@@ -1,19 +1,20 @@
 # Data Summaries {#sec-summary}
 
-## Intended Learning Outcomes {#sec-ilo-summary .unnumbered}
+<!-- checked for alt-text -->
 
-* Be able to load data from external files
-* Be able to summarise data by groups
-* Use pipes to chain together functions
+<div class="right meme"><img src="images/memes/read_csv.png"
+     alt = "Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font" /></div>
 
-## Functions used {#functions-summary}
+## Intended Learning Outcomes {#ilo-data - .ilo}
 
-```{r, include = FALSE}
-# load tidyverse packages separately so auto-links work in `func()` notation
-library(readr)
-library(dplyr)
-library(janitor)
-```
+- [ ] Be able to structure data for scripting
+- [ ] Import data from CSV and Excel files
+- [ ] Be able to summarise data by groups
+- [ ] Be able to produce well-formatted tables
+- [ ] Use pipes to chain together functions
+
+
+## Functions used {#sec-func-summary -}
 
 * built-in (you can always use these without loading any packages)
     * base:: `c()`, `dput()`, `library()`, `max()`, `mean()`, `min()`, `sum()`
@@ -25,23 +26,47 @@ library(janitor)
 * other (you need to load each package to use these)
     * janitor:: `clean_names()`
 
-## Walkthrough video {#sec-walkthrough-summary .unnumbered}
+## Setup {#sec-setup-summary -}
 
-There is a walkthrough video of this chapter available via [Echo360](https://echo360.org.uk/media/7684e5ec-5ca7-44e4-9a22-f46f21da498c/public). Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+1. Open your `ADS-2026` project 
+1. Create a new quarto file called `04-data.qmd`
+1. Update the YAML header 
+1. Replace the setup chunk with the one below: 
 
 
-## Set-up {#sec-setup-summary}
+````
+```{{r}}
+#| label: setup
+#| include: false
 
-First, create a new project for the work we'll do in this chapter named `r path("04-summary")`. Second, download the data for this chapter (<a href="data/12.1_delivery.csv" download>12.1_delivery.csv</a>) and save it in your project data folder. Finally, open and save and new R Markdown document named `summary.Rmd`, delete the welcome text and load the required packages for this chapter.
+# packages needed for this chapter
+library(tidyverse)     # loads readr for importing data
+                       #   and tibble for creating tables
+library(readxl)        # importing excel files
+library(jsonlite)      # importing JSON files
+library(rio)           # importing and exporting many types of files
+library(skimr)         # summarising datasets
+library(janitor)       # clean up data
+```
+````
 
-```{r setup-summary, message=FALSE, warning = FALSE, filename="Chapter packages"}
-library(tidyverse)   # data wrangling functions
-library(janitor)     # data cleaning functions
+```{r}
+#| label: setup-summary
+#| include: false
+
+# packages needed for this chapter
+library(tidyverse)     # loads readr for importing data
+                       #   and tibble for creating tables
+library(readxl)        # importing excel files
+library(jsonlite)      # importing JSON files
+library(rio)           # importing and exporting many types of files
+library(skimr)         # summarising datasets
+library(janitor)       # clean up data
 ```
 
-Download the [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf).
+Download the [Data import cheatsheet](https://rstudio.github.io/cheatsheets/html/data-import.html).
 
-## Import Data
+## Import Data {#sec-import-data}
 
 The data we'll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at [Method of Delivery](https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb), but we'll be working from a saved version. 
 
@@ -94,7 +119,7 @@ count(births, Delivery, sort = TRUE)
 count(births, Induced, sort = TRUE)
 ```
 
-We'll now add on extra code to `birth_cols` to set the order of our factors. What order you choose will depend on what makes most sense for the data. For `AgeGroup` we'll list them in chronological order, whilst for `Delivery` and `Induced`, we'll sort them according to the highest value - it can be helpful to think of what order you'll like the bars to be in if you were making a graph.
+We'll now add an extra code to `birth_cols` to set the order of our factors. What order you choose will depend on what makes most sense for the data. For `AgeGroup` we'll list them in chronological order, whilst for `Delivery` and `Induced`, we'll sort them according to the highest value - it can be helpful to think of what order you'll like the bars to be in if you were making a graph.
 
 
 :::{.callout-tip}
@@ -175,11 +200,14 @@ births$livebirths[c(20,30,40)] # select multiple with c()
 
 ## Pipes {#sec-pipes-first}
 
-::: {style="width: 200px; float: right;"}
-<img src="images/tidy/pipe_sticker.png" style="width: 100%"/>
-:::
+<!--
+<div class="right meme">
+<img src="images/tidy/pipe_sticker.png" alt="Hexagon sticker with the magrittr pipe %>% and text in cursive below it reading 'Ceci n'est pas un pipe.'"/>
+</div>
+-->
 
 Let's say you want to filter the dataset down to just the emergency C-sections, and then sum up the total number of live births per year, and then arrange the data from largest to smallest (don't worry, we'll introduce these functions soon). You could do it by creating intermediate objects for each step:
+
 
 ```{r}
 # filter the table to just emergency c-sections
@@ -197,20 +225,20 @@ c_sorted <- arrange(c_per_year, desc(n))
 head(c_sorted)
 ```
 
-Whilst the above code is functional, it adds three unnecessary objects to the environment, increasing cognitive load and the risk of mistakes. Enter... the `r glossary("pipe")`, that weird `%>%` you may have seen. 
+Whilst the above code is functional, it adds three unnecessary objects to the environment, increasing cognitive load and the risk of mistakes. Enter... the `r glossary("pipe")`, that weird `|>` you may have seen. 
 
-Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `%>%` to be an argument in the function after `%>%`. By default, this is the first argument, but we'll show you ways to change that later.
+Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `|>` to be an argument in the function after `|>`. By default, this is the first argument, but we'll show you ways to change that later.
 
 It can be useful to translate the pipe as "**and then**". It's easier to show than tell, so let's look at an example.
 
 ```{r}
         
-c_per_year <- births %>% # and then
+c_per_year <- births |> # and then
   
-  filter(delivery == "Caesarean - Emergency") %>% # and then
+  filter(delivery == "Caesarean - Emergency") |> # and then
   
   summarise(n = sum(livebirths), 
-            .by = financial_year) %>% # and then
+            .by = financial_year) |> # and then
   
   arrange(desc(n))
 
@@ -220,7 +248,7 @@ head(c_per_year)
 Notice that  `filter()`, `summarise()` and `arrange()` no longer need the first argument to be the data table; it is pulled in from the pipe above. The power of the pipe may not be obvious now, but it will soon prove its worth. 
 
 :::{.callout-note}
-Base R recently added a "native pipe" that looks like this: `|>`, while the tidyverse has traditionally used the "magrittr pipe" that looks like this `%>%`. They have a few small differences that you don't need to learn about yet. We'll be using the magrittr pipe, but you might see the base R pipe in other sources.
+Base R recently added a "native pipe" that looks like this: `|>`, while the tidyverse has traditionally used the "magrittr pipe" that looks like this `%>%`. They have a few small differences that you don't need to learn about yet. We'll be using the base R pipe, but you might see the magrittr pipe in other sources.
 :::
 
 ## Counting
@@ -240,7 +268,7 @@ You can add on a column with the numbers expressed in percent using the function
 The code below divides the value in the `n` column by the total sum of the numbers in that column, and adds it to a new column called `percent`. The next step modifies the percent column by multiplying it by 100 and rounding the value. You could do this all in one step, like `round(100 * n / sum(n))`, but often it's clearer to break it into a few steps to avoid too many nested parentheses.
 
 ```{r}
-count(births, delivery) %>%
+count(births, delivery) |>
   mutate(percent = n / sum(n),
          percent = round(100 * percent))
 ```
@@ -257,12 +285,12 @@ count(births, age_group, induced, sort = TRUE)
 mcq1 <- c(answer = "`count(births, induced, sort = TRUE)`", 
           x = "`count(induced, births, sort = TRUE)`", 
           x = "`count(births, induced)`", 
-          x = "`count(induced, births)`") %>%
-  sample() %>%
+          x = "`count(induced, births)`") |>
+  sample() |>
   longmcq()
 ```
 
-::: {.callout-note .try}
+::: {.try}
 How would you create the table of counts below? 
 
 ```{r, echo = FALSE}
@@ -326,9 +354,9 @@ You can also create summary values by group using a combination of `group_by()` 
 It differs from the `.by` argument to `summarise()` in that it is persistent, so the table stays grouped until you explicitly remove the groups using the `ungroup()` functions, while the `.by` argument only applies to the function it is inside. Most of the code examples you'll see use this style, since the `.by` argument is fairly new.
 
 ```{r}
-births %>%
-  group_by(delivery) %>%
-  summarise(births = sum(livebirths)) %>%
+births |>
+  group_by(delivery) |>
+  summarise(births = sum(livebirths)) |>
   ungroup()
 ```
 
@@ -340,10 +368,10 @@ Make sure you call the `ungroup()` function when you are done with grouped funct
 You might have noticed that the order of the table above is different from the order when using the `.by` argument of `summarise()`. This is because `group_by()` always sorts the values in the grouping columns in ascending order, while `.by` leaves them in the order they are first encountered in your data frame. Use the function `arrange()` to manually change order (see @sec-arrange).
 
 ```{r}
-births %>%
-  group_by(delivery) %>%
-  summarise(births = sum(livebirths)) %>%
-  ungroup() %>%
+births |>
+  group_by(delivery) |>
+  summarise(births = sum(livebirths)) |>
+  ungroup() |>
   arrange(desc(births)) # sort by number of births in descending order
 ```
 
@@ -356,9 +384,9 @@ You can add multiple variables to `group_by()` to further break down your data. 
 * Reverse the order of `delivery` and financial_year` in `group_by()` to see how it changes the output.
 
 ```{r eval = FALSE}
-births %>%
-  group_by(delivery, financial_year) %>%
-  summarise(n = sum(livebirths)) %>%
+births |>
+  group_by(delivery, financial_year) |>
+  summarise(n = sum(livebirths)) |>
   ungroup()
 ```
 
@@ -377,14 +405,14 @@ Calculating percent by groups is a great example of the flexibility of `group_by
 When we just had one variable to count, adding percent was nice and easy:
 
 ```{r}
-count(births, delivery) %>%
+count(births, delivery) |>
   mutate(percent = n/sum(n)*100)
 ```
 
 With multiple variables, problems can arise if we use the exact same approach because by default, it will calculate the percent that each row contributes to the dataset as a whole. This might be what you want:
 
 ```{r}
-count(births, age_group, induced, sort = TRUE)%>%
+count(births, age_group, induced, sort = TRUE)|>
   mutate(percent = n/sum(n)*100)
 ```
 
@@ -392,13 +420,13 @@ However, it's more likely that you would want to calculate percent by groups. Fo
 
 ```{r}
 # group by age, percentages within each age group will sum to 100
-count(births, age_group, induced)%>% #age then induced
-  group_by(age_group) %>%
+count(births, age_group, induced)|> #age then induced
+  group_by(age_group) |>
   mutate(percent = n/sum(n)*100)
 
 # group by induced, percentages within each induction group will sum to 100
-count(births, induced, age_group)%>% #induced then age
-  group_by(induced) %>%
+count(births, induced, age_group)|> #induced then age
+  group_by(induced) |>
   mutate(percent = n/sum(n)*100)
 ```
 
@@ -406,12 +434,12 @@ If you have updated `r pkg("dyplr")` then you can also use the `.by` argument in
 
 ```{r}
 # group by age, percentages within each age group will sum to 100
-count(births, age_group, induced)%>% #age then induced
+count(births, age_group, induced)|> #age then induced
   mutate(percent = n/sum(n)*100,
          .by = age_group)
 
 # group by induced, percentages within each induction group will sum to 100
-count(births, induced, age_group)%>% #induced then age
+count(births, induced, age_group)|> #induced then age
   mutate(percent = n/sum(n)*100,
          .by = induced)
 ```
@@ -431,13 +459,13 @@ You can combine functions like this to get detailed insights into your data. For
 
 
 ```{r}
-births_per_year_type_age <- births %>%
+births_per_year_type_age <- births |>
   mutate(year = str_extract(financial_year, ".{4}"), # takes first four digits
-         year = as.integer(year)) %>% # transform to numeric
+         year = as.integer(year)) |> # transform to numeric
   filter(age_group != "Unknown", # remove unknown
-         delivery != "Not Known") %>% # remove not known
+         delivery != "Not Known") |> # remove not known
   summarise(n = sum(livebirths),
-            .by = c(year, delivery, age_group)) %>%
+            .by = c(year, delivery, age_group)) |>
   mutate(pcnt = n / sum(n) * 100, 
          .by = c(year, age_group))
   
@@ -446,14 +474,17 @@ births_per_year_type_age <- births %>%
 head(births_per_year_type_age)
 ```
 
-::: {.callout-note .try}
+::: {.try}
 Re-write the code above using `group_by()` instead of the `.by` argument?
 :::
 
 Now you can use your skills from @sec-viz to plot the data! The code below has a few elements you haven't seen before. For example, it adds a transparent horizontal line at 0, which is a trick to force all the y-axes to start at 0, but allows different scales per facet. It also angles the text in the x-axis. 
 
-```{r fig-birth-year-type-age, fig.cap = ""}
-births_per_year_type_age  %>%
+```{r}
+#| label: fig-birth-year-type-age
+#| fig-cap: "Percent of live births per year by age group and delivery type."
+#| fig-alt: "Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020."
+births_per_year_type_age  |>
   ggplot(aes(x = year, y = pcnt, color = age_group)) +
   geom_line() +
   facet_wrap(~delivery, scales = "free_y") +
@@ -469,23 +500,19 @@ births_per_year_type_age  %>%
 
 Take a break and then try one (or more) of the following:
 
-* Create an Rmd report that presents the above code with nice formatting. For example, hide the code from the output and format the tables.
-* Explore the data and add at least one unique insights of your own to the report
+* Create a quarto report that presents the above code with nice formatting. For example, hide the code from the output and format the tables.
+* Explore the data and add at least one unique insights of your own to the report.
 * Download a different data set from [Scottish Health and Social Care Open Data](https://www.opendata.nhs.scot/) and create summary tables and plots.
 * If you have data of your own, practice summarising this in R.
 
-### Share on Teams
 
-Once you're done, share your knitted report and the Rmd file on Teams in the Week 04 channel.
-
-## Glossary {#sec-glossary-summary}
+## Glossary {#sec-glossary-summary -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-summary}
+## Further resources {#sec-resources-summary -}
 
 * [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 * [Chapter 3: Data Transformation ](https://r4ds.hadley.nz/data-transform) in *R for Data Science*
-* [kableExtra vignettes](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)

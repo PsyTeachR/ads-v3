@@ -68,15 +68,14 @@ You can set the working directory to another location manually with menu command
 
 ### Start a Project {#sec-project-start}
 
-Start by making a directory inside your default project directory where you will keep all of your materials for this class; we'd suggest naming it something like `ADS-2026`. 
 
 To create a new project for the work we'll do in this chapter:
 
 * <if>File > New Project...</if>
 * Select <if>New Directory</if>
 * Select <if>New Project</if>
-* Name the project `r path("02-reports")`
-* Save it inside the `ADS-2026` directory
+* Name the project `r path("ADS-2026")`
+* Save it inside the `R-projects` directory
 * Click <if>Create Project</if>
 
 RStudio will restart itself and open with this new project directory as the working directory.
@@ -85,14 +84,14 @@ RStudio will restart itself and open with this new project directory as the work
 
 ![](images/reports/new_proj_1.png){fig-alt="Interface box titled New Project Wizard. The heading is Create Project and there are three options: New Directory: start a project in a brand new working directory, Existing Directory: Associate a project with an existing directory, and Version Control: Checkout a project from a version control repository"}
 
-![](images/reports/new_proj_2.png){fig-alt="Next page of the New Project Wizard interface. There is a back button and the heading Project Type. There are 7 optins: New Project, R Package, Shiny Application, Quarto Project, Quarto Website, Quarto Blog, and Quarto Book. The first option is highlighted with the help text `Create a new project in an empty directory.'"}
+![](images/reports/new_proj_2.png){fig-alt="Next page of the New Project Wizard interface. There is a back button and the heading Project Type. There are 7 options: New Project, R Package, Shiny Application, Quarto Project, Quarto Website, Quarto Blog, and Quarto Book. The first option is highlighted with the help text `Create a new project in an empty directory.'"}
 
 ![](images/reports/new_proj_3.png){fig-alt="Next page of the New Project Wizard interface. There is a back button and the heading Create New Project. There is a text box labelled 'Directory name' with the contents 'reprores' and another with the label 'Create project as a subdirectory of:` and the contents '/Users/debruine/R-projects' next to a Browse... button. There are two tickboxes (both unselected) labelled 'Create a git repository' and 'Use renv with this project'."}
 
 Starting a new project.
 :::
 
-Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called `02-reports.Rproj`, which is a file that contains all of the project information. When you're in the Finder/Explorer, you can double-click on it to open up the project.
+Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called `ADS-2026.Rproj`, which is a file that contains all of the project information. When you're in the Finder/Explorer, you can double-click on it to open up the project.
 
 ::: {.callout-note}
 ## Dot files
@@ -180,7 +179,7 @@ format: html
 ---
 ```
 
-This is the `r glossary("YAML")` header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., `date: 2025-10-03`.
+This is the `r glossary("YAML")` header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., `date: 2026-01-20`.
 
 You will learn in @sec-yaml how to further customise your document using information in the header.
 

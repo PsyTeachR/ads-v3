@@ -1268,7 +1268,7 @@ Tip
 <p>Just like <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>, <code>mutate()</code> is incredibly powerful and the scope of what you can create is far beyond what we can cover in this book.</p>
 </section><section id="sec-dplyr-summarise" class="level3" data-number="9.3.5"><h3 data-number="9.3.5" class="anchored" data-anchor-id="sec-dplyr-summarise">
 <span class="header-section-number">9.3.5</span> Summarise</h3>
-<p>You were introduced to the <code>summarise()</code> function in <a href="04-summary.html#sec-summary-summarise" class="quarto-xref"><span>Section 4.6</span></a>. This applies summary functions to an entire table (or groups, as you’ll see in the next section).</p>
+<p>You were introduced to the <code>summarise()</code> function in <a href="04-summary.html#sec-summary-summarise" class="quarto-xref"><span>Section 4.4</span></a>. This applies summary functions to an entire table (or groups, as you’ll see in the next section).</p>
 <p>Let’s say we want to determine the mean sales and expenses, plus the minimum and maximum profit, for any region, product and year. First, we need to reshape the data like we learned in <a href="08-tidy.html" class="quarto-xref"><span>Chapter 8</span></a>, so that there is a column for year and one column each for sales and expenses, instead of separate columns for each year. We’ll also drop the satisfaction data as we don’t need it for this analysis.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>budget4 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span></span>
@@ -1369,7 +1369,7 @@ Tip
 </div>
 </section><section id="sec-dplyr-groupby" class="level3" data-number="9.3.6"><h3 data-number="9.3.6" class="anchored" data-anchor-id="sec-dplyr-groupby">
 <span class="header-section-number">9.3.6</span> Group By</h3>
-<p>You were introduced to the <code>group_by()</code> function in <a href="04-summary.html#sec-grouping" class="quarto-xref"><span>Section 4.7</span></a>. For example, you can break down the summary statistics above by year and product.</p>
+<p>You were introduced to the <code>group_by()</code> function in <a href="04-summary.html#sec-grouping" class="quarto-xref"><span>Section 4.5</span></a>. For example, you can break down the summary statistics above by year and product.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>year_prod <span class="ot">&lt;-</span> budget4 <span class="sc">%&gt;%</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">group_by</span>(year, product) <span class="sc">%&gt;%</span></span>
