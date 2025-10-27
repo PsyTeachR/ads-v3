@@ -1520,7 +1520,7 @@ library(tidyverse)
 library(patchwork) 
 library(ggthemes)  
 
-personality <- read_csv("https://psyteachr.github.io/reprores/data/personality_scores.csv")
+personality <- read_csv("https://psyteachr.github.io/ads-v3/data/personality_scores.csv")
 ```
 ````
 
@@ -1536,7 +1536,7 @@ Give human-readable labels to the columns you'll be plotting:
 
 ### Summary
 
-Create a level 2 heading titled "Overview". Underneath this heading, write a short summary of what the data set contains (scores on a 5-factor personality questionnaire) and what each of the variables means (you can use the information from the [personality_scores.json](https://psyteachr.github.io/reprores/data/personality_scores.json) codebook).
+Create a level 2 heading titled "Overview". Underneath this heading, write a short summary of what the data set contains (scores on a 5-factor personality questionnaire) and what each of the variables means (you can use the information from the [personality_scores.json](https://psyteachr.github.io/ads-v3/data/personality_scores.json) codebook).
 
 ### Appropriate plots
 

@@ -195,7 +195,7 @@ Now I can make:
 * headers
 * paragraphs
 * lists
-* [links](https://psyteachr.github.io/reprores-v5/)
+* [links](https://psyteachr.github.io/ads-v3/)
 
 ```
 
@@ -356,7 +356,7 @@ Create a new level 2 header called "Data Analysis", add a code chunk below it, a
 
 ```{r}
 #| eval: false
-smalldata <- read_csv("https://psyteachr.github.io/reprores/data/smalldata.csv")
+smalldata <- read_csv("https://psyteachr.github.io/ads-v3/data/smalldata.csv")
 ```
 
 :::
@@ -371,7 +371,7 @@ smalldata <- read_csv("https://psyteachr.github.io/reprores/data/smalldata.csv")
 
 If you get an error message that looks like:
 
-> Error in read_csv("https://psyteachr.github.io/reprores/data/smalldata.csv") :  
+> Error in read_csv("https://psyteachr.github.io/ads-v3/data/smalldata.csv") :  
 >  could not find function "read_csv"
 
 This means that you have not loaded tidyverse. Check that `library(tidyverse)` is in the setup chunk and that you have run the setup chunk.
@@ -393,17 +393,17 @@ View(smalldata)
 
 ### Local data files
 
-More commonly, you will be working from data files that are stored locally on your computer. But where should you put all of your files? You usually want to have all your scripts and data files for a single project inside one folder on your computer, that project's `r glossary("working directory")`, and we have already set up the main directory `r path("reprores")` for this course.
+More commonly, you will be working from data files that are stored locally on your computer. But where should you put all of your files? You usually want to have all your scripts and data files for a single project inside one folder on your computer, that project's `r glossary("working directory")`, and we have already set up the main directory `r path("ADS-2026")` for this course.
 
 You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a subdirectory called `r path("data")` and saving any image files to a subdirectory called `r path("images")`. Using subdirectories helps avoid one single folder becoming too cluttered, which is important when you're working on big projects.
 
-In your `r path("reprores")` directory, create a new folder named `r path("data")`, [download a copy of the data file](https://psyteachr.github.io/reprores/data/smalldata.csv){download=""}, and save it in this new subdirectory. Or you can run the following code in the console (do not add it to the script or you will unnecessarily download data every time you run it).
+In your `r path("ADS-2026")` directory, create a new folder named `r path("data")`, [download a copy of the data file](https://psyteachr.github.io/ads-v3/data/smalldata.csv){download=""}, and save it in this new subdirectory. Or you can run the following code in the console (do not add it to the script or you will unnecessarily download data every time you run it).
 
 ```{r}
 #| eval: false
 #| code-summary: "Run in the console"
 dir.create(path = "data", showWarnings = FALSE)
-url <- "https://psyteachr.github.io/reprores/data/smalldata.csv"
+url <- "https://psyteachr.github.io/ads-v3/data/smalldata.csv"
 download.file(url = url, destfile = "data/smalldata.csv")
 ```
 
@@ -527,10 +527,10 @@ You can also include images that you did not create in R using the markdown synt
 The general syntax for adding an image in markdown is `![caption](url){#fig-name}`. You can leave the caption blank, but must include the square brackets. The curly brackets are optional, and allow you to reference the figure as `@fig-name` (change the "name" part for each new figure). You can also add other formatting options in the curly brackets, like an image width or CSS styles. Alt-text for screen readers is an important thing to add to any image for accessibility.
 
 ``` md
-![The ReproRes logo](images/logos/logo.png){#fig-logo width="33%" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}
+![ADS](https://psyteachr.github.io/images/ads.png){width="200px" fig-alt="A rainbow-bordered hexagon with the words 'Applied Data Skills"}
 ```
-
-![The ReproRes logo](images/logos/logo.png){#fig-logo width="33%" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}
+]
+![ADS](https://psyteachr.github.io/images/ads.png){width="200px" fig-alt="A rainbow-bordered hexagon with the words 'Applied Data Skills"}
 
 
 ::: {.callout-note}

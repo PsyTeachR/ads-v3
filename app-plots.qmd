@@ -31,7 +31,7 @@ theme_set(theme_light())
 
 ### Set-up {#setup-custom-viz}
 
-1. Open your `reprores` project 
+1. Open your `ADS-2026` project 
 1. Create a new quarto file called `10-next.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
@@ -432,7 +432,7 @@ ggplot(data = rank_data,
 
 #### Word Clouds
 
-Word clouds are a common way to summarise text data. First, download <a href="https://psyteachr.github.io/reprores-v5/data/amazon_alexa.csv" download>amazon_alexa.csv</a> into your data folder and then load it into an object. This dataset contains  text reviews as well as the 1-5 rating from customers who bought an Alexa device on Amazon.
+Word clouds are a common way to summarise text data. First, download <a href="https://psyteachr.github.io/ads-v3/data/amazon_alexa.csv" download>amazon_alexa.csv</a> into your data folder and then load it into an object. This dataset contains  text reviews as well as the 1-5 rating from customers who bought an Alexa device on Amazon.
 
 ```{r}
 # https://www.kaggle.com/sid321axn/amazon-alexa-reviews
@@ -566,7 +566,7 @@ ggplot() +
 ```
 
 
-You can join <a href="https://psyteachr.github.io/reprores-v5/data/scottish_population.csv" download>Scottish population data</a> to the map table to visualise data on the map using colours or labels.
+You can join <a href="https://psyteachr.github.io/ads-v3/data/scottish_population.csv" download>Scottish population data</a> to the map table to visualise data on the map using colours or labels.
 
 ```{r}
 # load map data
