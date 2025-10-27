@@ -64,10 +64,13 @@ book:
   - app-conventions.qmd
   - app-teams.qmd
   - app-debugging.qmd
+  - app-accessibility.qmd
   - app-import.qmd
   - app-datatypes.qmd
   - app-dates.qmd
   - app-styling.qmd
+  - app-tables.qmd
+  - app-plots.qmd
   - app-webpage.qmd
 
 

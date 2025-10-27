@@ -66,7 +66,7 @@ is.logical(10 > 5)
 You might also see logical values abbreviated as `T` and `F`, or `0` and `1`. This can cause some problems down the road, so we will always spell out the whole thing.
 :::
 
-### Factors
+### Factors {#sec-factors}
 
 A `r glossary("factor")` is a specific type of integer that lets you specify the categories and their order. This is useful in data tables to make plots display with categories in the correct order.
 

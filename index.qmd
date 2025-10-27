@@ -1,4 +1,8 @@
-# Overview {.unnumbered}
+---
+number-offset: 0
+---
+
+# Overview {-}
 
 This book provides an overview of the basic skills needed to turn raw data into informative summaries and visualisations presented in professional reports and presentations. The book will introduce learners to R [@R-base], a programming language that can help automate working with data. The book will cover importing and processing data from spreadsheets, producing data summaries of descriptive statistics in tables, creating beautiful and informative visualisations, and constructing reports and presentations that automatically update when the underlying data changes.
 
@@ -10,10 +14,25 @@ By the end of this book, you will be able to use R to:
 -   create reusable report templates
 -   use AI to responsibly assist with coding
 
+::: {.callout-note}
+## Book version
+
+```{r, echo=FALSE, eval=FALSE}
+# doesn't work while knitting, so copy and paste
+rstudioapi::versionInfo()$version
+rstudioapi::versionInfo()$release_name
+```
+
+
+This book was created using `r R.version.string` (`r R.version$nickname`) and RStudio version 2025.5.1.513 (Mariposa Orchid). It was rendered with quarto version `r quarto::quarto_version()`.  Most of the content of this book will work fine in versions of R above 4.0 and earlier versions of RStudio, although there may be some small differences in the interface. 
+
+This is the 3rd version of the book and is currently under revision. You can access previous versions at: [v1](https://psyteachr.github.io/ads-v1) and [v2](https://psyteachr.github.io/ads-v2).
+:::
+
 
 ## Structure of the course
 
-This book accompanies a 10-week course, covering one chapter per week. Each chapter will introduce you to some new skills and concepts using concrete examples. At various points, there will be multiple-choice or fill-in-the-blank questions for you to check your understanding. Each chapter has accompanying walk-through videos, where an instructor demonstrates the skills covered in the chapter. Each chapter also has accompanying exercises that you should do to reinforce your learning.
+This book accompanies a 10-week course, covering one chapter per week. Each chapter will introduce you to some new skills and concepts using concrete examples. At various points, there will be multiple-choice or fill-in-the-blank questions for you to check your understanding. Each chapter also has accompanying exercises that you should do to reinforce your learning.
 
 ## How to learn data skills
 
@@ -30,23 +49,17 @@ Learning data skills is kind of like having a gym membership - you'll be given s
 Data skills do not require you to memorise lots of code. You will be introduced to many different functions, but the main skill to learn is how to efficiently find the information you need. This will require getting used to the structure of help files and [cheat sheets](https://www.rstudio.com/resources/cheatsheets/){target="_blank"}, learning how to Goggle your problem and choose a helpful solution, and learning how to read error messages.
 
 ::: {.small_right}
-<img src="images/memes/typos.jpg" alt="Morpehus from The Matrix; top text: What if I told you; bottom text: Typos are accidents nd accidents happon"/>
+<img src="images/memes/changing-stuff.jpg" 
+     alt="Fake O'Reilly-style book cover, line drawing of a kitten; title: Changing Stuff and Seeing What Happens; top text: How to actually learn any new programming concept" />
 :::
 
 Learning to code involves making a **lot** of mistakes. These mistakes are completely essential to the process, so try not to feel too frustrated. Many of the chapter exercises will give you broken code to fix so you get experience seeing what common errors look like. As you become a more experienced coder, you might not make fewer errors, but you'll recover from them much faster.
 
-## How (and why!) to enrol on ADS
 
-This book contains the core coding materials for Applied Data Skills (ADS). Open Educational Resources (OER) are a fundamental part of the PsyTeachR mission, however, we'd also encourage you to consider enrolling in the full version of ADS. ADS is primarily offered as an [Upskilling Course](https://www.gla.ac.uk/study/sfcupskilling/) through the University of Glasgow. If you're Scottish-domiciled, there are currently fully-funded places available through the Scottish Funding Council but you can also enrol as a [self-funded](https://www.gla.ac.uk/scholarships/upskilling/) student wherever you are in the world.
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'knitr', 'rmarkdown', 'tinytex', 'tidyverse'
+), 'include/packages.bib')
+```
 
-In addition to this book, learners on ADS get:
-
-* Weekly lectures on the fundamentals of statistics, data visualization, and working with quantitative data
-* A curated reading list
-* Weekly quizzes
-* A formative assessment with a solution file and walkthrough video
-* A summative assessment that is individually graded. Successful completion of this assessment results in the award of a 10-credit SCQF Level 8 qualification.
-* Access to a friendly and inclusive learning community on Teams that provides on-demand technical and learning support by our two academic leads and a dedicated Teaching Assistant, as well as the opportunity to interact with and learn from peers. 
-* A supported schedule and syllabus that has been purposefully designed to be underpinned by the science of learning to maximize success.
-
-ADS currently runs in April each year and you can [subscribe to be notified](https://r1.dotdigital-pages.com/p/4S63-CAV) when applications open.

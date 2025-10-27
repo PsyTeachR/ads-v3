@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Applied Data Skills - Appendix I — Dates and Times</title>
+<title>Appendix J — Dates and Times – Applied Data Skills</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -68,12 +68,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-f3e25e36da68531933d16fe9428bd359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-85778df6a5635a5384febc1874222977.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -113,13 +113,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-dates.html"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Dates and Times</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-dates.html"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -131,23 +131,23 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/psyteachr/ads-v3/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
 <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -173,7 +173,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro to R and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -227,7 +227,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-custom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Customising Visualisations &amp; Reports</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -244,9 +244,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -289,32 +289,50 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Accessibility</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -329,23 +347,23 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#formats" id="toc-formats" class="nav-link active" data-scroll-target="#formats"><span class="header-section-number">I.1</span> Formats</a></li>
-  <li><a href="#parsing" id="toc-parsing" class="nav-link" data-scroll-target="#parsing"><span class="header-section-number">I.2</span> Parsing</a></li>
-  <li><a href="#get-parts" id="toc-get-parts" class="nav-link" data-scroll-target="#get-parts"><span class="header-section-number">I.3</span> Get Parts</a></li>
+<li><a href="#formats" id="toc-formats" class="nav-link active" data-scroll-target="#formats"><span class="header-section-number">J.1</span> Formats</a></li>
+  <li><a href="#parsing" id="toc-parsing" class="nav-link" data-scroll-target="#parsing"><span class="header-section-number">J.2</span> Parsing</a></li>
+  <li><a href="#get-parts" id="toc-get-parts" class="nav-link" data-scroll-target="#get-parts"><span class="header-section-number">J.3</span> Get Parts</a></li>
   <li>
-<a href="#date-arithmetic" id="toc-date-arithmetic" class="nav-link" data-scroll-target="#date-arithmetic"><span class="header-section-number">I.4</span> Date Arithmetic</a>
+<a href="#date-arithmetic" id="toc-date-arithmetic" class="nav-link" data-scroll-target="#date-arithmetic"><span class="header-section-number">J.4</span> Date Arithmetic</a>
   <ul class="collapse">
-<li><a href="#first-and-last-of-month" id="toc-first-and-last-of-month" class="nav-link" data-scroll-target="#first-and-last-of-month"><span class="header-section-number">I.4.1</span> First and last of month</a></li>
-  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding"><span class="header-section-number">I.4.2</span> Rounding</a></li>
+<li><a href="#first-and-last-of-month" id="toc-first-and-last-of-month" class="nav-link" data-scroll-target="#first-and-last-of-month"><span class="header-section-number">J.4.1</span> First and last of month</a></li>
+  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding"><span class="header-section-number">J.4.2</span> Rounding</a></li>
   </ul>
 </li>
-  <li><a href="#internationalisation" id="toc-internationalisation" class="nav-link" data-scroll-target="#internationalisation"><span class="header-section-number">I.5</span> Internationalisation</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">I.6</span> Example</a></li>
+  <li><a href="#internationalisation" id="toc-internationalisation" class="nav-link" data-scroll-target="#internationalisation"><span class="header-section-number">J.5</span> Internationalisation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">J.6</span> Example</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/app-dates.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/app-dates.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-dates.html"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Dates and Times</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-dates-times" class="quarto-section-identifier">Appendix I — Dates and Times</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-dates.html"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-dates-times" class="quarto-section-identifier">Appendix J — Dates and Times</span></h1>
 </div>
 
 
@@ -366,8 +384,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="formats" class="level2" data-number="I.1"><h2 data-number="I.1" class="anchored" data-anchor-id="formats">
-<span class="header-section-number">I.1</span> Formats</h2>
+<section id="formats" class="level2" data-number="J.1"><h2 data-number="J.1" class="anchored" data-anchor-id="formats">
+<span class="header-section-number">J.1</span> Formats</h2>
 <p>While there is only one correct way to write date (The ISO 8601 format of “YYYY-MM-DD”), dates can be found in many formats. When you are reading a data file, you might need to specify the date format so it can be read properly. Date format specification uses abbreviations to represent the different ways people can write. the year, month, and day (as well as hours, minutes, and seconds). For example, the date <code>2023-01-03</code> is represented by the formatting string <code>"%Y-%m-%d</code>. The fastest way to find the list of formatting abbreviations is to look in the help for the function <code>col_date()</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
@@ -412,7 +430,7 @@ date (1): best
 <span id="cb5-6"><a href="#cb5-6"></a>         <span class="at">col_types =</span> ct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">best</th>
 <th style="text-align: left;">ok</th>
@@ -429,8 +447,8 @@ date (1): best
 </div>
 </div>
 </div>
-</section><section id="parsing" class="level2" data-number="I.2"><h2 data-number="I.2" class="anchored" data-anchor-id="parsing">
-<span class="header-section-number">I.2</span> Parsing</h2>
+</section><section id="parsing" class="level2" data-number="J.2"><h2 data-number="J.2" class="anchored" data-anchor-id="parsing">
+<span class="header-section-number">J.2</span> Parsing</h2>
 <p>The <code>ymd</code> functions can deal with almost all date formats, regardless of the punctuation used in the format. All of the examples below produce a date in the standard format “2022-01-03”.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># year-month-day orders</span></span>
@@ -474,8 +492,8 @@ Note
 <pre><code>[1] "2022-01-03 18:05:00 GMT"</code></pre>
 </div>
 </div>
-</section><section id="get-parts" class="level2" data-number="I.3"><h2 data-number="I.3" class="anchored" data-anchor-id="get-parts">
-<span class="header-section-number">I.3</span> Get Parts</h2>
+</section><section id="get-parts" class="level2" data-number="J.3"><h2 data-number="J.3" class="anchored" data-anchor-id="get-parts">
+<span class="header-section-number">J.3</span> Get Parts</h2>
 <p>You frequently need to extract parts of a date/time for plotting. The following functions extract specific parts of a date or datetime object. This is a godsend for those of us who never have a clue what week of the year it is today.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># get the date and time when this function is run</span></span>
@@ -500,17 +518,17 @@ Note
 <span id="cb11-20"><a href="#cb11-20"></a><span class="fu">str</span>(time_parts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 12
- $ second : num 54.5
- $ minute : int 28
- $ hour   : int 7
- $ day    : int 23
- $ wday   : num 3
- $ yday   : num 114
- $ week   : num 17
- $ isoweek: num 17
- $ epiweek: num 17
- $ month  : num 4
- $ year   : num 2024
+ $ second : num 33.5
+ $ minute : int 29
+ $ hour   : int 15
+ $ day    : int 27
+ $ wday   : num 2
+ $ yday   : num 300
+ $ week   : num 43
+ $ isoweek: num 44
+ $ epiweek: num 44
+ $ month  : num 10
+ $ year   : num 2025
  $ tz     : chr "GMT"</code></pre>
 </div>
 </div>
@@ -568,13 +586,13 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 </div>
 </div>
 </div>
-</section><section id="date-arithmetic" class="level2" data-number="I.4"><h2 data-number="I.4" class="anchored" data-anchor-id="date-arithmetic">
-<span class="header-section-number">I.4</span> Date Arithmetic</h2>
+</section><section id="date-arithmetic" class="level2" data-number="J.4"><h2 data-number="J.4" class="anchored" data-anchor-id="date-arithmetic">
+<span class="header-section-number">J.4</span> Date Arithmetic</h2>
 <p>You can add and subtract dates. For example, you can get the dates two weeks from today by adding <code>weeks(2)</code> to <code>today()</code>. You can probably guess how to add and subtract seconds, minutes, days, months, and years.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">today</span>() <span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-04-30"</code></pre>
+<pre><code>[1] "2025-11-03"</code></pre>
 </div>
 </div>
 <div class="try callout callout-style-default callout-note callout-titled">
@@ -640,8 +658,8 @@ Warning
 </div>
 </div>
 </div>
-<section id="first-and-last-of-month" class="level3" data-number="I.4.1"><h3 data-number="I.4.1" class="anchored" data-anchor-id="first-and-last-of-month">
-<span class="header-section-number">I.4.1</span> First and last of month</h3>
+<section id="first-and-last-of-month" class="level3" data-number="J.4.1"><h3 data-number="J.4.1" class="anchored" data-anchor-id="first-and-last-of-month">
+<span class="header-section-number">J.4.1</span> First and last of month</h3>
 <p>For things like billing, you might need to find the first or last days of the current, previous, or next month. The <code>rollback()</code> and <code>rollforward()</code> functions are easier than trying to parse dates.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>d <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">"2022-01-24"</span>)</span>
@@ -656,8 +674,8 @@ Warning
 [1] "2022-02-01"</code></pre>
 </div>
 </div>
-</section><section id="rounding" class="level3" data-number="I.4.2"><h3 data-number="I.4.2" class="anchored" data-anchor-id="rounding">
-<span class="header-section-number">I.4.2</span> Rounding</h3>
+</section><section id="rounding" class="level3" data-number="J.4.2"><h3 data-number="J.4.2" class="anchored" data-anchor-id="rounding">
+<span class="header-section-number">J.4.2</span> Rounding</h3>
 <p>You can round dates and times to the nearest unit. This can be useful when you have, for example, time measured to the nearest second, but want to group data by the nearest hour, rather than extract the hour component.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:25"</span>) <span class="sc">%&gt;%</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span>
@@ -669,8 +687,8 @@ Warning
 [1] "2022-01-24 11:00:00 UTC"</code></pre>
 </div>
 </div>
-</section></section><section id="internationalisation" class="level2" data-number="I.5"><h2 data-number="I.5" class="anchored" data-anchor-id="internationalisation">
-<span class="header-section-number">I.5</span> Internationalisation</h2>
+</section></section><section id="internationalisation" class="level2" data-number="J.5"><h2 data-number="J.5" class="anchored" data-anchor-id="internationalisation">
+<span class="header-section-number">J.5</span> Internationalisation</h2>
 <p>You may need to work with dates from a different locale than your computer’s defaults, such as dates written in French or Russian. Or your computer may have a non-English locale. Set the <code>locale</code> argument to the relevant language code.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">ymd</span>(<span class="st">"2022 January 24"</span>, <span class="at">locale =</span> <span class="st">"en_GB"</span>)</span>
@@ -707,8 +725,8 @@ AM/PM:  AM/PM</code></pre>
 <span id="cb33-2"><a href="#cb33-2"></a><span class="co"># doesn't work for Windows</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a><span class="fu">system</span>(<span class="st">"locale -a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="example" class="level2" data-number="I.6"><h2 data-number="I.6" class="anchored" data-anchor-id="example">
-<span class="header-section-number">I.6</span> Example</h2>
+</section><section id="example" class="level2" data-number="J.6"><h2 data-number="J.6" class="anchored" data-anchor-id="example">
+<span class="header-section-number">J.6</span> Example</h2>
 <p>Let’s work through some examples with downloaded tweets from the <a href="data/data.zip">class data</a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># read all metrics files in data/tweets/</span></span>
@@ -731,8 +749,8 @@ AM/PM:  AM/PM</code></pre>
 <span id="cb35-7"><a href="#cb35-7"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">rainbow</span>(<span class="dv">7</span>)) <span class="sc">+</span></span>
 <span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">24</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
+<pre><code>Warning in geom_bar(size = 1, alpha = 0.5, show.legend = FALSE): Ignoring
+unknown parameters: `size`</code></pre>
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1130,18 +1148,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1173,7 +1180,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1181,7 +1208,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1278,7 +1305,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1505,12 +1531,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./app-datatypes.html" class="pagination-link" aria-label="Data Types">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Types</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./app-styling.html" class="pagination-link" aria-label="Styling Plots">
-        <span class="nav-page-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
