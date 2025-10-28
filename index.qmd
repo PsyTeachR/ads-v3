@@ -8,11 +8,11 @@ This book provides an overview of the basic skills needed to turn raw data into 
 
 By the end of this book, you will be able to use R to:
 
--   clean and process data
--   summarise data
--   informatively visualise data
--   create reusable report templates
--   use AI to responsibly assist with coding
+- Import, clean, and manipulate real-world datasets using R programming.
+- Create fully reproducible data reports, demonstrating clear and ethical documentation of data processing and results.
+- Effectively visualise data to communicate findings to both technical and non-technical audiences.
+- Apply data skills to address socially relevant questions, with consideration of sustainability and impact.
+- Reflect on personal skill development and the role of data in driving informed decisions.
 
 ::: {.callout-note}
 ## Book version
@@ -32,7 +32,7 @@ This is the 3rd version of the book and is currently under revision. You can acc
 
 ## Structure of the course
 
-This book accompanies a 10-week course, covering one chapter per week. Each chapter will introduce you to some new skills and concepts using concrete examples. At various points, there will be multiple-choice or fill-in-the-blank questions for you to check your understanding. Each chapter also has accompanying exercises that you should do to reinforce your learning.
+This book accompanies a 10-week course, covering one chapter per week. Each chapter will introduce you to some new skills and concepts using concrete examples. At various points, there will be multiple-choice or fill-in-the-blank questions for you to check your understanding. Each chapter also has accompanying exercises that you should do to reinforce your learning. If you are enrolled on PSYCH1012 Applied Data Skills, you will complete these exercises in the second workshop each week as a pair programming exercise.
 
 ## How to learn data skills
 

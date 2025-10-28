@@ -22,27 +22,26 @@ book:
   #   hypothesis:
   #     theme: clean
   #     openSidebar: false
-  repo-url: https://github.com/psyteachr/ads-v3/
-  repo-branch: master
-  repo-actions: [edit, issue, source]
+  # repo-url: https://github.com/psyteachr/ads-v3/
+  # repo-branch: master
+  # repo-actions: [edit, issue, source]
   # downloads: [pdf, epub]
   sharing:
-  - twitter
   - facebook
   - linkedin
   # sidebar:
   #   style: docked
   #   background: light
-  margin-header: "<a href='https://doi.org/10.5281/zenodo.6365077'><img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg' alt='DOI'></a>"
+ #  margin-header: "<a href='https://doi.org/10.5281/zenodo.6365077'><img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg' alt='DOI'></a>"
   page-footer:
     left: "CC-BY 2024, psyTeachR"
-    right:
-    - icon: github
-      href: https://github.com/psyteachr/ads-v3
-    - icon: twitter
-      href: https://twitter.com/psyteachr
-    - icon: https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg
-      href: https://doi.org/10.5281/zenodo.6365077
+   # right:
+  #  - icon: github
+  #    href: https://github.com/psyteachr/ads-v3
+  #  - icon: twitter
+  #    href: https://twitter.com/psyteachr
+  #  - icon: https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg
+  #    href: https://doi.org/10.5281/zenodo.6365077
   chapters:
   - index.qmd
   - 01-intro.qmd
@@ -58,13 +57,6 @@ book:
   - 11-refs.qmd
   - 12-license.qmd
   appendices:
-  - app-installing-r.qmd
-  - app-updating-r.qmd
-  - app-symbols.qmd
-  - app-conventions.qmd
-  - app-teams.qmd
-  - app-debugging.qmd
-  - app-accessibility.qmd
   - app-import.qmd
   - app-datatypes.qmd
   - app-dates.qmd
