@@ -1574,7 +1574,7 @@ Pick one plot above and make a new version:
 
 * Adjust the visual aesthetics to make it look as bad and as difficult to read as possible.
 * Save the plot as a PNG image
-* Post this plot to the week 3 thread on Teams and explain why it is so bad. Include the code in your post (see @sec-teams for advice on posting code on Teams)
+* Post this plot to the week 3 thread on Teams and explain why it is so bad. Include the code in your post. 
 
 
 ## Glossary {#sec-glossary-viz -}

@@ -58,6 +58,7 @@ book:
   - 12-license.qmd
   appendices:
   - app-website.qmd
+  - app-referencing.qmd
   - app-import.qmd
   - app-datatypes.qmd
   - app-dates.qmd

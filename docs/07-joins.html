@@ -415,38 +415,44 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-referencing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Advanced: Referencing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Advanced: Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Advanced: Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Advanced: Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Advanced: Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Advanced: Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></span></a>
   </div>
 </li>
       </ul>
@@ -1815,7 +1821,7 @@ Warning
 </div>
 </section></section><section id="conflicting-variable-types" class="level2" data-number="7.9"><h2 data-number="7.9" class="anchored" data-anchor-id="conflicting-variable-types">
 <span class="header-section-number">7.9</span> Conflicting variable types</h2>
-<p>As we covered in <a href="app-import.html" class="quarto-xref"><span>Appendix B</span></a>, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there’s something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it’s important that not only are the variable names identical, but the data type of those variables is identical.</p>
+<p>As we covered in <a href="app-import.html" class="quarto-xref"><span>Appendix C</span></a>, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there’s something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it’s important that not only are the variable names identical, but the data type of those variables is identical.</p>
 <p>Let’s recreate our <code>new_customers</code> dataset but this time, we’ll specify that <code>id</code> is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> variable.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>new_customers2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
@@ -1852,7 +1858,7 @@ Warning
 ! Can't combine `..1$id` &lt;integer&gt; and `..2$id` &lt;character&gt;.</code></pre>
 </div>
 </div>
-<p>As alternative method to change variable types from what we showed you in <a href="app-import.html" class="quarto-xref"><span>Appendix B</span></a> is to use the <code>as.***</code> functions. If you type <code>as.</code> into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:</p>
+<p>As alternative method to change variable types from what we showed you in <a href="app-import.html" class="quarto-xref"><span>Appendix C</span></a> is to use the <code>as.***</code> functions. If you type <code>as.</code> into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:</p>
 <ul>
 <li>
 <code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code> - convert a variable to <a href="https://psyteachr.github.io/glossary/n#numeric" target="_blank" class="glossary" title="A data type representing a real decimal number or integer.">numeric</a>. Useful for when you have a variable of real numbers that have been encoded as character. Any values that can’t be turned into numbers (e.g., if you have the word “missing” in cells that you have no data for), will be returned as <code>NA</code>.</li>

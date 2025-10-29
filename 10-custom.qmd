@@ -27,7 +27,7 @@ Lisa participated in the 2022 30 Day Chart Challenge and ended up collecting all
 
 We've been concentrating on creating single documents with quarto, but you can do much more with it, such as create presentations and websites. See the [quarto guide](https://quarto.org/docs/guide/) for a list of everything that it can do.
 
-@sec-webpages will teach you how to create a simple webpage using `r glossary("quarto")`, link multiple pages, and style your content using `r glossary("css")`.
+@sec-websites will teach you how to create a simple webpage using `r glossary("quarto")`, link multiple pages, and style your content using `r glossary("css")`.
 
 You can easily create presentations using revealjs in quarto. Get started by creating a new quarto document, pasting in the following, and rendering it. 
 

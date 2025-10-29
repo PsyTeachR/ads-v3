@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.21">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Appendix G — Advanced: Plots – Applied Data Skills</title>
+<title>Appendix H — Advanced: Plots – Applied Data Skills</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -285,7 +285,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-website.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-plots.html"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-website.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-plots.html"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -417,38 +417,44 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-referencing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Advanced: Referencing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Advanced: Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Advanced: Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Advanced: Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Advanced: Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Advanced: Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-plots.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></span></a>
   </div>
 </li>
       </ul>
@@ -461,16 +467,16 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#setup-custom-viz" id="toc-setup-custom-viz" class="nav-link active" data-scroll-target="#setup-custom-viz"><span class="header-section-number">G.0.1</span> Set-up</a></li>
-  <li><a href="#defaults" id="toc-defaults" class="nav-link" data-scroll-target="#defaults"><span class="header-section-number">G.0.2</span> Defaults</a></li>
-  <li><a href="#annotations" id="toc-annotations" class="nav-link" data-scroll-target="#annotations"><span class="header-section-number">G.0.3</span> Annotations</a></li>
-  <li><a href="#sec-other-plots" id="toc-sec-other-plots" class="nav-link" data-scroll-target="#sec-other-plots"><span class="header-section-number">G.0.4</span> Other Plots</a></li>
-  <li><a href="#resources-custom" id="toc-resources-custom" class="nav-link" data-scroll-target="#resources-custom"><span class="header-section-number">G.0.5</span> Resources</a></li>
+<li><a href="#setup-custom-viz" id="toc-setup-custom-viz" class="nav-link active" data-scroll-target="#setup-custom-viz"><span class="header-section-number">H.0.1</span> Set-up</a></li>
+  <li><a href="#defaults" id="toc-defaults" class="nav-link" data-scroll-target="#defaults"><span class="header-section-number">H.0.2</span> Defaults</a></li>
+  <li><a href="#annotations" id="toc-annotations" class="nav-link" data-scroll-target="#annotations"><span class="header-section-number">H.0.3</span> Annotations</a></li>
+  <li><a href="#sec-other-plots" id="toc-sec-other-plots" class="nav-link" data-scroll-target="#sec-other-plots"><span class="header-section-number">H.0.4</span> Other Plots</a></li>
+  <li><a href="#resources-custom" id="toc-resources-custom" class="nav-link" data-scroll-target="#resources-custom"><span class="header-section-number">H.0.5</span> Resources</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-website.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-plots.html"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-more-plots" class="quarto-section-identifier">Appendix G — Advanced: Plots</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-website.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-plots.html"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-more-plots" class="quarto-section-identifier">Appendix H — Advanced: Plots</span></h1>
 </div>
 
 
@@ -485,8 +491,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 
 </header><p>This appendix will introduce you to some more plot styles, like maps and word clouds, and things you can do with plots, such as add annotations.</p>
-<section id="setup-custom-viz" class="level3" data-number="G.0.1"><h3 data-number="G.0.1" class="anchored" data-anchor-id="setup-custom-viz">
-<span class="header-section-number">G.0.1</span> Set-up</h3>
+<section id="setup-custom-viz" class="level3" data-number="H.0.1"><h3 data-number="H.0.1" class="anchored" data-anchor-id="setup-custom-viz">
+<span class="header-section-number">H.0.1</span> Set-up</h3>
 <ol type="1">
 <li>Open your <code>ADS-2026</code> project</li>
 <li>Create a new quarto file called <code>10-next.qmd</code>
@@ -519,8 +525,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb1-23"><a href="#cb1-23"></a><span class="fu">theme_set</span>(<span class="fu">theme_light</span>())</span>
 <span id="cb1-24"><a href="#cb1-24"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheat sheet</a>.</p>
-</section><section id="defaults" class="level3" data-number="G.0.2"><h3 data-number="G.0.2" class="anchored" data-anchor-id="defaults">
-<span class="header-section-number">G.0.2</span> Defaults</h3>
+</section><section id="defaults" class="level3" data-number="H.0.2"><h3 data-number="H.0.2" class="anchored" data-anchor-id="defaults">
+<span class="header-section-number">H.0.2</span> Defaults</h3>
 <p>The code below creates two plots using the default (light) theme and palettes. First, load the data and set <code>issue_category</code> to a factor so you can control the order of the categories.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># update column specification</span></span>
@@ -570,11 +576,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <div class="try">
 <p>Try changing the theme using built-in themes or customising the colours or linetypes with scale_* functions. See Appendix&nbsp;@ref(plotstyle) for details.</p>
 </div>
-</section><section id="annotations" class="level3" data-number="G.0.3"><h3 data-number="G.0.3" class="anchored" data-anchor-id="annotations">
-<span class="header-section-number">G.0.3</span> Annotations</h3>
+</section><section id="annotations" class="level3" data-number="H.0.3"><h3 data-number="H.0.3" class="anchored" data-anchor-id="annotations">
+<span class="header-section-number">H.0.3</span> Annotations</h3>
 <p>It’s often useful to add annotations to a plot, for example, to highlight an important part of the plot or add labels. The <code>annotate()</code> function creates a specific geom at x- and y-coordinates you specify.</p>
-<section id="text-annotations" class="level4" data-number="G.0.3.1"><h4 data-number="G.0.3.1" class="anchored" data-anchor-id="text-annotations">
-<span class="header-section-number">G.0.3.1</span> Text annotations</h4>
+<section id="text-annotations" class="level4" data-number="H.0.3.1"><h4 data-number="H.0.3.1" class="anchored" data-anchor-id="text-annotations">
+<span class="header-section-number">H.0.3.1</span> Text annotations</h4>
 <p>Add a text annotation by setting the <code>geom</code> argument to “text” or “label” and adding a <code>label</code>. Labels have padding and a background, while text is just text.</p>
 <ul>
 <li>Backslash-n <code>\n</code> in the label text controls where the line breaks are. Try removing or changing the position of these to see what happens.</li>
@@ -665,8 +671,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="other-annotations" class="level4" data-number="G.0.3.2"><h4 data-number="G.0.3.2" class="anchored" data-anchor-id="other-annotations">
-<span class="header-section-number">G.0.3.2</span> Other annotations</h4>
+</section><section id="other-annotations" class="level4" data-number="H.0.3.2"><h4 data-number="H.0.3.2" class="anchored" data-anchor-id="other-annotations">
+<span class="header-section-number">H.0.3.2</span> Other annotations</h4>
 <p>You can add other geoms to highlight parts of a plot. The example below adds a rectangle around a group of points, a text label, a straight arrow from the label to the rectangle, and a curved arrow from the label to an individual point.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>point <span class="sc">+</span></span>
@@ -699,10 +705,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 <p>See the <pkg><a href="https://ggforce.data-imaginist.com/" target="_blank">ggforce</a></pkg> package for more sophisticated options, such as highlighting a group of points with an ellipse.</p>
-</section></section><section id="sec-other-plots" class="level3" data-number="G.0.4"><h3 data-number="G.0.4" class="anchored" data-anchor-id="sec-other-plots">
-<span class="header-section-number">G.0.4</span> Other Plots</h3>
-<section id="interactive-plots" class="level4" data-number="G.0.4.1"><h4 data-number="G.0.4.1" class="anchored" data-anchor-id="interactive-plots">
-<span class="header-section-number">G.0.4.1</span> Interactive Plots</h4>
+</section></section><section id="sec-other-plots" class="level3" data-number="H.0.4"><h3 data-number="H.0.4" class="anchored" data-anchor-id="sec-other-plots">
+<span class="header-section-number">H.0.4</span> Other Plots</h3>
+<section id="interactive-plots" class="level4" data-number="H.0.4.1"><h4 data-number="H.0.4.1" class="anchored" data-anchor-id="interactive-plots">
+<span class="header-section-number">H.0.4.1</span> Interactive Plots</h4>
 <p>The <pkg>plotly</pkg> package can be used to make interactive graphs. Assign your ggplot to a variable and then use the function <code>ggplotly()</code> on the plot object. Note that interactive plots only work in HTML files, not PDFs or Word files.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplotly</span>(point)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -724,8 +730,8 @@ Note
 <p>Hover over the data points above and click on the legend items.</p>
 </div>
 </div>
-</section><section id="waffle-plots" class="level4" data-number="G.0.4.2"><h4 data-number="G.0.4.2" class="anchored" data-anchor-id="waffle-plots">
-<span class="header-section-number">G.0.4.2</span> Waffle Plots</h4>
+</section><section id="waffle-plots" class="level4" data-number="H.0.4.2"><h4 data-number="H.0.4.2" class="anchored" data-anchor-id="waffle-plots">
+<span class="header-section-number">H.0.4.2</span> Waffle Plots</h4>
 <p>In Chapter&nbsp;@ref(ggplot), we mentioned that pie charts are such a poor way to visualise proportions that we refused to even show you how to make one. Waffle plots are a delicious alternative.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -787,8 +793,8 @@ Warning
 </div>
 </div>
 </div>
-</section><section id="treemap" class="level4" data-number="G.0.4.3"><h4 data-number="G.0.4.3" class="anchored" data-anchor-id="treemap">
-<span class="header-section-number">G.0.4.3</span> Treemap</h4>
+</section><section id="treemap" class="level4" data-number="H.0.4.3"><h4 data-number="H.0.4.3" class="anchored" data-anchor-id="treemap">
+<span class="header-section-number">H.0.4.3</span> Treemap</h4>
 <p>Treemap plots are another way to visualise proportions. Like the waffle plots, you need to count the data by category first. You can use any <a href="https://www.datanovia.com/en/blog/the-a-z-of-rcolorbrewer-palette/">brewer palette</a> for the fill.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>survey_data <span class="sc">|&gt;</span> </span>
@@ -830,8 +836,8 @@ Warning
 </div>
 </div>
 </div>
-</section><section id="bump-plots" class="level4" data-number="G.0.4.4"><h4 data-number="G.0.4.4" class="anchored" data-anchor-id="bump-plots">
-<span class="header-section-number">G.0.4.4</span> Bump Plots</h4>
+</section><section id="bump-plots" class="level4" data-number="H.0.4.4"><h4 data-number="H.0.4.4" class="anchored" data-anchor-id="bump-plots">
+<span class="header-section-number">H.0.4.4</span> Bump Plots</h4>
 <p>Bump plots are very useful for visualising how rankings change over time. So first, we need to get some ranking data. Let’s start with a more typical raw data table, containing an identifying column of <code>person</code> and three columns for their scores each week</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># make a small dataset of scores for 3 people over 3 weeks</span></span>
@@ -983,8 +989,8 @@ Warning
 </div>
 </div>
 </div>
-</section><section id="word-clouds" class="level4" data-number="G.0.4.5"><h4 data-number="G.0.4.5" class="anchored" data-anchor-id="word-clouds">
-<span class="header-section-number">G.0.4.5</span> Word Clouds</h4>
+</section><section id="word-clouds" class="level4" data-number="H.0.4.5"><h4 data-number="H.0.4.5" class="anchored" data-anchor-id="word-clouds">
+<span class="header-section-number">H.0.4.5</span> Word Clouds</h4>
 <p>Word clouds are a common way to summarise text data. First, download <a href="https://psyteachr.github.io/ads-v3/data/amazon_alexa.csv" download="">amazon_alexa.csv</a> into your data folder and then load it into an object. This dataset contains text reviews as well as the 1-5 rating from customers who bought an Alexa device on Amazon.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># https://www.kaggle.com/sid321axn/amazon-alexa-reviews</span></span>
@@ -1123,8 +1129,8 @@ Warning
 <p>It’s worth highlighting that whilst word clouds are very common, they’re really the equivalent of pie charts for text data because we’re not very good at making accurate comparisons based on size. You might be able to see what’s the most popular word, but can you accurately determine the 2nd, 3rd, 4th or 5th most popular word based on the clouds alone? There’s also the issue that just because it’s text data doesn’t make it a qualitative analysis and just because something is said a lot doesn’t mean it’s useful or important. But, this argument is outwith the scope of this book, even if it is a recurring part of Emily’s life thanks to her qualitative wife.</p>
 </div>
 </div>
-</section><section id="maps" class="level4" data-number="G.0.4.6"><h4 data-number="G.0.4.6" class="anchored" data-anchor-id="maps">
-<span class="header-section-number">G.0.4.6</span> Maps</h4>
+</section><section id="maps" class="level4" data-number="H.0.4.6"><h4 data-number="H.0.4.6" class="anchored" data-anchor-id="maps">
+<span class="header-section-number">H.0.4.6</span> Maps</h4>
 <p>Working with maps can be tricky. The <pkg>sf</pkg> package provides functions that work with <pkg>ggplot2</pkg>, such as <code>geom_sf()</code>. The <pkg>rnaturalearth</pkg> package (and associated data packages that you may be prompted to download) provide high-quality mapping coordinates.</p>
 <ul>
 <li>
@@ -1243,8 +1249,8 @@ Warning
 </div>
 </div>
 </div>
-</section><section id="animated-plots" class="level4" data-number="G.0.4.7"><h4 data-number="G.0.4.7" class="anchored" data-anchor-id="animated-plots">
-<span class="header-section-number">G.0.4.7</span> Animated Plots</h4>
+</section><section id="animated-plots" class="level4" data-number="H.0.4.7"><h4 data-number="H.0.4.7" class="anchored" data-anchor-id="animated-plots">
+<span class="header-section-number">H.0.4.7</span> Animated Plots</h4>
 <p>Animated plots are a great way to add a wow factor to your reports, but they can be complex to make, distracting, and not very accessible, so use them sparingly and only for data visualisation where the animation really adds something. The package <pkg><a href="https://gganimate.com/" target="_blank">gganimate</a></pkg> has many functions for animating ggplots.</p>
 <p>Here, we’ll load some population data from the United Nations. <a href="data/WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES.xlsx" download="">Download the file</a> into your data folder and open it in Excel first to see what it looks like. The code below gets the data from the first tab, filters it to just the 6 world regions, makes the data long, and makes sure the <code>year</code> column is numeric and the <code>pop</code> column shows population in whole numbers (the original data is in 1000s).</p>
 <div class="cell" data-layout-align="center">
@@ -1334,8 +1340,8 @@ Warning
 </div>
 </div>
 </div>
-</section></section><section id="resources-custom" class="level3" data-number="G.0.5"><h3 data-number="G.0.5" class="anchored" data-anchor-id="resources-custom">
-<span class="header-section-number">G.0.5</span> Resources</h3>
+</section></section><section id="resources-custom" class="level3" data-number="H.0.5"><h3 data-number="H.0.5" class="anchored" data-anchor-id="resources-custom">
+<span class="header-section-number">H.0.5</span> Resources</h3>
 <p>There are so many more options for data visualisation in R than we have time to cover here. The following resources will get you started on your journey to informative, intuitive visualisations.</p>
 <ul>
 <li>
@@ -1964,7 +1970,7 @@ $( document ).ready(function() {
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./app-tables.html" class="pagination-link" aria-label="Advanced: Table Formatting">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

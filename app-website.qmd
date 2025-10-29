@@ -1,5 +1,5 @@
 
-# Advanced: Websites
+# Advanced: Websites {#sec-websites}
 
 For those of you who are confident with R and would like to push yourself, we will provide a number of advanced chapters to work through. The content covered in these chapters will not be assessed as part of Applied Data Skills and engaging with it is entirely optional.
 
@@ -258,9 +258,7 @@ No guesses for what we'll be using these for.
 First, we'll update the homepage, which is the page controlled by `index.qmd` and add a photo, title, biography and links to e.g., social media stuff. Here is the full contents of my `index.qmd`.
 
 
-````
 ```
-
 ---
 title: "Professor Emily Nordmann"
 page-layout: full
@@ -300,7 +298,6 @@ I am based in the School of Psychology and Neuroscience. My teaching is varied a
 :::
 
 ```
-````
 
 Let's break it down bit by bit and show you what to change.
 
@@ -371,7 +368,6 @@ page-layout: full
 
 ```
 
-
 ### Second column and biography
 
 * ::: closes the first column and opens the second one.
@@ -392,7 +388,6 @@ I am Associate Dean for Learning and Teaching ...
 :::
   
 ```
-
 
 :::{.callout-tip}
 ## Activity
