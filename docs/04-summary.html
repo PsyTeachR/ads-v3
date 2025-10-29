@@ -341,7 +341,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-reports.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reports with R Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Quarto Reports</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -394,12 +394,6 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./12-license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License/Citation</span></a>
   </div>
@@ -415,38 +409,44 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Advanced: Websites</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Advanced: Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Advanced: Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Plots</span></span></a>
   </div>
 </li>
       </ul>
@@ -563,7 +563,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section><section id="sec-import-data" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="sec-import-data">
 <span class="header-section-number">4.1</span> Import Data</h2>
 <p>The data we’ll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at <a href="https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb">Method of Delivery</a>, but we’ll be working from a saved version.</p>
-<p>The data are in a <a href="https://psyteachr.github.io/glossary/c#csv" target="_blank" class="glossary" title="Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.">CSV</a> file (download <a href="data/12.1_delivery.csv" download="">12.1_delivery.csv</a>), so we can read this with the function <code>read_csv()</code> , and assign it to a new object that we’ll call <code>births</code>. You can learn more about importing data from other file types in <a href="app-import.html" class="quarto-xref"><span>Appendix A</span></a>.</p>
+<p>The data are in a <a href="https://psyteachr.github.io/glossary/c#csv" target="_blank" class="glossary" title="Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.">CSV</a> file (download <a href="data/12.1_delivery.csv" download="">12.1_delivery.csv</a>), so we can read this with the function <code>read_csv()</code> , and assign it to a new object that we’ll call <code>births</code>. You can learn more about importing data from other file types in <a href="app-import.html" class="quarto-xref"><span>Appendix B</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
@@ -577,7 +577,7 @@ dbl (2): SIMDQuintile, Livebirths
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<p>When you load data with <code>read_csv()</code>, you get a quick summary that you should always check to see if the data were loaded correctly. One common problem is that data load with the the wrong type (see <a href="app-datatypes.html" class="quarto-xref"><span>Appendix B</span></a>), usually because a numeric column contains some unexpected text values. So the first thing to check is that each column has the expected data type. The abbreviation “chr” means this is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> column, which can contain any text. The abbreviation “dbl” is a <a href="https://psyteachr.github.io/glossary/d#double" target="_blank" class="glossary" title="A data type representing a real decimal number">double</a>, which is a number that can have decimal places.</p>
+<p>When you load data with <code>read_csv()</code>, you get a quick summary that you should always check to see if the data were loaded correctly. One common problem is that data load with the the wrong type (see <a href="app-datatypes.html" class="quarto-xref"><span>Appendix C</span></a>), usually because a numeric column contains some unexpected text values. So the first thing to check is that each column has the expected data type. The abbreviation “chr” means this is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> column, which can contain any text. The abbreviation “dbl” is a <a href="https://psyteachr.github.io/glossary/d#double" target="_blank" class="glossary" title="A data type representing a real decimal number">double</a>, which is a number that can have decimal places.</p>
 <p>There are too many columns to show all of them in the summary, so it tells you to use the <code>spec()</code> function to check all the columns.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">spec</span>(births)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

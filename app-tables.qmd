@@ -1,4 +1,4 @@
-# Table Formatting {#sec-tables}
+# Advanced: Table Formatting {#sec-tables}
 
 Flextable is a great package for formatting tables.
 
