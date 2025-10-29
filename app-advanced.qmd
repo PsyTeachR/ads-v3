@@ -469,30 +469,34 @@ Now we have updated our website beyond the starting template, it's time to cover
 2. **Commit** the changes - save and describe what you've done
 3. **Push** uploads your new commits from your computer to GitHub
 
-:::{.callout-tip}
-## Activity
+Now we have moved past the initial set-up stage, we're going to use a package named `gert` which you may need to install.
 
-To commit your new changes, use the function `usethis::use_git()`. The `message` argument is your description of what you've done.
+To select the files to save we use `git_add()`. To see what has changed, look at the Git pane in the top right, which will list all the changes. Most of the time, you will likely want to stage all your changes, however, you might also want to just stage individual files or folders: 
 
 ```{r}
 #| eval: false
 
-usethis::use_git(message = "Index update")
+gert::git_add(".") # stage all changes
+gert::git_add("index.qmd") # stage one file
+gert::git_add(c("index.qmd", "styles.css", "about.qmd")) # multiple files
+gert::git_add("posts/") # all files in one folder
 ```
 
-It will tell you how many files have changed that will be included in the commit, if you're happy, confirm the selection.
 
-Then, to push the changes to GitHub, use the function `git_push()` from the package `gert` which you may have to install if you don't have it (you probably don't):
+Then you can commit and push these files:
 
 ```{r}
 #| eval: false
 
-# install.packages("gert")
+gert::git_commit("Homepage and style update")
 gert::git_push()
 ```
 
-This will then push your changes to GitHub. If you wait a minute or two and reload your website, your changes will now be live.
 
+:::{.callout-tip}
+## Activity
+
+Stage and commit all your changes then push them to to GitHub. If you wait a minute or two and reload your website, your changes will now be live.
 :::
 
 
@@ -555,7 +559,7 @@ Welcome to my blog! Here I’ll share notes from my Applied Data Skills journey,
 
 ```
 
-3. Still inside the posts folder, create a new file called something like `2025-11-04-first-post.qmd`. Make sure you name the posts with the date in YYYY-MM-DD format at the start. Each post needs its own YAML header at the top:
+3. Still inside the posts folder, create a new file called something like `2025-11-04-first-post.qmd`. Each post needs its own YAML header at the top with the date in YYYY-MM-DD format as this is what it will use to order your blog correctly:
 
 ```
 ---
@@ -565,8 +569,9 @@ categories: [reflection, coding]
 ---
 
 ```
+And then underneath this....write your blog which can be text or code or anything else you've learned how to do in Quarto. If your blog involves data analysis, put your data in the `data` folder and then load it in with e.g., `read_csv("data/my_file.csv")`.
 
-And then underneath this....write your blog which can be text or code or anything else you've learned how to do in Quarto. If your blog involves data analysis, put your data in the `data` folder and then load it in with e.g., `read_csv("data/my_file.csv")`
+If you're enrolled on Applied Data Skills, you could make an ADS blog where each post is the weekly pair coding exercise to form a portfolio you can show off publicly. 
 :::
 
 ## Additional pages
@@ -589,11 +594,18 @@ By default, when you created a new Quarto Website project it gave you a file nam
         
 ```
 
-If you've managed all this, with the help of Google and/or AI, you should be able to figure out how to make your website work for you and add and change features. Well done! Make sure to send me your website so I can see your work. 
+## Workflow
+
+As a final reminder, a good set of code to have easy access to is:
+
+```{r}
+#| eval: false
+
+quarto::quarto_render()                # render new changes
+gert::git_add(".")                     # Stage any changed files
+gert::git_commit("My message")         # Save them with a message
+gert::git_push()                       # Upload to GitHub
+```
 
 
-quarto::quarto_render()
-gert::git_add(".")
-gert::git_commit("Added blog section and first post")
-gert::git_push()
-
+If you've managed all this, with the help of Google and/or AI, you should be able to figure out how to make your website work for you and add and change features. Well done! Make sure to send me your website so I can see your work.
