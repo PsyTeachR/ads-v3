@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>8&nbsp; Data Tidying – Applied Data Skills</title>
+<title>Applied Data Skills - 8&nbsp; Data Tidying</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -68,12 +68,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f3e25e36da68531933d16fe9428bd359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-85778df6a5635a5384febc1874222977.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -113,13 +113,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-tidy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Tidying</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -128,26 +128,19 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/psyteachr/ads-v3/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+        <div class="sidebar-tools-main">
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
 <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-facebook pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-linkedin pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -244,95 +237,47 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app-installing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-updating-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Updating R, RStudio, and packages</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-symbols.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Symbols</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-conventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-teams.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using Teams</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-debugging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-accessibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Accessibility</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
   </div>
 </li>
       </ul>
@@ -341,9 +286,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><a href="https://doi.org/10.5281/zenodo.6365077"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" alt="DOI"></a></p>
-</div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -388,7 +331,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
   <li><a href="#sec-glossary-tidy" id="toc-sec-glossary-tidy" class="nav-link" data-scroll-target="#sec-glossary-tidy"><span class="header-section-number">8.8</span> Glossary</a></li>
   <li><a href="#sec-resources-tidy" id="toc-sec-resources-tidy" class="nav-link" data-scroll-target="#sec-resources-tidy"><span class="header-section-number">8.9</span> Further resources</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/08-tidy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/08-tidy.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -471,7 +414,7 @@ Note
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">year</th>
@@ -547,13 +490,13 @@ Explain these answers
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>untidy_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/untidy_data.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-untidy-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-untidy-data" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-untidy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.1: Untidy table
 </figcaption><div aria-describedby="tbl-untidy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 11%">
 <col style="width: 14%">
@@ -666,13 +609,13 @@ Note
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>tidy_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/tidy_data.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-tidy-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-tidy-data" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tidy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.2: Tidy table
 </figcaption><div aria-describedby="tbl-tidy-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">year</th>
@@ -814,7 +757,7 @@ Table&nbsp;8.2: Tidy table
 <span id="cb4-6"><a href="#cb4-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">total_items</th>
@@ -905,13 +848,13 @@ Warning
 <span id="cb6-8"><a href="#cb6-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-wide-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-wide-data" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wide-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.3: Wide table
 </figcaption><div aria-describedby="tbl-wide-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">2018</th>
@@ -967,13 +910,13 @@ Table&nbsp;8.3: Wide table
 <span id="cb7-5"><a href="#cb7-5"></a>  <span class="at">values_to =</span> <span class="st">"totalprice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-long-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-long-data" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-long-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.4: Long table
 </figcaption><div aria-describedby="tbl-long-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: left;">year</th>
@@ -1085,7 +1028,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Create a long version of the following table of how many million followers each band has on different social media platforms. You don’t need to use code, just sketch it in a notebook or make a table in a spreadsheet.</p>
-<table class="caption-top table">
+<table class="table">
 <thead><tr class="header">
 <th style="text-align: left;">band</th>
 <th style="text-align: left;">twitter</th>
@@ -1114,7 +1057,7 @@ Note
 Answer
 </button>
 <p>Your answer doesn’t need to have the same column headers or be in the same order.</p>
-<table class="caption-top table">
+<table class="table">
 <thead><tr class="header">
 <th style="text-align: left;">account</th>
 <th style="text-align: left;">social_media</th>
@@ -1216,13 +1159,13 @@ Note
 <span id="cb10-7"><a href="#cb10-7"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-wide-pivot" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-wide-pivot" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wide-pivot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.5: Data made wider with pivot_wider()
 </figcaption><div aria-describedby="tbl-wide-pivot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">year</th>
 <th style="text-align: right;">C_1</th>
@@ -1271,7 +1214,7 @@ Table&nbsp;8.5: Data made wider with pivot_wider()
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <colgroup>
 <col style="width: 11%">
 <col style="width: 14%">
@@ -1345,7 +1288,7 @@ Table&nbsp;8.5: Data made wider with pivot_wider()
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">year</th>
@@ -1484,13 +1427,13 @@ Table&nbsp;8.5: Data made wider with pivot_wider()
 <span id="cb11-12"><a href="#cb11-12"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-wide-to-long" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-wide-to-long" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wide-to-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.6: Untidy data converted from wide to long.
 </figcaption><div aria-describedby="tbl-wide-to-long-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: left;">category</th>
@@ -1698,13 +1641,13 @@ Table&nbsp;8.6: Untidy data converted from wide to long.
 <span id="cb12-6"><a href="#cb12-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-intermediate" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-intermediate" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-intermediate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.7: Data converted from long to an intermediate shape.
 </figcaption><div aria-describedby="tbl-intermediate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">year</th>
@@ -1837,13 +1780,13 @@ Note
 <span id="cb13-8"><a href="#cb13-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-split" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-split" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.8: The itemsprice column split into items and price_per_item using separate().
 </figcaption><div aria-describedby="tbl-split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">year</th>
@@ -1993,13 +1936,13 @@ Warning
 <span id="cb14-8"><a href="#cb14-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div id="tbl-mutate" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-mutate" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mutate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8.9: Mutating data to remove the parentheses from price_per_item.
 </figcaption><div aria-describedby="tbl-mutate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">customer_id</th>
 <th style="text-align: right;">year</th>
@@ -2137,7 +2080,7 @@ $ price_per_item &lt;chr&gt; "3.91", "4.72", "5.59", "3.91", "4.72", "5.59", "3.
 $ totalprice     &lt;chr&gt; "7.82", "37.76", "55.9", "3.91", "28.32", "5.59", "15.6…</code></pre>
 </div>
 </div>
-<p>Once the data are clean and tidy, you can fix all of your column data types in one step using <code><a href="https://readr.tidyverse.org/reference/type_convert.html">readr::type_convert()</a></code>. This is good practice when you’ve finished cleaning a data set. If the automatic type detection doesn’t work as expected, this usually means that you still have non-numeric characters in a column where there were only supposed to be numbers. You can also manually set the column types in the same way as for <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv()</a></code> (see <a href="app-import.html" class="quarto-xref"><span>Appendix H</span></a>)).</p>
+<p>Once the data are clean and tidy, you can fix all of your column data types in one step using <code><a href="https://readr.tidyverse.org/reference/type_convert.html">readr::type_convert()</a></code>. This is good practice when you’ve finished cleaning a data set. If the automatic type detection doesn’t work as expected, this usually means that you still have non-numeric characters in a column where there were only supposed to be numbers. You can also manually set the column types in the same way as for <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv()</a></code> (see <a href="app-import.html" class="quarto-xref"><span>Appendix A</span></a>)).</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>tidy_data <span class="ot">&lt;-</span> <span class="fu">type_convert</span>(</span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="at">df =</span> mutated_data,</span>
@@ -2698,7 +2641,7 @@ Solution
 </section></section><section id="sec-glossary-tidy" class="level2" data-number="8.8"><h2 data-number="8.8" class="anchored" data-anchor-id="sec-glossary-tidy">
 <span class="header-section-number">8.8</span> Glossary</h2>
 <div class="cell" data-layout-align="center">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: left;">definition</th>
@@ -3126,7 +3069,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -3158,27 +3112,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -3186,7 +3120,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -3283,6 +3217,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -3525,29 +3460,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/08-tidy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/08-tidy.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/psyteachr/ads-v3">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/psyteachr">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://doi.org/10.5281/zenodo.6365077">
-      <i class="bi bi-https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 

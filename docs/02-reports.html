@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>2&nbsp; Reports with R Markdown – Applied Data Skills</title>
+<title>Applied Data Skills - 2&nbsp; Reports with R Markdown</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -88,12 +88,12 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f3e25e36da68531933d16fe9428bd359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-85778df6a5635a5384febc1874222977.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -133,13 +133,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-reports.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reports with R Markdown</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -148,26 +148,19 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/psyteachr/ads-v3/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+        <div class="sidebar-tools-main">
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
 <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-facebook pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-linkedin pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -264,95 +257,47 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app-installing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-updating-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Updating R, RStudio, and packages</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-symbols.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Symbols</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-conventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-teams.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using Teams</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-debugging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-accessibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Accessibility</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
   </div>
 </li>
       </ul>
@@ -361,9 +306,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><a href="https://doi.org/10.5281/zenodo.6365077"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" alt="DOI"></a></p>
-</div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -446,7 +389,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#sec-glossary-reports" id="toc-sec-glossary-reports" class="nav-link" data-scroll-target="#sec-glossary-reports">Glossary</a></li>
   <li><a href="#sec-resources-reports" id="toc-sec-resources-reports" class="nav-link" data-scroll-target="#sec-resources-reports">Further Resources</a></li>
   <li><a href="#sec-references-reports" id="toc-sec-references-reports" class="nav-link" data-scroll-target="#sec-references-reports">References</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/02-reports.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/02-reports.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -502,7 +445,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </ul>
 <p>Download the <a href="https://rstudio.github.io/cheatsheets/html/quarto.html">Quarto Cheat Sheet</a> and <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a>.</p>
 </section><section id="sec-setup-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-setup-reports">Setup</h2>
-<p>For reference, here are the packages we will use in this chapter. If running the code below in the console pane gives you the error <code>Error in library(package_name) : there is no package called ‘package_name’</code>, you may need to install them as explained in <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.3.1</span></a>.</p>
+<p>For reference, here are the packages we will use in this chapter. If running the code below in the console pane gives you the error <code>Error in library(package_name) : there is no package called ‘package_name’</code>, you may need to install them as explained in <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.4.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># various data manipulation functions</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(quarto)    <span class="co"># for rendering a report from a script</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -692,7 +635,7 @@ Source versus visual editor
 <div class="callout-body-container callout-body">
 <p>You can use the visual editor if you have RStudio version 1.4 or higher. This will be a button at the top of the source pane and the menu options should be very familiar to anyone who has worked with software like Microsoft Word. However, <strong>the examples in the rest of this book are shown for the source editor</strong>, not the visual editor, so delete the line <code>editor: visual</code> if needed.</p>
 <p>In the visual editor, you won’t see the hashes that create headers, or the asterisks that create bold and italic text. You also won’t see the backticks that demarcate inline code.</p>
-<div id="fig-visual-editor-example" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The visual editor shows the code in a grey box starting with {r} and then the main text is styles so 'Inline Code' is larger and bold.">
+<div id="fig-visual-editor-example" class="quarto-figure quarto-figure-center quarto-float anchored" alt="The visual editor shows the code in a grey box starting with {r} and then the main text is styles so 'Inline Code' is larger and bold.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-visual-editor-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/reports/visual-editor-example.png" class="img-fluid figure-img" alt="The visual editor shows the code in a grey box starting with {r} and then the main text is styles so 'Inline Code' is larger and bold.">
 </div>
@@ -757,7 +700,7 @@ Code chunk errors
 </div>
 </div>
 <div class="try">
-<p>Inside your code chunk, add the code you created in <a href="01-intro.html#sec-objects" class="quarto-xref"><span>Section 1.5</span></a>.</p>
+<p>Inside your code chunk, add the code you created in <a href="01-intro.html#sec-objects" class="quarto-xref"><span>Section 1.7</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>name <span class="ot">&lt;-</span> <span class="st">"Lisa"</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>age <span class="ot">&lt;-</span> <span class="dv">48</span></span>
@@ -784,7 +727,7 @@ Console vs scripts
 <p>When you’re working in a quarto document, there are several ways to run your lines of code.</p>
 <p>First, you can highlight the code you want to run and then click <if>Run &gt; Run Selected Line(s)</if>, however this is tedious and can cause problems if you don’t highlight <em>exactly</em> the code you want to run.</p>
 <p>Alternatively, you can press the green “play” button at the top-right of the code chunk and this will run <strong>all</strong> lines of code in that chunk.</p>
-<div id="fig-run-current" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A sreenshot of the code above in the RStudio interface, highlighting the green arrow on the right and helper text reading 'Run Current Chunk'.">
+<div id="fig-run-current" class="quarto-figure quarto-figure-center quarto-float anchored" alt="A sreenshot of the code above in the RStudio interface, highlighting the green arrow on the right and helper text reading 'Run Current Chunk'.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-run-current-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/reports/run-current.png" class="img-fluid figure-img" alt="A sreenshot of the code above in the RStudio interface, highlighting the green arrow on the right and helper text reading 'Run Current Chunk'.">
 </div>
@@ -793,7 +736,7 @@ Figure&nbsp;2.3: Click the green arrow to run all the code in the current chunk.
 </figcaption></figure>
 </div>
 <p>Even better is to learn some of the keyboard shortcuts for RStudio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere, just not selecting any characters) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!</p>
-<div id="fig-run-line" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A movie showing how to place the cursor without selecting to run one line.">
+<div id="fig-run-line" class="quarto-figure quarto-figure-center quarto-float anchored" alt="A movie showing how to place the cursor without selecting to run one line.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-run-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <video src="images/reports/run-line.mov" class="img-fluid" alt="A movie showing how to place the cursor without selecting to run one line." controls=""><a href="images/reports/run-line.mov">Video</a></video>
 </div>
@@ -803,7 +746,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 </div>
 <div class="try">
 <p>Run your code using each of the methods above. You should see the variables <code>name</code>, <code>age</code>, <code>today</code>, and <code>halloween</code> appear in the environment pane.</p>
-<p>Restart R to clear the objects. They should disappear from the environment (see <a href="app-installing-r.html#sec-rstudio-settings" class="quarto-xref"><span>Section A.4</span></a> if they don’t disappear).</p>
+<p>Restart R to clear the objects. They should disappear from the environment (see <a href="01-intro.html#sec-rstudio-settings" class="quarto-xref"><span>Section 1.2</span></a> if they don’t disappear).</p>
 <p>Run your code again, and then change the value of <code>name</code> in the script. When/how does it change in the Environment tab?</p>
 </div>
 </section><section id="sec-inline-r" class="level3" data-number="2.2.7"><h3 data-number="2.2.7" class="anchored" data-anchor-id="sec-inline-r">
@@ -972,7 +915,7 @@ Tab-autocomplete file names
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">group</th>
 <th style="text-align: right;">n</th>
@@ -1058,7 +1001,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Learn more about accessibility in <a href="app-accessibility.html" class="quarto-xref"><span>Appendix G</span></a>.</p>
+<p>Learn more about accessibility in <span class="quarto-unresolved-ref">?sec-accessibility</span>.</p>
 </div>
 </div>
 <p>If you have a lot of customisations, you may prefer to show images from a code block like this. Note that here, <code>width</code> and <code>height</code> are called <code>out-width</code> and <code>out-height</code> to distinguish them from a generated image’s rendered dimensions (controlled by <code>fig-width</code> and <code>fig-height</code>).</p>
@@ -1074,7 +1017,7 @@ Note
 <span id="cb19-9"><a href="#cb19-9"></a><span class="in">knitr::include_graphics("images/logos/psyTeachR_logo.png", )</span></span>
 <span id="cb19-10"><a href="#cb19-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" data-fig-align="right" width="50%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research">
+<div id="fig-psyteachr-logo" class="quarto-figure quarto-figure-right quarto-float anchored" data-fig-align="right" width="50%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-psyteachr-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://psyteachr.github.io"><img src="images/logos/psyTeachR_logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:50.0%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"></a>
 </div>
@@ -1143,7 +1086,7 @@ Image Licenses
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">id</th>
 <th style="text-align: left;">group</th>
@@ -1242,13 +1185,13 @@ Warning
 <p>These set the figure label so you can reference it in the document, and the table caption. The label must start with “tbl-” to automatically add it to the numbered list of tables. Now, when you render your document, tables will display in “kable” format, which looks much nicer.</p>
 <p>All data are shown in <a href="#tbl-raw-data2" class="quarto-xref">Table&nbsp;<span>2.1</span></a>.</p>
 <div class="cell" data-layout-align="center">
-<div id="tbl-raw-data2" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-raw-data2" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-raw-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2.1: The raw data from the study.
 </figcaption><div aria-describedby="tbl-raw-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">id</th>
 <th style="text-align: left;">group</th>
@@ -1336,7 +1279,7 @@ Advanced table customisation
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If you’re feeling confident with what we have covered so far, you can do even fancier formatting with the <pkg>flextable</pkg> package (see <a href="app-tables.html" class="quarto-xref"><span>Appendix L</span></a>).</p>
+<p>If you’re feeling confident with what we have covered so far, you can do even fancier formatting with the <pkg>flextable</pkg> package (see <a href="app-tables.html" class="quarto-xref"><span>Appendix E</span></a>).</p>
 </div>
 </div>
 </div>
@@ -1380,7 +1323,7 @@ Figure versus output dimensions
 <span id="cb26-8"><a href="#cb26-8"></a><span class="in">ggplot2::last_plot()</span></span>
 <span id="cb26-9"><a href="#cb26-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-full-100" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship.">
+<div id="fig-full-100" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center" alt="A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-full-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-reports_files/figure-html/fig-full-100-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship.">
 </div>
@@ -1402,7 +1345,7 @@ Figure&nbsp;2.6: A plot with the default values
 <span id="cb27-9"><a href="#cb27-9"></a><span class="in">ggplot2::last_plot()</span></span>
 <span id="cb27-10"><a href="#cb27-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-half-100" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same plot as above, but the text and points are larger in proportion to the full plot size">
+<div id="fig-half-100" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center" alt="The same plot as above, but the text and points are larger in proportion to the full plot size">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-reports_files/figure-html/fig-half-100-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same plot as above, but the text and points are larger in proportion to the full plot size">
 </div>
@@ -1423,7 +1366,7 @@ Figure&nbsp;2.7: The same plot with half the default width and height
 <span id="cb28-8"><a href="#cb28-8"></a><span class="in">ggplot2::last_plot()</span></span>
 <span id="cb28-9"><a href="#cb28-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-half-50" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same plot as above, with the same internal protoprtions as the original plot, but displayed smaller at half the page width">
+<div id="fig-half-50" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center" alt="The same plot as above, with the same internal protoprtions as the original plot, but displayed smaller at half the page width">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-reports_files/figure-html/fig-half-50-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="The same plot as above, with the same internal protoprtions as the original plot, but displayed smaller at half the page width">
 </div>
@@ -1480,7 +1423,7 @@ Note
 </div>
 <p>The <code>df-print: paged</code> option prints data frames using <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">rmarkdown::paged_table()</a></code> automatically. You can use <code>df_print: kable</code> to default to the simple kable style.</p>
 <p>The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can <a href="https://bootswatch.com/4/">view and download more themes</a>. Try changing the theme to see which one you like best.</p>
-<div id="fig-bootswatch" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A 6x4 grid showing the same text with headers and bullet points in 24 different themes.">
+<div id="fig-bootswatch" class="quarto-figure quarto-figure-center quarto-float anchored" alt="A 6x4 grid showing the same text with headers and bullet points in 24 different themes.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bootswatch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/reports/bootswatch.png" class="img-fluid figure-img" alt="A 6x4 grid showing the same text with headers and bullet points in 24 different themes.">
 </div>
@@ -1593,7 +1536,7 @@ Warning
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/reports/zotero.png" class="img-fluid figure-img" style="width:100.0%" alt="The Zotero interface showing the location of the Export menu (like a try with an up arrow)"></p>
+<figure class="figure"><p><img src="images/reports/zotero.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Export a bibliography file from Zotero</figcaption></figure>
 </div>
 </div>
@@ -1655,7 +1598,7 @@ Warning
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/present/google-scholar.png" class="img-fluid figure-img" style="width:100.0%" alt="A screenshot of Google Scholar, showing the location of the BibTeX format link"></p>
+<figure class="figure"><p><img src="images/present/google-scholar.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Get BibTex citations from Google Scholar.</figcaption></figure>
 </div>
 </div>
@@ -1744,7 +1687,7 @@ and teaching computational skills.
 <span id="cb48-9"><a href="#cb48-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">degree</th>
 <th style="text-align: left;">topic</th>
@@ -1855,7 +1798,7 @@ Important
 </section></section><section id="sec-glossary-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-reports">Glossary</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: left;">definition</th>
@@ -1948,10 +1891,6 @@ Dynamic documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkd
 DeBruine, L., &amp; Barr, D. (2020). <em>Data skills for reproducible
 research</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.3564348">https://doi.org/10.5281/zenodo.3564348</a>
 </div>
-<div id="ref-godfrey2020brailler" class="csl-entry" role="listitem">
-Godfrey, A. J. R., Warren, D., Murrell, P., Bilton, T., &amp; Sorge, V.
-(2020). <em>BrailleR: Improved access for blind users</em>. <a href="https://github.com/ajrgodfrey/BrailleR" class="uri">https://github.com/ajrgodfrey/BrailleR</a>.
-</div>
 <div id="ref-kathawalla_easing_2021" class="csl-entry" role="listitem">
 Kathawalla, U.-K., Silverstein, P., &amp; Syed, M. (2021). Easing into
 open science: A guide for graduate students and their advisors.
@@ -1963,20 +1902,12 @@ M. (2021). <em>Data visualisation using <span>R</span>, for researchers
 who don’t use <span>R</span></em>. PsyArXiv. <a href="https://doi.org/10.31234/osf.io/4huvw">https://doi.org/10.31234/osf.io/4huvw</a>
 </div>
 <div id="ref-R-base" class="csl-entry" role="listitem">
-R Core Team. (2025). <em>R: A language and environment for statistical
+R Core Team. (2023). <em>R: A language and environment for statistical
 computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
-</div>
-<div id="ref-siegert2017sonify" class="csl-entry" role="listitem">
-Siegert, S., &amp; Williams, R. (2017). <em>Sonify: Data sonification -
-turning data into sound</em>. <a href="https://CRAN.R-project.org/package=sonify" class="uri">https://CRAN.R-project.org/package=sonify</a>.
 </div>
 <div id="ref-tidyverse" class="csl-entry" role="listitem">
 Wickham, H. (2017). <em>Tidyverse: Easily install and load the
 ’tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>
-</div>
-<div id="ref-R-tidyverse" class="csl-entry" role="listitem">
-Wickham, H. (2023). <em>Tidyverse: Easily install and load the
-tidyverse</em>. <a href="https://tidyverse.tidyverse.org">https://tidyverse.tidyverse.org</a>
 </div>
 <div id="ref-R-tinytex" class="csl-entry" role="listitem">
 Xie, Y. (2025). <em>Tinytex: Helper functions to install and maintain
@@ -2356,7 +2287,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2388,27 +2330,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2416,7 +2338,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2513,6 +2435,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2755,29 +2678,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/02-reports.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/02-reports.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/psyteachr/ads-v3">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/psyteachr">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://doi.org/10.5281/zenodo.6365077">
-      <i class="bi bi-https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 

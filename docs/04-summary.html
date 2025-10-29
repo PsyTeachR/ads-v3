@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>4&nbsp; Data Summaries – Applied Data Skills</title>
+<title>Applied Data Skills - 4&nbsp; Data Summaries</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -68,12 +68,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f3e25e36da68531933d16fe9428bd359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-85778df6a5635a5384febc1874222977.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -113,13 +113,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-summary.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Summaries</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -128,26 +128,19 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/psyteachr/ads-v3/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+        <div class="sidebar-tools-main">
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
 <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-facebook pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-linkedin pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -244,95 +237,47 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app-installing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-updating-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Updating R, RStudio, and packages</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-symbols.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Symbols</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-conventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-teams.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using Teams</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-debugging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-accessibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Accessibility</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
   </div>
 </li>
       </ul>
@@ -341,9 +286,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><a href="https://doi.org/10.5281/zenodo.6365077"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" alt="DOI"></a></p>
-</div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -372,7 +315,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.7</span> Exercises</a></li>
   <li><a href="#sec-glossary-summary" id="toc-sec-glossary-summary" class="nav-link" data-scroll-target="#sec-glossary-summary">Glossary</a></li>
   <li><a href="#sec-resources-summary" id="toc-sec-resources-summary" class="nav-link" data-scroll-target="#sec-resources-summary">Further resources</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/04-summary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/04-summary.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -451,7 +394,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section><section id="sec-import-data" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="sec-import-data">
 <span class="header-section-number">4.1</span> Import Data</h2>
 <p>The data we’ll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at <a href="https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb">Method of Delivery</a>, but we’ll be working from a saved version.</p>
-<p>The data are in a <a href="https://psyteachr.github.io/glossary/c#csv" target="_blank" class="glossary" title="Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.">CSV</a> file (download <a href="data/12.1_delivery.csv" download="">12.1_delivery.csv</a>), so we can read this with the function <code>read_csv()</code> , and assign it to a new object that we’ll call <code>births</code>. You can learn more about importing data from other file types in <a href="app-import.html" class="quarto-xref"><span>Appendix H</span></a>.</p>
+<p>The data are in a <a href="https://psyteachr.github.io/glossary/c#csv" target="_blank" class="glossary" title="Comma-separated variable: a file type for representing data where each variable is separated from the next by a comma.">CSV</a> file (download <a href="data/12.1_delivery.csv" download="">12.1_delivery.csv</a>), so we can read this with the function <code>read_csv()</code> , and assign it to a new object that we’ll call <code>births</code>. You can learn more about importing data from other file types in <a href="app-import.html" class="quarto-xref"><span>Appendix A</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -465,7 +408,7 @@ dbl (2): SIMDQuintile, Livebirths
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<p>When you load data with <code>read_csv()</code>, you get a quick summary that you should always check to see if the data were loaded correctly. One common problem is that data load with the the wrong type (see <a href="app-datatypes.html" class="quarto-xref"><span>Appendix I</span></a>), usually because a numeric column contains some unexpected text values. So the first thing to check is that each column has the expected data type. The abbreviation “chr” means this is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> column, which can contain any text. The abbreviation “dbl” is a <a href="https://psyteachr.github.io/glossary/d#double" target="_blank" class="glossary" title="A data type representing a real decimal number">double</a>, which is a number that can have decimal places.</p>
+<p>When you load data with <code>read_csv()</code>, you get a quick summary that you should always check to see if the data were loaded correctly. One common problem is that data load with the the wrong type (see <a href="app-datatypes.html" class="quarto-xref"><span>Appendix B</span></a>), usually because a numeric column contains some unexpected text values. So the first thing to check is that each column has the expected data type. The abbreviation “chr” means this is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> column, which can contain any text. The abbreviation “dbl” is a <a href="https://psyteachr.github.io/glossary/d#double" target="_blank" class="glossary" title="A data type representing a real decimal number">double</a>, which is a number that can have decimal places.</p>
 <p>There are too many columns to show all of them in the summary, so it tells you to use the <code>spec()</code> function to check all the columns.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">spec</span>(births)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -506,7 +449,7 @@ $ Livebirths     &lt;dbl&gt; 9, 5, 8, 1, 6, 21, 60, 4, 4, 3, 1, 1, 1, 14, 2, 6, 
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">count</span>(births, SIMDQuintileQF)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">SIMDQuintileQF</th>
 <th style="text-align: right;">n</th>
@@ -542,7 +485,7 @@ $ Livebirths     &lt;dbl&gt; 9, 5, 8, 1, 6, 21, 60, 4, 4, 3, 1, 1, 1, 14, 2, 6, 
 <span id="cb10-3"><a href="#cb10-3"></a><span class="fu">count</span>(births, Induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">AgeGroup</th>
 <th style="text-align: right;">n</th>
@@ -568,7 +511,7 @@ $ Livebirths     &lt;dbl&gt; 9, 5, 8, 1, 6, 21, 60, 4, 4, 3, 1, 1, 1, 14, 2, 6, 
 </table>
 </div>
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">Delivery</th>
 <th style="text-align: right;">n</th>
@@ -606,7 +549,7 @@ $ Livebirths     &lt;dbl&gt; 9, 5, 8, 1, 6, 21, 60, 4, 4, 3, 1, 1, 1, 14, 2, 6, 
 </table>
 </div>
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">Induced</th>
 <th style="text-align: right;">n</th>
@@ -688,7 +631,7 @@ Tip
 </section><section id="exploring-a-dataset" class="level3" data-number="4.1.2"><h3 data-number="4.1.2" class="anchored" data-anchor-id="exploring-a-dataset">
 <span class="header-section-number">4.1.2</span> Exploring a Dataset</h3>
 <p>There are 97077 rows and 8 columns of data. The data dictionary on the NHS website includes the following, but doesn’t clearly state what the possible values are for each column. We’re going to practice figuring out more about how data is structured using data summaries in this exercise, since it’s a common task to get a mysteriously formatted data file and need to figure it out yourself. At the very least, this exercise should remind you to never do this to other people – always provide a clear codebook with all values!</p>
-<table class="caption-top table">
+<table class="table">
 <caption>Data Codebook</caption>
 <colgroup>
 <col style="width: 25%">
@@ -786,7 +729,7 @@ Tip
 <span id="cb19-13"><a href="#cb19-13"></a><span class="fu">head</span>(c_sorted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">financial_year</th>
 <th style="text-align: right;">n</th>
@@ -837,7 +780,7 @@ Tip
 <span id="cb20-10"><a href="#cb20-10"></a><span class="fu">head</span>(c_per_year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">financial_year</th>
 <th style="text-align: right;">n</th>
@@ -894,7 +837,7 @@ Note
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">count</span>(births, delivery)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">delivery</th>
 <th style="text-align: right;">n</th>
@@ -942,7 +885,7 @@ Note
 <span id="cb22-3"><a href="#cb22-3"></a>         <span class="at">percent =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> percent))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">delivery</th>
 <th style="text-align: right;">n</th>
@@ -994,7 +937,7 @@ Note
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">count</span>(births, age_group, induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">age_group</th>
 <th style="text-align: left;">induced</th>
@@ -1066,7 +1009,7 @@ Note
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">induced</th>
 <th style="text-align: right;">n</th>
@@ -1131,7 +1074,7 @@ Warning
 <span id="cb26-2"><a href="#cb26-2"></a>          <span class="at">total_births =</span> <span class="fu">sum</span>(livebirths))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">total_births</th>
 </tr></thead>
@@ -1149,7 +1092,7 @@ Warning
 <span id="cb27-3"><a href="#cb27-3"></a>          <span class="at">.by =</span> delivery)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">delivery</th>
 <th style="text-align: right;">total_births</th>
@@ -1195,7 +1138,7 @@ Warning
 <span id="cb28-3"><a href="#cb28-3"></a>          <span class="at">.by =</span> <span class="fu">c</span>(delivery, induced))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">delivery</th>
 <th style="text-align: left;">induced</th>
@@ -1323,7 +1266,7 @@ Warning
 <span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">delivery</th>
 <th style="text-align: right;">births</th>
@@ -1384,7 +1327,7 @@ Warning
 <span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(births)) <span class="co"># sort by number of births in descending order</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">delivery</th>
 <th style="text-align: right;">births</th>
@@ -1461,7 +1404,7 @@ Warning
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">delivery</th>
 <th style="text-align: right;">n</th>
@@ -1514,7 +1457,7 @@ Warning
 <span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">age_group</th>
 <th style="text-align: left;">induced</th>
@@ -1606,7 +1549,7 @@ Warning
 <span id="cb34-9"><a href="#cb34-9"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">age_group</th>
 <th style="text-align: left;">induced</th>
@@ -1684,7 +1627,7 @@ Warning
 </table>
 </div>
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">induced</th>
 <th style="text-align: left;">age_group</th>
@@ -1776,7 +1719,7 @@ Warning
 <span id="cb35-9"><a href="#cb35-9"></a>         <span class="at">.by =</span> induced)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">age_group</th>
 <th style="text-align: left;">induced</th>
@@ -1854,7 +1797,7 @@ Warning
 </table>
 </div>
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">induced</th>
 <th style="text-align: left;">age_group</th>
@@ -1963,7 +1906,7 @@ Warning
 <span id="cb36-13"><a href="#cb36-13"></a><span class="fu">head</span>(births_per_year_type_age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">year</th>
 <th style="text-align: left;">delivery</th>
@@ -2034,7 +1977,7 @@ Warning
 <span id="cb37-8"><a href="#cb37-8"></a>       <span class="at">color =</span> <span class="st">"Age Group"</span>) <span class="sc">+</span></span>
 <span id="cb37-9"><a href="#cb37-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-birth-year-type-age" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020." data-fig-align="center">
+<div id="fig-birth-year-type-age" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center" alt="Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-birth-year-type-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="04-summary_files/figure-html/fig-birth-year-type-age-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020.">
 </div>
@@ -2055,7 +1998,7 @@ Figure&nbsp;4.1: Percent of live births per year by age group and delivery type.
 </ul></section><section id="sec-glossary-summary" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-summary">Glossary</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: left;">definition</th>
@@ -2479,7 +2422,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2511,27 +2465,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2539,7 +2473,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2636,6 +2570,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2878,29 +2813,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/04-summary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/04-summary.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/psyteachr/ads-v3">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/psyteachr">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://doi.org/10.5281/zenodo.6365077">
-      <i class="bi bi-https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 

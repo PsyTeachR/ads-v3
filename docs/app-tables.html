@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Appendix L — Table Formatting – Applied Data Skills</title>
+<title>Applied Data Skills - Appendix E — Table Formatting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -68,12 +68,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f3e25e36da68531933d16fe9428bd359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-85778df6a5635a5384febc1874222977.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -114,13 +114,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-tables.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Table Formatting</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-import.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-tables.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Table Formatting</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -129,26 +129,19 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/psyteachr/ads-v3/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+        <div class="sidebar-tools-main">
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
 <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-facebook pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-linkedin pe-1"></i>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -245,95 +238,47 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app-installing-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-updating-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Updating R, RStudio, and packages</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-symbols.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Symbols</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-conventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Conventions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-teams.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Using Teams</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-debugging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-accessibility.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Accessibility</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
   </div>
 </li>
       </ul>
@@ -342,42 +287,40 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<p><a href="https://doi.org/10.5281/zenodo.6365077"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" alt="DOI"></a></p>
-</div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">L.1</span> Data</a></li>
-  <li><a href="#basic-table" id="toc-basic-table" class="nav-link" data-scroll-target="#basic-table"><span class="header-section-number">L.2</span> Basic table</a></li>
+<li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">E.1</span> Data</a></li>
+  <li><a href="#basic-table" id="toc-basic-table" class="nav-link" data-scroll-target="#basic-table"><span class="header-section-number">E.2</span> Basic table</a></li>
   <li>
-<a href="#cusomising-tables" id="toc-cusomising-tables" class="nav-link" data-scroll-target="#cusomising-tables"><span class="header-section-number">L.3</span> Cusomising tables</a>
+<a href="#cusomising-tables" id="toc-cusomising-tables" class="nav-link" data-scroll-target="#cusomising-tables"><span class="header-section-number">E.3</span> Cusomising tables</a>
   <ul class="collapse">
-<li><a href="#subsetreorder-columns" id="toc-subsetreorder-columns" class="nav-link" data-scroll-target="#subsetreorder-columns"><span class="header-section-number">L.3.1</span> Subset/reorder columns</a></li>
-  <li><a href="#header" id="toc-header" class="nav-link" data-scroll-target="#header"><span class="header-section-number">L.3.2</span> Header</a></li>
-  <li><a href="#alignment" id="toc-alignment" class="nav-link" data-scroll-target="#alignment"><span class="header-section-number">L.3.3</span> Alignment</a></li>
+<li><a href="#subsetreorder-columns" id="toc-subsetreorder-columns" class="nav-link" data-scroll-target="#subsetreorder-columns"><span class="header-section-number">E.3.1</span> Subset/reorder columns</a></li>
+  <li><a href="#header" id="toc-header" class="nav-link" data-scroll-target="#header"><span class="header-section-number">E.3.2</span> Header</a></li>
+  <li><a href="#alignment" id="toc-alignment" class="nav-link" data-scroll-target="#alignment"><span class="header-section-number">E.3.3</span> Alignment</a></li>
   </ul>
 </li>
   <li>
-<a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">L.4</span> Themes</a>
+<a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">E.4</span> Themes</a>
   <ul class="collapse">
-<li><a href="#alafoli" id="toc-alafoli" class="nav-link" data-scroll-target="#alafoli"><span class="header-section-number">L.4.1</span> Alafoli</a></li>
-  <li><a href="#apa" id="toc-apa" class="nav-link" data-scroll-target="#apa"><span class="header-section-number">L.4.2</span> APA</a></li>
-  <li><a href="#booktabs" id="toc-booktabs" class="nav-link" data-scroll-target="#booktabs"><span class="header-section-number">L.4.3</span> Booktabs</a></li>
-  <li><a href="#box" id="toc-box" class="nav-link" data-scroll-target="#box"><span class="header-section-number">L.4.4</span> Box</a></li>
-  <li><a href="#tron" id="toc-tron" class="nav-link" data-scroll-target="#tron"><span class="header-section-number">L.4.5</span> Tron</a></li>
-  <li><a href="#tron-legacy" id="toc-tron-legacy" class="nav-link" data-scroll-target="#tron-legacy"><span class="header-section-number">L.4.6</span> Tron Legacy</a></li>
-  <li><a href="#vader" id="toc-vader" class="nav-link" data-scroll-target="#vader"><span class="header-section-number">L.4.7</span> Vader</a></li>
-  <li><a href="#vanilla" id="toc-vanilla" class="nav-link" data-scroll-target="#vanilla"><span class="header-section-number">L.4.8</span> Vanilla</a></li>
+<li><a href="#alafoli" id="toc-alafoli" class="nav-link" data-scroll-target="#alafoli"><span class="header-section-number">E.4.1</span> Alafoli</a></li>
+  <li><a href="#apa" id="toc-apa" class="nav-link" data-scroll-target="#apa"><span class="header-section-number">E.4.2</span> APA</a></li>
+  <li><a href="#booktabs" id="toc-booktabs" class="nav-link" data-scroll-target="#booktabs"><span class="header-section-number">E.4.3</span> Booktabs</a></li>
+  <li><a href="#box" id="toc-box" class="nav-link" data-scroll-target="#box"><span class="header-section-number">E.4.4</span> Box</a></li>
+  <li><a href="#tron" id="toc-tron" class="nav-link" data-scroll-target="#tron"><span class="header-section-number">E.4.5</span> Tron</a></li>
+  <li><a href="#tron-legacy" id="toc-tron-legacy" class="nav-link" data-scroll-target="#tron-legacy"><span class="header-section-number">E.4.6</span> Tron Legacy</a></li>
+  <li><a href="#vader" id="toc-vader" class="nav-link" data-scroll-target="#vader"><span class="header-section-number">E.4.7</span> Vader</a></li>
+  <li><a href="#vanilla" id="toc-vanilla" class="nav-link" data-scroll-target="#vanilla"><span class="header-section-number">E.4.8</span> Vanilla</a></li>
   </ul>
 </li>
-  <li><a href="#defaults" id="toc-defaults" class="nav-link" data-scroll-target="#defaults"><span class="header-section-number">L.5</span> Defaults</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">L.6</span> Next Steps</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/app-tables.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/app-tables.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  <li><a href="#defaults" id="toc-defaults" class="nav-link" data-scroll-target="#defaults"><span class="header-section-number">E.5</span> Defaults</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">E.6</span> Next Steps</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-tables.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Table Formatting</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-tables" class="quarto-section-identifier">Appendix L — Table Formatting</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-import.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-tables.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Table Formatting</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-tables" class="quarto-section-identifier">Appendix E — Table Formatting</span></h1>
 </div>
 
 
@@ -395,8 +338,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(flextable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="data" class="level2" data-number="L.1"><h2 data-number="L.1" class="anchored" data-anchor-id="data">
-<span class="header-section-number">L.1</span> Data</h2>
+<section id="data" class="level2" data-number="E.1"><h2 data-number="E.1" class="anchored" data-anchor-id="data">
+<span class="header-section-number">E.1</span> Data</h2>
 <p>First, let’s get some data. I’ve included a subset of data for the first nine pokemon from Dave Parr’s pokedex package. We have some character and numeric columns, plus some missing data (not all pokemon have a secondary type).</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># devtools::install_github("DaveParr/pokedex")</span></span>
@@ -417,18 +360,18 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb2-16"><a href="#cb2-16"></a>             <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>)</span>
 <span id="cb2-17"><a href="#cb2-17"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="basic-table" class="level2" data-number="L.2"><h2 data-number="L.2" class="anchored" data-anchor-id="basic-table">
-<span class="header-section-number">L.2</span> Basic table</h2>
+</section><section id="basic-table" class="level2" data-number="E.2"><h2 data-number="E.2" class="anchored" data-anchor-id="basic-table">
+<span class="header-section-number">E.2</span> Basic table</h2>
 <p>Look at how the table displays by default. This will display in one way in RStudio, but a different way when you render the document, so also render it and look at the HTML version.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>pokemon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-basic" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-basic" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.1: A default table display
+Table&nbsp;E.1: A default table display
 </figcaption><div aria-describedby="tbl-basic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">name</th>
@@ -521,9 +464,9 @@ Table&nbsp;L.1: A default table display
 <p>Now see how it looks if you use <code>flextable()</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">flextable</span>(pokemon)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-flextable" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-flextable" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-flextable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.2: A basic flextable
+Table&nbsp;E.2: A basic flextable
 </figcaption><div aria-describedby="tbl-flextable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -618,17 +561,17 @@ Table&nbsp;L.2: A basic flextable
 </figure>
 </div>
 </div>
-</section><section id="cusomising-tables" class="level2" data-number="L.3"><h2 data-number="L.3" class="anchored" data-anchor-id="cusomising-tables">
-<span class="header-section-number">L.3</span> Cusomising tables</h2>
-<section id="subsetreorder-columns" class="level3" data-number="L.3.1"><h3 data-number="L.3.1" class="anchored" data-anchor-id="subsetreorder-columns">
-<span class="header-section-number">L.3.1</span> Subset/reorder columns</h3>
+</section><section id="cusomising-tables" class="level2" data-number="E.3"><h2 data-number="E.3" class="anchored" data-anchor-id="cusomising-tables">
+<span class="header-section-number">E.3</span> Cusomising tables</h2>
+<section id="subsetreorder-columns" class="level3" data-number="E.3.1"><h3 data-number="E.3.1" class="anchored" data-anchor-id="subsetreorder-columns">
+<span class="header-section-number">E.3.1</span> Subset/reorder columns</h3>
 <p>You can use the <code>col_keys</code> argument to select a subset of columns, or change their order. You can also do this with data wrangling before you send a data frame to flextable, but this can be easier in some instances.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">flextable</span>(pokemon, </span>
 <span id="cb5-2"><a href="#cb5-2"></a>          <span class="at">col_keys =</span> <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"weight"</span>, <span class="st">"height"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-col_keys" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-col_keys" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-col_keys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.3: Subsetting columns with <code>col_keys</code>
+Table&nbsp;E.3: Subsetting columns with <code>col_keys</code>
 </figcaption><div aria-describedby="tbl-col_keys-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -693,8 +636,8 @@ Table&nbsp;L.3: Subsetting columns with <code>col_keys</code>
 </figure>
 </div>
 </div>
-</section><section id="header" class="level3" data-number="L.3.2"><h3 data-number="L.3.2" class="anchored" data-anchor-id="header">
-<span class="header-section-number">L.3.2</span> Header</h3>
+</section><section id="header" class="level3" data-number="E.3.2"><h3 data-number="E.3.2" class="anchored" data-anchor-id="header">
+<span class="header-section-number">E.3.2</span> Header</h3>
 <p>Use <code>set_header_labels()</code> to customise the header. You can change the name of one or more column.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span></span>
@@ -704,9 +647,9 @@ Table&nbsp;L.3: Subsetting columns with <code>col_keys</code>
 <span id="cb6-5"><a href="#cb6-5"></a>                    <span class="at">weight =</span> <span class="st">"Weight (kg)"</span>,</span>
 <span id="cb6-6"><a href="#cb6-6"></a>                    <span class="at">type_1 =</span> <span class="st">"Type 1"</span>, </span>
 <span id="cb6-7"><a href="#cb6-7"></a>                    <span class="at">type_2 =</span> <span class="st">"Type 2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-set_header_labels" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-set_header_labels" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-set_header_labels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.4: Customising the header with <code>set_header_labels()</code>
+Table&nbsp;E.4: Customising the header with <code>set_header_labels()</code>
 </figcaption><div aria-describedby="tbl-set_header_labels-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -807,9 +750,9 @@ Table&nbsp;L.4: Customising the header with <code>set_header_labels()</code>
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">separate_header</span>() <span class="sc">|&gt;</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">set_header_labels</span>(<span class="at">type_1 =</span> <span class="st">"primary"</span>, </span>
 <span id="cb7-4"><a href="#cb7-4"></a>                    <span class="at">type_2 =</span> <span class="st">"secondary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-separate_header" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-separate_header" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-separate_header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.5: Nesting the header with <code>separate_header()</code>
+Table&nbsp;E.5: Nesting the header with <code>separate_header()</code>
 </figcaption><div aria-describedby="tbl-separate_header-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -916,9 +859,9 @@ Table&nbsp;L.5: Nesting the header with <code>separate_header()</code>
 <span id="cb8-3"><a href="#cb8-3"></a>                <span class="at">colwidths =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">set_header_labels</span>(<span class="at">type_1 =</span> <span class="st">"primary"</span>, </span>
 <span id="cb8-5"><a href="#cb8-5"></a>                    <span class="at">type_2 =</span> <span class="st">"secondary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-add_header_row" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-add_header_row" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-add_header_row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.6: Manually add a header row with <code>add_header_row()</code>
+Table&nbsp;E.6: Manually add a header row with <code>add_header_row()</code>
 </figcaption><div aria-describedby="tbl-add_header_row-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1020,8 +963,8 @@ Table&nbsp;L.6: Manually add a header row with <code>add_header_row()</code>
 </figure>
 </div>
 </div>
-</section><section id="alignment" class="level3" data-number="L.3.3"><h3 data-number="L.3.3" class="anchored" data-anchor-id="alignment">
-<span class="header-section-number">L.3.3</span> Alignment</h3>
+</section><section id="alignment" class="level3" data-number="E.3.3"><h3 data-number="E.3.3" class="anchored" data-anchor-id="alignment">
+<span class="header-section-number">E.3.3</span> Alignment</h3>
 <p>The defaults are usually correct, left-aligning text and right-aligning numbers, but you can also customise this using the <code>align()</code> function.</p>
 <p>The code below centre aligns the first row of the header to “center”, and then right aligns the body cells in the “name” column.</p>
 <div class="cell" data-layout-align="center">
@@ -1142,16 +1085,16 @@ Note
 <p>See if you can figure out what <code>i</code> and <code>j</code> mean, using trial-and-error first, and the help function if you get stuck.</p>
 </div>
 </div>
-</section></section><section id="themes" class="level2" data-number="L.4"><h2 data-number="L.4" class="anchored" data-anchor-id="themes">
-<span class="header-section-number">L.4</span> Themes</h2>
+</section></section><section id="themes" class="level2" data-number="E.4"><h2 data-number="E.4" class="anchored" data-anchor-id="themes">
+<span class="header-section-number">E.4</span> Themes</h2>
 <p>There are some built-in themes you can use.</p>
-<section id="alafoli" class="level3" data-number="L.4.1"><h3 data-number="L.4.1" class="anchored" data-anchor-id="alafoli">
-<span class="header-section-number">L.4.1</span> Alafoli</h3>
+<section id="alafoli" class="level3" data-number="E.4.1"><h3 data-number="E.4.1" class="anchored" data-anchor-id="alafoli">
+<span class="header-section-number">E.4.1</span> Alafoli</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_alafoli</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-alafoli" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-alafoli" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-alafoli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.7: The alafoli theme
+Table&nbsp;E.7: The alafoli theme
 </figcaption><div aria-describedby="tbl-alafoli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1246,13 +1189,13 @@ Table&nbsp;L.7: The alafoli theme
 </figure>
 </div>
 </div>
-</section><section id="apa" class="level3" data-number="L.4.2"><h3 data-number="L.4.2" class="anchored" data-anchor-id="apa">
-<span class="header-section-number">L.4.2</span> APA</h3>
+</section><section id="apa" class="level3" data-number="E.4.2"><h3 data-number="E.4.2" class="anchored" data-anchor-id="apa">
+<span class="header-section-number">E.4.2</span> APA</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_apa</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-apa" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-apa" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-apa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.8: The apa theme
+Table&nbsp;E.8: The apa theme
 </figcaption><div aria-describedby="tbl-apa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1347,13 +1290,13 @@ Table&nbsp;L.8: The apa theme
 </figure>
 </div>
 </div>
-</section><section id="booktabs" class="level3" data-number="L.4.3"><h3 data-number="L.4.3" class="anchored" data-anchor-id="booktabs">
-<span class="header-section-number">L.4.3</span> Booktabs</h3>
+</section><section id="booktabs" class="level3" data-number="E.4.3"><h3 data-number="E.4.3" class="anchored" data-anchor-id="booktabs">
+<span class="header-section-number">E.4.3</span> Booktabs</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_booktabs</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-booktabs" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-booktabs" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-booktabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.9: The booktabs theme
+Table&nbsp;E.9: The booktabs theme
 </figcaption><div aria-describedby="tbl-booktabs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1448,13 +1391,13 @@ Table&nbsp;L.9: The booktabs theme
 </figure>
 </div>
 </div>
-</section><section id="box" class="level3" data-number="L.4.4"><h3 data-number="L.4.4" class="anchored" data-anchor-id="box">
-<span class="header-section-number">L.4.4</span> Box</h3>
+</section><section id="box" class="level3" data-number="E.4.4"><h3 data-number="E.4.4" class="anchored" data-anchor-id="box">
+<span class="header-section-number">E.4.4</span> Box</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_box</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-box" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-box" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-box-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.10: The box theme
+Table&nbsp;E.10: The box theme
 </figcaption><div aria-describedby="tbl-box-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1549,13 +1492,13 @@ Table&nbsp;L.10: The box theme
 </figure>
 </div>
 </div>
-</section><section id="tron" class="level3" data-number="L.4.5"><h3 data-number="L.4.5" class="anchored" data-anchor-id="tron">
-<span class="header-section-number">L.4.5</span> Tron</h3>
+</section><section id="tron" class="level3" data-number="E.4.5"><h3 data-number="E.4.5" class="anchored" data-anchor-id="tron">
+<span class="header-section-number">E.4.5</span> Tron</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_tron</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-tron" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-tron" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tron-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.11: The tron theme
+Table&nbsp;E.11: The tron theme
 </figcaption><div aria-describedby="tbl-tron-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1650,13 +1593,13 @@ Table&nbsp;L.11: The tron theme
 </figure>
 </div>
 </div>
-</section><section id="tron-legacy" class="level3" data-number="L.4.6"><h3 data-number="L.4.6" class="anchored" data-anchor-id="tron-legacy">
-<span class="header-section-number">L.4.6</span> Tron Legacy</h3>
+</section><section id="tron-legacy" class="level3" data-number="E.4.6"><h3 data-number="E.4.6" class="anchored" data-anchor-id="tron-legacy">
+<span class="header-section-number">E.4.6</span> Tron Legacy</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_tron_legacy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-tron_legacy" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-tron_legacy" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tron_legacy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.12: The tron_legacy theme
+Table&nbsp;E.12: The tron_legacy theme
 </figcaption><div aria-describedby="tbl-tron_legacy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1751,13 +1694,13 @@ Table&nbsp;L.12: The tron_legacy theme
 </figure>
 </div>
 </div>
-</section><section id="vader" class="level3" data-number="L.4.7"><h3 data-number="L.4.7" class="anchored" data-anchor-id="vader">
-<span class="header-section-number">L.4.7</span> Vader</h3>
+</section><section id="vader" class="level3" data-number="E.4.7"><h3 data-number="E.4.7" class="anchored" data-anchor-id="vader">
+<span class="header-section-number">E.4.7</span> Vader</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_vader</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-vader" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-vader" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-vader-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.13: The vader theme
+Table&nbsp;E.13: The vader theme
 </figcaption><div aria-describedby="tbl-vader-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1852,13 +1795,13 @@ Table&nbsp;L.13: The vader theme
 </figure>
 </div>
 </div>
-</section><section id="vanilla" class="level3" data-number="L.4.8"><h3 data-number="L.4.8" class="anchored" data-anchor-id="vanilla">
-<span class="header-section-number">L.4.8</span> Vanilla</h3>
+</section><section id="vanilla" class="level3" data-number="E.4.8"><h3 data-number="E.4.8" class="anchored" data-anchor-id="vanilla">
+<span class="header-section-number">E.4.8</span> Vanilla</h3>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">flextable</span>(pokemon) <span class="sc">|&gt;</span> <span class="fu">theme_vanilla</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-vanilla" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<div id="tbl-vanilla" class="cell quarto-float anchored" data-layout-align="center">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-vanilla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;L.14: The vanilla theme
+Table&nbsp;E.14: The vanilla theme
 </figcaption><div aria-describedby="tbl-vanilla-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="tabwid">
@@ -1953,8 +1896,8 @@ Table&nbsp;L.14: The vanilla theme
 </figure>
 </div>
 </div>
-</section></section><section id="defaults" class="level2" data-number="L.5"><h2 data-number="L.5" class="anchored" data-anchor-id="defaults">
-<span class="header-section-number">L.5</span> Defaults</h2>
+</section></section><section id="defaults" class="level2" data-number="E.5"><h2 data-number="E.5" class="anchored" data-anchor-id="defaults">
+<span class="header-section-number">E.5</span> Defaults</h2>
 <p>You can set a ton of defaults using <code>set_flextable_defaults()</code>. Do this at the top of your script and all of the tables in your document will have consistent styles.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">set_flextable_defaults</span>(<span class="at">digits =</span> <span class="dv">2</span>, </span>
@@ -2054,8 +1997,8 @@ Table&nbsp;L.14: The vanilla theme
 </div>
 </div>
 </div>
-</section><section id="next-steps" class="level2" data-number="L.6"><h2 data-number="L.6" class="anchored" data-anchor-id="next-steps">
-<span class="header-section-number">L.6</span> Next Steps</h2>
+</section><section id="next-steps" class="level2" data-number="E.6"><h2 data-number="E.6" class="anchored" data-anchor-id="next-steps">
+<span class="header-section-number">E.6</span> Next Steps</h2>
 <p>You can learn a lot more about how to customisie tables from the <a href="https://ardata-fr.github.io/flextable-book/">flextable book</a>.</p>
 <ol type="1">
 <li>As a group, make a list of things you might want to do to tables, like highlight a row, add footnotes, include images, or set border styles.</li>
@@ -2437,7 +2380,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2469,27 +2423,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2497,7 +2431,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2594,6 +2528,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -2820,12 +2755,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./app-styling.html" class="pagination-link" aria-label="Styling Plots">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Styling Plots</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./app-plots.html" class="pagination-link" aria-label="More Plots">
-        <span class="nav-page-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">More Plots</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2836,29 +2771,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/ads-v3/edit/master/app-tables.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/ads-v3/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/ads-v3/blob/master/app-tables.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/psyteachr/ads-v3">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/psyteachr">
-      <i class="bi bi-twitter" role="img">
-</i> 
-    </a>
-  </li>  
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://doi.org/10.5281/zenodo.6365077">
-      <i class="bi bi-https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-</div>
+      &nbsp;
+    </div>
   </div>
 </footer>
 

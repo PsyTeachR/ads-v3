@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>app-advanced</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="app-advanced_files/libs/clipboard/clipboard.min.js"></script>
+<script src="app-advanced_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="app-advanced_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="app-advanced_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="app-advanced_files/libs/quarto-html/popper.min.js"></script>
+<script src="app-advanced_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="app-advanced_files/libs/quarto-html/anchor.min.js"></script>
+<link href="app-advanced_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="app-advanced_files/libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="app-advanced_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="app-advanced_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="app-advanced_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="advanced-websites" class="level1">
+<h1>Advanced: Websites</h1>
+<p>For those of you who are confident with R and would like to push yourself, we will provide a number of advanced chapters to work through. The content covered in these chapters will not be assessed as part of Applied Data Skills and engaging with it is entirely optional.</p>
+<section id="build-a-website" class="level2">
+<h2 class="anchored" data-anchor-id="build-a-website">Build a website</h2>
+<p>In this chapter, we will show you how to build a professional website for free using Quarto, RStudio, and GitHub. Having a professional website can be very useful as it can act as a repository to share your work, host a blog, and/or make your CV available.</p>
+</section>
+<section id="github" class="level2">
+<h2 class="anchored" data-anchor-id="github">GitHub</h2>
+<p>GitHub is a free online platform for storing, sharing, and collaborating on code and other files. It uses a system called Git, which tracks every change you make so you can see what has been edited, when, and by whom. This makes it especially useful for version control, teamwork, and reproducible research. For you, GitHub is also a public portfolio, a place where you can show evidence of your coding, data analysis, and project work. Many employers, research groups, and graduate programmes use GitHub to host their own work, so learning to use it is both a practical skill and a way to demonstrate your professionalism in an open, verifiable way.</p>
+<p>Most importantly for this chapter, you can also host a free website through GitHub pages, which is what we’re going to do here.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Go to https://github.com/signup and create a new GitHUb account. Make sure you give yourself a professional username given that we’re going to use this for professional purposes</p>
+</div>
+</div>
+</section>
+<section id="install-git" class="level2">
+<h2 class="anchored" data-anchor-id="install-git">Install Git</h2>
+<p>Git is the version control software that keeps track of changes in your files over time. Every time you save (or commit) your work, Git records exactly what changed, when, and why, allowing you to revisit earlier versions or undo mistakes without losing progress. Git also makes collaboration easier — multiple people can work on the same project simultaneously, and Git will manage the merging of their edits. RStudio uses Git behind the scenes to talk to GitHub, so you can work locally on your computer and then publish or back up your work online with a single click.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now you need to install Git.</p>
+<ul>
+<li>Windows: download from https://git-scm.com/install/windows</li>
+<li>macOS: install with Homebrew (brew install git) or from https://git-scm.com/install/mac</li>
+</ul>
+<p>After you have installed git, open RStudio then go to the Terminal tab (next to the Console) and type:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You can’t copy and past into the Terminal so be careful with typos and ensuring you have spaces in the right place etc.</p>
+</div>
+</div>
+</section>
+<section id="tell-git-who-you-are" class="level2">
+<h2 class="anchored" data-anchor-id="tell-git-who-you-are">Tell Git who you are</h2>
+<p>Before Git can record your work, it needs to know who is making the changes. Every time you “commit” a file, Git adds your name and email to the project history, this creates an automatic record of authorship and makes collaboration transparent. Think of it like signing your name at the bottom of each version of your work.</p>
+<p>You only have to do this once per computer. After that, Git will use the same details every time you save or publish. Make sure you use the same email address as the one you used for GitHub, otherwise RStudio may not recognise you when you try to connect.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the RStudio Terminal, type:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"you@example.com"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> pull.rebase false</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>user.name is how your name will appear beside each commit.</li>
+<li>user.email links those commits to your GitHub account.</li>
+<li>The pull.rebase false line just prevents confusing behaviour later when syncing projects.</li>
+</ul>
+<p>To check that everything worked, type:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you can see your name and email in the output, Git is now ready to keep an accurate, professional record of your work.</p>
+</div>
+</div>
+</section>
+<section id="connect-rstudio-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="connect-rstudio-to-github">Connect RStudio to GitHub</h2>
+<p>Now that Git knows who you are, the next step is to connect your computer to your GitHub account that you created earlier. This is what allows you to move files between your local RStudio projects (the work you do on your computer) and your online GitHub repositories (the version stored safely in the cloud).</p>
+<p>Because GitHub requires secure authentication, we do this using something called a Personal Access Token (PAT). A PAT is like a long, random password that gives RStudio permission to talk to GitHub on your behalf. It is more secure than saving your actual password, and you can easily revoke or regenerate it at any time. You only have to create and save a token once per computer. After that, RStudio will remember it for you.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To create a token, enter the following command in the console. It will open up a website where you can set a note, usually the name of the computer you’re using this token on. You’re meant to set it to expire for security purposes, but you can also set it up without an expiry date.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Now we have to go back to RStudio and enter the token.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the RStudio Console, type:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If RStudio says the gitcreds package is missing, install it first:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"gitcreds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>When prompted, paste your token into the console and press Enter. RStudio will store it safely in your system’s keychain or credential manager — not in your project files — so it stays private.</p>
+<p>Finally, to check everything is working:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">gh_token_help</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="quarto-website" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-website">Quarto Website</h2>
+<p>Now that we have RStudio, Git, and GitHub all talking to each other, create a new Quarto Website project in RStudio.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In RStudio</p>
+<ol type="1">
+<li>File - New Project - New Directory - Quarto Website</li>
+<li>Name the directory name something sensible, it will be public, e.g., <code>nordmann_website</code>.</li>
+</ol>
+</div>
+</div>
+<p>By selecting Quarto website, it will automatically build the files you need for a simple website.</p>
+<ul>
+<li><code>_quarto.yml</code> is the control file for your website. It tells Quarto how to build the site, things like the title, navigation bar, theme, and output folder. Every time you render your website, Quarto reads this file first to decide which pages to include and how they should look.</li>
+<li><code>.gitignore</code> is a hidden housekeeping file used by Git. It lists any files or folders that should not be tracked or uploaded to GitHub (for example, large data files or temporary build folders). When you see a filename starting with a dot (.), it usually means “hidden system file.” You should not delete it, but you rarely need to edit it manually.</li>
+<li><code>about.qmd</code> is one of your content pages written in Quarto Markdown (.qmd). It usually becomes your About Me or Biography page once the site is published. You can open it in RStudio and edit the text just like you would for any other Quarto report.</li>
+<li><code>example_website.Rproj</code> is your RStudio Project file. Opening this file launches RStudio with the correct working directory and project settings.</li>
+<li><code>index.qmd</code> is the homepage of your website. When someone visits your site (for example, https://yourname.github.io), Quarto uses this file as the first page they see. You can customise it with text, images, or links to other pages (like about.qmd).</li>
+<li><code>styles.css</code> controls your site’s styling, things like colours, fonts, and spacing. CSS stands for Cascading Style Sheets.</li>
+</ul>
+<p>To make our website play nice with GitHub, we need to make a small initial change to the <code>_quarto.yml</code> file so that when it produces the website, it saves the files in a directory named <code>docs</code>..</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open <code>_quarto.yml</code>. At the top it will say:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Amend this to add:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">-</span>dir<span class="sc">:</span> docs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Then save the file.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Before we make any edits, to see the basic website shell, click “Build” then “Render website”. You’ll see in the files tab that there is now a folder named <code>docs</code>. This is the folder that contains the rendered html files.</li>
+<li>Go into the Files tab then the <code>docs</code> folder and open the <code>index.html</code> file in the browser to see your website. It looks very basic now but we will soon populate it.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="create-a-new-repository" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-new-repository">Create a new repository</h2>
+<p>Next we need to create a new repository on GitHub. A repository (often shortened to repo) is the place where a project lives. You can think of it as a folder that contains everything related to one piece of work — your R scripts, data files, Quarto documents, images, and even the full history of every change you have made. Each time you commit and push, Git saves a snapshot of the repository at that moment, so you can always look back or restore an earlier version if something goes wrong.</p>
+<p>When the repository is stored on GitHub, it becomes both a backup and a showcase: a cloud-based version of your project that you can share with others, collaborate on, or publish as part of your portfolio. In this course, you will use repositories to store your Applied Data Skills work, and eventually to host your own professional website.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the console, run:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You will be asked to confirm that you want to commit the files. When you commit in Git, you are saving your changes along with a short message describing what you did, for example, “added introduction section” or “fixed typo in code.” Each commit creates a permanent, timestamped record in your project’s history, showing exactly what changed, when, and by whom. You can think of it as pressing Save + Describe: Git doesn’t just keep the latest version of your work, it remembers every version you’ve committed.</p>
+<p>Once you’ve done this, then run the following code which will create the new repository on GitHub with the files you have committed:</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="github-pages">GitHub pages</h2>
+<p>GitHub Pages is a free service from GitHub that lets you turn a repository into a live website. Instead of just storing your files on GitHub, you can publish them so that anyone can view them in a web browser — for example, at a URL like https://yourusername.github.io/.</p>
+<p>It works by taking the files in your repository (for example, HTML pages created by Quarto or Markdown) and automatically serving them as a website. Every time you push new changes to GitHub, the site updates within a few minutes. You don’t need to buy hosting or manage servers, GitHub handles everything behind the scenes.</p>
+<p>For this course, GitHub Pages is what allows you to publish your Quarto website publicly. It’s completely free, integrates directly with RStudio and version control, and gives you a professional web address where you can showcase your Applied Data Skills work, portfolio, CV, and blog.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>In your repository on GitHub, click on Settings then click Pages, which is in the left hand pane.</li>
+<li>Under Branch, select <code>master</code> and then <code>docs</code> then click save.</li>
+<li>Your website will then be available at https://yourusername.github.io/reponame/</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="adding-content" class="level2">
+<h2 class="anchored" data-anchor-id="adding-content">Adding content</h2>
+<p>I’m going to show you how to add content that mirrors my own academic website https://www.emilynordmann.com/ (me and my ego pay for my domain name, it’s still done through GitHub even if the address doesn’t show it). Of course you don’t have to use this as your template, you can style your website however you like, but to do that you’re on your own!</p>
+</section>
+<section id="sub-directories" class="level2">
+<h2 class="anchored" data-anchor-id="sub-directories">Sub-directories</h2>
+<p>We don’t need them straight away but it will help us to set up a few new folders.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the Files pane, create four new folders in your main website folder (e.g., where your <code>_quarto.yml</code> is stored).</p>
+<ol type="1">
+<li>A folder named <code>images</code></li>
+<li>A folder named <code>blog</code></li>
+<li>A folder named <code>data</code></li>
+<li>A folder names <code>files</code></li>
+</ol>
+<p>No guesses for what we’ll be using these for.</p>
+</div>
+</div>
+<section id="homepage" class="level3">
+<h3 class="anchored" data-anchor-id="homepage">Homepage</h3>
+<p>First, we’ll update the homepage, which is the page controlled by <code>index.qmd</code> and add a photo, title, biography and links to e.g., social media stuff. Here is the full contents of my <code>index.qmd</code>.</p>
+<pre><code>
+---
+title: "Professor Emily Nordmann"
+page-layout: full
+---
+
+::: {.grid .gap-4}
+::: {.g-col-12 .g-col-md-4}
+
+&lt;div class="profile-card"&gt;
+&lt;p&gt;Associate Dean of Learning and Teaching&lt;/p&gt;
+&lt;p&gt;University of Glasgow&lt;/p&gt;
+
+&lt;img src="images/headshot_2025.jpg" class="avatar" alt="Headshot of Emily Nordmann" /&gt;
+
+
+&lt;p class="icons"&gt;
+&lt;a href="mailto:emily.nordmann@glasgow.ac.uk" aria-label="Email"&gt;&lt;i class="bi bi-envelope"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://www.linkedin.com/in/emilynordmann/" aria-label="LinkedIn"&gt;&lt;i class="bi bi-linkedin"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://scholar.google.co.uk/citations?user=-7Y95XAAAAAJ&amp;hl" aria-label="Google Scholar"&gt;&lt;i class="bi bi-google"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://github.com/emilynordmann" aria-label="GitHub"&gt;&lt;i class="bi bi-github"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+:::
+::: {.g-col-12 .g-col-md-8}
+
+## Biography
+
+I am Associate Dean for Learning and Teaching and Professor of Evidence-Informed Education at the University of Glasgow. My research predominantly focuses on lecture capture, how it can be used as an effective study tool by students and the impact on students from widening participation backgrounds as well as those with disabilities and neurodivergent conditions. In all my work, I draw on theories of learning from cognitive science and self-regulation, as well as theories of belonging and self-efficacy.
+
+My leadership roles have centred around supporting those on the learning, teaching, and scholarship track. I am currently lead of the College of MVLS LTS Network and previously founded and led the Pedagogy and Education Research Unit in the School of Psychology and Neuroscience.
+
+I am based in the School of Psychology and Neuroscience. My teaching is varied although centres on cognitive psychology and beginner data skills in R and I am a vocal advocate of open science and open educational resources where as a member of the PsyTeachR team I has authored several open-access data skills books and tutorials.
+
+
+:::
+:::
+
+
+</code></pre>
+<p>Let’s break it down bit by bit and show you what to change.</p>
+<section id="yaml" class="level4">
+<h4 class="anchored" data-anchor-id="yaml">YAML</h4>
+<ul>
+<li>This section at the very top is called the YAML header. It tells Quarto what to call the page and how to lay it out.</li>
+<li><code>title</code>: is what appears in the browser tab and sometimes at the top of the page. Change this to your own name or website title.</li>
+<li><code>page-layout: full</code> tells Quarto to use the full-width layout instead of narrow text columns.</li>
+<li>Every Quarto page starts and ends its YAML section with three dashes (—).</li>
+<li>Change the title to your name / whatever you want the website to be called.</li>
+</ul>
+<pre><code>---
+title: "Professor Emily Nordmann"
+page-layout: full
+---</code></pre>
+</section>
+<section id="grid-layout" class="level4">
+<h4 class="anchored" data-anchor-id="grid-layout">Grid layout</h4>
+<ul>
+<li>The triple colons (:::) mark the start of a div block in Quarto’s markdown. Here, the classes inside {} use Bootstrap grid styling, which Quarto supports out of the box.</li>
+<li><code>.grid</code> starts a grid layout (think of it as rows and columns).</li>
+<li><code>.gap-4</code> adds some space between elements.</li>
+<li><code>.g-col-12</code> means “take the full width on small screens”.</li>
+<li><code>.g-col-md-4</code> means “use four of twelve columns on medium or larger screens.”.</li>
+<li>In plain English: this first column will hold your profile picture and contact links, while the next section (below) will hold your biography.</li>
+<li>You don’t have to change anything here, unless you want to play around with the layout.</li>
+</ul>
+</section>
+<section id="profile-card" class="level4">
+<h4 class="anchored" data-anchor-id="profile-card">Profile card</h4>
+<ul>
+<li><code>&lt;div&gt;</code> opens a section of content with the class profile-card, which controls its styling.</li>
+<li>The two <code>&lt;p&gt;</code> tags add lines of text for your title and affiliation — replace these with your own.</li>
+<li><code>&lt;img&gt;</code> inserts an image: <code>src="images/headshot_2025.jpg"</code> is the file path to your photo. Put the image you want to display in your images/ folder and then update the name of the file.</li>
+<li><code>class="avatar"</code> applies circular styling (you can change this later in styles.css).</li>
+<li><code>alt="..."</code> provides alternative text for accessibility - update this text to describe your photo.</li>
+</ul>
+<pre><code>
+&lt;div class="profile-card"&gt;
+&lt;p&gt;Associate Dean of Learning and Teaching&lt;/p&gt;
+&lt;p&gt;University of Glasgow&lt;/p&gt;
+
+&lt;img src="images/headshot_2025.jpg" class="avatar" alt="Headshot of Emily Nordmann" /&gt;
+
+</code></pre>
+</section>
+</section>
+<section id="social-and-contact-icons" class="level3">
+<h3 class="anchored" data-anchor-id="social-and-contact-icons">Social and contact icons</h3>
+<ul>
+<li>Each <code>&lt;a&gt;</code> tag creates a clickable icon that links to one of your online profiles.</li>
+<li><code>href=</code> gives the link destination (for example, your email, LinkedIn, or GitHub).</li>
+<li><code>aria-label=</code> adds descriptive text for screen readers — this helps accessibility.</li>
+<li><code>&lt;i class="bi bi-envelope"&gt;</code> inserts an icon from the Bootstrap Icons library that Quarto includes automatically.</li>
+<li>To customise, just replace the URLs with the links to your own profiles.</li>
+<li>If you don’t use one (for example, Google Scholar), you can safely delete that line.</li>
+</ul>
+<pre><code>
+&lt;p class="icons"&gt;
+&lt;a href="mailto:emily.nordmann@glasgow.ac.uk" aria-label="Email"&gt;&lt;i class="bi bi-envelope"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://www.linkedin.com/in/emilynordmann/" aria-label="LinkedIn"&gt;&lt;i class="bi bi-linkedin"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://scholar.google.co.uk/citations?user=-7Y95XAAAAAJ&amp;hl" aria-label="Google Scholar"&gt;&lt;i class="bi bi-google"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href="https://github.com/emilynordmann" aria-label="GitHub"&gt;&lt;i class="bi bi-github"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/p&gt;
+</code></pre>
+</section>
+<section id="second-column-and-biography" class="level3">
+<h3 class="anchored" data-anchor-id="second-column-and-biography">Second column and biography</h3>
+<ul>
+<li>::: closes the first column and opens the second one.</li>
+<li><code>.g-col-12 .g-col-md-8</code> means this section takes up eight columns on medium or larger screens.</li>
+<li>The <code>## Biography</code> heading introduces the text that follows.</li>
+<li>Everything below is normal Markdown — just edit or replace it with your own biography paragraph.</li>
+<li>At the very end, you’ll see one more ::: which closes the grid layout.</li>
+<li>This tells Quarto you’ve finished describing the page structure.</li>
+</ul>
+<pre><code>:::
+::: {.g-col-12 .g-col-md-8}
+
+## Biography
+
+I am Associate Dean for Learning and Teaching ...
+
+:::
+  </code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Copy and paste in my bio to your <code>.index.qmd</code> file and render it just to make sure it works and you can see what it looks like.</li>
+<li>Then update it with your title, picture, bio, and social contact links. Remove any sections that aren’t relevant to you.To help debugging, I would render after you have changed each section to make sure it has worked as intended.</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="adjusting-the-style-guide" class="level2">
+<h2 class="anchored" data-anchor-id="adjusting-the-style-guide">Adjusting the style guide</h2>
+<p>If you have added an image, with the default style settings it will likely be massive (I’ve just gotten a shock of my own huge face on the screen) so now we can work on adjusting some of the style. My website uses a fairly simple style sheet, if you have the time and the eye for it, you could make something much more impressive.</p>
+<p>The styling settings are contained in <code>styles.css</code>. Again, here’s my full style sheet which you can copy and paste. The adjustments you can make to the style are almost infinite and I am not the person to teach you (I used AI to generate mine). There’s a bunch of free courses you can use to learn CSS (e.g., there’s a basic intro available from <a href="https://learn.microsoft.com/en-us/training/modules/use-css-styles/">Microsoft</a>) and you can also use AI to help you get what you want.</p>
+<pre><code>#| eval: false
+
+/* general spacing */
+main.content { margin-top: 1rem; }
+
+/* profile card on the left */
+.avatar {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 0 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+}
+
+.profile-card { font-size: 1rem; }
+.profile-card .no-top { margin-top: 0; }
+
+.icons a {
+  font-size: 1.4rem;
+  margin-right: .6rem;
+  text-decoration: none;
+}
+
+/* make icon links readable on all themes */
+.icons a:link, .icons a:visited { color: inherit; }
+
+/* Increase base font size for body text */
+body {
+  font-size: 18px; /* default ~16px, increase as needed */
+  line-height: 1.6;
+}
+
+/* Slightly larger headings for better hierarchy */
+h1, .h1 { font-size: 2.2rem; }
+h2, .h2 { font-size: 1.8rem; }
+h3, .h3 { font-size: 1.5rem; }
+
+
+  </code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Update your <code>style.css</code> with my styling. Change the numbers and play around with it if you’re feeling brave.</li>
+<li>Render your website again to apply the styling. Your profile should now be a sensible size.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="commit-and-push-new-changes" class="level2">
+<h2 class="anchored" data-anchor-id="commit-and-push-new-changes">Commit and push new changes</h2>
+<p>Now we have updated our website beyond the starting template, it’s time to cover how we send these changes to GitHub which involves two processes:</p>
+<ol type="1">
+<li>Commit the changes - save and describe what you’ve done</li>
+<li>Push uploads your new commits from your computer to GitHub</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To commit your new changes, use the function <code>usethis::use_git()</code>. The <code>message</code> argument is your description of what you’ve done.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>(<span class="at">message =</span> <span class="st">"Index update"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>It will tell you how many files have changed that will be included in the commit, if you’re happy, confirm the selection.</p>
+<p>Then, to push the changes to GitHub, use the function <code>git_push()</code> from the package <code>gert</code> which you may have to install if you don’t have it (you probably don’t):</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("gert")</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>gert<span class="sc">::</span><span class="fu">git_push</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This will then push your changes to GitHub. If you wait a minute or two and reload your website, your changes will now be live.</p>
+</div>
+</div>
+</section>
+<section id="blog" class="level2">
+<h2 class="anchored" data-anchor-id="blog">Blog</h2>
+<p>How you use your website is up to you but adding a blog is quite common. You could also do everything in this section but frame it as a Portfolio. The same structure will work so generalise as you choose.</p>
+<p>First, we need to edit the <code>_quarto.yml</code> to add a new section that tells Quarto to treat posts/ as a listing (a page that automatically shows all your posts).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Open <code>_quarto.yml</code> and edit to the following. The main reason for the edit is to add the blog but whilst we’re here, let’s add in a dark mode toggle.</li>
+</ol>
+<pre><code>project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Your Name"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: posts/index.qmd
+        text: Blog
+
+format:
+  html:
+    toc: false
+    css: styles.css
+    theme:
+      light: cosmo
+      dark: slate
+    toggle: true           # adds the dark/light switch in the navbar</code></pre>
+<ol start="2" type="1">
+<li>Inside your <code>posts</code> folder, create a file called <code>index.qmd.</code></li>
+</ol>
+<p>Paste in the following:</p>
+<pre><code>#| eval: false
+
+
+---
+title: "Blog"
+listing:
+  contents: .   # means “list everything in this folder”
+  sort: "date desc"
+  type: default
+  categories: true
+  date-format: "long"
+---
+
+Welcome to my blog! Here I’ll share notes from my Applied Data Skills journey, project reflections, and other things I’ve learned along the way.
+</code></pre>
+<ol start="3" type="1">
+<li>Still inside the posts folder, create a new file called something like <code>2025-11-04-first-post.qmd</code>. Make sure you name the posts with the date in YYYY-MM-DD format at the start. Each post needs its own YAML header at the top:</li>
+</ol>
+<pre><code>---
+title: "My First Post"
+date: 2025-11-04
+categories: [reflection, coding]
+---
+</code></pre>
+<p>And then underneath this….write your blog which can be text or code or anything else you’ve learned how to do in Quarto. If your blog involves data analysis, put your data in the <code>data</code> folder and then load it in with e.g., <code>read_csv("data/my_file.csv")</code></p>
+</div>
+</div>
+</section>
+<section id="additional-pages" class="level2">
+<h2 class="anchored" data-anchor-id="additional-pages">Additional pages</h2>
+<p>By default, when you created a new Quarto Website project it gave you a file named <code>about.qmd</code> which is intended to be used as an “About me” page. My homepage already has a bio so I didn’t need this. Instead, I have a “Contact” page that tells people the best way to contact me and a link to a download copy of my CV. What you do with these extra pages is up to you.</p>
+<ol type="1">
+<li>You could delete them and just have the homepage and blog. If you want to do this, delete the <code>about.qmd</code> file and also delete the reference to it in the <code>navbar</code> section of <code>_quarto.yml</code> (both the <code>href</code> and <code>text</code> line).</li>
+<li>Use it for a different purpose (e.g., a Contact page, a list of your publications, photos of your cats). Update the name of the file to match the new purpose e.g., <code>contact.qmd</code> and then make sure to update the resulting line in the <code>_quarto.yml</code> for the navbar (both <code>href</code> and <code>text</code>).</li>
+<li>If you want it to link to a file download (like with my CV), then put the file you want people to be able to download in your <code>files</code> folder and then update <code>_quarto.yml</code> to reflect the file name, like this:</li>
+</ol>
+<pre><code>  navbar:
+    left:
+      - text: "Blog"
+        href: post.qmd
+      - text: "Contact"
+        href: contact.qmd
+      - text: "CV"
+        href: files/cv.pdf
+        </code></pre>
+<p>If you’ve managed all this, with the help of Google and/or AI, you should be able to figure out how to make your website work for you and add and change features. Well done! Make sure to send me your website so I can see your work.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
