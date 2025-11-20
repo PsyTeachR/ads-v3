@@ -54,12 +54,12 @@ First, make a new `r glossary("directory")` (i.e., folder) on your computer wher
 
 Next, open <if>Tools > Global Options...</if>, navigate to the <if>General</if> pane, and set the "Default working directory (when not in a project)" to this directory. Now, if you're not working in a project, any files or images you make will be saved in this `r glossary("working directory")`. 
 
+:::
+
 ::: {.callout-caution collapse="true"}
 ## Avoid long path names
 
 On some versions of Windows 10 and 11, it can cause problems if path names are longer than 260 characters. Set your default working directory to a path with a length well below that to avoid problems when R creates temporary files while rendering a report. If you are having issues, a helpful test is to try moving your project folder to the desktop to see if that solves the problem as this will likely have a much short path name than most other folders on your computer.
-:::
-
 :::
 
 You can set the working directory to another location manually with menu commands: <if>Session > Set Working Directory > Choose Directory...</if> However, there's a better way of organising your files by using Projects in RStudio.
@@ -185,7 +185,14 @@ format: html
 ---
 ```
 
-This is the `r glossary("YAML")` header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., `date: 2026-01-20`.
+This is the `r glossary("YAML")` header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. 
+
+:::{.callout-tip}
+## Activity
+
+Add a new line with the date, e.g., `date: 2026-01-20`.
+
+:::
 
 You will learn in @sec-yaml how to further customise your document using information in the header.
 
@@ -611,17 +618,14 @@ Rather than a figure, we might want to display our data in a table.
 :::{.callout-tip}
 ## Activity
 
-Add a new level 3 heading to your document, name the heading "Tables" and then create a new code chunk below this. 
+1. Add a new level 3 heading to your document, name the heading "Tables" and then create a new code chunk below this. 
+
+2. Then, let's see what the table looks like if we don't make any edits. Simply write the name of the table you want to display in the code chunk (in our case `smalldata`) and then render to see what it looks like.
 
 ```{r}
 #| eval: false
 smalldata
 ```
-::: 
-
-First, let's see what the table looks like if we don't make any edits. Simply write the name of the table you want to display in the code chunk (in our case `smalldata`) and then render to see what it looks like.
-
-
 
 ```
 # A tibble: 10 × 4
@@ -638,6 +642,7 @@ First, let's see what the table looks like if we don't make any edits. Simply wr
  9 S09   exp      97.0 109. 
 10 S10   exp     102.  114. 
 ```
+:::
 
 This isn't very pretty, but we can change the print style. 
 
@@ -951,9 +956,9 @@ You're still going to assume the roles of Driver and Navigator but you'll both d
 There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
 
 1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often! The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
-2. Create a new project called "cv" ([@sec-projects]).
-3. In the "cv" project, create a new quarto document called "cv.qmd" ([@sec-quarto-newdoc]). Edit the YAML header to print data frames using kable and set a custom theme ([@sec-yaml]).
-4. Write a short paragraph describing you and your work or academic aspirations. Include a bullet-point list of links to related websites ([@sec-markdown]).
+2. Create a new project called "cv".
+3. In the "cv" project, create a new quarto document called "cv.qmd". Edit the YAML header to print data frames using kable and set a custom theme.
+4. Write a short paragraph describing you and your work or academic aspirations. Include a bullet-point list of links to related websites, for example:
 
 ```
 I am a research psychologist who is interested in open science and teaching computational skills.
@@ -962,7 +967,7 @@ I am a research psychologist who is interested in open science and teaching comp
 * [Google Scholar](https://scholar.google.com/)
 ```
 
-5. Make a subheading titled "Education" and use the following code to load a small table of your education ([@sec-code-chunks]). Edit it to be relevant to you (you can change the categories entirely if you want, for example, you could list your courses you have taken at University).  
+5. Make a subheading titled "Education" and use the following code to load a small table of your education. Edit it to be relevant to you (you can change the categories entirely if you want, for example, you could list your courses you have taken at University).  
 
 ```{r}
 #| echo: fenced
@@ -978,21 +983,20 @@ tibble::tribble(
 6. Change the settings so that code chunks don't show in your rendered document.
 
 7. Add an image of anything relevant. Make sure to add alt-text.
-`r hide()`
 
 8. Use inline R to include the current date (pulled from the computer system) in a sentence like:
 
-"This CV was created on `r Sys.Date()`."
+> This CV was created on `r Sys.Date()`.
 
 9. Render this document to html ([@sec-render]).
 
 10. Once you're done, zip up your entire project folder and share it on Teams under the week 2 exercise post. Try downloading someone else's project and rendering their qmd file.
 
+
 ::: {.callout-important}
 Make sure any files you reference are inside your project folder, and **always** use `r glossary("relative path", "relative paths")` and not `r glossary("absolute path", "absolute paths")` when you refer to images or other files in your code. The use of absolute paths is a major source of irreproducibility in published code. The best way to double-check your code for reproducibility problems is to share your entire project directory with a friend and see if they can render your file.
 :::
 
-:::
 
 ## Glossary {#sec-glossary-reports -}
 
@@ -1009,7 +1013,6 @@ glossary_table()
 -   [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
 -   [flextable](https://ardata-fr.github.io/flextable-book/) for customised tables
 
-## References {#sec-references-reports -}
 
 
 

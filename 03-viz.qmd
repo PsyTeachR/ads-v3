@@ -27,6 +27,9 @@
 
 ## Set-up {#sec-setup-viz -}
 
+::: {.callout-tip}
+## Activity
+
 1. Open your `ADS-2026` project 
 1. Create a new quarto file called `03-dataviz.qmd`
 1. Update the YAML header 
@@ -52,11 +55,17 @@ library(patchwork) # for multi-part plots
 library(ggthemes)  # for plot themes
 ```
 
+:::
+
 If you get the message `Error in library(x) : there is no package called ‘x’`, please refer to @sec-install-package.
 
 We'd recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you'd like to ask the course team.
 
+::: {.callout-tip}
+## Activity
+
 Download the [ggplot2 cheat sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html).
+:::
 
 ## Variable types
 
@@ -141,7 +150,9 @@ lubridate::today()
 lubridate::now(tzone = "GMT")
 ```
 
-::: {.try}
+::: {.callout-tip}
+## Activity
+
 Coming back to the pets dataset, what type of variable is in each column? You can use the function `glimpse()` to show a list of the column names, their data types, and the first few values in each column - here is the output of running `glimpse()` on the pets dataset.
 
 ```{r}
@@ -244,12 +255,14 @@ ggplot(pip, aes(x = gini, y = welfare_mean)) +
 
 Let's build up the plot above, layer by layer. First we need to get the data. We'll learn how to load data from different sources in @sec-data, but this time we'll use the same method as we did in @sec-loading-online and load it from an online source. 
 
-::: {.try}
+::: {.callout-tip}
+## Activity
+
 Load the data by copying the following into a code block in your script, and running the code.
 
 ```{r}
 #| eval: false
-pip <- read_csv("https://psyteachr.github.io/ads-v3/data/pip_gini_welfare_2010.csv")
+pip <- read_csv("https://raw.githubusercontent.com/PsyTeachR/ads-v3/refs/heads/master/data/pip_gini_welfare_2010.csv")
 ```
 :::
 
@@ -271,21 +284,32 @@ The first thing you should do when you need to plot data is to get familiar with
 
 Unless you specify the column types, data importing functions will just guess the types and usually default to double for columns with numbers and character for columns with letters. 
 
-::: {.try}
-Use the function `spec()` to find out all of the column types and edit them if needed.
+::: {.callout-tip}
+## Activity
+
+1. Use the function `spec()` to find out all of the column types so we can determine if we need to edit them.
 
 ```{r}
 spec(pip)
 ```
 :::
 
-Let's set `region_name` and `region_code` as factors and set the order of the levels. By default, R will order the levels of a factor alphanumerically, however in many cases you will want or need to set your own order. For example, in this data, it might make sense to order the regions from least to most countries. You can do this with the `count()` function.
+Let's set `region_name` and `region_code` as factors and set the order of the levels. By default, R will order the levels of a factor alphanumerically, however in many cases you will want or need to set your own order. For example, in this data, it might make sense to order the regions from least to most countries. 
+
+::: {.callout-tip}
+## Activity
+
+1. To produce a table of counts for each country, use the `count()` function.
 
 ```{r}
-count(pip, region_name, region_code, sort = TRUE)
+regions <- count(pip, region_name, region_code, sort = TRUE)
 ```
 
-Assign this table to an object called `regions`, then make two new objects for the levels, which are the relevant column from this table, but in reverse order using `rev()`.
+:::
+
+We then need to make two new objects for the levels, which are the relevant column from this table, but in reverse order using `rev()`. The `object$variable` dollar sign notation here is quite common and comes from Base R, it means that you will perform the operation on a single column from the object. 
+
+In this case, you can read it as "take the column `region_name` from the object `regions`, reverse it,
 
 ```{r}
 #| code-summary: Run in the console
