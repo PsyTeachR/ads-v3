@@ -1,4 +1,4 @@
-# Advanced: Plots {#sec-more-plots}
+# Advanced: More Plots {#sec-more-plots}
 
 This appendix will introduce you to some more plot styles, like maps and word clouds, and things you can do with plots, such as add annotations.
 
