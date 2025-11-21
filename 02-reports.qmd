@@ -992,6 +992,8 @@ tibble::tribble(
 
 10. Once you're done, zip up your entire project folder and share it on Teams under the week 2 exercise post. Try downloading someone else's project and rendering their qmd file.
 
+:::
+
 
 ::: {.callout-important}
 Make sure any files you reference are inside your project folder, and **always** use `r glossary("relative path", "relative paths")` and not `r glossary("absolute path", "absolute paths")` when you refer to images or other files in your code. The use of absolute paths is a major source of irreproducibility in published code. The best way to double-check your code for reproducibility problems is to share your entire project directory with a friend and see if they can render your file.
