@@ -930,7 +930,7 @@ You can access a [working quarto file](demos/02-reports.qmd){download="02-report
 
 As you continue to work through the book you will learn how to wrangle and analyse your data and how to use quarto to present it. We'll slowly build on the available customisation options so over the course of next few weeks, you'll find your quarto reports start to look more polished and professional.
 
-## Advanced
+## Advanced {#sec-advanced-reports}
 
 If you would like to go beyond what we've covered in this chapter, we recommend the following Advanced appendices:
 
