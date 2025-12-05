@@ -1800,5 +1800,275 @@
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Summaries</span>"
     ]
+  },
+  {
+    "objectID": "05-joins.html",
+    "href": "05-joins.html",
+    "title": "5  Data Relations",
+    "section": "",
+    "text": "Intended Learning Outcomes",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#sec-ilo-joins",
+    "href": "05-joins.html#sec-ilo-joins",
+    "title": "5  Data Relations",
+    "section": "",
+    "text": "Be able to match related data across multiple tables\nBe able to combine data from multiple files",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#functions-joins",
+    "href": "05-joins.html#functions-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.1 Functions used",
+    "text": "5.1 Functions used\n\nbuilt-in (you can always use these without loading any packages)\n\nbase:: library(), dir.create(), list.files(), as.numeric(), as.factor(), as.character(), as.data.frame()\n\n\n\ntidyverse (you can use all these with library(tidyverse))\n\nreadr:: write_csv(), read_csv()\n\ndplyr:: left_join(), right_join(), inner_join(), full_join(), semi_join(), anti_join(), bind_rows(), bind_cols(), intersect(), union(), setdiff(), mutate()\n\ntibble:: tibble(), as_tibble()\n\npurrr:: map_df()\n\nstringr:: str_replace_all()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#sec-walkthrough-joins",
+    "href": "05-joins.html#sec-walkthrough-joins",
+    "title": "5  Data Relations",
+    "section": "Walkthrough video",
+    "text": "Walkthrough video\nThere is a walkthrough video of this chapter available via Echo360. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#sec-setup-joins",
+    "href": "05-joins.html#sec-setup-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.2 Set-up",
+    "text": "5.2 Set-up\nFirst, create a new project for the work we’ll do in this chapter named 07-relations. Second, open and save a new R Markdown document named relations.Rmd, delete the welcome text, and load the required packages for this chapter.\n\n\n```{r setup, include=FALSE}\nlibrary(tidyverse)     # includes readr & tibble\n\nWarning: package 'ggplot2' was built under R version 4.5.2\n\n```\n\n\nDownload the Data transformation cheatsheet.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#sec-joins-data",
+    "href": "05-joins.html#sec-joins-data",
+    "title": "5  Data Relations",
+    "section": "\n5.3 Loading data",
+    "text": "5.3 Loading data\nThe data you want to report on or visualise are often in more than one file (or more than one tab of an excel file or googlesheet). You might need to join up a table of customer information with a table of orders, or combine the monthly social media reports across several months.\nFor this demo, rather than loading in data, we’ll create two small data tables from scratch using the tibble() function.\ncustomers has id, city and postcode for five customers 1-5.\n\n\n1:5 will fill the variable id with all integers between 1 and 5.\n\ncity and code both use the c() function to enter multiple strings. Note that each entry is contained within its own quotation marks, apart from missing data, which is recorded as NA.\nWhen entering data like this, it’s important that the order of each variable matches up. So number 1 will correspond to “Port Ellen” and “PA42 7DU”.\n\n\ncustomers &lt;- tibble(\n  id = 1:5,\n  city = c(\"Port Ellen\", \"Dufftown\", NA, \"Aberlour\", \"Tobermory\"),\n  postcode = c(\"PA42 7DU\", \"AB55 4DH\", NA, \"AB38 7RY\", \"PA75 6NR\")\n)\n\n\nDemo customers table.\n\nid\ncity\npostcode\n\n\n\n1\nPort Ellen\nPA42 7DU\n\n\n2\nDufftown\nAB55 4DH\n\n\n3\nNA\nNA\n\n\n4\nAberlour\nAB38 7RY\n\n\n5\nTobermory\nPA75 6NR\n\n\n\norders has customer id and the number of items ordered. Some customers from the previous table have no orders, some have more than one order, and some are not in the customer table.\n\norders &lt;- tibble(\n  id = c(2, 3, 4, 4, 5, 5, 6, 6, 7),\n  items = c(10, 18, 21, 23, 9, 11, 11, 12, 3)\n)\n\n\nDemo orders table.\n\nid\nitems\n\n\n\n2\n10\n\n\n3\n18\n\n\n4\n21\n\n\n4\n23\n\n\n5\n9\n\n\n5\n11\n\n\n6\n11\n\n\n6\n12\n\n\n7\n3",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#mutating-joins",
+    "href": "05-joins.html#mutating-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.4 Mutating Joins",
+    "text": "5.4 Mutating Joins\nMutating joins act like the dplyr::mutate() function in that they add new columns to one table based on values in another table. (We’ll learn more about the mutate() function in Chapter 8).)\nAll the mutating joins have this basic syntax:\n****_join(x, y, by = NULL, suffix = c(\".x\", \".y\"))\n\n\nx = the first (left) table\n\ny = the second (right) table\n\nby = what columns to match on. If you leave this blank, it will match on all columns with the same names in the two tables.\n\nsuffix = if columns have the same name in the two tables, but you aren’t joining by them, they get a suffix to make them unambiguous. This defaults to “.x” and “.y”, but you can change it to something more meaningful.\n\n\n\n\n\n\n\nNote\n\n\n\nYou can leave out the by argument if you’re matching on all of the columns with the same name, but it’s good practice to always specify it so your code is robust to changes in the loaded data.\n\n\n\n5.4.1 left_join()\n\n\n\nA left_join keeps all the data from the first (left) table and adds anything that matches from the second (right) table. If the right table has more than one match for a row in the left table, there will be more than one row in the joined table (see ids 4 and 5).\n\nleft_data &lt;- left_join(customers, orders, by = \"id\")\nleft_data\n\n\n\n\nid\ncity\npostcode\nitems\n\n\n\n1\nPort Ellen\nPA42 7DU\nNA\n\n\n2\nDufftown\nAB55 4DH\n10\n\n\n3\nNA\nNA\n18\n\n\n4\nAberlour\nAB38 7RY\n21\n\n\n4\nAberlour\nAB38 7RY\n23\n\n\n5\nTobermory\nPA75 6NR\n9\n\n\n5\nTobermory\nPA75 6NR\n11\n\n\n\n\n\n\n\n\n\nThe order you specify the tables matters, in the below code we have reversed the order and so the result is all rows from the orders table joined to any matching rows from the customers table.\n\nleft2_data &lt;- left_join(orders, customers, by = \"id\")\nleft2_data\n\n\n\n\nid\nitems\ncity\npostcode\n\n\n\n2\n10\nDufftown\nAB55 4DH\n\n\n3\n18\nNA\nNA\n\n\n4\n21\nAberlour\nAB38 7RY\n\n\n4\n23\nAberlour\nAB38 7RY\n\n\n5\n9\nTobermory\nPA75 6NR\n\n\n5\n11\nTobermory\nPA75 6NR\n\n\n6\n11\nNA\nNA\n\n\n6\n12\nNA\nNA\n\n\n7\n3\nNA\nNA\n\n\n\n\n\n\n\n5.4.2 right_join()\n\n\n\nA right_join keeps all the data from the second (right) table and joins anything that matches from the first (left) table.\n\nright_data &lt;- right_join(customers, orders, by = \"id\")\nright_data\n\n\n\n\nid\ncity\npostcode\nitems\n\n\n\n2\nDufftown\nAB55 4DH\n10\n\n\n3\nNA\nNA\n18\n\n\n4\nAberlour\nAB38 7RY\n21\n\n\n4\nAberlour\nAB38 7RY\n23\n\n\n5\nTobermory\nPA75 6NR\n9\n\n\n5\nTobermory\nPA75 6NR\n11\n\n\n6\nNA\nNA\n11\n\n\n6\nNA\nNA\n12\n\n\n7\nNA\nNA\n3\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis table has the same information as left_join(orders, customers, by = \"id\"), but the columns are in a different order (left table, then right table).\n\n\n\n5.4.3 inner_join()\n\n\n\nAn inner_join returns all the rows that have a match in both tables. Changing the order of the tables will change the order of the columns, but not which rows are kept.\n\ninner_data &lt;- inner_join(customers, orders, by = \"id\")\ninner_data\n\n\n\n\nid\ncity\npostcode\nitems\n\n\n\n2\nDufftown\nAB55 4DH\n10\n\n\n3\nNA\nNA\n18\n\n\n4\nAberlour\nAB38 7RY\n21\n\n\n4\nAberlour\nAB38 7RY\n23\n\n\n5\nTobermory\nPA75 6NR\n9\n\n\n5\nTobermory\nPA75 6NR\n11\n\n\n\n\n\n\n\n5.4.4 full_join()\n\n\n\nA full_join lets you join up rows in two tables while keeping all of the information from both tables. If a row doesn’t have a match in the other table, the other table’s column values are set to NA.\n\nfull_data &lt;- full_join(customers, orders, by = \"id\")\nfull_data\n\n\n\n\nid\ncity\npostcode\nitems\n\n\n\n1\nPort Ellen\nPA42 7DU\nNA\n\n\n2\nDufftown\nAB55 4DH\n10\n\n\n3\nNA\nNA\n18\n\n\n4\nAberlour\nAB38 7RY\n21\n\n\n4\nAberlour\nAB38 7RY\n23\n\n\n5\nTobermory\nPA75 6NR\n9\n\n\n5\nTobermory\nPA75 6NR\n11\n\n\n6\nNA\nNA\n11\n\n\n6\nNA\nNA\n12\n\n\n7\nNA\nNA\n3",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#filtering-joins",
+    "href": "05-joins.html#filtering-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.5 Filtering Joins",
+    "text": "5.5 Filtering Joins\nFiltering joins act like the dplyr::filter() function in that they keep and remove rows from the data in one table based on the values in another table. The result of a filtering join will only contain rows from the left table and have the same number or fewer rows than the left table. We’ll learn more about the filter() function in Chapter 9.\n\n5.5.1 semi_join()\n\n\n\nA semi_join returns all rows from the left table where there are matching values in the right table, keeping just columns from the left table.\n\nsemi_data &lt;- semi_join(customers, orders, by = \"id\")\nsemi_data\n\n\n\n\nid\ncity\npostcode\n\n\n\n2\nDufftown\nAB55 4DH\n\n\n3\nNA\nNA\n\n\n4\nAberlour\nAB38 7RY\n\n\n5\nTobermory\nPA75 6NR\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nUnlike an inner join, a semi join will never duplicate the rows in the left table if there is more than one matching row in the right table.\n\n\n\n\n\nOrder matters in a semi join.\n\nsemi2_data &lt;- semi_join(orders, customers, by = \"id\")\nsemi2_data\n\n\n\n\nid\nitems\n\n\n\n2\n10\n\n\n3\n18\n\n\n4\n21\n\n\n4\n23\n\n\n5\n9\n\n\n5\n11\n\n\n\n\n\n\n\n5.5.2 anti_join()\n\n\n\nAn anti_join return all rows from the left table where there are not matching values in the right table, keeping just columns from the left table.\n\nanti_data &lt;- anti_join(customers, orders, by = \"id\")\nanti_data\n\n\n\n\nid\ncity\npostcode\n\n\n1\nPort Ellen\nPA42 7DU\n\n\n\n\n\n\n\n\nOrder matters in an anti join.\n\nanti2_data &lt;- anti_join(orders, customers, by = \"id\")\nanti2_data\n\n\n\n\nid\nitems\n\n\n\n6\n11\n\n\n6\n12\n\n\n7\n3",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#multiple-joins",
+    "href": "05-joins.html#multiple-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.6 Multiple joins",
+    "text": "5.6 Multiple joins\nThe ****_join() functions are all two-table verbs, that is, you can only join together two tables at a time. However, you may often need to join together multiple tables. To do so, you simply need to add on additional joins. You can do this by creating an intermediate object or more efficiently by using a pipe.\n\n# create a table of overall customer satisfaction scores\nsatisfaction &lt;- tibble(\n  id = 1:5,\n  satisfaction = c(4, 3, 2, 3, 1)\n)\n\n# perform the initial join\njoin_1 &lt;- left_join(customers, orders, by = \"id\")\n\n# perform the second join on the new object\njoin_2 &lt;- left_join(join_1, satisfaction, \n                    by = \"id\")\n\n\n# more efficient method using the pipe\npipe_join &lt;- customers %&gt;%\n  left_join(orders, by = \"id\") %&gt;%\n  left_join(satisfaction, by = \"id\")\n\n\n\n\n\n\n\nWarning\n\n\n\nAt every stage of any analysis you should check your output to ensure that what you created is what you intended to create, but this is particularly true of joins. You should be familiar enough with your data through routine checks using functions like glimpse(), str(), and summary() to have a rough idea of what the join should result in. At the very least, you should know whether the joined object should result in more or fewer variables and observations.\nIf you have a multi-line join like in the above piped example, build up the code and check the output at each stage.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#binding-joins",
+    "href": "05-joins.html#binding-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.7 Binding Joins",
+    "text": "5.7 Binding Joins\nBinding joins bind one table to another by adding their rows or columns together.\n\n5.7.1 bind_rows()\nYou can combine the rows of two tables with bind_rows.\nHere we’ll add customer data for customers 6-9 and bind that to the original customer table.\n\nnew_customers &lt;- tibble(\n  id = 6:9,\n  city = c(\"Falkirk\", \"Ardbeg\", \"Doogal\", \"Kirkwall\"),\n  postcode = c(\"FK1 4RS\", \"PA42 7EA\", \"G81 4SJ\", \"KW15 1SE\")\n)\n\nbindr_data &lt;- bind_rows(customers, new_customers)\nbindr_data\n\n\n\n\nid\ncity\npostcode\n\n\n\n1\nPort Ellen\nPA42 7DU\n\n\n2\nDufftown\nAB55 4DH\n\n\n3\nNA\nNA\n\n\n4\nAberlour\nAB38 7RY\n\n\n5\nTobermory\nPA75 6NR\n\n\n6\nFalkirk\nFK1 4RS\n\n\n7\nArdbeg\nPA42 7EA\n\n\n8\nDoogal\nG81 4SJ\n\n\n9\nKirkwall\nKW15 1SE\n\n\n\n\n\n\nThe columns just have to have the same names, they don’t have to be in the same order. Any columns that differ between the two tables will just have NA values for entries from the other table.\nIf a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table. If your tables have the exact same columns, you can use union() (see Section 5.8.2) to avoid duplicates.\n\nnew_customers &lt;- tibble(\n  id = 5:9,\n  postcode = c(\"PA75 6NR\", \"FK1 4RS\", \"PA42 7EA\", \"G81 4SJ\", \"KW15 1SE\"),\n  city = c(\"Tobermory\", \"Falkirk\", \"Ardbeg\", \"Doogal\", \"Kirkwall\"),\n  new = c(1,2,3,4,5)\n)\n\nbindr2_data &lt;- bind_rows(customers, new_customers)\nbindr2_data\n\n\n\n\nid\ncity\npostcode\nnew\n\n\n\n1\nPort Ellen\nPA42 7DU\nNA\n\n\n2\nDufftown\nAB55 4DH\nNA\n\n\n3\nNA\nNA\nNA\n\n\n4\nAberlour\nAB38 7RY\nNA\n\n\n5\nTobermory\nPA75 6NR\nNA\n\n\n5\nTobermory\nPA75 6NR\n1\n\n\n6\nFalkirk\nFK1 4RS\n2\n\n\n7\nArdbeg\nPA42 7EA\n3\n\n\n8\nDoogal\nG81 4SJ\n4\n\n\n9\nKirkwall\nKW15 1SE\n5\n\n\n\n\n\n\n\n5.7.2 bind_cols()\nYou can merge two tables with the same number of rows using bind_cols. This is only useful if the two tables have the same number of rows in the exact same order.\n\nnew_info &lt;- tibble(\n  colour = c(\"red\", \"orange\", \"yellow\", \"green\", \"blue\")\n)\n\nbindc_data &lt;- bind_cols(customers, new_info)\nbindc_data \n\n\n\n\nid\ncity\npostcode\ncolour\n\n\n\n1\nPort Ellen\nPA42 7DU\nred\n\n\n2\nDufftown\nAB55 4DH\norange\n\n\n3\nNA\nNA\nyellow\n\n\n4\nAberlour\nAB38 7RY\ngreen\n\n\n5\nTobermory\nPA75 6NR\nblue\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe only advantage of bind_cols() over a mutating join is when the tables don’t have any IDs to join by and you have to rely solely on their order. Otherwise, you should use a mutating join (all four mutating joins result in the same output when all rows in each table have exactly one match in the other table).\n\n\n\n5.7.3 Importing multiple files\nIf you need to import and bind a whole folder full of files that have the same structure, get a list of all the files you want to combine. It’s easiest if they’re all in the same directory, although you can use a pattern to select the files you want if they have a systematic naming structure.\nFirst, save the two customer tables to CSV files. The dir.create() function makes a folder called “data”. The showWarnings = FALSE argument means that you won’t get a warning if the folder already exists, it just won’t do anything.\n\n# write our data to a new folder for the demo\ndir.create(\"data\", showWarnings = FALSE)\nwrite_csv(x = customers, file = \"data/customers1.csv\")\nwrite_csv(x = new_customers, file = \"data/customers2.csv\")\n\nNext, retrieve a list of all file names in the data folder that contain the string “customers”\n\nfiles &lt;- list.files(\n  path = \"data\", \n  pattern = \"customers\", \n  full.names = TRUE\n)\n\nfiles\n\n[1] \"data/customers1.csv\" \"data/customers2.csv\"\n\n\nNext, we’ll iterate over this list to read in the data from each file. Whilst this won’t be something we cover in detail in the core resources of this course, iteration is an important concept to know about. Iteration is where you perform the same task on multiple different inputs. As a general rule of thumb, if you find yourself copying and pasting the same thing more than twice, there’s a more efficient and less error-prone way to do it, although these functions do typically require a stronger grasp of programming.\nThe purrr package contains functions to help with iteration. purrr::map_df() maps a function to a list and returns a data frame (table) of the results.\n\n\n.x is the list of file paths\n\n.f specifies the function to map to each of those file paths.\nThe resulting object all_files will be a data frame that combines all the files together, similar to if you had imported them separately and then used bind_rows().\n\n\nall_files &lt;- purrr::map_df(.x = files, .f = read_csv)\n\n\n\n\n\n\n\nNote\n\n\n\nIf all of your data files have the exact same structure (i.e., the same number of columns with the same names), you can just use read_csv() and set the file argument to a vector of the file names. However, the pattern above is safer if you might have a file with an extra or missing column.\n\nfiles &lt;- c(\"data/customers1.csv\", \"data/customers1.csv\")\nall_files &lt;- read_csv(files)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#set-operations",
+    "href": "05-joins.html#set-operations",
+    "title": "5  Data Relations",
+    "section": "\n5.8 Set Operations",
+    "text": "5.8 Set Operations\nSet operations compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff).\n\n5.8.1 intersect()\ndplyr::intersect() returns all rows in two tables that match exactly. The columns don’t have to be in the same order, but they have to have the same names.\n\nnew_customers &lt;- tibble(\n  id = 5:9,\n  postcode = c(\"PA75 6NR\", \"FK1 4RS\", \"PA42 7EA\", \"G81 4SJ\", \"KW15 1SE\"),\n  city = c(\"Tobermory\", \"Falkirk\", \"Ardbeg\", \"Doogal\", \"Kirkwall\")\n)\n\nintersect_data &lt;- intersect(customers, new_customers)\nintersect_data\n\n\n\n\nid\ncity\npostcode\n\n\n5\nTobermory\nPA75 6NR\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you’ve forgotten to load dplyr or the tidyverse, base R also has a base::intersect() function that doesn’t work like dplyr::intersect(). The error message can be confusing and looks something like this:\n\nbase::intersect(customers, new_customers)\n\nlist()\n\n\n\n\n\n5.8.2 union()\ndplyr::union() returns all the rows from both tables, removing duplicate rows, unlike bind_rows().\n\nunion_data &lt;- union(customers, new_customers)\nunion_data\n\n\n\n\nid\ncity\npostcode\n\n\n\n1\nPort Ellen\nPA42 7DU\n\n\n2\nDufftown\nAB55 4DH\n\n\n3\nNA\nNA\n\n\n4\nAberlour\nAB38 7RY\n\n\n5\nTobermory\nPA75 6NR\n\n\n6\nFalkirk\nFK1 4RS\n\n\n7\nArdbeg\nPA42 7EA\n\n\n8\nDoogal\nG81 4SJ\n\n\n9\nKirkwall\nKW15 1SE\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you’ve forgotten to load dplyr or the tidyverse, base R also has a base::union() function. You usually won’t get an error message, but the output won’t be what you expect.\n\nbase::union(customers, new_customers)\n\n[[1]]\n[1] 1 2 3 4 5\n\n[[2]]\n[1] \"Port Ellen\" \"Dufftown\"   NA           \"Aberlour\"   \"Tobermory\" \n\n[[3]]\n[1] \"PA42 7DU\" \"AB55 4DH\" NA         \"AB38 7RY\" \"PA75 6NR\"\n\n[[4]]\n[1] 5 6 7 8 9\n\n[[5]]\n[1] \"PA75 6NR\" \"FK1 4RS\"  \"PA42 7EA\" \"G81 4SJ\"  \"KW15 1SE\"\n\n[[6]]\n[1] \"Tobermory\" \"Falkirk\"   \"Ardbeg\"    \"Doogal\"    \"Kirkwall\" \n\n\n\n\n\n5.8.3 setdiff()\ndplyr::setdiff returns rows that are in the first table, but not in the second table.\n\nsetdiff_data &lt;- setdiff(customers, new_customers)\nsetdiff_data\n\n\n\n\nid\ncity\npostcode\n\n\n\n1\nPort Ellen\nPA42 7DU\n\n\n2\nDufftown\nAB55 4DH\n\n\n3\nNA\nNA\n\n\n4\nAberlour\nAB38 7RY\n\n\n\n\n\n\nOrder matters for setdiff.\n\nsetdiff2_data &lt;- setdiff(new_customers, customers)\nsetdiff2_data\n\n\n\n\nid\npostcode\ncity\n\n\n\n6\nFK1 4RS\nFalkirk\n\n\n7\nPA42 7EA\nArdbeg\n\n\n8\nG81 4SJ\nDoogal\n\n\n9\nKW15 1SE\nKirkwall\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you’ve forgotten to load dplyr or the tidyverse, base R also has a base::setdiff() function. You usually won’t get an error message, but the output might not be what you expect because base::setdiff() expects columns to be in the same order, so id 5 here registers as different between the two tables.\n\nbase::setdiff(customers, new_customers)\n\n[[1]]\n[1] 1 2 3 4 5\n\n[[2]]\n[1] \"Port Ellen\" \"Dufftown\"   NA           \"Aberlour\"   \"Tobermory\" \n\n[[3]]\n[1] \"PA42 7DU\" \"AB55 4DH\" NA         \"AB38 7RY\" \"PA75 6NR\"",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#conflicting-variable-types",
+    "href": "05-joins.html#conflicting-variable-types",
+    "title": "5  Data Relations",
+    "section": "\n5.9 Conflicting variable types",
+    "text": "5.9 Conflicting variable types\nAs we covered in ?sec-data, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there’s something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it’s important that not only are the variable names identical, but the data type of those variables is identical.\nLet’s recreate our new_customers dataset but this time, we’ll specify that id is a character variable.\n\nnew_customers2 &lt;- tibble(\n  id = as.character(5:9),\n  postcode = c(\"PA75 6NR\", \"FK1 4RS\", \"PA42 7EA\", \"G81 4SJ\", \"KW15 1SE\"),\n  city = c(\"Tobermory\", \"Falkirk\", \"Ardbeg\", \"Doogal\", \"Kirkwall\")\n)\nstr(new_customers2)\n\ntibble [5 × 3] (S3: tbl_df/tbl/data.frame)\n $ id      : chr [1:5] \"5\" \"6\" \"7\" \"8\" ...\n $ postcode: chr [1:5] \"PA75 6NR\" \"FK1 4RS\" \"PA42 7EA\" \"G81 4SJ\" ...\n $ city    : chr [1:5] \"Tobermory\" \"Falkirk\" \"Ardbeg\" \"Doogal\" ...\n\n\nIf you try to join this dataset to any of the other datasets where id is stored as a numeric variable, it will produce an error.\n\ninner_join(customers, new_customers2)\n\nJoining with `by = join_by(id, city, postcode)`\n\n\nError in `inner_join()`:\n! Can't join `x$id` with `y$id` due to incompatible types.\nℹ `x$id` is a &lt;integer&gt;.\nℹ `y$id` is a &lt;character&gt;.\n\n\nThe same goes for bind_rows():\n\nbind_rows(customers, new_customers2)\n\nError in `bind_rows()`:\n! Can't combine `..1$id` &lt;integer&gt; and `..2$id` &lt;character&gt;.\n\n\nAs alternative method to change variable types from what we showed you in ?sec-data is to use the as.*** functions. If you type as. into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:\n\n\nas.numeric() - convert a variable to numeric. Useful for when you have a variable of real numbers that have been encoded as character. Any values that can’t be turned into numbers (e.g., if you have the word “missing” in cells that you have no data for), will be returned as NA.\n\nas.factor() - convert a variable to a factor. You can set the factor levels and labels manually, or use the default order (alphabetical).\n\nas.character() - convert a variable to character data.\n\nas_tibble() and as.data.frame() - convert a list object (not a variable) to a tibble or a data frame (two different table formats). This isn’t actually relevant to what we’re discussing here, but it’s a useful one to be aware of because sometimes you’ll run into issues where you get an error that specifically requests your data is a tibble or data frame type and you can use this function to overwrite your object.\n\nTo use these functions on a variable we can use mutate() to overwrite the variable with that variable as the new data type:\n\nnew_customers2 &lt;- new_customers2 %&gt;%\n  mutate(id = as.numeric(id))\n\nOnce you’ve done this, the joins will now work:\n\ninner_join(orders, new_customers2)\n\nJoining with `by = join_by(id)`\n\n\n\n\n\nid\nitems\npostcode\ncity\n\n\n\n5\n9\nPA75 6NR\nTobermory\n\n\n5\n11\nPA75 6NR\nTobermory\n\n\n6\n11\nFK1 4RS\nFalkirk\n\n\n6\n12\nFK1 4RS\nFalkirk\n\n\n7\n3\nPA42 7EA\nArdbeg",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#exercises",
+    "href": "05-joins.html#exercises",
+    "title": "5  Data Relations",
+    "section": "\n5.10 Exercises",
+    "text": "5.10 Exercises\nThere’s lots of different use cases for the ****_join() functions. These exercises will allow you to practice different joins. If you have any examples of where joins might be helpful in your own work, please post them on Teams in the week 6 channel, as having many concrete examples can help distinguish between the different joins.\n\n5.10.1 Grade data\nThe University of Glasgow’s Schedule A grading scheme uses a 22-point alphanumeric scale (there’s more information in your summative report assessment information sheet). Each alphanumeric grade (e.g., B2) has an underlying numeric Grade Point (e.g., 16).\nOften when we’re working with student grades they are provided to us in only one of these forms, but we need to be able to go between the two. For example, we need the numeric form in order to be able to calculate descriptive statistics about the mean grade, but we need the alphanumeric form to release to student records.\n\nDownload grade_data.csv, grade_data2.csv and scheduleA.csv into your data folder.\nRead in scheduleA.csv and save it to an object named schedule.\nRead in grade_data1.csv and save it to an object named grades1.\nRead in grade_data2.csv and save it to an object named grades2.\n\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nschedule &lt;- read_csv(\"data/scheduleA.csv\")\ngrades1 &lt;- read_csv(\"data/grade_data1.csv\") \ngrades2 &lt;- read_csv(\"data/grade_data2.csv\")\n\n\n\n\n\n5.10.2 Matching the variable types\nAt UofG, all students are given a GUID, a numeric ID number. However, that ID number is also then combined with the first letter from your surname to create your username that is used with your email address. For example, if your ID is 1234567 and your surname is Nordmann, your username would be 1234567n. From a data wrangling perspective this is very annoying because the numeric ID will be stored as numeric data, but the username will be stored as character because of the letter at the end. grades1 has a numeric id whilst grades2 has the additional letter. In order to join these datasets, we need to standardise the variables.\nFirst, remove the letter character from id using the function stringr::str_replace_all(), which replaces text that matches a pattern. Here, we’re using the pattern \"[a-z]\", which matches all lowercase letters a through z, and replacing them with \"\". See the help for ?about_search_regex for more info about how to set patterns (these can get really complex).\n\ngrades1 &lt;- grades1 %&gt;%\n  mutate(id = str_replace_all(\n    id, # the variable you want to search\n    pattern = \"[a-z]\", # find all letters a-z\n    replacement = \"\" # replace with nothing\n  ))  \n\nNow, transform the data type of id so that it matches the data type in grades2.\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\n# check variable types\nglimpse(grades1)\nglimpse(grades2) \n\ngrades1 &lt;- grades1 %&gt;%\n  mutate(id = as.numeric(id))\n\n\n\n\n\n5.10.3 Complete records\nIn this example, we want to join the grade data to schedule A so that each student with a grade has both the grade and the grade point. But we also want a complete record of all students on the course, so students with missing grades should still be included in the data.\n\nJoin grades1 and scheduleA and store this table in an object named exam_all.\nDo the same for grades2 and save it in essay_all.\nBoth exam_all and essay_all should have 100 observations of 4 variables.\n\n\n\nHint\n\nYou want to keep all of the data from grade_data1 and grade_data2, but you only want the alphanumeric grades from schedule for the Grade Point values that exist in grades. E.g., if no-one was awarded an F1, your final dataset shouldn’t have that in it.\n\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nexam_all &lt;- left_join(grades1, schedule, by = \"Points\")\nessay_all &lt;- left_join(grades2, schedule, by = \"Points\")\n\n\n\n\n\n5.10.4 Missing data\nAlternatively, you may wish to have a dataset that only contains data for students who submitted each assessment and have a grade. First, run summary() on both exam_all and essay_all.\n\nHow many exam grades are missing? \n\nHow many essay grades are missing? \n\n\nNow, create an object exam_grades that joins together grades1 and schedule, but this time the resulting object should only contain data from students who have a grade. Do the same but for grades2 and store it in essay_grades.\nBefore you do this, given what you know about how many data points are missing in each data set:\n\nHow many observations should exam_grades have? \n\nHow many observations should essay_grades have? \n\n\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nexam_grades &lt;- inner_join(grades1, schedule, by = \"Points\")\nessay_grades &lt;- inner_join(grades2, schedule, by = \"Points\")\n\n\n\n\n\n\nAlternative solution\n\nIt’s worth noting that in reality you wouldn’t actually go back to the raw data and do another join to get this dataset, you could just remove all the missing response by adding %&gt;% drop_na() to exam_all and essay_all. However, for the purposes of teaching joins, we’ll do it this slightly artificial way.\n\nNow, create a dataset completes that joins the grades for students who have a grade for both the essay and the exam.\n\nBecause both exam_grades and essay_grades have the variables Assessment, Points and Grades that are named the same, but have different data, you should amend the suffix so that the resulting variables are named Points_exam and Points_essay etc. You may need to consult the help documentation to see an example to figure this out.\nClean up the file with select() and only keep the variables id, Grade_exam, and Grade_essay\n\n\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\ncompletes &lt;- inner_join(exam_grades, essay_grades, \n                        by = \"id\", \n                        suffix = c(\"_exam\", \"_essay\")) %&gt;%\n  select(id, Grade_exam, Grade_essay)\n\n\n\n\n\nHow many students have a grade for both the exam and the essay? \n\n\nNow create a dataset no_essay that contains students that have a grade for the exam, but not the essay.\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nno_essay &lt;- anti_join(exam_grades, essay_grades, by = \"id\")\n\n\n\n\n\nHow many students have a grade for the exam but not the essay? \n\n\nFinally, now make a dataset no_exam that contains students have have a grade for the essay but not the exam\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nno_exam &lt;- anti_join(essay_grades, exam_grades, by = \"id\")\n\n\n\n\n\nHow many students have a grade for the exam but not the essay? \n\n\n5.10.5 Share on Teams\nOnce you’re done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 07 channel.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#sec-glossary-joins",
+    "href": "05-joins.html#sec-glossary-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.11 Glossary",
+    "text": "5.11 Glossary\n\n\n\nterm\ndefinition\n\n\n\nbase-r\nThe set of R functions that come with a basic installation of R, before you add external packages.\n\n\nbinding-joins\nJoins that bind one table to another by adding their rows or columns together.\n\n\ncharacter\nA data type representing strings of text.\n\n\nfactor\nA data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter\n\n\nfiltering-joins\nJoins that act like the dplyr::filter() function in that they remove rows from the data in one table based on the values in another table.\n\n\niteration\nRepeating a process or function\n\n\nmutating-joins\nJoins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table.\n\n\nnumeric\nA data type representing a real decimal number or integer.\n\n\nset-operations\nFunctions that compare two tables and return rows that match (intersect), are in either table (union), or are in one table but not the other (setdiff).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "05-joins.html#sec-resources-joins",
+    "href": "05-joins.html#sec-resources-joins",
+    "title": "5  Data Relations",
+    "section": "\n5.12 Further resources",
+    "text": "5.12 Further resources\n\nData transformation cheatsheet\n\nChapter 19: Joins in R for Data Science\n\n\nChapter 26: Iteration in R for Data Science.\npurrr cheatsheet",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Relations</span>"
+    ]
+  },
+  {
+    "objectID": "06-backwards.html",
+    "href": "06-backwards.html",
+    "title": "\n6  Backwards Engineering Report\n",
+    "section": "",
+    "text": "6.1 Details and files\nThis chapter gives an overview the first assessment, the backwards engineering report along with the files you will need and some helpful hints. If you are enrolled on Applied Data Skills, please ensure you have read the Assessment Information Sheet in full before proceeding further.\nMost of what you need to do generate this report will have been covered at least once in the workbook, but you should also expect to need to Google some things. Being able to search for alternative solutions is such a key skill for programming and it will also increase your self-efficacy and sense of autonomy to be able to apply your skills to a novel task.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Backwards Engineering Report</span>"
+    ]
+  },
+  {
+    "objectID": "06-backwards.html#details-and-files",
+    "href": "06-backwards.html#details-and-files",
+    "title": "\n6  Backwards Engineering Report\n",
+    "section": "",
+    "text": "To get started, download this zip file which contains the data files and the finished html report that you need to backwards engineer from the data.\nThere are multiple ways to achieve the same outcome when coding. You do not have to use the same solutions that we did; what matters is that the output is the same and that it is reproducible.\nAll plots and tables in the report should be fully reproducible, in addition, all numbers and text that are bold and underlined should also be reproducible, i.e., you should use inline coding rather than just writing out the numbers in the text.\nFor any visuals, you should get as close to the example report as possible, for example, use of headings, theme, table of contents, although we recognise that it may be difficult to know the exact theme or colours used without seeing the code. Close enough will do.\nFor the “Analysis and interpretation” section, the important thing here isn’t necessarily that you can reproduce this - it’s just text so it’s fairly simple. The important thing is that you see that what is written here isn’t explicitly contained in the data, this is our interpretation - we’ve added meaning to it. You can reproduce this text or you can change it if you have a different interpretation or if you think there is anything else that the data shows that is important to highlight.\n\nIn order to replicate the report you will need the following skills:\n\nQuarto text formatting (e.g., bold, italics, headings)\nAdding images from online sources\nJoining datasets together\nFiltering and selecting data\nData visualisation\nSummarising data in tables\nInline coding",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Backwards Engineering Report</span>"
+    ]
+  },
+  {
+    "objectID": "06-backwards.html#support",
+    "href": "06-backwards.html#support",
+    "title": "\n6  Backwards Engineering Report\n",
+    "section": "\n6.2 Support",
+    "text": "6.2 Support\nThis assessment will require you to use the skills you have learned from Chapter 1 (Intro to R and R Studio) up to and including Chapter 5 (Data Relations) of the Applied Data Skills workbook. You can also ask for help on Teams, although because this is a summative activity, the help we give will be constrained.\nGoogle and Stack Overflow will help you a lot. Remember to include the names of packages and functions to help ensure the results are closer to what you’re trying to do.\nDo not use AI for this task. We’re going to use AI to write the code again in Week 7 in the lab so if you use AI for your first attempt, the lab will be pointless and you will learn nothing. Trust us. We’re not anti-AI, we’re just pro-learning.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Backwards Engineering Report</span>"
+    ]
+  },
+  {
+    "objectID": "06-backwards.html#helpful-hints",
+    "href": "06-backwards.html#helpful-hints",
+    "title": "\n6  Backwards Engineering Report\n",
+    "section": "\n6.3 Helpful hints",
+    "text": "6.3 Helpful hints\nA few hints to help you on your way: - You have no other work to do this week for ADS - this replaces the workshops, reading, quizzes, and AITutoR so expect to spend quite a few hours on the report. It won’t be something you’re likely to do in one sitting. - Your first step should be to open the data files and figure out what each variable is and whether there are any common variables across the datasets, you may need to rename some of them. - For one of the datasets, we’re going to give you a few lines of code to load in the data as it needs a little bit of wrangling we haven’t yet taught you.\n\nuv202 &lt;- read_csv(\"UV202 - National Identity.csv\", skip = 4) |&gt;\n  mutate(across(2:10, .fns = as.numeric)) |&gt;\n  pivot_longer(2:10, names_to = \"identity\", values_to = \"count\") \n\n\nThe Output Area is formatted as a “block quote”.\nGetting the percentages grouped by the right thing will do your head in. You will need to become familiar and comfortable with group_by() and ungroup(). Good luck.\nFor Table 2 and 3, we haven’t taught you how to do this the “proper” way yet, which is to use a function named pivot_wider(). You can look up this function or you could filter the data to create two separate Tables for each identity and then join them together, which we have taught you.\nFigure 3 requires you to do the same wrangling and summarisation as Table 2, just by constituency not region.\nHint: theme_economist()\n\nHint: scale_fill_brewer(palette = \"Blues\")\n\nHint: scales::label_wrap()\n\nHint: annotate()",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Backwards Engineering Report</span>"
+    ]
+  },
+  {
+    "objectID": "06-backwards.html#why-am-i-being-assessed-like-this",
+    "href": "06-backwards.html#why-am-i-being-assessed-like-this",
+    "title": "\n6  Backwards Engineering Report\n",
+    "section": "\n6.4 Why am I being assessed like this?",
+    "text": "6.4 Why am I being assessed like this?\nThis report serves as a practice for the full report, which will be due at the end of the semester. The backwards engineering report gives you the intended output so that you can focus on your coding skills, rather than deciding how to summarise and present the data. You will need to make these decisions yourself for the full report.\nThe peer review exercise will support you to evaluate code. It will provide a useful demonstration of how there are always mulitple approaches to the same problem and reading other people’s code will reinforce why reproducibility and clear comments are useful.\nThe mark for participation and attendance component rewards consisrent engagement with the course. Programming is not a skill that can\nWhilst most of the skills required for this report have been explicitly taught, there are minor bits of the coding that will require you to look up solutions independently. This will be good practice for the final report and for applying your coding skills to your own work.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Backwards Engineering Report</span>"
+    ]
+  },
+  {
+    "objectID": "07-ai.html",
+    "href": "07-ai.html",
+    "title": "7  Coding with AI",
+    "section": "",
+    "text": "Intended Learning Outcomes",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding with AI</span>"
+    ]
+  },
+  {
+    "objectID": "07-ai.html#sec-ilo-ai",
+    "href": "07-ai.html#sec-ilo-ai",
+    "title": "7  Coding with AI",
+    "section": "",
+    "text": "Use AI to write code\nCritically evaluate the output of AI",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding with AI</span>"
+    ]
+  },
+  {
+    "objectID": "07-ai.html#sec-walkthrough-ai",
+    "href": "07-ai.html#sec-walkthrough-ai",
+    "title": "7  Coding with AI",
+    "section": "Walkthrough video",
+    "text": "Walkthrough video\nThere is no walkthrough video for this chapter.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding with AI</span>"
+    ]
+  },
+  {
+    "objectID": "07-ai.html#sec-intro-ai",
+    "href": "07-ai.html#sec-intro-ai",
+    "title": "7  Coding with AI",
+    "section": "7.1 Here we go again",
+    "text": "7.1 Here we go again\nSo far we’ve been slowly building up your use of AI but we’ve very consciously stayed away from allowing or encouraging you to use AI to write your code. But it’s now time, so for this chapter, we’re going to do something a bit different.\nRather than giving you new exercises or content, your task is seemingly very simple: redo the practice report from Chapter 5, but this time, AI must write all of the code. You can use any AI platform you’d like.\nThe rationale behind this is that having worked through the report yourself, you will be intimately familiar with the dataset and the requirements of the assignment. This means that your ability to critically evaluate and check its output will be stronger than with a new dataset. This should (in theory) allow you to:\n\nCheck whether it’s actually done it right\nUnderstand how to engineer your prompts to get it closer to the solution if it’s struggling\nEvaluate the suitability of alternative approaches to your original solution.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding with AI</span>"
+    ]
+  },
+  {
+    "objectID": "07-ai.html#sec-setup-ai",
+    "href": "07-ai.html#sec-setup-ai",
+    "title": "7  Coding with AI",
+    "section": "7.2 Set-up",
+    "text": "7.2 Set-up\nCreate a separate project from your original practice report project to avoid any confusion.\nThe two files you need to download are the dataset: review_data.csv. and the finished report that you need to backwards engineer from the data: formative_report_output.html.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding with AI</span>"
+    ]
+  },
+  {
+    "objectID": "07-ai.html#starting-advice",
+    "href": "07-ai.html#starting-advice",
+    "title": "7  Coding with AI",
+    "section": "7.3 Starting advice",
+    "text": "7.3 Starting advice\nA few hints, tip, and rules to get you on your way:\n\nAlthough the dataset for the practice report isn’t sensitive data (and indeed was publicly available), treat it as if it were. Even if the AI has the capability, don’t upload the dataset. Instead run str() and summary() and describe the dataset to the AI so it knows the variables and the types of data.\nYou can upload the finished report if you want although describing each bit manually might be more educational in the long-run (and more likely to generalise to when you don’t have anything to backwards engineer from).\nCheck everything it produces. Just because it doesn’t throw an error, doesn’t mean it’s right.\nThink about the specificity of your prompts. If you want it to produce solutions closer to our solution, tell it to use the tidyverse. If you’d like to see what other approaches it might take, don’t give it a steer on packages (be mindful you might need to install some new packages).",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding with AI</span>"
+    ]
+  },
+  {
+    "objectID": "07-ai.html#keep-a-log",
+    "href": "07-ai.html#keep-a-log",
+    "title": "7  Coding with AI",
+    "section": "7.4 Keep a log",
+    "text": "7.4 Keep a log\nAs you’re progressing, makes notes on the following:\n\nWhat does it get right with ease?\nWhat does it get right with a bit of back-and-forth?\nWhat errors does it make? If you didn’t know the dataset and hadn’t worked through the report yourself, is there anything you think you may have missed that the AI got wrong?\nHow does the code compare to your original solution?? Is there anything you think it did better? Is there anything you think you did better?\nDid you learn any new functions or approaches?\n\nOnce you’re done, post your notes on Teams so we can compare how different AIs performed. If you use ChatGPT or Gemini, you can also post a link to your chat so other learners can see the full process.\n\n\n\n\n\n\nWarning\n\n\n\nTeaching with and about AI is a brave new world. We think that this exercise will be extremely useful for a number of reasons but we’d really appreciate any feedback on whether that’s the case!",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Coding with AI</span>"
+    ]
   }
 ]

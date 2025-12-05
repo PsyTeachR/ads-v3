@@ -48,9 +48,9 @@ book:
   - 02-reports.qmd
   - 03-viz.qmd
   - 04-summary.qmd
-  - 05-formative.qmd
-  - 06-ai.qmd
-  - 07-joins.qmd
+  - 05-joins.qmd
+  - 06-backwards.qmd
+  - 07-ai.qmd
   - 08-tidy.qmd
   - 09-wrangle.qmd
   - 10-custom.qmd
