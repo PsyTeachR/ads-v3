@@ -378,20 +378,20 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-formative.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Practice Report</span></span></a>
+  <a href="./05-joins.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Relations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-ai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Coding with AI</span></span></a>
+  <a href="./06-backwards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Backwards Engineering Report</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-joins.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Relations</span></span></a>
+  <a href="./07-ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Coding with AI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -632,7 +632,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p><a href="#fig-layers" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> displays the evolution of a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a <code>geom</code>) that is desired for these variables is specified (layer 3) - in this case <code>geom_point()</code> is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-layers" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A grid of 6 layers buidling up a plot. 1: A blank plot. 2: Adds the x-axis `gini` with ticks 0.3 to 0.6 and the y-axis `welfare_mean` with ticks form 0 to 80. 3: Adds blue scatterplot points. 4: Adds a linear trendline with error shading. 5: Changes the x-axis label to `Gini Index` and the y-axis label to `Mean Welfare (log10)` and the y-axis to a log10 scale with ticks at 3, 10, 30 and 100. 6: Changes the y-axis ticks to 1, 2, 5, 10, 20, 50, and 100." data-fig-align="center">
+<div id="fig-layers" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A grid of 6 layers buidling up a plot. 1: A blank plot. 2: Adds the x-axis `gini` with ticks 0.3 to 0.6 and the y-axis `welfare_mean` with ticks form 0 to 80. 3: Adds blue scatterplot points. 4: Adds a linear trendline with error shading. 5: Changes the x-axis label to `Gini Index` and the y-axis label to `Mean Welfare (log10)` and the y-axis to a log10 scale with ticks at 3, 10, 30 and 100. 6: Changes the y-axis ticks to 1, 2, 5, 10, 20, 50, and 100.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-layers-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A grid of 6 layers buidling up a plot. 1: A blank plot. 2: Adds the x-axis `gini` with ticks 0.3 to 0.6 and the y-axis `welfare_mean` with ticks form 0 to 80. 3: Adds blue scatterplot points. 4: Adds a linear trendline with error shading. 5: Changes the x-axis label to `Gini Index` and the y-axis label to `Mean Welfare (log10)` and the y-axis to a log10 scale with ticks at 3, 10, 30 and 100. 6: Changes the y-axis ticks to 1, 2, 5, 10, 20, 50, and 100.">
 </div>
@@ -645,7 +645,7 @@ Figure&nbsp;3.1: Evolution of a layered plot
 <p>Importantly, each layer is independent and independently customisable. For example, the size, colour and position of each component can be adjusted, or one could, for example, remove the first geom (the data points) to only visualise the line of best fit, simply by removing the layer that draws the data points (<a href="#fig-remove-layer" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>). The use of layers makes it easy to build up complex plots step-by-step, and to adapt or extend plots from existing code.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-remove-layer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A regression line with Gini Index on the x-axis and Mean Welfare (log10) on the y-axis, showing a negative relationship from 2.5 gini/30 welfare to 6.5 gini/5 welfare." data-fig-align="center">
+<div id="fig-remove-layer" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A regression line with Gini Index on the x-axis and Mean Welfare (log10) on the y-axis, showing a negative relationship from 2.5 gini/30 welfare to 6.5 gini/5 welfare.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-remove-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-remove-layer-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A regression line with Gini Index on the x-axis and Mean Welfare (log10) on the y-axis, showing a negative relationship from 2.5 gini/30 welfare to 6.5 gini/5 welfare.">
 </div>
@@ -657,7 +657,7 @@ Figure&nbsp;3.2: Final plot with scatterplot layer removed.
 </div>
 <section id="sec-plots-loading-data" class="level3" data-number="3.1.1"><h3 data-number="3.1.1" class="anchored" data-anchor-id="sec-plots-loading-data">
 <span class="header-section-number">3.1.1</span> Loading data</h3>
-<p>Let’s build up the plot above, layer by layer. First we need to get the data. We’ll learn how to load data from different sources in <a href="app-import.html" class="quarto-xref"><span>Appendix C</span></a>, but this time we’ll use the same method as we did in <a href="02-reports.html#sec-loading-online" class="quarto-xref"><span>Section 2.3.3</span></a> and load it from an online source.</p>
+<p>Let’s build up the plot above, layer by layer. First we need to get the data. We’ll learn how to load data from different sources in <span class="quarto-unresolved-ref">?sec-data</span>, but this time we’ll use the same method as we did in <a href="02-reports.html#sec-loading-online" class="quarto-xref"><span>Section 2.3.3</span></a> and load it from an online source.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -887,7 +887,7 @@ Caution
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-build-plot-geom2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two nearly identical plots with boxplots plus raw data points. In the left plot, the points are underneath the boxplot, and in the right plot they are on top." data-fig-align="center">
+<div id="fig-build-plot-geom2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Two nearly identical plots with boxplots plus raw data points. In the left plot, the points are underneath the boxplot, and in the right plot they are on top.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-geom2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-geom2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Two nearly identical plots with boxplots plus raw data points. In the left plot, the points are underneath the boxplot, and in the right plot they are on top.">
 </div>
@@ -938,7 +938,7 @@ Figure&nbsp;3.3: Points on top vs points underneath
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># add plots together in 1 row</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>points_top <span class="sc">+</span> points_bottom <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-geom2b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The points_top and points_bottom plots displayed in one image side-by-side." data-fig-align="center">
+<div id="fig-build-plot-geom2b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The points_top and points_bottom plots displayed in one image side-by-side.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-geom2b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-geom2b-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The points_top and points_bottom plots displayed in one image side-by-side.">
 </div>
@@ -984,7 +984,7 @@ Figure&nbsp;3.4: Combining plots with patchwork.
 <span id="cb16-9"><a href="#cb16-9"></a>              <span class="at">colour =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, .<span class="dv">5</span>, .<span class="dv">8</span>),</span>
 <span id="cb16-10"><a href="#cb16-10"></a>              <span class="at">linetype =</span> <span class="dv">3</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-style" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same scatter-line plot as above, but the points are transparent blue diamonds instead of solid black circles, and the regression line is dotted and blue instead of solid and blue." data-fig-align="center">
+<div id="fig-build-plot-style" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same scatter-line plot as above, but the points are transparent blue diamonds instead of solid black circles, and the regression line is dotted and blue instead of solid and blue.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-style-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-style-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same scatter-line plot as above, but the points are transparent blue diamonds instead of solid black circles, and the regression line is dotted and blue instead of solid and blue.">
 </div>
@@ -1033,7 +1033,7 @@ Figure&nbsp;3.5: Changing geom styles.
 <span id="cb17-7"><a href="#cb17-7"></a>  <span class="co"># customise axis labels and breaks</span></span>
 <span id="cb17-8"><a href="#cb17-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-axes" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same scatter-line plot as above, but the points are transparent blue circles, and the regression line is a solid blue." data-fig-align="center">
+<div id="fig-build-plot-axes" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same scatter-line plot as above, but the points are transparent blue circles, and the regression line is a solid blue.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-axes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-axes-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same scatter-line plot as above, but the points are transparent blue circles, and the regression line is a solid blue.">
 </div>
@@ -1112,7 +1112,7 @@ Figure&nbsp;3.6: Formatting plot axes with scale_ functions.
 <span id="cb21-10"><a href="#cb21-10"></a>  <span class="co"># set axis limits</span></span>
 <span id="cb21-11"><a href="#cb21-11"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-limits" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with the x-axis from 0 to 100." data-fig-align="center">
+<div id="fig-build-plot-limits" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with the x-axis from 0 to 100.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-limits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-limits-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with the x-axis from 0 to 100.">
 </div>
@@ -1169,7 +1169,7 @@ Figure&nbsp;3.7: Changing the axis limits.
 <span id="cb22-11"><a href="#cb22-11"></a>  <span class="co"># change the theme</span></span>
 <span id="cb22-12"><a href="#cb22-12"></a>  <span class="fu">theme_light</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-theme" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with a style that makes the border around the plot lighter" data-fig-align="center">
+<div id="fig-build-plot-theme" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with a style that makes the border around the plot lighter">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-theme-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with a style that makes the border around the plot lighter">
 </div>
@@ -1197,7 +1197,7 @@ Figure&nbsp;3.8: Changing the theme to another style.
 <span id="cb23-12"><a href="#cb23-12"></a>  <span class="co"># customise theme elements</span></span>
 <span id="cb23-13"><a href="#cb23-13"></a>  <span class="fu">theme</span>(<span class="at">plot.background =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-custom-theme" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with no plot border" data-fig-align="center">
+<div id="fig-build-plot-custom-theme" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with no plot border">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-custom-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-custom-theme-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with no plot border">
 </div>
@@ -1228,7 +1228,7 @@ Figure&nbsp;3.9: Customising the theme to remove the x-axis line and background 
 <span id="cb24-15"><a href="#cb24-15"></a>       <span class="at">subtitle =</span> <span class="st">"Data from 2010"</span>,</span>
 <span id="cb24-16"><a href="#cb24-16"></a>       <span class="at">caption =</span> <span class="st">"Figure 1. Inequality and welfare have a negative relationship."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-caption" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with the title and subtitle written above the plot: 'The relationship between Gini index and mean welfare per captita' and 'Data from 2010', and the caption written below: 'Figure 1. Inequality and welfare have a negative relationship.'" data-fig-align="center">
+<div id="fig-caption" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with the title and subtitle written above the plot: 'The relationship between Gini index and mean welfare per captita' and 'Data from 2010', and the caption written below: 'Figure 1. Inequality and welfare have a negative relationship.'">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-caption-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-caption-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with the title and subtitle written above the plot: 'The relationship between Gini index and mean welfare per captita' and 'Data from 2010', and the caption written below: 'Figure 1. Inequality and welfare have a negative relationship.'">
 </div>
@@ -1319,7 +1319,7 @@ Note
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code)) <span class="sc">+</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-bar" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A bar plot with region_code on the x-axis with 7 categories and count on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27." data-fig-align="center">
+<div id="fig-bar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A bar plot with region_code on the x-axis with 7 categories and count on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-bar-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A bar plot with region_code on the x-axis with 7 categories and count on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
 </div>
@@ -1464,7 +1464,7 @@ Figure&nbsp;3.11: A basic bar plot.
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">ggplot</span>(count_data, <span class="fu">aes</span>(<span class="at">x =</span> region_code, <span class="at">y =</span> n)) <span class="sc">+</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-col" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A column plot identical to the bar plot above, except the y-axis label is n and not count. It has Region on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27." data-fig-align="center">
+<div id="fig-col" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A column plot identical to the bar plot above, except the y-axis label is n and not count. It has Region on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-col-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-col-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A column plot identical to the bar plot above, except the y-axis label is n and not count. It has Region on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
 </div>
@@ -1579,7 +1579,7 @@ Figure&nbsp;3.12: A basic column plot.
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="fig-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot with Mean Welfare per Capita on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90." data-fig-align="center">
+<div id="fig-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A plot with Mean Welfare per Capita on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot with Mean Welfare per Capita on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90.">
 </div>
@@ -1604,7 +1604,7 @@ Figure&nbsp;3.13: Histogram of mean welfare per capita.
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">boundary =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-histogram-boundary0" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, but the first bar spans 0-5 instead of 2.5 to 7.5." data-fig-align="center">
+<div id="fig-histogram-boundary0" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same plot as above, but the first bar spans 0-5 instead of 2.5 to 7.5.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-boundary0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-boundary0-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same plot as above, but the first bar spans 0-5 instead of 2.5 to 7.5.">
 </div>
@@ -1624,7 +1624,7 @@ Figure&nbsp;3.14: A histogram with the boundary set to 0.
 <span id="cb36-6"><a href="#cb36-6"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Mean Welfare per Capita"</span>,</span>
 <span id="cb36-7"><a href="#cb36-7"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-histogram-custom" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, but the bars are white with black borders, instead of grey with grey borders." data-fig-align="center">
+<div id="fig-histogram-custom" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same plot as above, but the bars are white with black borders, instead of grey with grey borders.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-custom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-custom-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same plot as above, but the bars are white with black borders, instead of grey with grey borders.">
 </div>
@@ -1706,7 +1706,7 @@ Figure&nbsp;3.15: Histogram with custom styles.
 <span id="cb38-3"><a href="#cb38-3"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>,</span>
 <span id="cb38-4"><a href="#cb38-4"></a>                 <span class="at">color =</span> <span class="st">"black"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-hist-fill" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A stacked histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-15. Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30." data-fig-align="center">
+<div id="fig-hist-fill" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A stacked histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-15. Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-hist-fill-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-hist-fill-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A stacked histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-15. Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
 </div>
@@ -1760,7 +1760,7 @@ Figure&nbsp;3.16: Histogram with categories represented by fill.
 <span id="cb41-5"><a href="#cb41-5"></a>            <span class="at">binwidth =</span> <span class="dv">5</span>, </span>
 <span id="cb41-6"><a href="#cb41-6"></a>            <span class="at">color =</span> <span class="st">"black"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-stacked-area" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A stacked area plot like the previous stacked histogram, but the value for each bin is connected by lines and the area underneath coloured in." data-fig-align="center">
+<div id="fig-stacked-area" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A stacked area plot like the previous stacked histogram, but the value for each bin is connected by lines and the area underneath coloured in.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-stacked-area-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-stacked-area-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A stacked area plot like the previous stacked histogram, but the value for each bin is connected by lines and the area underneath coloured in.">
 </div>
@@ -1787,7 +1787,7 @@ Figure&nbsp;3.17: Stacked area plot.
 <span id="cb42-8"><a href="#cb42-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Mean Welfare per Capita"</span>,</span>
 <span id="cb42-9"><a href="#cb42-9"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-histogram-dodge" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-7. Instead of stacking bars, each bar is very thin and placed next to the others (it is hard to read). Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30." data-fig-align="center">
+<div id="fig-histogram-dodge" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-7. Instead of stacking bars, each bar is very thin and placed next to the others (it is hard to read). Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-dodge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-dodge-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-7. Instead of stacking bars, each bar is very thin and placed next to the others (it is hard to read). Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
 </div>
@@ -1820,7 +1820,7 @@ Figure&nbsp;3.18: A histogram with multiple groups.
 <span id="cb43-7"><a href="#cb43-7"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Mean Welfare per Capita"</span>,</span>
 <span id="cb43-8"><a href="#cb43-8"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-groups-freqpoly" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot like above, but showing lines connecting the levels instead of bars." data-fig-align="center">
+<div id="fig-groups-freqpoly" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A plot like above, but showing lines connecting the levels instead of bars.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-groups-freqpoly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-groups-freqpoly-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot like above, but showing lines connecting the levels instead of bars.">
 </div>
@@ -1855,7 +1855,7 @@ Figure&nbsp;3.19: A frequency plot with multiple groups.
 <span id="cb44-15"><a href="#cb44-15"></a></span>
 <span id="cb44-16"><a href="#cb44-16"></a>violin_area <span class="sc">/</span> violin_count <span class="sc">/</span> violin_width</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-violin-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three versions of violin plots. The top panel shows scale = 'area' (default). The middle panel shows scale = 'count'. The bottom panel shows scale = 'width'." data-fig-align="center">
+<div id="fig-violin-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Three versions of violin plots. The top panel shows scale = 'area' (default). The middle panel shows scale = 'count'. The bottom panel shows scale = 'width'.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-violin-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-violin-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Three versions of violin plots. The top panel shows scale = 'area' (default). The middle panel shows scale = 'count'. The bottom panel shows scale = 'width'.">
 </div>
@@ -1885,7 +1885,7 @@ Figure&nbsp;3.20: The default violin plot gives each shape the same area. Set sc
 <span id="cb45-13"><a href="#cb45-13"></a></span>
 <span id="cb45-14"><a href="#cb45-14"></a>boxplot <span class="sc">+</span> custom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-box-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two boxplots. The left plot is labelled 'Default vertical boxpplot' and shows the 7 region_codes along the x-axis and melfare_mean (0-90) on the y-axis. Boxplots are white with black outlines and show the median, whiskers, and outlier points. The right plot is labelled `Customised horizontal boxplot and has grey fill in the boxes, capped whiskers, and red asterisks for outliers." data-fig-align="center">
+<div id="fig-box-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Two boxplots. The left plot is labelled 'Default vertical boxpplot' and shows the 7 region_codes along the x-axis and melfare_mean (0-90) on the y-axis. Boxplots are white with black outlines and show the median, whiskers, and outlier points. The right plot is labelled `Customised horizontal boxplot and has grey fill in the boxes, capped whiskers, and red asterisks for outliers.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-box-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-box-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Two boxplots. The left plot is labelled 'Default vertical boxpplot' and shows the 7 region_codes along the x-axis and melfare_mean (0-90) on the y-axis. Boxplots are white with black outlines and show the median, whiskers, and outlier points. The right plot is labelled `Customised horizontal boxplot and has grey fill in the boxes, capped whiskers, and red asterisks for outliers.">
 </div>
@@ -1926,7 +1926,7 @@ Figure&nbsp;3.21: Boxplots.
 <span id="cb46-25"><a href="#cb46-25"></a>               <span class="at">shape =</span> <span class="dv">18</span>) <span class="sc">+</span> </span>
 <span id="cb46-26"><a href="#cb46-26"></a>  <span class="fu">ggtitle</span>(<span class="st">"ViolinBox"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-violin-combos" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot labelled 'ViolinBox' with 'Mean welfare per Capita' on the y-axis (0-90) and 'Region' (7 categories) on the x-axis. Each region is represented by a rainbow coloured violin with a boxplot inside it." data-fig-align="center">
+<div id="fig-violin-combos" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A plot labelled 'ViolinBox' with 'Mean welfare per Capita' on the y-axis (0-90) and 'Region' (7 categories) on the x-axis. Each region is represented by a rainbow coloured violin with a boxplot inside it.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-violin-combos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-violin-combos-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot labelled 'ViolinBox' with 'Mean welfare per Capita' on the y-axis (0-90) and 'Region' (7 categories) on the x-axis. Each region is represented by a rainbow coloured violin with a boxplot inside it.">
 </div>
@@ -1986,7 +1986,7 @@ Figure&nbsp;3.22: Violin plots combined with different methods to represent mean
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-demo-point" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are solid black." data-fig-align="center">
+<div id="fig-demo-point" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A scatterplot with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are solid black.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-demo-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-demo-point-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A scatterplot with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are solid black.">
 </div>
@@ -2022,7 +2022,7 @@ Figure&nbsp;3.23: Scatterplot with geom_point().”
 <span id="cb48-18"><a href="#cb48-18"></a></span>
 <span id="cb48-19"><a href="#cb48-19"></a>loess_plot <span class="sc">/</span> lm_plot <span class="sc">/</span> lm2_plot </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-2-continuous" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Thre versions of a trend line trhough the scatterplot above with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are transparent black. The top plot 'Default: method = loess, formula = y~x' shows a wavy line through the points. The middle plot 'Linear: method = lm, formula = y~x' shows a straight line. The bottom plot 'Quadratic: method = lm, formula = y~x + I(x^2)' shows a smoothly curved line." data-fig-align="center">
+<div id="fig-2-continuous" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Thre versions of a trend line trhough the scatterplot above with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are transparent black. The top plot 'Default: method = loess, formula = y~x' shows a wavy line through the points. The middle plot 'Linear: method = lm, formula = y~x' shows a straight line. The bottom plot 'Quadratic: method = lm, formula = y~x + I(x^2)' shows a smoothly curved line.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-2-continuous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-2-continuous-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Thre versions of a trend line trhough the scatterplot above with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are transparent black. The top plot 'Default: method = loess, formula = y~x' shows a wavy line through the points. The middle plot 'Linear: method = lm, formula = y~x' shows a straight line. The bottom plot 'Quadratic: method = lm, formula = y~x + I(x^2)' shows a smoothly curved line.">
 </div>
@@ -2139,7 +2139,7 @@ Figure&nbsp;3.24: Different ways to show the relationship between two continuous
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
 <span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-over-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read." data-fig-align="center">
+<div id="fig-over-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-over-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-over-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read.">
 </div>
@@ -2184,7 +2184,7 @@ Figure&nbsp;3.25: Overlapping data makes plots hard to understand.
 <span id="cb56-9"><a href="#cb56-9"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>,</span>
 <span id="cb56-10"><a href="#cb56-10"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fig-facet-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5." data-fig-align="center">
+<div id="fig-facet-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-facet-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-facet-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5.">
 </div>
