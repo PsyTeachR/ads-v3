@@ -10,6 +10,8 @@ This chapter gives an overview the first assessment, the backwards engineering r
 
 -   There are multiple ways to achieve the same outcome when coding. You do not have to use the same solutions that we did; what matters is that the output is the same and that it is reproducible.
 
+- Your code should contain comments so that it is clear what you have done and why.
+
 -   All plots and tables in the report should be fully reproducible, in addition, all numbers and text that are bold and underlined should also be reproducible, i.e., you should use inline coding rather than just writing out the numbers in the text.
 
 -   For any visuals, you should get as close to the example report as possible, for example, use of headings, theme, table of contents, although we recognise that it may be difficult to know the exact theme or colours used without seeing the code. Close enough will do.
