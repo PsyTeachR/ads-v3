@@ -42,7 +42,7 @@ Google and Stack Overflow will help you a lot. Remember to include the names of 
 ## Helpful hints
 
 A few hints to help you on your way:
-- You have no other work to do this week for ADS - this replaces the workshops, reading, quizzes, and AITutoR so expect to spend quite a few hours on the report. It won't be something you're likely to do in one sitting. 
+- You have no other work to do this week for ADS aside from AITutoR - this replaces the workshops, reading, AND quizzes so expect to spend quite a few hours on the report. It won't be something you're likely to do in one sitting. 
 -   Your first step should be to open the data files and figure out what each variable is and whether there are any common variables across the datasets, you may need to rename some of them.
 - For one of the datasets, we're going to give you a few lines of code to load in the data as it needs a little bit of wrangling we haven't yet taught you.
 
