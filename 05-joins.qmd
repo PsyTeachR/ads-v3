@@ -26,53 +26,66 @@ library(stringr)
     * stringr:: `str_replace_all()`
 
 
-
-## Walkthrough video {#sec-walkthrough-joins .unnumbered}
-
-There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/519bb538-58b3-4710-85df-d71c56001a5d/public) Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
-
 ## Set-up {#sec-setup-joins}
 
-First, create a new project for the work we'll do in this chapter named `r path("07-relations")`. Second, open and save a new R Markdown document named `relations.Rmd`, delete the welcome text, and load the required packages for this chapter.
+::: {.callout-tip}
+## Activity
+
+1. Open your `ADS-2026` project 
+1. Create a new quarto file called `05-relations.qmd`
+1. Update the YAML header 
+1. Replace the setup chunk with the one below: 
 
 ```{r setup-joins, message=FALSE, verbatim="r setup, include=FALSE"}
+#| eval: false
+#| 
 library(tidyverse)     # includes readr & tibble
 ```
 
-Download the [Data transformation cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf).
+* Download the [Data transformation cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf).
+
+:::
 
 ## Loading data {#sec-joins-data}
 
-The data you want to report on or visualise are often in more than one file (or more than one tab of an excel file or googlesheet). You might need to join up a table of customer information with a table of orders, or combine the monthly social media reports across several months.
+The data you want to report on or visualise are often in more than one file (or more than one tab of an excel file or googlesheet). You might need to join up a table of patient information with a table of visits, or combine the monthly social media reports across several months.
 
 For this demo, rather than loading in data, we'll create two small data tables from scratch using the `tibble()` function.
 
-`customers` has id, city and postcode for five customers 1-5.
+`patients` has id, city and postcode for five patients 1-5.
 
 -   `1:5` will fill the variable `id` with all integers between 1 and 5.
 -   `city` and `code` both use the `c()` function to enter multiple strings. Note that each entry is contained within its own quotation marks, apart from missing data, which is recorded as `NA`.
 -   When entering data like this, it's important that the order of each variable matches up. So number 1 will correspond to "Port Ellen" and "PA42 7DU".
 
+
 ```{r subject}
-customers <- tibble(
+patients <- tibble(
   id = 1:5,
   city = c("Port Ellen", "Dufftown", NA, "Aberlour", "Tobermory"),
   postcode = c("PA42 7DU", "AB55 4DH", NA, "AB38 7RY", "PA75 6NR")
 )
 ```
 
-`r kable(customers, caption="Demo customers table.")`
+`r kable(patients, caption="Demo patients table.")`
 
-`orders` has customer id and the number of items ordered. Some customers from the previous table have no orders, some have more than one order, and some are not in the customer table.
+`visits` has patient id and the number of visits to the GP in the last year. Some patients from the previous table have no visits, some have more than one visit, and some are not in the patients table.
 
-```{r orders}
-orders <- tibble(
+```{r visits}
+visits <- tibble(
   id = c(2, 3, 4, 4, 5, 5, 6, 6, 7),
-  items = c(10, 18, 21, 23, 9, 11, 11, 12, 3)
+  visits = c(2, 1, 4, 0, 9, 11, 5, 0, 3)
 )
 ```
 
-`r kable(orders, caption="Demo orders table.")`
+`r kable(visits, caption="Demo visits table.")`
+
+::: {.callout-tip}
+## Activity
+
+Insert a new code chunk and create the objects `patients` and `visits`.
+
+:::
 
 ## Mutating Joins
 
@@ -91,6 +104,17 @@ All the mutating joins have this basic syntax:
 You can leave out the `by` argument if you're matching on all of the columns with the same name, but it's good practice to always specify it so your code is robust to changes in the loaded data.
 :::
 
+::: {.callout-tip}
+## Activity
+
+For each of the joins below, run the code and inspect the object it creates and make a note of three things in your Quarto document alongside each bit of code:
+
+1. Does the resulting object have more or less observations than the original tables?
+1. Does the resulting object have more or less variables than the original tables?
+1. Does the resulting object have any NAs?
+
+:::
+
 ### left_join() {#sec-left_join}
 
 ::: join
@@ -100,7 +124,7 @@ You can leave out the `by` argument if you're matching on all of the columns wit
 A `left_join` keeps all the data from the first (left) table and adds anything that matches from the second (right) table. If the right table has more than one match for a row in the left table, there will be more than one row in the joined table (see ids 4 and 5).
 
 ```{r left_join}
-left_data <- left_join(customers, orders, by = "id")
+left_data <- left_join(patients, visits, by = "id")
 left_data
 ```
 
@@ -108,10 +132,10 @@ left_data
 <img src="images/joins/left_join_rev.png"/>
 :::
 
-The order you specify the tables matters, in the below code we have reversed the order and so the result is all rows from the `orders` table joined to any matching rows from the `customers` table.
+The order you specify the tables matters, in the below code we have reversed the order and so the result is all rows from the `visits` table joined to any matching rows from the `patients` table.
 
 ```{r left_join-2}
-left2_data <- left_join(orders, customers, by = "id")
+left2_data <- left_join(visits, patients, by = "id")
 left2_data
 ```
 
@@ -124,12 +148,12 @@ left2_data
 A `right_join` keeps all the data from the second (right) table and joins anything that matches from the first (left) table.
 
 ```{r right_join}
-right_data <- right_join(customers, orders, by = "id")
+right_data <- right_join(patients, visits, by = "id")
 right_data
 ```
 
 ::: {.callout-note}
-This table has the same information as `left_join(orders, customers, by = "id")`, but the columns are in a different order (left table, then right table).
+This table has the same information as `left_join(visits, patients, by = "id")`, but the columns are in a different order (left table, then right table).
 :::
 
 ### inner_join() {#sec-inner_join}
@@ -141,7 +165,7 @@ This table has the same information as `left_join(orders, customers, by = "id")`
 An `inner_join` returns all the rows that have a match in both tables. Changing the order of the tables will change the order of the columns, but not which rows are kept.
 
 ```{r inner_join}
-inner_data <- inner_join(customers, orders, by = "id")
+inner_data <- inner_join(patients, visits, by = "id")
 inner_data
 ```
 
@@ -154,9 +178,49 @@ inner_data
 A `full_join` lets you join up rows in two tables while keeping all of the information from both tables. If a row doesn't have a match in the other table, the other table's column values are set to `NA`.
 
 ```{r full_join}
-full_data <- full_join(customers, orders, by = "id")
+full_data <- full_join(patients, visits, by = "id")
 full_data
 ```
+
+
+::: {.callout-tip}
+## Activity
+
+1. You have two datasets: people registered with a GP practice (registrations) and people who received a flu jab (jabs). You only want people who appear in both datasets, because you are analysing outcomes for those registered and vaccinated. Which should you use?
+
+`r mcq(c(answer = "inner_join", "left_join", "right_join", "full_join"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+inner_join(registrations, jabs, by = "nhs_number") returns only the people whose NHS number appears in both datasets. This is appropriate when you want to analyse the subset who are both registered and vaccinated, excluding anyone who is only in one list.
+
+:::
+
+1. A local authority has two separate lists of households receiving support: one for fuel poverty payments (fuel_support) and one for disability-related housing adaptations (adaptations). You want a combined dataset that includes everyone in either list, keeping both sets of variables and using NA where a household is only in one list. Which should you use?
+
+`r mcq(c("inner_join", "left_join", "right_join", answer = "full_join"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+full_join(fuel_support, adaptations, by = "household_id") keeps all households from both lists and combines the variables, filling unmatched values with NA. This is the correct choice when you want a complete picture of anyone receiving either type of support, not just the overlap.
+
+:::
+
+3. You have a table of all NHS boards with their deprivation quintile and population (boards), and a second table with the number of people who attended a new vaccination clinic (attendances). You want a dataset that keeps every NHS board, and adds the attendance numbers where available, showing NA for boards with no recorded attendances. Which should you use?
+
+`r mcq(c("inner_join", answer = "left_join", "right_join", "full_join"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+left_join(boards, attendances, by = "board_id") keeps all rows from boards and adds attendance information where a match exists. NHS boards with no recorded attendances remain in the dataset with NA in the attendance columns, which is what you need for comparing service uptake across all boards.
+
+:::
+
+:::
+
 
 ## Filtering Joins
 
@@ -171,7 +235,7 @@ full_data
 A `semi_join` returns all rows from the left table where there are matching values in the right table, keeping just columns from the left table.
 
 ```{r semi_join}
-semi_data <- semi_join(customers, orders, by = "id")
+semi_data <- semi_join(patients, visits, by = "id")
 semi_data
 ```
 
@@ -186,7 +250,7 @@ Unlike an inner join, a semi join will never duplicate the rows in the left tabl
 Order matters in a semi join.
 
 ```{r semi_join-2}
-semi2_data <- semi_join(orders, customers, by = "id")
+semi2_data <- semi_join(visits, patients, by = "id")
 semi2_data
 ```
 
@@ -199,7 +263,7 @@ semi2_data
 An `anti_join` return all rows from the left table where there are *not* matching values in the right table, keeping just columns from the left table.
 
 ```{r anti_join}
-anti_data <- anti_join(customers, orders, by = "id")
+anti_data <- anti_join(patients, visits, by = "id")
 anti_data
 ```
 
@@ -210,23 +274,51 @@ anti_data
 Order matters in an anti join.
 
 ```{r anti_join-2}
-anti2_data <- anti_join(orders, customers, by = "id")
+anti2_data <- anti_join(visits, patients, by = "id")
 anti2_data
 ```
+
+
+::: {.callout-tip}
+## Activity
+
+1. You have a dataset of people discharged from hospital (discharges) and a dataset of people who received a follow up call within 72 hours (followups). You want a list of people who were discharged but did not receive the follow up call. Which should you use?
+
+`r mcq(c(answer = "anti_join", "semi_join"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+anti_join(discharges, followups, by = "patient_id") keeps the rows in discharges that do not have a matching patient_id in followups. This directly returns the list of discharged patients who did not receive a follow up call within the specified window.
+
+:::
+
+2. You have a dataset of all patients referred to a specialist service (referrals) and a dataset containing those who meet an eligibility criterion after triage (eligible). You want to keep only the referrals that are eligible, but you do not need any additional columns from eligible. Which should you use?
+
+`r mcq(c("anti_join", answer = "semi_join"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+semi_join(referrals, eligible, by = "referral_id") filters referrals to only those rows with a matching referral_id in eligible, but it does not bring in any columns from eligible. This is appropriate when you want an eligibility filter rather than a merged dataset.
+
+:::
+
+:::
 
 ## Multiple joins
 
 The `****_join()` functions are all **two-table verbs**, that is, you can only join together two tables at a time. However, you may often need to join together multiple tables. To do so, you simply need to add on additional joins. You can do this by creating an intermediate object or more efficiently by using a pipe.
 
 ```{r}
-# create a table of overall customer satisfaction scores
+# create a table of overall patient satisfaction scores
 satisfaction <- tibble(
   id = 1:5,
   satisfaction = c(4, 3, 2, 3, 1)
 )
 
 # perform the initial join
-join_1 <- left_join(customers, orders, by = "id")
+join_1 <- left_join(patients, visits, by = "id")
 
 # perform the second join on the new object
 join_2 <- left_join(join_1, satisfaction, 
@@ -236,14 +328,14 @@ join_2 <- left_join(join_1, satisfaction,
 
 ```{r}
 # more efficient method using the pipe
-pipe_join <- customers %>%
-  left_join(orders, by = "id") %>%
+pipe_join <- patients %>%
+  left_join(visits, by = "id") %>%
   left_join(satisfaction, by = "id")
 
 ```
 
 ::: {.callout-warning}
-At every stage of any analysis you should **check your output** to ensure that what you created is what you intended to create, but this is particularly true of joins. You should be familiar enough with your data through routine checks using functions like `glimpse()`, `str()`, and `summary()` to have a rough idea of what the join should result in. At the very least, you should know whether the joined object should result in more or fewer variables and observations.
+At every stage of any analysis you should **check your output** to ensure that what you created is what you intended to create, but this is particularly true of joins. You should be familiar enough with your data through routine checks using functions like `glimpse()`, `str()`, and `summary()` to have a rough idea of what the join should result in. At the very least, you should know whether the joined object should result in more or fewer variables and observations and whether there should be any NAs.
 
 If you have a multi-line join like in the above piped example, build up the code and check the output at each stage.
 :::
@@ -257,16 +349,16 @@ If you have a multi-line join like in the above piped example, build up the code
 
 You can combine the rows of two tables with `bind_rows`.
 
-Here we'll add customer data for customers 6-9 and bind that to the original customer table.
+Here we'll add patient data for patients 6-9 and bind that to the original patient table.
 
 ```{r bind_rows}
-new_customers <- tibble(
+new_patients <- tibble(
   id = 6:9,
   city = c("Falkirk", "Ardbeg", "Doogal", "Kirkwall"),
   postcode = c("FK1 4RS", "PA42 7EA", "G81 4SJ", "KW15 1SE")
 )
 
-bindr_data <- bind_rows(customers, new_customers)
+bindr_data <- bind_rows(patients, new_patients)
 bindr_data
 ```
 
@@ -275,27 +367,27 @@ The columns just have to have the same names, they don't have to be in the same 
 If a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table. If your tables have the exact same columns, you can use `union()` (see @sec-union) to avoid duplicates.
 
 ```{r bind-rows-union}
-new_customers <- tibble(
+new_patients <- tibble(
   id = 5:9,
   postcode = c("PA75 6NR", "FK1 4RS", "PA42 7EA", "G81 4SJ", "KW15 1SE"),
   city = c("Tobermory", "Falkirk", "Ardbeg", "Doogal", "Kirkwall"),
   new = c(1,2,3,4,5)
 )
 
-bindr2_data <- bind_rows(customers, new_customers)
+bindr2_data <- bind_rows(patients, new_patients)
 bindr2_data
 ```
 
 ### bind_cols() {#sec-bind_cols}
 
-You can merge two tables with the same number of rows using `bind_cols`. This is only useful if the two tables have the same number of rows in the exact same order.
+You can merge two tables with the same number of rows using `bind_cols`. This is only useful if the two tables have the same number of rows *in the exact same order*.
 
 ```{r bind_cols}
 new_info <- tibble(
-  colour = c("red", "orange", "yellow", "green", "blue")
+  smoker = c("no", "no", "yes", "yes", "yes")
 )
 
-bindc_data <- bind_cols(customers, new_info)
+bindc_data <- bind_cols(patients, new_info)
 bindc_data 
 ```
 
@@ -307,21 +399,21 @@ The only advantage of `bind_cols()` over a mutating join is when the tables don'
 
 If you need to import and bind a whole folder full of files that have the same structure, get a list of all the files you want to combine. It's easiest if they're all in the same directory, although you can use a pattern to select the files you want if they have a systematic naming structure.
 
-First, save the two customer tables to CSV files. The `dir.create()` function makes a folder called "data". The `showWarnings = FALSE` argument means that you won't get a warning if the folder already exists, it just won't do anything.
+First, save the two patient tables to CSV files. The `dir.create()` function makes a folder called "data". The `showWarnings = FALSE` argument means that you won't get a warning if the folder already exists, it just won't do anything.
 
 ```{r}
 # write our data to a new folder for the demo
 dir.create("data", showWarnings = FALSE)
-write_csv(x = customers, file = "data/customers1.csv")
-write_csv(x = new_customers, file = "data/customers2.csv")
+write_csv(x = patients, file = "data/patients1.csv")
+write_csv(x = new_patients, file = "data/patients2.csv")
 ```
 
-Next, retrieve a list of all file names in the data folder that contain the string "customers"
+Next, retrieve a list of all file names in the data folder that contain the string "patients"
 
 ```{r}
 files <- list.files(
   path = "data", 
-  pattern = "customers", 
+  pattern = "patients", 
   full.names = TRUE
 )
 
@@ -344,7 +436,7 @@ all_files <- purrr::map_df(.x = files, .f = read_csv)
 If all of your data files have the _exact_ same structure (i.e., the same number of columns with the same names), you can just use `read_csv()` and set the `file` argument to a vector of the file names. However, the pattern above is safer if you might have a file with an extra or missing column.
 
 ```{r, eval=FALSE}
-files <- c("data/customers1.csv", "data/customers1.csv")
+files <- c("data/patients1.csv", "data/patients1.csv")
 all_files <- read_csv(files)
 ```
 :::
@@ -352,8 +444,8 @@ all_files <- read_csv(files)
 
 ```{r, echo=FALSE, results='hide'}
 # clean up temporary files
-file.remove("data/customers1.csv")
-file.remove("data/customers2.csv")
+file.remove("data/patients1.csv")
+file.remove("data/patients2.csv")
 ```
 
 
@@ -366,13 +458,13 @@ file.remove("data/customers2.csv")
 `dplyr::intersect()` returns all rows in two tables that match exactly. The columns don't have to be in the same order, but they have to have the same names.
 
 ```{r intersect}
-new_customers <- tibble(
+new_patients <- tibble(
   id = 5:9,
   postcode = c("PA75 6NR", "FK1 4RS", "PA42 7EA", "G81 4SJ", "KW15 1SE"),
   city = c("Tobermory", "Falkirk", "Ardbeg", "Doogal", "Kirkwall")
 )
 
-intersect_data <- intersect(customers, new_customers)
+intersect_data <- intersect(patients, new_patients)
 intersect_data
 ```
 
@@ -380,7 +472,7 @@ intersect_data
 If you've forgotten to load dplyr or the tidyverse, `r glossary("base R")` also has a `base::intersect()` function that doesn't work like `dplyr::intersect()`. The error message can be confusing and looks something like this:
 
 ```{r base-intersect, error = TRUE}
-base::intersect(customers, new_customers)
+base::intersect(patients, new_patients)
 ```
 :::
 
@@ -389,7 +481,7 @@ base::intersect(customers, new_customers)
 `dplyr::union()` returns all the rows from both tables, removing duplicate rows, unlike `bind_rows()`.
 
 ```{r union}
-union_data <- union(customers, new_customers)
+union_data <- union(patients, new_patients)
 union_data
 ```
 
@@ -397,7 +489,7 @@ union_data
 If you've forgotten to load dplyr or the tidyverse, `r glossary("base R")` also has a `base::union()` function. You usually won't get an error message, but the output won't be what you expect.
 
 ```{r base-union}
-base::union(customers, new_customers)
+base::union(patients, new_patients)
 ```
 :::
 
@@ -406,14 +498,14 @@ base::union(customers, new_customers)
 `dplyr::setdiff` returns rows that are in the first table, but not in the second table.
 
 ```{r setdiff}
-setdiff_data <- setdiff(customers, new_customers)
+setdiff_data <- setdiff(patients, new_patients)
 setdiff_data
 ```
 
 Order matters for `setdiff`.
 
 ```{r setdiff-order}
-setdiff2_data <- setdiff(new_customers, customers)
+setdiff2_data <- setdiff(new_patients, patients)
 setdiff2_data
 ```
 
@@ -421,40 +513,91 @@ setdiff2_data
 If you've forgotten to load dplyr or the tidyverse, `r glossary("base R")` also has a `base::setdiff()` function. You usually won't get an error message, but the output might not be what you expect because `base::setdiff()` expects columns to be in the same order, so id 5 here registers as different between the two tables.
 
 ```{r base-setdiff}
-base::setdiff(customers, new_customers)
+base::setdiff(patients, new_patients)
 ```
+:::
+
+::: {.callout-tip}
+## Activity
+
+1. Two  surveys used the same questions and columns, one run in 2023 (survey_2023) and one in 2024 (survey_2024). You want one dataset with all responses from both years, keeping duplicates if the same respondent appears twice. Which should you use?
+
+`r mcq(c("union", answer = "bind_rows", "bind_cols", "setdiff"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+bind_rows() stacks two data frames on top of each other, so you get all responses from 2023 and 2024 in one long dataset. It keeps duplicates by default, which is appropriate if the same respondent appears in both years and you want both records retained.
+
+:::
+
+
+1. You have two extracts of the same equality register (register_a, register_b) with identical columns. Some rows are exact duplicates across the two extracts. You want a combined dataset that removes exact duplicate rows. Which should you use?
+
+`r mcq(c(answer = "union", "bind_rows", "bind_cols", "setdiff"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+union() combines the rows from both extracts but drops exact duplicate rows, so repeated entries across register_a and register_b are removed. This is useful when the columns match and you want a deduplicated combined register without having to identify duplicates manually.
+
+:::
+
+1. You have a master list of staff IDs expected in an annual pay gap analysis (master_staff) and a list of staff IDs present in the HR export you received (hr_export). You want to identify staff who are in the master list but missing from the export. Which should you use?
+
+`r mcq(c(answer = "union", "bind_rows", "bind_cols", answer = "setdiff"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+setdiff(master_staff, hr_export) returns the IDs that are in master_staff but not in hr_export, which is exactly what you want for a missingness check. Order matters, so reversing the inputs would answer a different question (who is in the export but not the master list).
+
+:::
+
+1. You have a dataset with one row per patient (patients) and a separate table with model predictions in the same row order (preds), with no shared identifier. You want to add the prediction column to the patients dataset. Which should you use?
+
+`r mcq(c(answer = "union", "bind_rows", "bind_cols", answer = "setdiff"))`
+
+::: {.callout-tip collapse="true"}
+## Explain this answer
+
+bind_cols() adds columns side by side, which is the right choice when patients and preds have the same number of rows and are already aligned in the same row order. Because there is no shared identifier to join on, a join would be inappropriate and could silently misalign records if the order differs.
+
+:::
+
+
 :::
 
 ## Conflicting variable types
 
-As we covered in @sec-data, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there's something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it's important that not only are the variable names identical, but the data type of those variables is identical.
+As we covered in @sec-summary, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there's something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it's important that not only are the variable names identical, but the data type of those variables is identical.
 
-Let's recreate our `new_customers` dataset but this time, we'll specify that `id` is a `r glossary("character")` variable.
+Let's recreate our `new_patients` dataset but this time, we'll specify that `id` is a `r glossary("character")` variable.
 
 ```{r}
-new_customers2 <- tibble(
+new_patients2 <- tibble(
   id = as.character(5:9),
   postcode = c("PA75 6NR", "FK1 4RS", "PA42 7EA", "G81 4SJ", "KW15 1SE"),
   city = c("Tobermory", "Falkirk", "Ardbeg", "Doogal", "Kirkwall")
 )
-str(new_customers2)
+str(new_patients2)
 
 ```
 
 If you try to join this dataset to any of the other datasets where `id` is stored as a `r glossary("numeric")` variable, it will produce an error. 
 
 ```{r error=TRUE}
-inner_join(customers, new_customers2)
+inner_join(patients, new_patients2)
 ```
 
 The same goes for `bind_rows()`:
 
 ```{r error=TRUE}
-bind_rows(customers, new_customers2)
+bind_rows(patients, new_patients2)
 ```
 
 
-As alternative method to change variable types from what we showed you in @sec-data is to use the `as.***` functions. If you type `as.` into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:
+As alternative method to change variable types from what we showed you in @sec-summary is to use the `as.***` functions. If you type `as.` into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:
 
 * `as.numeric()` - convert a variable to `r glossary("numeric")`. Useful for when you have a variable of real numbers that have been encoded as character. Any values that can't be turned into numbers (e.g., if you have the word "missing" in cells that you have no data for), will be returned as `NA`.
 * `as.factor()` - convert a variable to a `r glossary("factor")`. You can set the factor levels and labels manually, or use the default order (alphabetical).
@@ -464,20 +607,53 @@ As alternative method to change variable types from what we showed you in @sec-d
 To use these functions on a variable we can use `mutate()` to overwrite the variable with that variable as the new data type:
 
 ```{r}
-new_customers2 <- new_customers2 %>%
+new_patients2 <- new_patients2 %>%
   mutate(id = as.numeric(id))
 ```
 
 Once you've done this, the joins will now work:
 
 ```{r}
-inner_join(orders, new_customers2)
+inner_join(visits, new_patients2)
 ```
 
+## Advanced {#sec-advanced-joins}
 
-## Exercises
+If you would like to go beyond what we've covered in this chapter, we recommend the following Advanced appendices that are related to this chapter:
 
-There's lots of different use cases for the `****_join()` functions. These exercises will allow you to practice different joins. If you have any examples of where joins might be helpful in your own work, please post them on Teams in the week 6 channel, as having many concrete examples can help distinguish between the different joins.
+- Advanced: Data Import ([@sec-import])
+- Advanced: Data Types ([@sec-data-types])
+
+## Peer Coding Exercises
+
+If you are enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.
+
+For each exercise, you will work in a pair programming team. Pair programming is when two people work on the same code with distinct, rotating roles:
+
+- The Driver operates the keyboard, implements the next small step, narrates what they are doing.
+
+- The Navigator reviews in real time, thinks ahead, checks naming, design, and help pages, and catches mistakes and typos.
+
+You should work in short cycles (5 to 10 minutes or two or three tasks), then switch roles.
+
+There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
+
+::: {.callout-tip}
+
+## Activity
+
+
+### Set up
+
+1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often. The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
+
+1. Open RStudio, ensure the environment is clear, and restart R.
+
+1. Create a new quarto document and save it as ads-week6-joins.qmd
+
+1. In a new code chunk, load the tidyverse.
+
+:::
 
 ### Grade data
 
@@ -485,25 +661,36 @@ The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumer
 
 Often when we're working with student grades they are provided to us in only one of these forms, but we need to be able to go between the two. For example, we need the numeric form in order to be able to calculate descriptive statistics about the mean grade, but we need the alphanumeric form to release to student records.
 
-* Download <a href="data/grade_data1.csv" download>grade_data.csv</a>, <a href="data/grade_data2.csv" download>grade_data2.csv</a> and <a href="data/scheduleA.csv" download>scheduleA.csv</a> into your data folder.
+::: {.callout-tip}
 
-* Read in `scheduleA.csv` and save it to an object named `schedule`.
-* Read in `grade_data1.csv` and save it to an object named `grades1`.
-* Read in `grade_data2.csv` and save it to an object named `grades2`.
+## Activity
+
+5 Download <a href="data/grade_data1.csv" download>grade_data.csv</a>, <a href="data/grade_data2.csv" download>grade_data2.csv</a> and <a href="data/scheduleA.csv" download>scheduleA.csv</a> into your data folder.
+
+6. Read each file into R and store them as grades1, grades2, and schedule.
 
 
-```{r, message=FALSE, webex.hide = TRUE}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
 schedule <- read_csv("data/scheduleA.csv")
 grades1 <- read_csv("data/grade_data1.csv") 
 grades2 <- read_csv("data/grade_data2.csv")
 ```
 
+:::
 
 ### Matching the variable types
 
 At UofG, all students are given a GUID, a numeric ID number. However, that ID number is also then combined with the first letter from your surname to create your username that is used with your email address. For example, if your ID is 1234567 and your surname is Nordmann, your username would be 1234567n. From a data wrangling perspective this is very annoying because the numeric ID will be stored as numeric data, but the username will be stored as character because of the letter at the end. `grades1` has a numeric id whilst `grades2` has the additional letter. In order to join these datasets, we need to standardise the variables.
 
-First, remove the letter character from `id` using the function `stringr::str_replace_all()`, which replaces text that matches a pattern. Here, we're using the pattern `"[a-z]"`, which matches all lowercase letters a through z, and replacing them with `""`. See the help for `?about_search_regex` for more info about how to set patterns (these can get really complex).
+::: {.callout-tip}
+
+## Activity
+
+7. First, remove the letter character from `id` using the function `stringr::str_replace_all()`, which replaces text that matches a pattern. Here, we're using the pattern `"[a-z]"`, which matches all lowercase letters a through z, and replacing them with `""`. See the help for `?about_search_regex` for more info about how to set patterns (these can get really complex).
 
 ```{r}
 grades1 <- grades1 %>%
@@ -515,25 +702,29 @@ grades1 <- grades1 %>%
 ```
 
 
-Now, transform the data type of `id` so that it matches the data type in `grades2`.
+8. Now, transform the data type of `id` so that it matches the data type in `grades2`.
 
-```{r, results='hide', webex.hide = TRUE}
-# check variable types
-glimpse(grades1)
-glimpse(grades2) 
-
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
 grades1 <- grades1 %>%
   mutate(id = as.numeric(id))
 ```
 
+:::
 
 ### Complete records
 
 In this example, we want to join the grade data to schedule A so that each student with a grade has both the grade and the grade point. But we also want a complete record of all students on the course, so students with missing grades should still be included in the data.
 
-* Join `grades1` and `scheduleA` and store this table in an object named `exam_all`.
-* Do the same for `grades2` and save it in `essay_all`.
-* Both `exam_all` and `essay_all` should have 100 observations of 4 variables.
+::: {.callout-tip}
+
+## Activity
+
+9. Join `grades1` and `scheduleA` and store this table in an object named `exam_all`.
+10. Do the same for `grades2` and save it in `essay_all`.
+11. Both `exam_all` and `essay_all` should have 100 observations of 4 variables.
 
 `r hide("Hint")`
 
@@ -542,6 +733,10 @@ You want to keep all of the data from `grade_data1` and `grade_data2`, but you o
 `r unhide()`
 
 ```{r, webex.hide = TRUE}
+#| echo: false
+#| message: false
+#| warning: false
+#
 exam_all <- left_join(grades1, schedule, by = "Points")
 essay_all <- left_join(grades2, schedule, by = "Points")
 ```
@@ -554,14 +749,18 @@ Alternatively, you may wish to have a dataset that only contains data for studen
 * How many exam grades are missing? `r fitb(sum(is.na(exam_all$Grade)))`
 * How many essay grades are missing? `r fitb(sum(is.na(essay_all$Grade)))`
 
-Now, create an object `exam_grades` that joins together `grades1` and `schedule`, but this time the resulting object should only contain data from students who have a grade. Do the same but for `grades2` and store it in `essay_grades`.
+12. Now, create an object `exam_grades` that joins together `grades1` and `schedule`, but this time the resulting object should only contain data from students who have a grade. Do the same but for `grades2` and store it in `essay_grades`.
 
 Before you do this, given what you know about how many data points are missing in each data set:
 
 * How many observations should `exam_grades` have? `r fitb(sum(!is.na(exam_all$Grade)))`
 * How many observations should `essay_grades` have? `r fitb(sum(!is.na(essay_all$Grade)))`
 
-```{r, webex.hide = TRUE}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
 exam_grades <- inner_join(grades1, schedule, by = "Points")
 essay_grades <- inner_join(grades2, schedule, by = "Points")
 ```
@@ -572,10 +771,8 @@ It's worth noting that in reality you wouldn't actually go back to the raw data 
 
 `r unhide()`
 
-Now, create a dataset `completes` that joins the grades for students who have a grade for **both** the essay and the exam.  
-
-* Because both `exam_grades` and `essay_grades` have the variables `Assessment`, `Points` and `Grades` that are named the same, but have different data, you should amend the suffix so that the resulting variables are named `Points_exam` and `Points_essay` etc. You may need to consult the help documentation to see an example to figure this out. 
-* Clean up the file with `select()` and only keep the variables `id`, `Grade_exam`, and `Grade_essay`
+13. Now, create a dataset `completes` that joins the grades for students who have a grade for **both** the essay and the exam.  Because both `exam_grades` and `essay_grades` have the variables `Assessment`, `Points` and `Grades` that are named the same, but have different data, you should amend the suffix so that the resulting variables are named `Points_exam` and `Points_essay` etc. You may need to consult the help documentation to see an example to figure this out. 
+14. Clean up the file with `select()` and only keep the variables `id`, `Grade_exam`, and `Grade_essay`
 
 ```{r, webex.hide = TRUE}
 completes <- inner_join(exam_grades, essay_grades, 
@@ -586,26 +783,24 @@ completes <- inner_join(exam_grades, essay_grades,
 
 * How many students have a grade for both the exam and the essay? `r fitb(nrow(completes))`
 
-Now create a dataset `no_essay` that contains students that have a grade for the exam, but not the essay.
+15. Now create a dataset `no_essay` that contains students that have a grade for the exam, but not the essay.
 
 ```{r, webex.hide = TRUE}
 no_essay <- anti_join(exam_grades, essay_grades, by = "id")
 ```
 
--   How many students have a grade for the exam but not the essay? `r fitb(nrow(no_essay))`
+*   How many students have a grade for the exam but not the essay? `r fitb(nrow(no_essay))`
 
 
-Finally, now make a dataset `no_exam` that contains students have have a grade for the essay but not the exam
+16. Finally, now make a dataset `no_exam` that contains students have have a grade for the essay but not the exam
 
 ```{r, webex.hide = TRUE}
 no_exam <- anti_join(essay_grades, exam_grades, by = "id")
 ```
 
--   How many students have a grade for the exam but not the essay? `r fitb(nrow(no_exam))`
+17.  How many students have a grade for the exam but not the essay? `r fitb(nrow(no_exam))`
 
-### Share on Teams
-
-Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 07 channel.
+:::
 
 ## Glossary {#sec-glossary-joins}
 

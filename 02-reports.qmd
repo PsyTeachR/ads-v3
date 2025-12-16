@@ -932,7 +932,7 @@ As you continue to work through the book you will learn how to wrangle and analy
 
 ## Advanced {#sec-advanced-reports}
 
-If you would like to go beyond what we've covered in this chapter, we recommend the following Advanced appendices:
+If you would like to go beyond what we've covered in this chapter, we recommend the following Advanced appendices that are related to this chapter:
 
 - Advanced: Websites ([@sec-websites])
 - Advanced: Referencing ([@sec-bibliography])

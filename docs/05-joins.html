@@ -467,7 +467,6 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <ul>
 <li><a href="#sec-ilo-joins" id="toc-sec-ilo-joins" class="nav-link active" data-scroll-target="#sec-ilo-joins">Intended Learning Outcomes</a></li>
   <li><a href="#functions-joins" id="toc-functions-joins" class="nav-link" data-scroll-target="#functions-joins"><span class="header-section-number">5.1</span> Functions used</a></li>
-  <li><a href="#sec-walkthrough-joins" id="toc-sec-walkthrough-joins" class="nav-link" data-scroll-target="#sec-walkthrough-joins">Walkthrough video</a></li>
   <li><a href="#sec-setup-joins" id="toc-sec-setup-joins" class="nav-link" data-scroll-target="#sec-setup-joins"><span class="header-section-number">5.2</span> Set-up</a></li>
   <li><a href="#sec-joins-data" id="toc-sec-joins-data" class="nav-link" data-scroll-target="#sec-joins-data"><span class="header-section-number">5.3</span> Loading data</a></li>
   <li>
@@ -504,18 +503,17 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   </ul>
 </li>
   <li><a href="#conflicting-variable-types" id="toc-conflicting-variable-types" class="nav-link" data-scroll-target="#conflicting-variable-types"><span class="header-section-number">5.9</span> Conflicting variable types</a></li>
+  <li><a href="#sec-advanced-joins" id="toc-sec-advanced-joins" class="nav-link" data-scroll-target="#sec-advanced-joins"><span class="header-section-number">5.10</span> Advanced</a></li>
   <li>
-<a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5.10</span> Exercises</a>
+<a href="#peer-coding-exercises" id="toc-peer-coding-exercises" class="nav-link" data-scroll-target="#peer-coding-exercises"><span class="header-section-number">5.11</span> Peer Coding Exercises</a>
   <ul class="collapse">
-<li><a href="#grade-data" id="toc-grade-data" class="nav-link" data-scroll-target="#grade-data"><span class="header-section-number">5.10.1</span> Grade data</a></li>
-  <li><a href="#matching-the-variable-types" id="toc-matching-the-variable-types" class="nav-link" data-scroll-target="#matching-the-variable-types"><span class="header-section-number">5.10.2</span> Matching the variable types</a></li>
-  <li><a href="#complete-records" id="toc-complete-records" class="nav-link" data-scroll-target="#complete-records"><span class="header-section-number">5.10.3</span> Complete records</a></li>
-  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">5.10.4</span> Missing data</a></li>
-  <li><a href="#share-on-teams" id="toc-share-on-teams" class="nav-link" data-scroll-target="#share-on-teams"><span class="header-section-number">5.10.5</span> Share on Teams</a></li>
+<li><a href="#grade-data" id="toc-grade-data" class="nav-link" data-scroll-target="#grade-data"><span class="header-section-number">5.11.2</span> Grade data</a></li>
+  <li><a href="#matching-the-variable-types" id="toc-matching-the-variable-types" class="nav-link" data-scroll-target="#matching-the-variable-types"><span class="header-section-number">5.11.3</span> Matching the variable types</a></li>
+  <li><a href="#complete-records" id="toc-complete-records" class="nav-link" data-scroll-target="#complete-records"><span class="header-section-number">5.11.4</span> Complete records</a></li>
   </ul>
 </li>
-  <li><a href="#sec-glossary-joins" id="toc-sec-glossary-joins" class="nav-link" data-scroll-target="#sec-glossary-joins"><span class="header-section-number">5.11</span> Glossary</a></li>
-  <li><a href="#sec-resources-joins" id="toc-sec-resources-joins" class="nav-link" data-scroll-target="#sec-resources-joins"><span class="header-section-number">5.12</span> Further resources</a></li>
+  <li><a href="#sec-glossary-joins" id="toc-sec-glossary-joins" class="nav-link" data-scroll-target="#sec-glossary-joins"><span class="header-section-number">5.12</span> Glossary</a></li>
+  <li><a href="#sec-resources-joins" id="toc-sec-resources-joins" class="nav-link" data-scroll-target="#sec-resources-joins"><span class="header-section-number">5.13</span> Further resources</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -561,27 +559,42 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
 </ul>
 </li>
-</ul></section><section id="sec-walkthrough-joins" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-walkthrough-joins">Walkthrough video</h2>
-<p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/519bb538-58b3-4710-85df-d71c56001a5d/public">Echo360.</a> Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
-</section><section id="sec-setup-joins" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="sec-setup-joins">
+</ul></section><section id="sec-setup-joins" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="sec-setup-joins">
 <span class="header-section-number">5.2</span> Set-up</h2>
-<p>First, create a new project for the work we’ll do in this chapter named <code class="path">07-relations</code>. Second, open and save a new R Markdown document named <code>relations.Rmd</code>, delete the welcome text, and load the required packages for this chapter.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Open your <code>ADS-2026</code> project</li>
+<li>Create a new quarto file called <code>05-relations.qmd</code>
+</li>
+<li>Update the YAML header</li>
+<li>Replace the setup chunk with the one below:</li>
+</ol>
 <div class="cell" data-layout-align="center" data-verbatim="r setup, include=FALSE">
 <div class="code-copy-outer-scaffold"><div class="code-copy-outer-scaffold"><div class="verbatim">
 <pre class="sourceCode r code-with-copy"><code class="sourceCode R">```{r setup, include=FALSE}</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)     <span class="co"># includes readr &amp; tibble</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.5.2</code></pre>
-</div>
 <pre class="sourceCode r code-with-copy"><code class="sourceCode R">```</code></pre>
 </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheatsheet</a>.</p>
+<ul>
+<li>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheatsheet</a>.</li>
+</ul>
+</div>
+</div>
 </section><section id="sec-joins-data" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="sec-joins-data">
 <span class="header-section-number">5.3</span> Loading data</h2>
-<p>The data you want to report on or visualise are often in more than one file (or more than one tab of an excel file or googlesheet). You might need to join up a table of customer information with a table of orders, or combine the monthly social media reports across several months.</p>
+<p>The data you want to report on or visualise are often in more than one file (or more than one tab of an excel file or googlesheet). You might need to join up a table of patient information with a table of visits, or combine the monthly social media reports across several months.</p>
 <p>For this demo, rather than loading in data, we’ll create two small data tables from scratch using the <code>tibble()</code> function.</p>
-<p><code>customers</code> has id, city and postcode for five customers 1-5.</p>
+<p><code>patients</code> has id, city and postcode for five patients 1-5.</p>
 <ul>
 <li>
 <code>1:5</code> will fill the variable <code>id</code> with all integers between 1 and 5.</li>
@@ -590,14 +603,14 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>When entering data like this, it’s important that the order of each variable matches up. So number 1 will correspond to “Port Ellen” and “PA42 7DU”.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>customers <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Port Ellen"</span>, <span class="st">"Dufftown"</span>, <span class="cn">NA</span>, <span class="st">"Aberlour"</span>, <span class="st">"Tobermory"</span>),</span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA42 7DU"</span>, <span class="st">"AB55 4DH"</span>, <span class="cn">NA</span>, <span class="st">"AB38 7RY"</span>, <span class="st">"PA75 6NR"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>patients <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Port Ellen"</span>, <span class="st">"Dufftown"</span>, <span class="cn">NA</span>, <span class="st">"Aberlour"</span>, <span class="st">"Tobermory"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA42 7DU"</span>, <span class="st">"AB55 4DH"</span>, <span class="cn">NA</span>, <span class="st">"AB38 7RY"</span>, <span class="st">"PA75 6NR"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <table class="caption-top table">
-<caption>Demo customers table.</caption>
+<caption>Demo patients table.</caption>
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">city</th>
@@ -631,35 +644,35 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </tr>
 </tbody>
 </table>
-<p><code>orders</code> has customer id and the number of items ordered. Some customers from the previous table have no orders, some have more than one order, and some are not in the customer table.</p>
+<p><code>visits</code> has patient id and the number of visits to the GP in the last year. Some patients from the previous table have no visits, some have more than one visit, and some are not in the patients table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>orders <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">7</span>),</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="at">items =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">23</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">3</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>visits <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">7</span>),</span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="at">visits =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <table class="caption-top table">
-<caption>Demo orders table.</caption>
+<caption>Demo visits table.</caption>
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
@@ -671,18 +684,32 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </tr>
 <tr class="odd">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">3</td>
 </tr>
 </tbody>
-</table></section><section id="mutating-joins" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="mutating-joins">
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Insert a new code chunk and create the objects <code>patients</code> and <code>visits</code>.</p>
+</div>
+</div>
+</section><section id="mutating-joins" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="mutating-joins">
 <span class="header-section-number">5.4</span> Mutating Joins</h2>
 <p><a href="https://psyteachr.github.io/glossary/m#mutating-joins" target="_blank" class="glossary" title="Joins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table.">Mutating joins</a> act like the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></code> function in that they add new columns to one table based on values in another table. (We’ll learn more about the <code>mutate()</code> function in <a href="08-tidy.html" class="quarto-xref"><span>Chapter 8</span></a>).)</p>
 <p>All the mutating joins have this basic syntax:</p>
@@ -710,6 +737,24 @@ Note
 <p>You can leave out the <code>by</code> argument if you’re matching on all of the columns with the same name, but it’s good practice to always specify it so your code is robust to changes in the loaded data.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For each of the joins below, run the code and inspect the object it creates and make a note of three things in your Quarto document alongside each bit of code:</p>
+<ol type="1">
+<li>Does the resulting object have more or less observations than the original tables?</li>
+<li>Does the resulting object have more or less variables than the original tables?</li>
+<li>Does the resulting object have any NAs?</li>
+</ol>
+</div>
+</div>
 <section id="sec-left_join" class="level3" data-number="5.4.1"><h3 data-number="5.4.1" class="anchored" data-anchor-id="sec-left_join">
 <span class="header-section-number">5.4.1</span> left_join()</h3>
 <div class="join">
@@ -717,8 +762,8 @@ Note
 </div>
 <p>A <code>left_join</code> keeps all the data from the first (left) table and adds anything that matches from the second (right) table. If the right table has more than one match for a row in the left table, there will be more than one row in the joined table (see ids 4 and 5).</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>left_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>left_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>left_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(patients, visits, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>left_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -726,7 +771,7 @@ Note
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">city</th>
 <th style="text-align: left;">postcode</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -739,25 +784,25 @@ Note
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">Dufftown</td>
 <td style="text-align: left;">AB55 4DH</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">5</td>
@@ -779,41 +824,41 @@ Note
 <div class="join">
 <p><img src="images/joins/left_join_rev.png"></p>
 </div>
-<p>The order you specify the tables matters, in the below code we have reversed the order and so the result is all rows from the <code>orders</code> table joined to any matching rows from the <code>customers</code> table.</p>
+<p>The order you specify the tables matters, in the below code we have reversed the order and so the result is all rows from the <code>visits</code> table joined to any matching rows from the <code>patients</code> table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>left2_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(orders, customers, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>left2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>left2_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(visits, patients, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>left2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 <th style="text-align: left;">city</th>
 <th style="text-align: left;">postcode</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: left;">Dufftown</td>
 <td style="text-align: left;">AB55 4DH</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
 </tr>
@@ -831,13 +876,13 @@ Note
 </tr>
 <tr class="odd">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
@@ -859,8 +904,8 @@ Note
 </div>
 <p>A <code>right_join</code> keeps all the data from the second (right) table and joins anything that matches from the first (left) table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>right_data <span class="ot">&lt;-</span> <span class="fu">right_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>right_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>right_data <span class="ot">&lt;-</span> <span class="fu">right_join</span>(patients, visits, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>right_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -868,32 +913,32 @@ Note
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">city</th>
 <th style="text-align: left;">postcode</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">Dufftown</td>
 <td style="text-align: left;">AB55 4DH</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
@@ -911,13 +956,13 @@ Note
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
@@ -940,7 +985,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This table has the same information as <code>left_join(orders, customers, by = "id")</code>, but the columns are in a different order (left table, then right table).</p>
+<p>This table has the same information as <code>left_join(visits, patients, by = "id")</code>, but the columns are in a different order (left table, then right table).</p>
 </div>
 </div>
 </section><section id="sec-inner_join" class="level3" data-number="5.4.3"><h3 data-number="5.4.3" class="anchored" data-anchor-id="sec-inner_join">
@@ -950,8 +995,8 @@ Note
 </div>
 <p>An <code>inner_join</code> returns all the rows that have a match in both tables. Changing the order of the tables will change the order of the columns, but not which rows are kept.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>inner_data <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a>inner_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>inner_data <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(patients, visits, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>inner_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -959,32 +1004,32 @@ Note
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">city</th>
 <th style="text-align: left;">postcode</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">Dufftown</td>
 <td style="text-align: left;">AB55 4DH</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
@@ -1010,8 +1055,8 @@ Note
 </div>
 <p>A <code>full_join</code> lets you join up rows in two tables while keeping all of the information from both tables. If a row doesn’t have a match in the other table, the other table’s column values are set to <code>NA</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>full_data <span class="ot">&lt;-</span> <span class="fu">full_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a>full_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>full_data <span class="ot">&lt;-</span> <span class="fu">full_join</span>(patients, visits, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a>full_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1019,7 +1064,7 @@ Note
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">city</th>
 <th style="text-align: left;">postcode</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1032,25 +1077,25 @@ Note
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">Dufftown</td>
 <td style="text-align: left;">AB55 4DH</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">5</td>
@@ -1068,13 +1113,13 @@ Note
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">7</td>
@@ -1084,6 +1129,90 @@ Note
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>You have two datasets: people registered with a GP practice (registrations) and people who received a flu jab (jabs). You only want people who appear in both datasets, because you are analysing outcomes for those registered and vaccinated. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="answer">inner_join</option>
+<option value="">left_join</option>
+<option value="">right_join</option>
+<option value="">full_join</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>inner_join(registrations, jabs, by = “nhs_number”) returns only the people whose NHS number appears in both datasets. This is appropriate when you want to analyse the subset who are both registered and vaccinated, excluding anyone who is only in one list.</p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>A local authority has two separate lists of households receiving support: one for fuel poverty payments (fuel_support) and one for disability-related housing adaptations (adaptations). You want a combined dataset that includes everyone in either list, keeping both sets of variables and using NA where a household is only in one list. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">inner_join</option>
+<option value="">left_join</option>
+<option value="">right_join</option>
+<option value="answer">full_join</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>full_join(fuel_support, adaptations, by = “household_id”) keeps all households from both lists and combines the variables, filling unmatched values with NA. This is the correct choice when you want a complete picture of anyone receiving either type of support, not just the overlap.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>You have a table of all NHS boards with their deprivation quintile and population (boards), and a second table with the number of people who attended a new vaccination clinic (attendances). You want a dataset that keeps every NHS board, and adds the attendance numbers where available, showing NA for boards with no recorded attendances. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">inner_join</option>
+<option value="answer">left_join</option>
+<option value="">right_join</option>
+<option value="">full_join</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>left_join(boards, attendances, by = “board_id”) keeps all rows from boards and adds attendance information where a match exists. NHS boards with no recorded attendances remain in the dataset with NA in the attendance columns, which is what you need for comparing service uptake across all boards.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1097,8 +1226,8 @@ Note
 </div>
 <p>A <code>semi_join</code> returns all rows from the left table where there are matching values in the right table, keeping just columns from the left table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>semi_data <span class="ot">&lt;-</span> <span class="fu">semi_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2"></a>semi_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>semi_data <span class="ot">&lt;-</span> <span class="fu">semi_join</span>(patients, visits, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a>semi_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1151,31 +1280,31 @@ Note
 </div>
 <p>Order matters in a semi join.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>semi2_data <span class="ot">&lt;-</span> <span class="fu">semi_join</span>(orders, customers, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>semi2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>semi2_data <span class="ot">&lt;-</span> <span class="fu">semi_join</span>(visits, patients, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>semi2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">21</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">23</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
@@ -1197,8 +1326,8 @@ Note
 </div>
 <p>An <code>anti_join</code> return all rows from the left table where there are <em>not</em> matching values in the right table, keeping just columns from the left table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>anti_data <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a>anti_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>anti_data <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(patients, visits, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a>anti_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1221,23 +1350,23 @@ Note
 </div>
 <p>Order matters in an anti join.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>anti2_data <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(orders, customers, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a>anti2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>anti2_data <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(visits, patients, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2"></a>anti2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">7</td>
@@ -1248,28 +1377,84 @@ Note
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>You have a dataset of people discharged from hospital (discharges) and a dataset of people who received a follow up call within 72 hours (followups). You want a list of people who were discharged but did not receive the follow up call. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="answer">anti_join</option>
+<option value="">semi_join</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>anti_join(discharges, followups, by = “patient_id”) keeps the rows in discharges that do not have a matching patient_id in followups. This directly returns the list of discharged patients who did not receive a follow up call within the specified window.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>You have a dataset of all patients referred to a specialist service (referrals) and a dataset containing those who meet an eligibility criterion after triage (eligible). You want to keep only the referrals that are eligible, but you do not need any additional columns from eligible. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">anti_join</option>
+<option value="answer">semi_join</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>semi_join(referrals, eligible, by = “referral_id”) filters referrals to only those rows with a matching referral_id in eligible, but it does not bring in any columns from eligible. This is appropriate when you want an eligibility filter rather than a merged dataset.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section><section id="multiple-joins" class="level2" data-number="5.6"><h2 data-number="5.6" class="anchored" data-anchor-id="multiple-joins">
 <span class="header-section-number">5.6</span> Multiple joins</h2>
 <p>The <code>****_join()</code> functions are all <strong>two-table verbs</strong>, that is, you can only join together two tables at a time. However, you may often need to join together multiple tables. To do so, you simply need to add on additional joins. You can do this by creating an intermediate object or more efficiently by using a pipe.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># create a table of overall customer satisfaction scores</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>satisfaction <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb14-3"><a href="#cb14-3"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="at">satisfaction =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
-<span id="cb14-5"><a href="#cb14-5"></a>)</span>
-<span id="cb14-6"><a href="#cb14-6"></a></span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># perform the initial join</span></span>
-<span id="cb14-8"><a href="#cb14-8"></a>join_1 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
-<span id="cb14-9"><a href="#cb14-9"></a></span>
-<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># perform the second join on the new object</span></span>
-<span id="cb14-11"><a href="#cb14-11"></a>join_2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(join_1, satisfaction, </span>
-<span id="cb14-12"><a href="#cb14-12"></a>                    <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># create a table of overall patient satisfaction scores</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>satisfaction <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="at">satisfaction =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb13-5"><a href="#cb13-5"></a>)</span>
+<span id="cb13-6"><a href="#cb13-6"></a></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="co"># perform the initial join</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>join_1 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(patients, visits, <span class="at">by =</span> <span class="st">"id"</span>)</span>
+<span id="cb13-9"><a href="#cb13-9"></a></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="co"># perform the second join on the new object</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>join_2 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(join_1, satisfaction, </span>
+<span id="cb13-12"><a href="#cb13-12"></a>                    <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># more efficient method using the pipe</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>pipe_join <span class="ot">&lt;-</span> customers <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">left_join</span>(orders, <span class="at">by =</span> <span class="st">"id"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">left_join</span>(satisfaction, <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># more efficient method using the pipe</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>pipe_join <span class="ot">&lt;-</span> patients <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">left_join</span>(visits, <span class="at">by =</span> <span class="st">"id"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">left_join</span>(satisfaction, <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1281,7 +1466,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>At every stage of any analysis you should <strong>check your output</strong> to ensure that what you created is what you intended to create, but this is particularly true of joins. You should be familiar enough with your data through routine checks using functions like <code>glimpse()</code>, <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>, and <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> to have a rough idea of what the join should result in. At the very least, you should know whether the joined object should result in more or fewer variables and observations.</p>
+<p>At every stage of any analysis you should <strong>check your output</strong> to ensure that what you created is what you intended to create, but this is particularly true of joins. You should be familiar enough with your data through routine checks using functions like <code>glimpse()</code>, <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>, and <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> to have a rough idea of what the join should result in. At the very least, you should know whether the joined object should result in more or fewer variables and observations and whether there should be any NAs.</p>
 <p>If you have a multi-line join like in the above piped example, build up the code and check the output at each stage.</p>
 </div>
 </div>
@@ -1291,16 +1476,16 @@ Warning
 <section id="sec-bind_rows" class="level3" data-number="5.7.1"><h3 data-number="5.7.1" class="anchored" data-anchor-id="sec-bind_rows">
 <span class="header-section-number">5.7.1</span> bind_rows()</h3>
 <p>You can combine the rows of two tables with <code>bind_rows</code>.</p>
-<p>Here we’ll add customer data for customers 6-9 and bind that to the original customer table.</p>
+<p>Here we’ll add patient data for patients 6-9 and bind that to the original patient table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>new_customers <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb16-2"><a href="#cb16-2"></a>  <span class="at">id =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb16-3"><a href="#cb16-3"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>),</span>
-<span id="cb16-4"><a href="#cb16-4"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5"></a>)</span>
-<span id="cb16-6"><a href="#cb16-6"></a></span>
-<span id="cb16-7"><a href="#cb16-7"></a>bindr_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(customers, new_customers)</span>
-<span id="cb16-8"><a href="#cb16-8"></a>bindr_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>new_patients <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="at">id =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>),</span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a>)</span>
+<span id="cb15-6"><a href="#cb15-6"></a></span>
+<span id="cb15-7"><a href="#cb15-7"></a>bindr_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(patients, new_patients)</span>
+<span id="cb15-8"><a href="#cb15-8"></a>bindr_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1363,15 +1548,15 @@ Warning
 <p>The columns just have to have the same names, they don’t have to be in the same order. Any columns that differ between the two tables will just have <code>NA</code> values for entries from the other table.</p>
 <p>If a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table. If your tables have the exact same columns, you can use <code><a href="https://rdrr.io/r/base/sets.html">union()</a></code> (see <a href="#sec-union" class="quarto-xref"><span>Section 5.8.2</span></a>) to avoid duplicates.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>new_customers <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="at">id =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA75 6NR"</span>, <span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>),</span>
-<span id="cb17-4"><a href="#cb17-4"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Tobermory"</span>, <span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>),</span>
-<span id="cb17-5"><a href="#cb17-5"></a>  <span class="at">new =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb17-6"><a href="#cb17-6"></a>)</span>
-<span id="cb17-7"><a href="#cb17-7"></a></span>
-<span id="cb17-8"><a href="#cb17-8"></a>bindr2_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(customers, new_customers)</span>
-<span id="cb17-9"><a href="#cb17-9"></a>bindr2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>new_patients <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="at">id =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA75 6NR"</span>, <span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>),</span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Tobermory"</span>, <span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>),</span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="at">new =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb16-6"><a href="#cb16-6"></a>)</span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a>bindr2_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(patients, new_patients)</span>
+<span id="cb16-9"><a href="#cb16-9"></a>bindr2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1449,14 +1634,14 @@ Warning
 </div>
 </section><section id="sec-bind_cols" class="level3" data-number="5.7.2"><h3 data-number="5.7.2" class="anchored" data-anchor-id="sec-bind_cols">
 <span class="header-section-number">5.7.2</span> bind_cols()</h3>
-<p>You can merge two tables with the same number of rows using <code>bind_cols</code>. This is only useful if the two tables have the same number of rows in the exact same order.</p>
+<p>You can merge two tables with the same number of rows using <code>bind_cols</code>. This is only useful if the two tables have the same number of rows <em>in the exact same order</em>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>new_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="at">colour =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"orange"</span>, <span class="st">"yellow"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>)</span>
-<span id="cb18-3"><a href="#cb18-3"></a>)</span>
-<span id="cb18-4"><a href="#cb18-4"></a></span>
-<span id="cb18-5"><a href="#cb18-5"></a>bindc_data <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(customers, new_info)</span>
-<span id="cb18-6"><a href="#cb18-6"></a>bindc_data </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>new_info <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="at">smoker =</span> <span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"no"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>, <span class="st">"yes"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a>)</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a>bindc_data <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(patients, new_info)</span>
+<span id="cb17-6"><a href="#cb17-6"></a>bindc_data </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1464,38 +1649,38 @@ Warning
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">city</th>
 <th style="text-align: left;">postcode</th>
-<th style="text-align: left;">colour</th>
+<th style="text-align: left;">smoker</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">Port Ellen</td>
 <td style="text-align: left;">PA42 7DU</td>
-<td style="text-align: left;">red</td>
+<td style="text-align: left;">no</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">Dufftown</td>
 <td style="text-align: left;">AB55 4DH</td>
-<td style="text-align: left;">orange</td>
+<td style="text-align: left;">no</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;">yellow</td>
+<td style="text-align: left;">yes</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
 <td style="text-align: left;">Aberlour</td>
 <td style="text-align: left;">AB38 7RY</td>
-<td style="text-align: left;">green</td>
+<td style="text-align: left;">yes</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">5</td>
 <td style="text-align: left;">Tobermory</td>
 <td style="text-align: left;">PA75 6NR</td>
-<td style="text-align: left;">blue</td>
+<td style="text-align: left;">yes</td>
 </tr>
 </tbody>
 </table>
@@ -1518,24 +1703,24 @@ Note
 </section><section id="importing-multiple-files" class="level3" data-number="5.7.3"><h3 data-number="5.7.3" class="anchored" data-anchor-id="importing-multiple-files">
 <span class="header-section-number">5.7.3</span> Importing multiple files</h3>
 <p>If you need to import and bind a whole folder full of files that have the same structure, get a list of all the files you want to combine. It’s easiest if they’re all in the same directory, although you can use a pattern to select the files you want if they have a systematic naming structure.</p>
-<p>First, save the two customer tables to CSV files. The <code><a href="https://rdrr.io/r/base/files2.html">dir.create()</a></code> function makes a folder called “data”. The <code>showWarnings = FALSE</code> argument means that you won’t get a warning if the folder already exists, it just won’t do anything.</p>
+<p>First, save the two patient tables to CSV files. The <code><a href="https://rdrr.io/r/base/files2.html">dir.create()</a></code> function makes a folder called “data”. The <code>showWarnings = FALSE</code> argument means that you won’t get a warning if the folder already exists, it just won’t do anything.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># write our data to a new folder for the demo</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="fu">dir.create</span>(<span class="st">"data"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="fu">write_csv</span>(<span class="at">x =</span> customers, <span class="at">file =</span> <span class="st">"data/customers1.csv"</span>)</span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="fu">write_csv</span>(<span class="at">x =</span> new_customers, <span class="at">file =</span> <span class="st">"data/customers2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># write our data to a new folder for the demo</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">dir.create</span>(<span class="st">"data"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">write_csv</span>(<span class="at">x =</span> patients, <span class="at">file =</span> <span class="st">"data/patients1.csv"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="fu">write_csv</span>(<span class="at">x =</span> new_patients, <span class="at">file =</span> <span class="st">"data/patients2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Next, retrieve a list of all file names in the data folder that contain the string “customers”</p>
+<p>Next, retrieve a list of all file names in the data folder that contain the string “patients”</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb20-2"><a href="#cb20-2"></a>  <span class="at">path =</span> <span class="st">"data"</span>, </span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="at">pattern =</span> <span class="st">"customers"</span>, </span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>)</span>
-<span id="cb20-6"><a href="#cb20-6"></a></span>
-<span id="cb20-7"><a href="#cb20-7"></a>files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">path =</span> <span class="st">"data"</span>, </span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">pattern =</span> <span class="st">"patients"</span>, </span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>)</span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a>files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "data/customers1.csv" "data/customers2.csv"</code></pre>
+<pre><code>[1] "data/patients1.csv" "data/patients2.csv"</code></pre>
 </div>
 </div>
 <p>Next, we’ll iterate over this list to read in the data from each file. Whilst this won’t be something we cover in detail in the core resources of this course, <a href="https://psyteachr.github.io/glossary/i#iteration" target="_blank" class="glossary" title="Repeating a process or function">iteration</a> is an important concept to know about. Iteration is where you perform the same task on multiple different inputs. As a general rule of thumb, if you find yourself copying and pasting the same thing more than twice, there’s a more efficient and less error-prone way to do it, although these functions do typically require a stronger grasp of programming.</p>
@@ -1548,7 +1733,7 @@ Note
 <li>The resulting object <code>all_files</code> will be a data frame that combines all the files together, similar to if you had imported them separately and then used <code>bind_rows()</code>.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>all_files <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_df</span>(<span class="at">.x =</span> files, <span class="at">.f =</span> read_csv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>all_files <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map_df</span>(<span class="at">.x =</span> files, <span class="at">.f =</span> read_csv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1562,8 +1747,8 @@ Note
 <div class="callout-body-container callout-body">
 <p>If all of your data files have the <em>exact</em> same structure (i.e., the same number of columns with the same names), you can just use <code>read_csv()</code> and set the <code>file</code> argument to a vector of the file names. However, the pattern above is safer if you might have a file with an extra or missing column.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>files <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"data/customers1.csv"</span>, <span class="st">"data/customers1.csv"</span>)</span>
-<span id="cb23-2"><a href="#cb23-2"></a>all_files <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(files)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>files <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"data/patients1.csv"</span>, <span class="st">"data/patients1.csv"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a>all_files <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(files)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1574,14 +1759,14 @@ Note
 <span class="header-section-number">5.8.1</span> intersect()</h3>
 <p><code><a href="https://generics.r-lib.org/reference/setops.html">dplyr::intersect()</a></code> returns all rows in two tables that match exactly. The columns don’t have to be in the same order, but they have to have the same names.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>new_customers <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  <span class="at">id =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,</span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA75 6NR"</span>, <span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>),</span>
-<span id="cb24-4"><a href="#cb24-4"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Tobermory"</span>, <span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>)</span>
-<span id="cb24-5"><a href="#cb24-5"></a>)</span>
-<span id="cb24-6"><a href="#cb24-6"></a></span>
-<span id="cb24-7"><a href="#cb24-7"></a>intersect_data <span class="ot">&lt;-</span> <span class="fu">intersect</span>(customers, new_customers)</span>
-<span id="cb24-8"><a href="#cb24-8"></a>intersect_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>new_patients <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="at">id =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,</span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA75 6NR"</span>, <span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>),</span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Tobermory"</span>, <span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5"></a>)</span>
+<span id="cb23-6"><a href="#cb23-6"></a></span>
+<span id="cb23-7"><a href="#cb23-7"></a>intersect_data <span class="ot">&lt;-</span> <span class="fu">intersect</span>(patients, new_patients)</span>
+<span id="cb23-8"><a href="#cb23-8"></a>intersect_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1611,7 +1796,7 @@ Warning
 <div class="callout-body-container callout-body">
 <p>If you’ve forgotten to load dplyr or the tidyverse, <a href="https://psyteachr.github.io/glossary/b#base-r" target="_blank" class="glossary" title="The set of R functions that come with a basic installation of R, before you add external packages.">base R</a> also has a <code><a href="https://rdrr.io/r/base/sets.html">base::intersect()</a></code> function that doesn’t work like <code><a href="https://generics.r-lib.org/reference/setops.html">dplyr::intersect()</a></code>. The error message can be confusing and looks something like this:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>base<span class="sc">::</span><span class="fu">intersect</span>(customers, new_customers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>base<span class="sc">::</span><span class="fu">intersect</span>(patients, new_patients)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code><a href="https://rdrr.io/r/base/list.html">list()</a></code></pre>
 </div>
@@ -1622,8 +1807,8 @@ Warning
 <span class="header-section-number">5.8.2</span> union()</h3>
 <p><code><a href="https://generics.r-lib.org/reference/setops.html">dplyr::union()</a></code> returns all the rows from both tables, removing duplicate rows, unlike <code>bind_rows()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>union_data <span class="ot">&lt;-</span> <span class="fu">union</span>(customers, new_customers)</span>
-<span id="cb27-2"><a href="#cb27-2"></a>union_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>union_data <span class="ot">&lt;-</span> <span class="fu">union</span>(patients, new_patients)</span>
+<span id="cb26-2"><a href="#cb26-2"></a>union_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1695,7 +1880,7 @@ Warning
 <div class="callout-body-container callout-body">
 <p>If you’ve forgotten to load dplyr or the tidyverse, <a href="https://psyteachr.github.io/glossary/b#base-r" target="_blank" class="glossary" title="The set of R functions that come with a basic installation of R, before you add external packages.">base R</a> also has a <code><a href="https://rdrr.io/r/base/sets.html">base::union()</a></code> function. You usually won’t get an error message, but the output won’t be what you expect.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>base<span class="sc">::</span><span class="fu">union</span>(customers, new_customers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>base<span class="sc">::</span><span class="fu">union</span>(patients, new_patients)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 1 2 3 4 5
@@ -1722,8 +1907,8 @@ Warning
 <span class="header-section-number">5.8.3</span> setdiff()</h3>
 <p><code><a href="https://generics.r-lib.org/reference/setops.html">dplyr::setdiff</a></code> returns rows that are in the first table, but not in the second table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>setdiff_data <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(customers, new_customers)</span>
-<span id="cb30-2"><a href="#cb30-2"></a>setdiff_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>setdiff_data <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(patients, new_patients)</span>
+<span id="cb29-2"><a href="#cb29-2"></a>setdiff_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1760,8 +1945,8 @@ Warning
 </div>
 <p>Order matters for <code>setdiff</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>setdiff2_data <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(new_customers, customers)</span>
-<span id="cb31-2"><a href="#cb31-2"></a>setdiff2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>setdiff2_data <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(new_patients, patients)</span>
+<span id="cb30-2"><a href="#cb30-2"></a>setdiff2_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1808,7 +1993,7 @@ Warning
 <div class="callout-body-container callout-body">
 <p>If you’ve forgotten to load dplyr or the tidyverse, <a href="https://psyteachr.github.io/glossary/b#base-r" target="_blank" class="glossary" title="The set of R functions that come with a basic installation of R, before you add external packages.">base R</a> also has a <code><a href="https://rdrr.io/r/base/sets.html">base::setdiff()</a></code> function. You usually won’t get an error message, but the output might not be what you expect because <code><a href="https://rdrr.io/r/base/sets.html">base::setdiff()</a></code> expects columns to be in the same order, so id 5 here registers as different between the two tables.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>base<span class="sc">::</span><span class="fu">setdiff</span>(customers, new_customers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>base<span class="sc">::</span><span class="fu">setdiff</span>(patients, new_patients)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 1 2 3 4 5
@@ -1822,17 +2007,125 @@ Warning
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Two surveys used the same questions and columns, one run in 2023 (survey_2023) and one in 2024 (survey_2024). You want one dataset with all responses from both years, keeping duplicates if the same respondent appears twice. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">union</option>
+<option value="answer">bind_rows</option>
+<option value="">bind_cols</option>
+<option value="">setdiff</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>bind_rows() stacks two data frames on top of each other, so you get all responses from 2023 and 2024 in one long dataset. It keeps duplicates by default, which is appropriate if the same respondent appears in both years and you want both records retained.</p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>You have two extracts of the same equality register (register_a, register_b) with identical columns. Some rows are exact duplicates across the two extracts. You want a combined dataset that removes exact duplicate rows. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="answer">union</option>
+<option value="">bind_rows</option>
+<option value="">bind_cols</option>
+<option value="">setdiff</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>union() combines the rows from both extracts but drops exact duplicate rows, so repeated entries across register_a and register_b are removed. This is useful when the columns match and you want a deduplicated combined register without having to identify duplicates manually.</p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>You have a master list of staff IDs expected in an annual pay gap analysis (master_staff) and a list of staff IDs present in the HR export you received (hr_export). You want to identify staff who are in the master list but missing from the export. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="answer">union</option>
+<option value="">bind_rows</option>
+<option value="">bind_cols</option>
+<option value="answer">setdiff</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>setdiff(master_staff, hr_export) returns the IDs that are in master_staff but not in hr_export, which is exactly what you want for a missingness check. Order matters, so reversing the inputs would answer a different question (who is in the export but not the master list).</p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>You have a dataset with one row per patient (patients) and a separate table with model predictions in the same row order (preds), with no shared identifier. You want to add the prediction column to the patients dataset. Which should you use?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="answer">union</option>
+<option value="">bind_rows</option>
+<option value="">bind_cols</option>
+<option value="answer">setdiff</option></select></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Explain this answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>bind_cols() adds columns side by side, which is the right choice when patients and preds have the same number of rows and are already aligned in the same row order. Because there is no shared identifier to join on, a join would be inappropriate and could silently misalign records if the order differs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section><section id="conflicting-variable-types" class="level2" data-number="5.9"><h2 data-number="5.9" class="anchored" data-anchor-id="conflicting-variable-types">
 <span class="header-section-number">5.9</span> Conflicting variable types</h2>
-<p>As we covered in <span class="quarto-unresolved-ref">?sec-data</span>, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there’s something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it’s important that not only are the variable names identical, but the data type of those variables is identical.</p>
-<p>Let’s recreate our <code>new_customers</code> dataset but this time, we’ll specify that <code>id</code> is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> variable.</p>
+<p>As we covered in <a href="04-summary.html" class="quarto-xref"><span>Chapter 4</span></a>, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there’s something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it’s important that not only are the variable names identical, but the data type of those variables is identical.</p>
+<p>Let’s recreate our <code>new_patients</code> dataset but this time, we’ll specify that <code>id</code> is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> variable.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>new_customers2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>),</span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA75 6NR"</span>, <span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>),</span>
-<span id="cb34-4"><a href="#cb34-4"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Tobermory"</span>, <span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>)</span>
-<span id="cb34-5"><a href="#cb34-5"></a>)</span>
-<span id="cb34-6"><a href="#cb34-6"></a><span class="fu">str</span>(new_customers2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>new_patients2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>),</span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="at">postcode =</span> <span class="fu">c</span>(<span class="st">"PA75 6NR"</span>, <span class="st">"FK1 4RS"</span>, <span class="st">"PA42 7EA"</span>, <span class="st">"G81 4SJ"</span>, <span class="st">"KW15 1SE"</span>),</span>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="at">city =</span> <span class="fu">c</span>(<span class="st">"Tobermory"</span>, <span class="st">"Falkirk"</span>, <span class="st">"Ardbeg"</span>, <span class="st">"Doogal"</span>, <span class="st">"Kirkwall"</span>)</span>
+<span id="cb33-5"><a href="#cb33-5"></a>)</span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="fu">str</span>(new_patients2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [5 × 3] (S3: tbl_df/tbl/data.frame)
  $ id      : chr [1:5] "5" "6" "7" "8" ...
@@ -1842,7 +2135,7 @@ Warning
 </div>
 <p>If you try to join this dataset to any of the other datasets where <code>id</code> is stored as a <a href="https://psyteachr.github.io/glossary/n#numeric" target="_blank" class="glossary" title="A data type representing a real decimal number or integer.">numeric</a> variable, it will produce an error.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">inner_join</span>(customers, new_customers2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">inner_join</span>(patients, new_patients2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id, city, postcode)`</code></pre>
 </div>
@@ -1855,13 +2148,13 @@ Warning
 </div>
 <p>The same goes for <code>bind_rows()</code>:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">bind_rows</span>(customers, new_customers2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">bind_rows</span>(patients, new_patients2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `bind_rows()`:
 ! Can't combine `..1$id` &lt;integer&gt; and `..2$id` &lt;character&gt;.</code></pre>
 </div>
 </div>
-<p>As alternative method to change variable types from what we showed you in <span class="quarto-unresolved-ref">?sec-data</span> is to use the <code>as.***</code> functions. If you type <code>as.</code> into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:</p>
+<p>As alternative method to change variable types from what we showed you in <a href="04-summary.html" class="quarto-xref"><span>Chapter 4</span></a> is to use the <code>as.***</code> functions. If you type <code>as.</code> into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:</p>
 <ul>
 <li>
 <code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code> - convert a variable to <a href="https://psyteachr.github.io/glossary/n#numeric" target="_blank" class="glossary" title="A data type representing a real decimal number or integer.">numeric</a>. Useful for when you have a variable of real numbers that have been encoded as character. Any values that can’t be turned into numbers (e.g., if you have the word “missing” in cells that you have no data for), will be returned as <code>NA</code>.</li>
@@ -1874,12 +2167,12 @@ Warning
 </ul>
 <p>To use these functions on a variable we can use <code>mutate()</code> to overwrite the variable with that variable as the new data type:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>new_customers2 <span class="ot">&lt;-</span> new_customers2 <span class="sc">%&gt;%</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">as.numeric</span>(id))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>new_patients2 <span class="ot">&lt;-</span> new_patients2 <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">as.numeric</span>(id))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Once you’ve done this, the joins will now work:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">inner_join</span>(orders, new_customers2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">inner_join</span>(visits, new_patients2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(id)`</code></pre>
 </div>
@@ -1888,7 +2181,7 @@ Warning
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
-<th style="text-align: right;">items</th>
+<th style="text-align: right;">visits</th>
 <th style="text-align: left;">postcode</th>
 <th style="text-align: left;">city</th>
 </tr></thead>
@@ -1907,13 +2200,13 @@ Warning
 </tr>
 <tr class="odd">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
 <td style="text-align: left;">FK1 4RS</td>
 <td style="text-align: left;">Falkirk</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: left;">FK1 4RS</td>
 <td style="text-align: left;">Falkirk</td>
 </tr>
@@ -1928,83 +2221,107 @@ Warning
 </div>
 </div>
 </div>
-</section><section id="exercises" class="level2" data-number="5.10"><h2 data-number="5.10" class="anchored" data-anchor-id="exercises">
-<span class="header-section-number">5.10</span> Exercises</h2>
-<p>There’s lots of different use cases for the <code>****_join()</code> functions. These exercises will allow you to practice different joins. If you have any examples of where joins might be helpful in your own work, please post them on Teams in the week 6 channel, as having many concrete examples can help distinguish between the different joins.</p>
-<section id="grade-data" class="level3" data-number="5.10.1"><h3 data-number="5.10.1" class="anchored" data-anchor-id="grade-data">
-<span class="header-section-number">5.10.1</span> Grade data</h3>
+</section><section id="sec-advanced-joins" class="level2" data-number="5.10"><h2 data-number="5.10" class="anchored" data-anchor-id="sec-advanced-joins">
+<span class="header-section-number">5.10</span> Advanced</h2>
+<p>If you would like to go beyond what we’ve covered in this chapter, we recommend the following Advanced appendices that are related to this chapter:</p>
+<ul>
+<li>Advanced: Data Import (<a href="app-import.html" class="quarto-xref"><span>Appendix C</span></a>)</li>
+<li>Advanced: Data Types (<a href="app-datatypes.html" class="quarto-xref"><span>Appendix D</span></a>)</li>
+</ul></section><section id="peer-coding-exercises" class="level2" data-number="5.11"><h2 data-number="5.11" class="anchored" data-anchor-id="peer-coding-exercises">
+<span class="header-section-number">5.11</span> Peer Coding Exercises</h2>
+<p>If you are enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.</p>
+<p>For each exercise, you will work in a pair programming team. Pair programming is when two people work on the same code with distinct, rotating roles:</p>
+<ul>
+<li><p>The Driver operates the keyboard, implements the next small step, narrates what they are doing.</p></li>
+<li><p>The Navigator reviews in real time, thinks ahead, checks naming, design, and help pages, and catches mistakes and typos.</p></li>
+</ul>
+<p>You should work in short cycles (5 to 10 minutes or two or three tasks), then switch roles.</p>
+<p>There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<section id="set-up" class="level3 callout-body-container callout-body" data-number="5.11.1"><h3 data-number="5.11.1" class="anchored" data-anchor-id="set-up">
+<span class="header-section-number">5.11.1</span> Set up</h3>
+<ol type="1">
+<li><p>Decide who is going to start as the Driver and Navigator. Remember to switch every so often. The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.</p></li>
+<li><p>Open RStudio, ensure the environment is clear, and restart R.</p></li>
+<li><p>Create a new quarto document and save it as ads-week6-joins.qmd</p></li>
+<li><p>In a new code chunk, load the tidyverse.</p></li>
+</ol></section>
+</div>
+<section id="grade-data" class="level3" data-number="5.11.2"><h3 data-number="5.11.2" class="anchored" data-anchor-id="grade-data">
+<span class="header-section-number">5.11.2</span> Grade data</h3>
 <p>The University of Glasgow’s Schedule A grading scheme uses a 22-point alphanumeric scale (there’s more information in your summative report <a href="https://sway.office.com/k0CnXGd6RjbVokkR" target="_blank">assessment information sheet</a>). Each alphanumeric grade (e.g., B2) has an underlying numeric Grade Point (e.g., 16).</p>
 <p>Often when we’re working with student grades they are provided to us in only one of these forms, but we need to be able to go between the two. For example, we need the numeric form in order to be able to calculate descriptive statistics about the mean grade, but we need the alphanumeric form to release to student records.</p>
-<ul>
-<li><p>Download <a href="data/grade_data1.csv" download="">grade_data.csv</a>, <a href="data/grade_data2.csv" download="">grade_data2.csv</a> and <a href="data/scheduleA.csv" download="">scheduleA.csv</a> into your data folder.</p></li>
-<li><p>Read in <code>scheduleA.csv</code> and save it to an object named <code>schedule</code>.</p></li>
-<li><p>Read in <code>grade_data1.csv</code> and save it to an object named <code>grades1</code>.</p></li>
-<li><p>Read in <code>grade_data2.csv</code> and save it to an object named <code>grades2</code>.</p></li>
-</ul>
-<div class="cell" data-layout-align="center" data-webex.hide="true">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+<span class="screen-reader-only">Tip</span>Activity
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>schedule <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/scheduleA.csv"</span>)</span>
-<span id="cb44-2"><a href="#cb44-2"></a>grades1 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/grade_data1.csv"</span>) </span>
-<span id="cb44-3"><a href="#cb44-3"></a>grades2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/grade_data2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>5 Download <a href="data/grade_data1.csv" download="">grade_data.csv</a>, <a href="data/grade_data2.csv" download="">grade_data2.csv</a> and <a href="data/scheduleA.csv" download="">scheduleA.csv</a> into your data folder.</p>
+<ol start="6" type="1">
+<li>Read each file into R and store them as grades1, grades2, and schedule.</li>
+</ol>
 </div>
 </div>
-</div>
-</div>
-</section><section id="matching-the-variable-types" class="level3" data-number="5.10.2"><h3 data-number="5.10.2" class="anchored" data-anchor-id="matching-the-variable-types">
-<span class="header-section-number">5.10.2</span> Matching the variable types</h3>
+</section><section id="matching-the-variable-types" class="level3" data-number="5.11.3"><h3 data-number="5.11.3" class="anchored" data-anchor-id="matching-the-variable-types">
+<span class="header-section-number">5.11.3</span> Matching the variable types</h3>
 <p>At UofG, all students are given a GUID, a numeric ID number. However, that ID number is also then combined with the first letter from your surname to create your username that is used with your email address. For example, if your ID is 1234567 and your surname is Nordmann, your username would be 1234567n. From a data wrangling perspective this is very annoying because the numeric ID will be stored as numeric data, but the username will be stored as character because of the letter at the end. <code>grades1</code> has a numeric id whilst <code>grades2</code> has the additional letter. In order to join these datasets, we need to standardise the variables.</p>
-<p>First, remove the letter character from <code>id</code> using the function <code><a href="https://stringr.tidyverse.org/reference/str_replace.html">stringr::str_replace_all()</a></code>, which replaces text that matches a pattern. Here, we’re using the pattern <code>"[a-z]"</code>, which matches all lowercase letters a through z, and replacing them with <code>""</code>. See the help for <code>?about_search_regex</code> for more info about how to set patterns (these can get really complex).</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>grades1 <span class="ot">&lt;-</span> grades1 <span class="sc">%&gt;%</span></span>
-<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">str_replace_all</span>(</span>
-<span id="cb45-3"><a href="#cb45-3"></a>    id, <span class="co"># the variable you want to search</span></span>
-<span id="cb45-4"><a href="#cb45-4"></a>    <span class="at">pattern =</span> <span class="st">"[a-z]"</span>, <span class="co"># find all letters a-z</span></span>
-<span id="cb45-5"><a href="#cb45-5"></a>    <span class="at">replacement =</span> <span class="st">""</span> <span class="co"># replace with nothing</span></span>
-<span id="cb45-6"><a href="#cb45-6"></a>  ))  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Now, transform the data type of <code>id</code> so that it matches the data type in <code>grades2</code>.</p>
-<div class="cell" data-layout-align="center" data-webex.hide="true">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+<span class="screen-reader-only">Tip</span>Activity
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># check variable types</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">glimpse</span>(grades1)</span>
-<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">glimpse</span>(grades2) </span>
-<span id="cb46-4"><a href="#cb46-4"></a></span>
-<span id="cb46-5"><a href="#cb46-5"></a>grades1 <span class="ot">&lt;-</span> grades1 <span class="sc">%&gt;%</span></span>
-<span id="cb46-6"><a href="#cb46-6"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">as.numeric</span>(id))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="7" type="1">
+<li>First, remove the letter character from <code>id</code> using the function <code><a href="https://stringr.tidyverse.org/reference/str_replace.html">stringr::str_replace_all()</a></code>, which replaces text that matches a pattern. Here, we’re using the pattern <code>"[a-z]"</code>, which matches all lowercase letters a through z, and replacing them with <code>""</code>. See the help for <code>?about_search_regex</code> for more info about how to set patterns (these can get really complex).</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>grades1 <span class="ot">&lt;-</span> grades1 <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">str_replace_all</span>(</span>
+<span id="cb43-3"><a href="#cb43-3"></a>    id, <span class="co"># the variable you want to search</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">pattern =</span> <span class="st">"[a-z]"</span>, <span class="co"># find all letters a-z</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>    <span class="at">replacement =</span> <span class="st">""</span> <span class="co"># replace with nothing</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>  ))  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="8" type="1">
+<li>Now, transform the data type of <code>id</code> so that it matches the data type in <code>grades2</code>.</li>
+</ol>
 </div>
 </div>
-</div>
-</div>
-</section><section id="complete-records" class="level3" data-number="5.10.3"><h3 data-number="5.10.3" class="anchored" data-anchor-id="complete-records">
-<span class="header-section-number">5.10.3</span> Complete records</h3>
+</section><section id="complete-records" class="level3" data-number="5.11.4"><h3 data-number="5.11.4" class="anchored" data-anchor-id="complete-records">
+<span class="header-section-number">5.11.4</span> Complete records</h3>
 <p>In this example, we want to join the grade data to schedule A so that each student with a grade has both the grade and the grade point. But we also want a complete record of all students on the course, so students with missing grades should still be included in the data.</p>
-<ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol start="9" type="1">
 <li>Join <code>grades1</code> and <code>scheduleA</code> and store this table in an object named <code>exam_all</code>.</li>
 <li>Do the same for <code>grades2</code> and save it in <code>essay_all</code>.</li>
 <li>Both <code>exam_all</code> and <code>essay_all</code> should have 100 observations of 4 variables.</li>
-</ul>
+</ol>
 <div class="webex-solution">
 <button>
 Hint
@@ -2012,8 +2329,8 @@ Hint
 <p>You want to keep all of the data from <code>grade_data1</code> and <code>grade_data2</code>, but you only want the alphanumeric grades from <code>schedule</code> for the Grade Point values that exist in <code>grades</code>. E.g., if no-one was awarded an F1, your final dataset shouldn’t have that in it.</p>
 </div>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2022,16 +2339,15 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>exam_all <span class="ot">&lt;-</span> <span class="fu">left_join</span>(grades1, schedule, <span class="at">by =</span> <span class="st">"Points"</span>)</span>
-<span id="cb47-2"><a href="#cb47-2"></a>essay_all <span class="ot">&lt;-</span> <span class="fu">left_join</span>(grades2, schedule, <span class="at">by =</span> <span class="st">"Points"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
 </div>
 </div>
 </div>
 </div>
-</section><section id="missing-data" class="level3" data-number="5.10.4"><h3 data-number="5.10.4" class="anchored" data-anchor-id="missing-data">
-<span class="header-section-number">5.10.4</span> Missing data</h3>
+<section id="missing-data" class="level3" data-number="5.11.5"><h3 data-number="5.11.5" class="anchored" data-anchor-id="missing-data">
+<span class="header-section-number">5.11.5</span> Missing data</h3>
 <p>Alternatively, you may wish to have a dataset that only contains data for students who submitted each assessment and have a grade. First, run <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> on both <code>exam_all</code> and <code>essay_all</code>.</p>
 <ul>
 <li>How many exam grades are missing? <input class="webex-solveme nospaces" size="2" data-answer="[&quot;17&quot;]">
@@ -2039,7 +2355,9 @@ Hint
 <li>How many essay grades are missing? <input class="webex-solveme nospaces" size="2" data-answer="[&quot;23&quot;]">
 </li>
 </ul>
-<p>Now, create an object <code>exam_grades</code> that joins together <code>grades1</code> and <code>schedule</code>, but this time the resulting object should only contain data from students who have a grade. Do the same but for <code>grades2</code> and store it in <code>essay_grades</code>.</p>
+<ol start="12" type="1">
+<li>Now, create an object <code>exam_grades</code> that joins together <code>grades1</code> and <code>schedule</code>, but this time the resulting object should only contain data from students who have a grade. Do the same but for <code>grades2</code> and store it in <code>essay_grades</code>.</li>
+</ol>
 <p>Before you do this, given what you know about how many data points are missing in each data set:</p>
 <ul>
 <li>How many observations should <code>exam_grades</code> have? <input class="webex-solveme nospaces" size="2" data-answer="[&quot;83&quot;]">
@@ -2047,40 +2365,20 @@ Hint
 <li>How many observations should <code>essay_grades</code> have? <input class="webex-solveme nospaces" size="2" data-answer="[&quot;77&quot;]">
 </li>
 </ul>
-<div class="cell" data-layout-align="center" data-webex.hide="true">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>exam_grades <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(grades1, schedule, <span class="at">by =</span> <span class="st">"Points"</span>)</span>
-<span id="cb48-2"><a href="#cb48-2"></a>essay_grades <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(grades2, schedule, <span class="at">by =</span> <span class="st">"Points"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-</div>
 <div class="webex-solution">
 <button>
 Alternative solution
 </button>
 <p>It’s worth noting that in reality you wouldn’t actually go back to the raw data and do another join to get this dataset, you could just remove all the missing response by adding <code>%&gt;% drop_na()</code> to <code>exam_all</code> and <code>essay_all</code>. However, for the purposes of teaching joins, we’ll do it this slightly artificial way.</p>
 </div>
-<p>Now, create a dataset <code>completes</code> that joins the grades for students who have a grade for <strong>both</strong> the essay and the exam.</p>
-<ul>
-<li>Because both <code>exam_grades</code> and <code>essay_grades</code> have the variables <code>Assessment</code>, <code>Points</code> and <code>Grades</code> that are named the same, but have different data, you should amend the suffix so that the resulting variables are named <code>Points_exam</code> and <code>Points_essay</code> etc. You may need to consult the help documentation to see an example to figure this out.</li>
+<ol start="13" type="1">
+<li>Now, create a dataset <code>completes</code> that joins the grades for students who have a grade for <strong>both</strong> the essay and the exam. Because both <code>exam_grades</code> and <code>essay_grades</code> have the variables <code>Assessment</code>, <code>Points</code> and <code>Grades</code> that are named the same, but have different data, you should amend the suffix so that the resulting variables are named <code>Points_exam</code> and <code>Points_essay</code> etc. You may need to consult the help documentation to see an example to figure this out.</li>
 <li>Clean up the file with <code>select()</code> and only keep the variables <code>id</code>, <code>Grade_exam</code>, and <code>Grade_essay</code>
 </li>
-</ul>
+</ol>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2089,12 +2387,12 @@ Alternative solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>completes <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(exam_grades, essay_grades, </span>
-<span id="cb49-2"><a href="#cb49-2"></a>                        <span class="at">by =</span> <span class="st">"id"</span>, </span>
-<span id="cb49-3"><a href="#cb49-3"></a>                        <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">"_exam"</span>, <span class="st">"_essay"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb49-4"><a href="#cb49-4"></a>  <span class="fu">select</span>(id, Grade_exam, Grade_essay)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>completes <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(exam_grades, essay_grades, </span>
+<span id="cb44-2"><a href="#cb44-2"></a>                        <span class="at">by =</span> <span class="st">"id"</span>, </span>
+<span id="cb44-3"><a href="#cb44-3"></a>                        <span class="at">suffix =</span> <span class="fu">c</span>(<span class="st">"_exam"</span>, <span class="st">"_essay"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">select</span>(id, Grade_exam, Grade_essay)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2103,10 +2401,12 @@ Alternative solution
 <li>How many students have a grade for both the exam and the essay? <input class="webex-solveme nospaces" size="2" data-answer="[&quot;62&quot;]">
 </li>
 </ul>
-<p>Now create a dataset <code>no_essay</code> that contains students that have a grade for the exam, but not the essay.</p>
+<ol start="15" type="1">
+<li>Now create a dataset <code>no_essay</code> that contains students that have a grade for the exam, but not the essay.</li>
+</ol>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2115,9 +2415,9 @@ Alternative solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>no_essay <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(exam_grades, essay_grades, <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>no_essay <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(exam_grades, essay_grades, <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2126,10 +2426,12 @@ Alternative solution
 <li>How many students have a grade for the exam but not the essay? <input class="webex-solveme nospaces" size="2" data-answer="[&quot;21&quot;]">
 </li>
 </ul>
-<p>Finally, now make a dataset <code>no_exam</code> that contains students have have a grade for the essay but not the exam</p>
+<ol start="16" type="1">
+<li>Finally, now make a dataset <code>no_exam</code> that contains students have have a grade for the essay but not the exam</li>
+</ol>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -2138,21 +2440,21 @@ Alternative solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>no_exam <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(essay_grades, exam_grades, <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>no_exam <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(essay_grades, exam_grades, <span class="at">by =</span> <span class="st">"id"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
-<ul>
+<ol start="17" type="1">
 <li>How many students have a grade for the exam but not the essay? <input class="webex-solveme nospaces" size="2" data-answer="[&quot;15&quot;]">
 </li>
-</ul></section><section id="share-on-teams" class="level3" data-number="5.10.5"><h3 data-number="5.10.5" class="anchored" data-anchor-id="share-on-teams">
-<span class="header-section-number">5.10.5</span> Share on Teams</h3>
-<p>Once you’re done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 07 channel.</p>
-</section></section><section id="sec-glossary-joins" class="level2" data-number="5.11"><h2 data-number="5.11" class="anchored" data-anchor-id="sec-glossary-joins">
-<span class="header-section-number">5.11</span> Glossary</h2>
+</ol></section>
+</div>
+</div>
+</section></section><section id="sec-glossary-joins" class="level2" data-number="5.12"><h2 data-number="5.12" class="anchored" data-anchor-id="sec-glossary-joins">
+<span class="header-section-number">5.12</span> Glossary</h2>
 <div class="cell" data-layout-align="center">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -2199,8 +2501,8 @@ Alternative solution
 </tbody>
 </table>
 </div>
-</section><section id="sec-resources-joins" class="level2" data-number="5.12"><h2 data-number="5.12" class="anchored" data-anchor-id="sec-resources-joins">
-<span class="header-section-number">5.12</span> Further resources</h2>
+</section><section id="sec-resources-joins" class="level2" data-number="5.13"><h2 data-number="5.13" class="anchored" data-anchor-id="sec-resources-joins">
+<span class="header-section-number">5.13</span> Further resources</h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheatsheet</a></li>
 <li>
