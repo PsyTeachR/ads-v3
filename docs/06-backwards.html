@@ -493,7 +493,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <section id="details-and-files" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="details-and-files">
 <span class="header-section-number">6.1</span> Details and files</h2>
 <ul>
-<li><p>To get started, download this <a href="https://psyteachr.github.io/ads-v3/data/backwards_report.zip" download="">zip file</a> which contains the data files and the finished html report that you need to backwards engineer from the data.</p></li>
+<li><p>To get started, download this <a href="https://github.com/PsyTeachR/ads-v3/tree/master/data/backwards_report.zip" download="">zip file</a> which contains the data files and the finished html report that you need to backwards engineer from the data.</p></li>
 <li><p>There are multiple ways to achieve the same outcome when coding. You do not have to use the same solutions that we did; what matters is that the output is the same and that it is reproducible.</p></li>
 <li><p>Your code should contain comments so that it is clear what you have done and why.</p></li>
 <li><p>All plots and tables in the report should be fully reproducible, in addition, all numbers and text that are bold and underlined should also be reproducible, i.e., you should use inline coding rather than just writing out the numbers in the text.</p></li>
@@ -520,7 +520,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p><strong>Do not use AI for this task</strong>. We’re going to use AI to write the code again in Week 7 in the lab so if you use AI for your first attempt, the lab will be pointless and you will learn nothing. <strong>Trust us</strong>. We’re not anti-AI, we’re just pro-learning.</p>
 </section><section id="helpful-hints" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="helpful-hints">
 <span class="header-section-number">6.3</span> Helpful hints</h2>
-<p>A few hints to help you on your way: - You have no other work to do this week for ADS aside from AITutoR - this replaces the workshops, reading, AND quizzes so expect to spend quite a few hours on the report. It won’t be something you’re likely to do in one sitting. - Your first step should be to open the data files and figure out what each variable is and whether there are any common variables across the datasets, you may need to rename some of them. - For one of the datasets, we’re going to give you a few lines of code to load in the data as it needs a little bit of wrangling we haven’t yet taught you.</p>
+<p>A few hints to help you on your way:</p>
+<ul>
+<li>You have no other work to do this week for ADS aside from AITutoR - this replaces the workshops, reading, AND quizzes so expect to spend quite a few hours on the report. It won’t be something you’re likely to do in one sitting.</li>
+<li>Your first step should be to open the data files and figure out what each variable is and whether there are any common variables across the datasets, you may need to rename some of them.</li>
+<li>For one of the datasets, we’re going to give you a few lines of code to load in the data as it needs a little bit of wrangling we haven’t yet taught you.</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>uv202 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"UV202 - National Identity.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.fns =</span> as.numeric)) <span class="sc">|&gt;</span></span>
@@ -543,8 +548,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span class="header-section-number">6.4</span> Why am I being assessed like this?</h2>
 <p>This report serves as a practice for the full report, which will be due at the end of the semester. The backwards engineering report gives you the intended output so that you can focus on your coding skills, rather than deciding how to summarise and present the data. You will need to make these decisions yourself for the full report.</p>
 <p>The peer review exercise will support you to evaluate code. It will provide a useful demonstration of how there are always mulitple approaches to the same problem and reading other people’s code will reinforce why reproducibility and clear comments are useful.</p>
-<p>The mark for participation and attendance component rewards consisrent engagement with the course. Programming is not a skill that can</p>
-<p>Whilst most of the skills required for this report have been explicitly taught, there are minor bits of the coding that will require you to look up solutions independently. This will be good practice for the final report and for applying your coding skills to your own work.</p>
+<p>The mark for participation and attendance component rewards consistent engagement with the course. Programming is not a skill that can be developed through cramming, it requires steady practice and we want to reward those of you who engage in this way.</p>
+<p>Whilst most of the skills required for this report have been explicitly taught, there are minor bits of the coding that will require you to look up solutions independently. This will be good practice for the final report and for applying your coding skills to new and novel problems.</p>
 
 
 </section></main><!-- /main --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script>

@@ -6,7 +6,7 @@ This chapter gives an overview the first assessment, the backwards engineering r
 
 ## Details and files
 
--   To get started, download this <a href="https://psyteachr.github.io/ads-v3/data/backwards_report.zip" download>zip file</a> which contains the data files and the finished html report that you need to backwards engineer from the data. 
+-   To get started, download this <a href="https://github.com/PsyTeachR/ads-v3/tree/master/data/backwards_report.zip" download>zip file</a> which contains the data files and the finished html report that you need to backwards engineer from the data. 
 
 -   There are multiple ways to achieve the same outcome when coding. You do not have to use the same solutions that we did; what matters is that the output is the same and that it is reproducible.
 
@@ -42,6 +42,7 @@ Google and Stack Overflow will help you a lot. Remember to include the names of 
 ## Helpful hints
 
 A few hints to help you on your way:
+
 - You have no other work to do this week for ADS aside from AITutoR - this replaces the workshops, reading, AND quizzes so expect to spend quite a few hours on the report. It won't be something you're likely to do in one sitting. 
 -   Your first step should be to open the data files and figure out what each variable is and whether there are any common variables across the datasets, you may need to rename some of them.
 - For one of the datasets, we're going to give you a few lines of code to load in the data as it needs a little bit of wrangling we haven't yet taught you.
@@ -69,6 +70,6 @@ This report serves as a practice for the full report, which will be due at the e
 
 The peer review exercise will support you to evaluate code. It will provide a useful demonstration of how there are always mulitple approaches to the same problem and reading other people's code will reinforce why reproducibility and clear comments are useful.
 
-The mark for participation and attendance component rewards consisrent engagement with the course. Programming is not a skill that can
+The mark for participation and attendance component rewards consistent engagement with the course. Programming is not a skill that can be developed through cramming, it requires steady practice and we want to reward those of you who engage in this way.
 
-Whilst most of the skills required for this report have been explicitly taught, there are minor bits of the coding that will require you to look up solutions independently. This will be good practice for the final report and for applying your coding skills to your own work.
+Whilst most of the skills required for this report have been explicitly taught, there are minor bits of the coding that will require you to look up solutions independently. This will be good practice for the final report and for applying your coding skills to new and novel problems. 
