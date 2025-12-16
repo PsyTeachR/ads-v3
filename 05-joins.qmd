@@ -2,8 +2,8 @@
 
 ## Intended Learning Outcomes {#sec-ilo-joins .unnumbered}
 
--   Be able to match related data across multiple tables
--   Be able to combine data from multiple files
+- [ ] Be able to match related data across multiple tables
+- [ ] Be able to combine data from multiple files
 
 ## Functions used {#functions-joins}
 
