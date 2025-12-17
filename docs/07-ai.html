@@ -451,11 +451,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#sec-ilo-ai" id="toc-sec-ilo-ai" class="nav-link active" data-scroll-target="#sec-ilo-ai">Intended Learning Outcomes</a></li>
-  <li><a href="#sec-walkthrough-ai" id="toc-sec-walkthrough-ai" class="nav-link" data-scroll-target="#sec-walkthrough-ai">Walkthrough video</a></li>
   <li><a href="#sec-intro-ai" id="toc-sec-intro-ai" class="nav-link" data-scroll-target="#sec-intro-ai"><span class="header-section-number">7.1</span> Here we go again</a></li>
-  <li><a href="#sec-setup-ai" id="toc-sec-setup-ai" class="nav-link" data-scroll-target="#sec-setup-ai"><span class="header-section-number">7.2</span> Set-up</a></li>
-  <li><a href="#starting-advice" id="toc-starting-advice" class="nav-link" data-scroll-target="#starting-advice"><span class="header-section-number">7.3</span> Starting advice</a></li>
-  <li><a href="#keep-a-log" id="toc-keep-a-log" class="nav-link" data-scroll-target="#keep-a-log"><span class="header-section-number">7.4</span> Keep a log</a></li>
+  <li><a href="#starting-advice" id="toc-starting-advice" class="nav-link" data-scroll-target="#starting-advice"><span class="header-section-number">7.2</span> Starting advice</a></li>
   </ul>
 </nav>
     </div>
@@ -484,63 +481,61 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <section id="sec-ilo-ai" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-ilo-ai">Intended Learning Outcomes</h2>
-<ul>
-<li>Use AI to write code</li>
-<li>Critically evaluate the output of AI</li>
+<ul class="task-list">
+<li><label><input type="checkbox">Use AI to write code in R</label></li>
+<li><label><input type="checkbox">Critically evaluate AI output against a known target report</label></li>
+<li><label><input type="checkbox">Compare how small prompt differences shape both the code and the reasoning an AI produces</label></li>
 </ul>
-</section>
-<section id="sec-walkthrough-ai" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-walkthrough-ai">Walkthrough video</h2>
-<p>There is no walkthrough video for this chapter.</p>
 </section>
 <section id="sec-intro-ai" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="sec-intro-ai"><span class="header-section-number">7.1</span> Here we go again</h2>
 <p>So far we’ve been slowly building up your use of AI but we’ve very consciously stayed away from allowing or encouraging you to use AI to write your code. But it’s now time, so for this chapter, we’re going to do something a bit different.</p>
-<p>Rather than giving you new exercises or content, your task is seemingly very simple: redo the practice report from Chapter 5, but this time, <strong>AI must write all of the code</strong>. You can use any AI platform you’d like.</p>
+<p>Rather than giving you new exercises or content, your task is seemingly very simple: redo the practice report from <a href="06-backwards.html" class="quarto-xref"><span>Chapter 6</span></a>, but this time, <strong>AI must write all of the code</strong>.</p>
 <p>The rationale behind this is that having worked through the report yourself, you will be intimately familiar with the dataset and the requirements of the assignment. This means that your ability to critically evaluate and check its output will be stronger than with a new dataset. This should (in theory) allow you to:</p>
 <ul>
 <li>Check whether it’s actually done it right</li>
 <li>Understand how to engineer your prompts to get it closer to the solution if it’s struggling</li>
 <li>Evaluate the suitability of alternative approaches to your original solution.</li>
 </ul>
+<p>However, you will also do this as a peer coding exercise designed to expose a specific phenomenon: two people can ask for “the same thing” and still get meaningfully different code, explanations, and levels of correctness, purely because of differences in prompt wording, assumptions, and constraints. Research consistently shows that LLM outputs can be sensitive to prompt phrasing and that they can produce plausible but incorrect content, including in technical contexts.</p>
 </section>
-<section id="sec-setup-ai" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="sec-setup-ai"><span class="header-section-number">7.2</span> Set-up</h2>
-<p>Create a separate project from your original practice report project to avoid any confusion.</p>
-<p>The two files you need to download are the dataset: <a href="https://psyteachr.github.io/ads-v2/data/review_data.csv" download="">review_data.csv</a>. and the finished report that you need to backwards engineer from the data: <a href="https://psyteachr.github.io/ads-v2/data/formative_report_output.html">formative_report_output.html</a>.</p>
-</section>
-<section id="starting-advice" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="starting-advice"><span class="header-section-number">7.3</span> Starting advice</h2>
+<section id="starting-advice" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="starting-advice"><span class="header-section-number">7.2</span> Starting advice</h2>
 <p>A few hints, tip, and rules to get you on your way:</p>
 <ul>
-<li>Although the dataset for the practice report isn’t sensitive data (and indeed was publicly available), treat it as if it were. Even if the AI has the capability, don’t upload the dataset. Instead run <code>str()</code> and <code>summary()</code> and describe the dataset to the AI so it knows the variables and the types of data.</li>
-<li>You can upload the finished report if you want although describing each bit manually might be more educational in the long-run (and more likely to generalise to when you don’t have anything to backwards engineer from).</li>
-<li>Check everything it produces. Just because it doesn’t throw an error, doesn’t mean it’s right.</li>
+<li>Although the dataset for the practice report is publicly available data, treat it as if it were strictly private and confidential. Even if the AI has the capability, don’t upload the dataset. Instead run <code>str()</code> and <code>summary()</code> and describe the dataset to the AI so it knows the variables and the types of data.</li>
+<li>You can upload the rendered html report if you want although describing each bit manually might be more educational in the long-run (and more likely to generalise to when you don’t have anything to backwards engineer from).</li>
+<li>Check everything it produces. Just because it doesn’t throw an error, doesn’t mean it’s right. Check the values it produces against your original solution.</li>
 <li>Think about the specificity of your prompts. If you want it to produce solutions closer to our solution, tell it to use the <code>tidyverse</code>. If you’d like to see what other approaches it might take, don’t give it a steer on packages (be mindful you might need to install some new packages).</li>
 </ul>
-</section>
-<section id="keep-a-log" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="keep-a-log"><span class="header-section-number">7.4</span> Keep a log</h2>
-<p>As you’re progressing, makes notes on the following:</p>
-<ul>
-<li>What does it get right with ease?</li>
-<li>What does it get right with a bit of back-and-forth?</li>
-<li>What errors does it make? If you didn’t know the dataset and hadn’t worked through the report yourself, is there anything you think you may have missed that the AI got wrong?</li>
-<li>How does the code compare to your original solution?? Is there anything you think it did better? Is there anything you think you did better?</li>
-<li>Did you learn any new functions or approaches?</li>
-</ul>
-<p>Once you’re done, post your notes on Teams so we can compare how different AIs performed. If you use ChatGPT or Gemini, you can also post a link to your chat so other learners can see the full process.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+<span class="screen-reader-only">Tip</span>Activity
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Teaching with and about AI is a brave new world. We think that this exercise will be extremely useful for a number of reasons but we’d really appreciate any feedback on whether that’s the case!</p>
+<ol type="1">
+<li>Each person should create a separate Qmd file from your original practice report project to avoid any confusion.</li>
+<li>For each part of the report, agree on what you want to achieve with the AI, e.g., “at this step, we’ll load in the data, rename and clean the columns and set the factors”. To make this more meaningful, don’t make each step too simple (load in the data), but also don’t assign too many tasks to each step (code the whole report).</li>
+<li>Then, separately prompt your AI until you get it to do the agreed task(s).</li>
+<li>Next compare both of your prompts and the output it produced.</li>
+<li>For each stage, makes notes on the following:</li>
+</ol>
+<ul>
+<li>Did you prompts differ from your partner? For example, was one of you more specific or provided longer prompts?</li>
+<li>What did the AI get right with ease? What did the AI get right with a bit of back-and-forth? What errors did the AI make?</li>
+<li>How does the code compare to your original solution?? Is there anything you think it did better? Is there anything you think you did better? Did you learn any new functions or approaches?</li>
+<li>If you didn’t know the dataset and hadn’t worked through the report yourself, is there anything you think you may have missed that the AI got wrong?</li>
+<li>If you hadn’t worked through the report yourself and had just used AI for the first attempt, is there anything you learned during the process that you think you would have missed by using AI? This could be a specific function or it could be e.g., more confidence.</li>
+</ul>
+<ol start="6" type="1">
+<li>Get as far as you can through the report by the end of the Tuesday workshop and then submit your log on Moodle.</li>
+<li>Additionally, submit your AI produced Qmd file and rendered html file on the Week 7 channel on Teams so that other students can see the varying outputs.</li>
+</ol>
 </div>
 </div>
 
