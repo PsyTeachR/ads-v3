@@ -1405,14 +1405,15 @@ personality <- read_csv("https://psyteachr.github.io/ads-v3/data/personality_sco
 :::
 
 
-## Glossary {#sec-glossary-viz -}
+## Glossary {#sec-glossary-viz}
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 glossary_table()
 ```
 
 
-## Further Resources {#sec-resources-viz -}
+## Further Resources {#sec-resources-viz}
 
 * [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
 * [Data visualisation using R, for researchers who don't use R](https://psyteachr.github.io/introdataviz/) [@nordmann_2021]

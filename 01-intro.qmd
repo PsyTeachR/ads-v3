@@ -563,6 +563,11 @@ vignette("ggplot2-specs", package = "ggplot2")
 
 The glossary at the end of each chapter defines common jargon you might encounter while learning R. This specialised vocabulary can help you to communicate more efficiently and to search for solutions to problems. The terms below link to our [PsyTeachR glossary](https://psyteachr.github.io/glossary/), which contains further information and examples.
 
+```{r}
+#| echo: false
+glossary_table()
+```
+
 ## Peer Coding Exercises {#sec-exercises-intro}
 
 If you're enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.
@@ -599,10 +604,6 @@ message <- paste("Hi", name, "— there are", days_left, "days until your report
 10. Use `beep()` to play the Mario sound.
 11. Save the file and make sure you both have a copy (send it to the other person via Teams or OneDrive)
 :::
-
-```{r, echo = FALSE}
-glossary_table()
-```
 
 
 

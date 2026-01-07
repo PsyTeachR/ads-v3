@@ -804,7 +804,8 @@ no_exam <- anti_join(essay_grades, exam_grades, by = "id")
 
 ## Glossary {#sec-glossary-joins}
 
-```{r, echo = FALSE, results='asis'}
+```{r}
+#| echo: false
 glossary_table()
 ```
 

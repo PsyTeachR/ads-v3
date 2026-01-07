@@ -1,0 +1,29 @@
+country_name,country_code,year,members,women
+Argentina,ARG,1950,34,0
+Argentina,ARG,1975,69,3
+Argentina,ARG,2000,72,2
+Argentina,ARG,2025,72,33
+Brazil,BRA,1950,63,0
+Brazil,BRA,1975,66,0
+Brazil,BRA,2000,81,6
+Brazil,BRA,2025,81,16
+Chile,CHL,1950,45,0
+Chile,CHL,1975,50,2
+Chile,CHL,2000,49,2
+Chile,CHL,2025,50,13
+Italy,ITA,1950,342,4
+Italy,ITA,1975,322,6
+Italy,ITA,2000,326,26
+Italy,ITA,2025,204,74
+Jordan,JOR,1950,20,0
+Jordan,JOR,1975,30,0
+Jordan,JOR,2000,40,3
+Jordan,JOR,2025,69,10
+Philippines,PHL,1950,8,0
+Philippines,PHL,1975,8,1
+Philippines,PHL,2000,23,4
+Philippines,PHL,2025,24,5
+United States of America,USA,1950,100,1
+United States of America,USA,1975,100,0
+United States of America,USA,2000,100,13
+United States of America,USA,2025,100,26

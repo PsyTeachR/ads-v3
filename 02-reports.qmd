@@ -1004,14 +1004,14 @@ Make sure any files you reference are inside your project folder, and **always**
 :::
 
 
-## Glossary {#sec-glossary-reports -}
+## Glossary {#sec-glossary-reports}
 
 ```{r}
 #| echo: false
 glossary_table()
 ```
 
-## Further Resources {#sec-resources-reports -}
+## Further Resources {#sec-resources-reports}
 
 -   [Quarto Guide](https://quarto.org/docs/guide/)
 -   [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)

@@ -610,13 +610,14 @@ There are no solutions provided for the pair programming activities. Everything 
 
 :::
 
-## Glossary {#sec-glossary-summary -}
+## Glossary {#sec-glossary-summary}
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 glossary_table()
 ```
 
-## Further resources {#sec-resources-summary -}
+## Further resources {#sec-resources-summary}
 
 * [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 * [Chapter 3: Data Transformation ](https://r4ds.hadley.nz/data-transform) in *R for Data Science*
