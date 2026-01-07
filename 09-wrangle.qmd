@@ -681,7 +681,7 @@ Missing data can be quite difficult to deal with depending on how it is represen
 
 Let's try some exercises using a dataset you already encountered in @sec-viz so that you can see how much more you're able to do with the data now.
 
-* Save your current Markdown, close it, and open a new Rmd named "survey_data_mad_skillz".
+* Save your current Markdown, close it, and open a new qmd named "survey_data_mad_skillz".
 * In the set-up code chunk, load the tidyverse, then load the dataset from https://psyteachr.github.io/ads-v2/data/survey_data.csv into an object named `survey_data`.
 * Use your method of choice to review the dataset and familiarise yourself with its structure.
 
@@ -859,7 +859,7 @@ In preparation for the final summative assessment, explore the data to provide o
 
 ### Share on Teams
 
-Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 09 channel.
+Once you're done, share your rendered html file and the qmd file for the exercises on Teams in the Week 09 channel.
 
 
 ## Glossary {#sec-glossary-wrangle}

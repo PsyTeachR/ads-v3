@@ -127,7 +127,7 @@ Edit the README file to include the code for installing your package from github
 devtools::install_github("psyteachr/demopkg")
 ```
 
-Knit the README, then go into the Git tab in the upper right pane. You should see a list of files that have changes.  Select them all and click on the staged checkboxes, then click "Commit".
+Render the README, then go into the Git tab in the upper right pane. You should see a list of files that have changes.  Select them all and click on the staged checkboxes, then click "Commit".
 
 :::{.light-mode}
 ![](images/git-commit.png)
@@ -166,7 +166,7 @@ If there were no error message, go ahead and close this.
 
 You may prefer interacting with git via the command line. If not, you can skip this section. 
 
-Add something to the README and re-knit to create changes. Then go to the Terminal in the console pane and type `git status`. You should see output like this, with the changed files in red.
+Add something to the README and re-render to create changes. Then go to the Terminal in the console pane and type `git status`. You should see output like this, with the changed files in red.
 
 :::{.terminal}
 ```

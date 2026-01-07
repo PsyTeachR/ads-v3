@@ -116,7 +116,7 @@ Before we start creating new files, it's important to review how to name your fi
 
 -   file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (`.`) between the file name and `r glossary("extension")` (that means no spaces!)
 -   be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)
--   use underscores (`_`) to separate parts of the file name, like the title and date, and dashes (`-`) to separate words in each part (e.g., `thesis-analysis_2024-10-31.Rmd`)
+-   use underscores (`_`) to separate parts of the file name, like the title and date, and dashes (`-`) to separate words in each part (e.g., `thesis-analysis_2024-10-31.qmd`)
 -   name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you're looking for
 -   prefix a file name with an underscore to move it to the top of the list, or prefix all files with numbers to control their order
 
@@ -796,7 +796,7 @@ For example, by default you might want to hide your code but there also might be
 ::: {.callout-tip .activity}
 
 
-Try this now and knit the file to see the results.
+Try this now and render the file to see the results.
 :::
 
 Additionally, you can also override the default image display size or dimensions.
@@ -902,7 +902,7 @@ So far we've just rendered to html. To generate PDF reports, you need to install
 ::: {.callout-tip .activity}
 
 
-Run the following code in the console (do **not** add this to your Rmd file):
+Run the following code in the console (do **not** add this to your qmd file):
 
 ```{r}
 #| eval: false
@@ -911,7 +911,7 @@ install.packages("tinytex")
 tinytex::install_tinytex()
 ```
 
-Once you've done this, update your YAML heading to add a `pdf_document` section and knit a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace `html` with `pdf`, you may need to remove some options if you get an error that looks like "Functions that produce HTML output found in document targeting PDF output."
+Once you've done this, update your YAML heading to add a `pdf_document` section and render a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace `html` with `pdf`, you may need to remove some options if you get an error that looks like "Functions that produce HTML output found in document targeting PDF output."
 
 ```  md
 ---

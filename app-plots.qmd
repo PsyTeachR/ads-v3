@@ -649,7 +649,7 @@ To convert this to an animated plot that shows the data from multiple years:
 
 * Remove the filter and add `transition_time(year)`. 
 * Use the `{}` syntax to include the `frame_time` in the title. 
-* Use `anim_save()` to save the animation to a GIF file and set this code chunk to `eval = FALSE` because creating an animation takes a long time and you don't want to have to run it every time you knit your report.
+* Use `anim_save()` to save the animation to a GIF file and set this code chunk to `#| eval: false` because creating an animation takes a long time and you don't want to have to run it every time you render your report.
 
 ```{r, eval = FALSE}
 anim <- worldpop |>

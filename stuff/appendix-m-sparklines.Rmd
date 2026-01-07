@@ -88,7 +88,7 @@ babies <- names_long %>%
 
 Use kable to print the table, setting `escape = FALSE` to prevent the html in the three nations columns from being "escaped" and printing literally instead of functioning as html code.
 
-If you run this code interactively in the source pane, you won't see the sparklines. You have to knit to be able to see them because they rely on some javascript code that is created by `sparkline(0)` in the setup chunk. 
+If you run this code interactively in the source pane, you won't see the sparklines. You have to render to be able to see them because they rely on some javascript code that is created by `sparkline(0)` in the setup chunk. 
 
 Click on the sparklines and hover over them to see the actual numbers.
 

@@ -728,7 +728,7 @@ Don’t nest projects
 <ul>
 <li>file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (<code>.</code>) between the file name and <a href="https://psyteachr.github.io/glossary/e#extension" target="_blank" class="glossary" title="The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).">extension</a> (that means no spaces!)</li>
 <li>be consistent with capitalisation (set a rule to make it easy to remember, like always use lowercase)</li>
-<li>use underscores (<code>_</code>) to separate parts of the file name, like the title and date, and dashes (<code>-</code>) to separate words in each part (e.g., <code>thesis-analysis_2024-10-31.Rmd</code>)</li>
+<li>use underscores (<code>_</code>) to separate parts of the file name, like the title and date, and dashes (<code>-</code>) to separate words in each part (e.g., <code>thesis-analysis_2024-10-31.qmd</code>)</li>
 <li>name files with a pattern that alphabetises in a sensible order and makes it easy for you to find the file you’re looking for</li>
 <li>prefix a file name with an underscore to move it to the top of the list, or prefix all files with numbers to control their order</li>
 </ul>
@@ -1366,7 +1366,7 @@ Tip
 <span id="cb19-9"><a href="#cb19-9"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/logos/psyTeachR_logo.png"</span>, )</span>
 <span id="cb19-10"><a href="#cb19-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" width="50%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research" data-fig-align="right">
+<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research" width="50%" data-fig-align="right">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-psyteachr-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://psyteachr.github.io"><img src="images/logos/psyTeachR_logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:50.0%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"></a>
 </div>
@@ -1786,7 +1786,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Try this now and knit the file to see the results.</p>
+<p>Try this now and render the file to see the results.</p>
 </div>
 </div>
 <p>Additionally, you can also override the default image display size or dimensions.</p>
@@ -1918,12 +1918,12 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Run the following code in the console (do <strong>not</strong> add this to your Rmd file):</p>
+<p>Run the following code in the console (do <strong>not</strong> add this to your qmd file):</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
 <span id="cb34-2"><a href="#cb34-2"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Once you’ve done this, update your YAML heading to add a <code>pdf_document</code> section and knit a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace <code>html</code> with <code>pdf</code>, you may need to remove some options if you get an error that looks like “Functions that produce HTML output found in document targeting PDF output.”</p>
+<p>Once you’ve done this, update your YAML heading to add a <code>pdf_document</code> section and render a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace <code>html</code> with <code>pdf</code>, you may need to remove some options if you get an error that looks like “Functions that produce HTML output found in document targeting PDF output.”</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1"></a><span class="co">---</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a><span class="an">format:</span></span>
 <span id="cb35-3"><a href="#cb35-3"></a><span class="co">  pdf:</span></span>

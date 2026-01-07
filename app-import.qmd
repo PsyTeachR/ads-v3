@@ -14,7 +14,13 @@ There is a walkthrough video of this chapter available via [Echo360.](https://ec
 
 ## Set-up {#sec-setup-data}
 
-Create a new project for the work we'll do in this chapter named `r path("app-data-import")`. Then, create and save a new R Markdown document named `data.Rmd`, get rid of the default template text, and load the packages in the set-up code chunk. You should have all of these packages installed already, but if you get the message `Error in library(x) : there is no package called ‘x’`, please refer to @sec-install-package.
+1. Open your `ADS-2026` project 
+1. Download the [Data import cheat sheet](https://rstudio.github.io/cheatsheets/html/data-import.html)
+1. Create a new quarto file called `app-import.qmd`
+1. Update the YAML header 
+1. Replace the setup chunk with the one below
+
+You should have all of these packages installed already, but if you get the message `Error in library(x) : there is no package called ‘x’`, please refer to @sec-install-package.
 
 ```{r setup-data, message=FALSE, verbatim="r setup, include=FALSE"}
 library(tidyverse)     # includes readr & tibble
@@ -24,9 +30,9 @@ library(readxl)        # for Excel files
 library(googlesheets4) # for Google Sheets
 ```
 
-We'd recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you'd like to ask the course team.
+You should have all of these packages installed already, but if you get the message `Error in library(x) : there is no package called ‘x’`, please refer to @sec-install-package.
 
-Download the [Data import cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf).
+We'd recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you'd like to ask the course team.
 
 ## Built-in data {#sec-builtin}
 
@@ -483,11 +489,11 @@ You may also be tempted to fix messy datasets by, for example, opening up Excel 
 
 ## Exercises
 
-For the final step in this chapter, we will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We'd also recommend you knit at every step so that you can see how your output changes.
+For the final step in this chapter, we will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We'd also recommend you render at every step so that you can see how your output changes.
 
-### New Markdown {#sec-exercises-new-rmd-4}
+### New Script {#sec-exercises-new-qmd-4}
 
-Create and save a new R Markdown document named `starwars_report.Rmd`. In the set-up code chunk load the packages `tidyverse` and `rio`.
+Create and save a new quarto document named `starwars_report.qmd`. In the set-up code chunk load the packages `tidyverse` and `rio`.
 
 We're going to use the built-in `starwars` dataset that contains data about Star Wars characters. You can learn more about the dataset by using the `?help` function.
 
@@ -604,7 +610,7 @@ ggplot(starwars, aes(x = gender, fill = gender)) +
 ### Make it look nice
 
 * Add at least one Star Wars related image from an online source
-* Hide the code and any messages from the knitted output
+* Hide the code and any messages from the rendered output
 * Resize any images as you see fit
 
 `r hide()`

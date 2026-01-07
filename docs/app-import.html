@@ -490,7 +490,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li>
 <a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">C.9</span> Exercises</a>
   <ul>
-<li><a href="#sec-exercises-new-rmd-4" id="toc-sec-exercises-new-rmd-4" class="nav-link" data-scroll-target="#sec-exercises-new-rmd-4"><span class="header-section-number">C.9.1</span> New Markdown</a></li>
+<li><a href="#sec-exercises-new-qmd-4" id="toc-sec-exercises-new-qmd-4" class="nav-link" data-scroll-target="#sec-exercises-new-qmd-4"><span class="header-section-number">C.9.1</span> New Script</a></li>
   <li><a href="#sec-exercises-load" id="toc-sec-exercises-load" class="nav-link" data-scroll-target="#sec-exercises-load"><span class="header-section-number">C.9.2</span> Import and export the dataset</a></li>
   <li><a href="#convert-column-types" id="toc-convert-column-types" class="nav-link" data-scroll-target="#convert-column-types"><span class="header-section-number">C.9.3</span> Convert column types</a></li>
   <li><a href="#sec-exercises-plots" id="toc-sec-exercises-plots" class="nav-link" data-scroll-target="#sec-exercises-plots"><span class="header-section-number">C.9.4</span> Plots</a></li>
@@ -527,7 +527,16 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/52d2249e-a737-42b4-bf55-267e39fc05c5/public">Echo360.</a> Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
 </section><section id="sec-setup-data" class="level2" data-number="C.1"><h2 data-number="C.1" class="anchored" data-anchor-id="sec-setup-data">
 <span class="header-section-number">C.1</span> Set-up</h2>
-<p>Create a new project for the work we’ll do in this chapter named <code class="path">app-data-import</code>. Then, create and save a new R Markdown document named <code>data.Rmd</code>, get rid of the default template text, and load the packages in the set-up code chunk. You should have all of these packages installed already, but if you get the message <code>Error in library(x) : there is no package called ‘x’</code>, please refer to <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.4.1</span></a>.</p>
+<ol type="1">
+<li>Open your <code>ADS-2026</code> project</li>
+<li>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-import.html">Data import cheat sheet</a>
+</li>
+<li>Create a new quarto file called <code>app-import.qmd</code>
+</li>
+<li>Update the YAML header</li>
+<li>Replace the setup chunk with the one below</li>
+</ol>
+<p>You should have all of these packages installed already, but if you get the message <code>Error in library(x) : there is no package called ‘x’</code>, please refer to <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.4.1</span></a>.</p>
 <div class="cell" data-layout-align="center" data-verbatim="r setup, include=FALSE">
 <div class="verbatim">
 <pre class="sourceCode r code-with-copy"><code class="sourceCode R">```{r setup, include=FALSE}</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
@@ -539,8 +548,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <pre class="sourceCode r code-with-copy"><code class="sourceCode R">```</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
 </div>
 </div>
+<p>You should have all of these packages installed already, but if you get the message <code>Error in library(x) : there is no package called ‘x’</code>, please refer to <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.4.1</span></a>.</p>
 <p>We’d recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you’d like to ask the course team.</p>
-<p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf">Data import cheatsheet</a>.</p>
 </section><section id="sec-builtin" class="level2" data-number="C.2"><h2 data-number="C.2" class="anchored" data-anchor-id="sec-builtin">
 <span class="header-section-number">C.2</span> Built-in data</h2>
 <p>You’ll likely want to import you own data to work with, however, Base R also comes with built-in datasets and these can be very useful for learning new functions and packages. Additionally, some packages, like <pkg>tidyr</pkg>, also contain data. The <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code> function lists the datasets available.</p>
@@ -1328,10 +1337,10 @@ e.g.:
 <p>You may also be tempted to fix messy datasets by, for example, opening up Excel and editing them there. Whilst this might seem easier in the short term, there’s two serious issues with doing this. First, you will likely work with datasets that have recurring messy problems. By taking the time to solve these problems with code, you can apply the same solutions to a large number of future datasets so it’s more efficient in the long run. Second, if you edit the spreadsheet, there’s no record of what you did. By solving these problems with code, you do so reproducibly and you don’t edit the original data file. This means that if you make an error, you haven’t lost the original data and can recover.</p>
 </section><section id="exercises" class="level2" data-number="C.9"><h2 data-number="C.9" class="anchored" data-anchor-id="exercises">
 <span class="header-section-number">C.9</span> Exercises</h2>
-<p>For the final step in this chapter, we will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We’d also recommend you knit at every step so that you can see how your output changes.</p>
-<section id="sec-exercises-new-rmd-4" class="level3" data-number="C.9.1"><h3 data-number="C.9.1" class="anchored" data-anchor-id="sec-exercises-new-rmd-4">
-<span class="header-section-number">C.9.1</span> New Markdown</h3>
-<p>Create and save a new R Markdown document named <code>starwars_report.Rmd</code>. In the set-up code chunk load the packages <code>tidyverse</code> and <code>rio</code>.</p>
+<p>For the final step in this chapter, we will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We’d also recommend you render at every step so that you can see how your output changes.</p>
+<section id="sec-exercises-new-qmd-4" class="level3" data-number="C.9.1"><h3 data-number="C.9.1" class="anchored" data-anchor-id="sec-exercises-new-qmd-4">
+<span class="header-section-number">C.9.1</span> New Script</h3>
+<p>Create and save a new quarto document named <code>starwars_report.qmd</code>. In the set-up code chunk load the packages <code>tidyverse</code> and <code>rio</code>.</p>
 <p>We’re going to use the built-in <code>starwars</code> dataset that contains data about Star Wars characters. You can learn more about the dataset by using the <code><a href="https://rdrr.io/r/utils/help.html">?help</a></code> function.</p>
 </section><section id="sec-exercises-load" class="level3" data-number="C.9.2"><h3 data-number="C.9.2" class="anchored" data-anchor-id="sec-exercises-load">
 <span class="header-section-number">C.9.2</span> Import and export the dataset</h3>
@@ -1472,7 +1481,7 @@ Solution
 <span class="header-section-number">C.9.5</span> Make it look nice</h3>
 <ul>
 <li>Add at least one Star Wars related image from an online source</li>
-<li>Hide the code and any messages from the knitted output</li>
+<li>Hide the code and any messages from the rendered output</li>
 <li>Resize any images as you see fit</li>
 </ul>
 <div class="webex-solution">
