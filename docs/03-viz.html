@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>3&nbsp; Data Visualisation – Applied Data Skills</title>
 <style>
@@ -86,19 +86,18 @@ div.csl-indent {
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea06de1ba525ceca656e3b09b4cd3316.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-055205720082bea6cf7d6c8b816a8014.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-18a2161c37a28c2ad2b6bf620dd7650e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-055205720082bea6cf7d6c8b816a8014.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8f2db377de619df7931067401f8d1149.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -312,9 +311,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
         <div class="sidebar-tools-main">
@@ -482,7 +479,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li><a href="#sec-ilo-viz" id="toc-sec-ilo-viz" class="nav-link active" data-scroll-target="#sec-ilo-viz">Intended Learning Outcomes</a></li>
@@ -490,9 +487,18 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#sec-setup-viz" id="toc-sec-setup-viz" class="nav-link" data-scroll-target="#sec-setup-viz">Set-up</a></li>
   <li>
 <a href="#sec-plots" id="toc-sec-plots" class="nav-link" data-scroll-target="#sec-plots"><span class="header-section-number">3.1</span> Building plots</a>
-  <ul class="collapse">
+  <ul>
 <li><a href="#sec-plots-loading-data" id="toc-sec-plots-loading-data" class="nav-link" data-scroll-target="#sec-plots-loading-data"><span class="header-section-number">3.1.1</span> Loading data</a></li>
-  <li><a href="#plot-setup" id="toc-plot-setup" class="nav-link" data-scroll-target="#plot-setup"><span class="header-section-number">3.1.2</span> Plot setup</a></li>
+  <li>
+<a href="#plot-setup" id="toc-plot-setup" class="nav-link" data-scroll-target="#plot-setup"><span class="header-section-number">3.1.2</span> Plot setup</a>
+  <ul class="collapse">
+<li><a href="#default-theme" id="toc-default-theme" class="nav-link" data-scroll-target="#default-theme"><span class="header-section-number">3.1.2.1</span> Default theme</a></li>
+  <li><a href="#sec-plot-setup-data" id="toc-sec-plot-setup-data" class="nav-link" data-scroll-target="#sec-plot-setup-data"><span class="header-section-number">3.1.2.2</span> Data</a></li>
+  <li><a href="#mapping" id="toc-mapping" class="nav-link" data-scroll-target="#mapping"><span class="header-section-number">3.1.2.3</span> Mapping</a></li>
+  <li><a href="#sec-ggplot-labels" id="toc-sec-ggplot-labels" class="nav-link" data-scroll-target="#sec-ggplot-labels"><span class="header-section-number">3.1.2.4</span> Label Attributes</a></li>
+  <li><a href="#geoms" id="toc-geoms" class="nav-link" data-scroll-target="#geoms"><span class="header-section-number">3.1.2.5</span> Geoms</a></li>
+  </ul>
+</li>
   <li><a href="#multiple-geoms" id="toc-multiple-geoms" class="nav-link" data-scroll-target="#multiple-geoms"><span class="header-section-number">3.1.3</span> Multiple geoms</a></li>
   <li><a href="#plot-objects" id="toc-plot-objects" class="nav-link" data-scroll-target="#plot-objects"><span class="header-section-number">3.1.4</span> Plot objects</a></li>
   <li><a href="#combining-plots" id="toc-combining-plots" class="nav-link" data-scroll-target="#combining-plots"><span class="header-section-number">3.1.5</span> Combining plots</a></li>
@@ -500,7 +506,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
   <li>
 <a href="#customising-plots" id="toc-customising-plots" class="nav-link" data-scroll-target="#customising-plots"><span class="header-section-number">3.2</span> Customising plots</a>
-  <ul class="collapse">
+  <ul>
 <li><a href="#styling-geoms" id="toc-styling-geoms" class="nav-link" data-scroll-target="#styling-geoms"><span class="header-section-number">3.2.1</span> Styling geoms</a></li>
   <li><a href="#format-axes" id="toc-format-axes" class="nav-link" data-scroll-target="#format-axes"><span class="header-section-number">3.2.2</span> Format axes</a></li>
   <li><a href="#axis-limits" id="toc-axis-limits" class="nav-link" data-scroll-target="#axis-limits"><span class="header-section-number">3.2.3</span> Axis limits</a></li>
@@ -510,20 +516,47 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
   <li>
 <a href="#sec-captions" id="toc-sec-captions" class="nav-link" data-scroll-target="#sec-captions"><span class="header-section-number">3.3</span> Figure captions</a>
-  <ul class="collapse">
+  <ul>
 <li><a href="#sec-ggsave" id="toc-sec-ggsave" class="nav-link" data-scroll-target="#sec-ggsave"><span class="header-section-number">3.3.1</span> Saving Plots</a></li>
   </ul>
 </li>
   <li>
 <a href="#sec-appropriate-plots" id="toc-sec-appropriate-plots" class="nav-link" data-scroll-target="#sec-appropriate-plots"><span class="header-section-number">3.4</span> Appropriate plots</a>
+  <ul>
+<li>
+<a href="#counting-categories" id="toc-counting-categories" class="nav-link" data-scroll-target="#counting-categories"><span class="header-section-number">3.4.1</span> Counting categories</a>
   <ul class="collapse">
-<li><a href="#counting-categories" id="toc-counting-categories" class="nav-link" data-scroll-target="#counting-categories"><span class="header-section-number">3.4.1</span> Counting categories</a></li>
+<li><a href="#bar-plot" id="toc-bar-plot" class="nav-link" data-scroll-target="#bar-plot"><span class="header-section-number">3.4.1.1</span> Bar plot</a></li>
+  <li><a href="#column-plot" id="toc-column-plot" class="nav-link" data-scroll-target="#column-plot"><span class="header-section-number">3.4.1.2</span> Column plot</a></li>
+  </ul>
+</li>
   <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">3.4.2</span> Pie chart</a></li>
   <li><a href="#sec-histogram" id="toc-sec-histogram" class="nav-link" data-scroll-target="#sec-histogram"><span class="header-section-number">3.4.3</span> One continuous variable</a></li>
-  <li><a href="#grouped-continuous-variables" id="toc-grouped-continuous-variables" class="nav-link" data-scroll-target="#grouped-continuous-variables"><span class="header-section-number">3.4.4</span> Grouped continuous variables</a></li>
-  <li><a href="#two-continuous-variables" id="toc-two-continuous-variables" class="nav-link" data-scroll-target="#two-continuous-variables"><span class="header-section-number">3.4.5</span> Two continuous variables</a></li>
+  <li>
+<a href="#grouped-continuous-variables" id="toc-grouped-continuous-variables" class="nav-link" data-scroll-target="#grouped-continuous-variables"><span class="header-section-number">3.4.4</span> Grouped continuous variables</a>
+  <ul class="collapse">
+<li><a href="#stacked-histogram" id="toc-stacked-histogram" class="nav-link" data-scroll-target="#stacked-histogram"><span class="header-section-number">3.4.4.1</span> Stacked histogram</a></li>
+  <li><a href="#dodged-histogram" id="toc-dodged-histogram" class="nav-link" data-scroll-target="#dodged-histogram"><span class="header-section-number">3.4.4.2</span> Dodged histogram</a></li>
+  <li><a href="#violin-plot" id="toc-violin-plot" class="nav-link" data-scroll-target="#violin-plot"><span class="header-section-number">3.4.4.3</span> Violin plot</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">3.4.4.4</span> Boxplot</a></li>
+  <li><a href="#combo-plots" id="toc-combo-plots" class="nav-link" data-scroll-target="#combo-plots"><span class="header-section-number">3.4.4.5</span> Combo plots</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#two-continuous-variables" id="toc-two-continuous-variables" class="nav-link" data-scroll-target="#two-continuous-variables"><span class="header-section-number">3.4.5</span> Two continuous variables</a>
+  <ul class="collapse">
+<li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot"><span class="header-section-number">3.4.5.1</span> Scatterplot</a></li>
+  <li><a href="#trendlines" id="toc-trendlines" class="nav-link" data-scroll-target="#trendlines"><span class="header-section-number">3.4.5.2</span> Trendlines</a></li>
+  </ul>
+</li>
   <li><a href="#simulated-data" id="toc-simulated-data" class="nav-link" data-scroll-target="#simulated-data"><span class="header-section-number">3.4.6</span> Simulated data</a></li>
-  <li><a href="#overplotting" id="toc-overplotting" class="nav-link" data-scroll-target="#overplotting"><span class="header-section-number">3.4.7</span> Overplotting</a></li>
+  <li>
+<a href="#overplotting" id="toc-overplotting" class="nav-link" data-scroll-target="#overplotting"><span class="header-section-number">3.4.7</span> Overplotting</a>
+  <ul class="collapse">
+<li><a href="#jitter-plot" id="toc-jitter-plot" class="nav-link" data-scroll-target="#jitter-plot"><span class="header-section-number">3.4.7.1</span> Jitter plot</a></li>
+  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets"><span class="header-section-number">3.4.7.2</span> Facets</a></li>
+  </ul>
+</li>
   </ul>
 </li>
   <li><a href="#sec-advanced-plots" id="toc-sec-advanced-plots" class="nav-link" data-scroll-target="#sec-advanced-plots"><span class="header-section-number">3.5</span> Advanced</a></li>
@@ -584,55 +617,44 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </ul>
 </li>
 </ul></section><section id="sec-setup-viz" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-setup-viz">Set-up</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Open your <code>ADS-2026</code> project</li>
+<li>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">ggplot2 cheat sheet</a>
+</li>
 <li>Create a new quarto file called <code>03-dataviz.qmd</code>
 </li>
 <li>Update the YAML header</li>
-<li>Replace the setup chunk with the one below:</li>
+<li>Replace the setup chunk with the one below</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(tidyverse) <span class="co"># includes readr, ggplot2, dplyr, and lubridate</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(patchwork) <span class="co"># for multi-part plots</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(ggthemes)  <span class="co"># for plot themes</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>If you get the message <code>Error in library(x) : there is no package called ‘x’</code>, please refer to <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.4.1</span></a>.</p>
 <p>We’d recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you’d like to ask the course team.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-visualization.html">ggplot2 cheat sheet</a>.</p>
-</div>
-</div>
 </section><section id="sec-plots" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="sec-plots">
 <span class="header-section-number">3.1</span> Building plots</h2>
 <p>There are multiple approaches to data visualisation in R; in this course we will use the popular package <pkg>ggplot2</pkg>, which is part of the larger <pkg>tidyverse</pkg> collection of packages. A grammar of graphics (the “gg” in “ggplot”) is a standardised way to describe the components of a graphic. <pkg>ggplot2</pkg> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any plot as having multiple elements that sit semi-transparently over each other. A good analogy is old Disney movies where artists would create a background and then add moveable elements on top of the background via transparencies.</p>
 <p><a href="#fig-layers" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> displays the evolution of a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a <code>geom</code>) that is desired for these variables is specified (layer 3) - in this case <code>geom_point()</code> is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-layers" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A grid of 6 layers buidling up a plot. 1: A blank plot. 2: Adds the x-axis `gini` with ticks 0.3 to 0.6 and the y-axis `welfare_mean` with ticks form 0 to 80. 3: Adds blue scatterplot points. 4: Adds a linear trendline with error shading. 5: Changes the x-axis label to `Gini Index` and the y-axis label to `Mean Welfare (log10)` and the y-axis to a log10 scale with ticks at 3, 10, 30 and 100. 6: Changes the y-axis ticks to 1, 2, 5, 10, 20, 50, and 100.">
+<div id="fig-layers" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A grid of 6 layers buidling up a plot. 1: A blank plot. 2: Adds the x-axis `gini` with ticks 0.3 to 0.6 and the y-axis `welfare_mean` with ticks form 0 to 80. 3: Adds blue scatterplot points. 4: Adds a linear trendline with error shading. 5: Changes the x-axis label to `Gini Index` and the y-axis label to `Mean Welfare (log10)` and the y-axis to a log10 scale with ticks at 3, 10, 30 and 100. 6: Changes the y-axis ticks to 1, 2, 5, 10, 20, 50, and 100." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-layers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-layers-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A grid of 6 layers buidling up a plot. 1: A blank plot. 2: Adds the x-axis `gini` with ticks 0.3 to 0.6 and the y-axis `welfare_mean` with ticks form 0 to 80. 3: Adds blue scatterplot points. 4: Adds a linear trendline with error shading. 5: Changes the x-axis label to `Gini Index` and the y-axis label to `Mean Welfare (log10)` and the y-axis to a log10 scale with ticks at 3, 10, 30 and 100. 6: Changes the y-axis ticks to 1, 2, 5, 10, 20, 50, and 100.">
 </div>
@@ -645,7 +667,7 @@ Figure&nbsp;3.1: Evolution of a layered plot
 <p>Importantly, each layer is independent and independently customisable. For example, the size, colour and position of each component can be adjusted, or one could, for example, remove the first geom (the data points) to only visualise the line of best fit, simply by removing the layer that draws the data points (<a href="#fig-remove-layer" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>). The use of layers makes it easy to build up complex plots step-by-step, and to adapt or extend plots from existing code.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-remove-layer" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A regression line with Gini Index on the x-axis and Mean Welfare (log10) on the y-axis, showing a negative relationship from 2.5 gini/30 welfare to 6.5 gini/5 welfare.">
+<div id="fig-remove-layer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A regression line with Gini Index on the x-axis and Mean Welfare (log10) on the y-axis, showing a negative relationship from 2.5 gini/30 welfare to 6.5 gini/5 welfare." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-remove-layer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-remove-layer-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A regression line with Gini Index on the x-axis and Mean Welfare (log10) on the y-axis, showing a negative relationship from 2.5 gini/30 welfare to 6.5 gini/5 welfare.">
 </div>
@@ -657,20 +679,20 @@ Figure&nbsp;3.2: Final plot with scatterplot layer removed.
 </div>
 <section id="sec-plots-loading-data" class="level3" data-number="3.1.1"><h3 data-number="3.1.1" class="anchored" data-anchor-id="sec-plots-loading-data">
 <span class="header-section-number">3.1.1</span> Loading data</h3>
-<p>Let’s build up the plot above, layer by layer. First we need to get the data. We’ll learn how to load data from different sources in <span class="quarto-unresolved-ref">?sec-data</span>, but this time we’ll use the same method as we did in <a href="02-reports.html#sec-loading-online" class="quarto-xref"><span>Section 2.3.3</span></a> and load it from an online source.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Let’s build up the plot above, layer by layer. First we need to get the data. You can see how to load data from different sources in <a href="app-import.html" class="quarto-xref"><span>Appendix C</span></a>, but this time we’ll use the same method as we did in <a href="02-reports.html#sec-loading-online" class="quarto-xref"><span>Section 2.3.3</span></a> and load it from an online source.</p>
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Load the data by copying the following into a code block in your script, and running the code.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>pip <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/PsyTeachR/ads-v3/refs/heads/master/data/pip_gini_welfare_2010.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>pip <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/PsyTeachR/ads-v3/refs/heads/master/data/pip_gini_welfare_2010.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -701,38 +723,38 @@ Figure&nbsp;3.2: Final plot with scatterplot layer removed.
 <section id="default-theme" class="level4" data-number="3.1.2.1"><h4 data-number="3.1.2.1" class="anchored" data-anchor-id="default-theme">
 <span class="header-section-number">3.1.2.1</span> Default theme</h4>
 <p>Plots in this book use the black-and-white theme, not the default grey theme, so set your default theme to the same so your plots will look like the examples below. At the top of your script, in the setup chunk after you’ve loaded the tidyverse package, add the following code and run it. You’ll learn more ways to customise your theme in <a href="#sec-themes" class="quarto-xref"><span>Section 3.2.4</span></a> and <a href="app-styling.html#sec-themes-appendix" class="quarto-xref"><span>Section F.3</span></a>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Add this code to your setup chunk. It needs to run before you make the first plot in this script.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>()) <span class="co"># set the default theme</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>()) <span class="co"># set the default theme</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section><section id="sec-plot-setup-data" class="level4" data-number="3.1.2.2"><h4 data-number="3.1.2.2" class="anchored" data-anchor-id="sec-plot-setup-data">
 <span class="header-section-number">3.1.2.2</span> Data</h4>
 <p>Every plot starts with the <code>ggplot()</code> function and a data table. If your data are not loaded or you have a typo in your code, this will give you an error message. It’s best to check your plot after each step, so that you can figure out where errors are more easily.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>In a new code chunk, create a blank plot.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pip)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="03-viz_files/figure-html/img-build-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A blank plot"></p>
@@ -745,23 +767,23 @@ Figure&nbsp;3.2: Final plot with scatterplot layer removed.
 </section><section id="mapping" class="level4" data-number="3.1.2.3"><h4 data-number="3.1.2.3" class="anchored" data-anchor-id="mapping">
 <span class="header-section-number">3.1.2.3</span> Mapping</h4>
 <p>The next <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">argument</a> to <code>ggplot()</code> is the <code>mapping</code>. This tells the plot which columns in the data should be represented by, or “mapped” to, different aspects of the plot, such as the x-axis, y-axis, line colour, object fill, or line style. These aspects, or “aesthetics”, are listed inside the <code>aes()</code> function.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Set the arguments <code>x</code> and <code>y</code> to the names of the columns you want to be plotted on those axes. Here, we want to plot <code>gini</code> (the measure of inequality) on the x-axis and <code>welfare_mean</code> (average welfore per capita) on the y-axis.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># set up the plot with mapping</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># set up the plot with mapping</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">ggplot</span>(</span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="at">data =</span> pip, </span>
 <span id="cb5-4"><a href="#cb5-4"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)</span>
-<span id="cb5-5"><a href="#cb5-5"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-5"><a href="#cb5-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="03-viz_files/figure-html/img-build-plot-mapping-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="An empty plot with `gini` on the x-axis and `welfare_mean` on the y-axis"></p>
@@ -773,32 +795,32 @@ Figure&nbsp;3.2: Final plot with scatterplot layer removed.
 </div>
 <p>In the example above, we wrote out the names of the <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a> <code>data</code> and <code>mapping</code>, but in practice, almost everyone omits them. Just make sure you put the data and mapping in the right order.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="sec-ggplot-labels" class="level4" data-number="3.1.2.4"><h4 data-number="3.1.2.4" class="anchored" data-anchor-id="sec-ggplot-labels">
 <span class="header-section-number">3.1.2.4</span> Label Attributes</h4>
 <p>You probably don’t want the axis labels to read “gini” and “welfare_mean”. These are great column labels that fit our rules for naming objects in R (<a href="02-reports.html#sec-naming" class="quarto-xref"><span>Section 2.1.4</span></a>), but are not plot-friendly.</p>
 <p>Before ggplot2 version 4.0.0, you had to always manually change the aesthetic labels with <code>labs()</code> or a scale_* function. But now you can add plot-friendly labels directly to the data table so they are always used.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Update the labels for each variable.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># set label attributes</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># set label attributes</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">attr</span>(pip<span class="sc">$</span>region_name, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Region"</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="fu">attr</span>(pip<span class="sc">$</span>region_code, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Region"</span></span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="fu">attr</span>(pip<span class="sc">$</span>country_name, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Country"</span></span>
 <span id="cb7-5"><a href="#cb7-5"></a><span class="fu">attr</span>(pip<span class="sc">$</span>country_code, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Country"</span></span>
 <span id="cb7-6"><a href="#cb7-6"></a><span class="fu">attr</span>(pip<span class="sc">$</span>reporting_year, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Year"</span></span>
 <span id="cb7-7"><a href="#cb7-7"></a><span class="fu">attr</span>(pip<span class="sc">$</span>gini, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Gini Index"</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="fu">attr</span>(pip<span class="sc">$</span>welfare_mean, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Mean Welfare per Capita"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="fu">attr</span>(pip<span class="sc">$</span>welfare_mean, <span class="st">"label"</span>) <span class="ot">&lt;-</span> <span class="st">"Mean Welfare per Capita"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -818,20 +840,20 @@ Caution
 </section><section id="geoms" class="level4" data-number="3.1.2.5"><h4 data-number="3.1.2.5" class="anchored" data-anchor-id="geoms">
 <span class="header-section-number">3.1.2.5</span> Geoms</h4>
 <p>Now we can add our plot elements in layers. These are referred to as <a href="https://psyteachr.github.io/glossary/g#geom" target="_blank" class="glossary" title="The geometric style in which data are displayed, such as boxplot, density, or histogram.">geoms</a> and their functions start with <code>geom_</code>. You <strong>add</strong> layers onto the base plot created by <code>ggplot()</code> with a plus (<code>+</code>).</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Add a scatterplot to your plot using <code>geom_point()</code>. Notice how the axis labels have updated themselves from the label attributes we set above!</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_point</span>() <span class="co"># scatterplot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_point</span>() <span class="co"># scatterplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="03-viz_files/figure-html/img-build-plot-labels-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot with axis labels and points"></p>
@@ -847,20 +869,20 @@ Caution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Location of the +
+Location of the +
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Somewhat annoyingly, the plus has to be on the end of the previous line, not at the start of the next line. If you do make this mistake, it will run the first line of code to produce the base layer but then you will get the following error message rather than adding on <code>geom_point()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="03-viz_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot with axis labels, but no scatterplot"></p>
 </figure>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="sc">+</span> <span class="fu">geom_point</span>() <span class="co"># scatterplot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="sc">+</span> <span class="fu">geom_point</span>() <span class="co"># scatterplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error:
 ! Cannot use `+` with a single argument.
@@ -873,7 +895,7 @@ Caution
 <span class="header-section-number">3.1.3</span> Multiple geoms</h3>
 <p>Part of the power of <pkg>ggplot2</pkg> is that you can add more than one geom to a plot by adding on extra layers and so it quickly becomes possible to make complex and informative visualisations. Importantly, the layers display in the order you set them up. The code below uses the same geoms to produce a boxplot with the raw data points, but orders them differently.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># points on top of boxplot</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># points on top of boxplot</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_name, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
@@ -883,11 +905,11 @@ Caution
 <span id="cb12-8"><a href="#cb12-8"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_name, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb12-9"><a href="#cb12-9"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb12-10"><a href="#cb12-10"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-11"><a href="#cb12-11"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-build-plot-geom2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Two nearly identical plots with boxplots plus raw data points. In the left plot, the points are underneath the boxplot, and in the right plot they are on top.">
+<div id="fig-build-plot-geom2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two nearly identical plots with boxplots plus raw data points. In the left plot, the points are underneath the boxplot, and in the right plot they are on top." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-geom2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-geom2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Two nearly identical plots with boxplots plus raw data points. In the left plot, the points are underneath the boxplot, and in the right plot they are on top.">
 </div>
@@ -901,7 +923,7 @@ Figure&nbsp;3.3: Points on top vs points underneath
 <span class="header-section-number">3.1.4</span> Plot objects</h3>
 <p>Just like you can save numbers and data tables to objects, you can also save the output of <code>ggplot()</code>. The code below produces the same plots we created above but saves them to objects named <code>points_top</code> and <code>points_bottom</code>. If you run just this code, the plots won’t display like they have done before. Instead, you’ll see the object names appear in the environment pane.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># points on top of boxplot</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># points on top of boxplot</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>points_top <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_name, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb13-4"><a href="#cb13-4"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
@@ -911,20 +933,20 @@ Figure&nbsp;3.3: Points on top vs points underneath
 <span id="cb13-8"><a href="#cb13-8"></a>points_bottom <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_name, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb13-9"><a href="#cb13-9"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb13-10"><a href="#cb13-10"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="#cb13-11"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-11"><a href="#cb13-11"></a>  <span class="fu">coord_flip</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To view the plots, call the objects by name. This will output each plot separately.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>points_top <span class="co"># view first plot</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>points_bottom <span class="co"># view second plot</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>points_top <span class="co"># view first plot</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>points_bottom <span class="co"># view second plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -935,10 +957,10 @@ Figure&nbsp;3.3: Points on top vs points underneath
 <span class="header-section-number">3.1.5</span> Combining plots</h3>
 <p>One of the reasons to save your plots to objects is so that you can combine multiple plots using functions from the <code>patchwork</code> package. The code below produces the plot above by combining the two plots with <code>+</code> and then specifying that we want the plots produced on a single row with the <code>nrow</code> argument in <code>plot_layout()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># add plots together in 1 row</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>points_top <span class="sc">+</span> points_bottom <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">nrow =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># add plots together in 1 row</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>points_top <span class="sc">+</span> points_bottom <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-geom2b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The points_top and points_bottom plots displayed in one image side-by-side.">
+<div id="fig-build-plot-geom2b" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The points_top and points_bottom plots displayed in one image side-by-side." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-geom2b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-geom2b-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The points_top and points_bottom plots displayed in one image side-by-side.">
 </div>
@@ -948,13 +970,13 @@ Figure&nbsp;3.4: Combining plots with patchwork.
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -973,7 +995,7 @@ Figure&nbsp;3.4: Combining plots with patchwork.
 <span class="header-section-number">3.2.1</span> Styling geoms</h3>
 <p>For our scatterplot, We should definitely put the line in front of the points, but the points are still a bit dark. If you want to change the overall style of a geom, you can set the arguments <code>colour</code>, <code>alpha</code>, <code>shape</code>, <code>size</code> and <code>linetype</code> inside the geom function. There are many different values that you can set these to; <a href="app-styling.html" class="quarto-xref"><span>Appendix F</span></a> gives details of these.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb16-3"><a href="#cb16-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="co"># 20% transparency</span></span>
 <span id="cb16-4"><a href="#cb16-4"></a>             <span class="at">shape =</span> <span class="dv">18</span>,  <span class="co"># solid diamond</span></span>
@@ -982,9 +1004,9 @@ Figure&nbsp;3.4: Combining plots with patchwork.
 <span id="cb16-7"><a href="#cb16-7"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,   <span class="co"># method of linear model (lm)</span></span>
 <span id="cb16-8"><a href="#cb16-8"></a>              <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="co"># formula used to draw line</span></span>
 <span id="cb16-9"><a href="#cb16-9"></a>              <span class="at">colour =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, .<span class="dv">5</span>, .<span class="dv">8</span>),</span>
-<span id="cb16-10"><a href="#cb16-10"></a>              <span class="at">linetype =</span> <span class="dv">3</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-10"><a href="#cb16-10"></a>              <span class="at">linetype =</span> <span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-style" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same scatter-line plot as above, but the points are transparent blue diamonds instead of solid black circles, and the regression line is dotted and blue instead of solid and blue.">
+<div id="fig-build-plot-style" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same scatter-line plot as above, but the points are transparent blue diamonds instead of solid black circles, and the regression line is dotted and blue instead of solid and blue." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-style-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-style-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same scatter-line plot as above, but the points are transparent blue diamonds instead of solid black circles, and the regression line is dotted and blue instead of solid and blue.">
 </div>
@@ -994,13 +1016,13 @@ Figure&nbsp;3.5: Changing geom styles.
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1013,7 +1035,7 @@ Figure&nbsp;3.5: Changing geom styles.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Setting aesthetics overall versus by category
+Setting aesthetics overall versus by category
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1024,16 +1046,16 @@ Figure&nbsp;3.5: Changing geom styles.
 <span class="header-section-number">3.2.2</span> Format axes</h3>
 <p>Now we need to make the axes look neater. There are several functions you can use to change the axis labels, but the most powerful ones are the <code>scale_</code> functions. You need to use a scale function that matches the data you’re plotting on that axis and this is where it becomes particularly important to know what type of data you’re working with. Both of the axes here are <a href="https://psyteachr.github.io/glossary/c#continuous" target="_blank" class="glossary" title="Data that can take on any values between other existing values.">continuous</a>, so we’ll use <code>scale_x_continuous()</code> and <code>scale_y_continuous()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb17-3"><a href="#cb17-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
 <span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, </span>
 <span id="cb17-5"><a href="#cb17-5"></a>              <span class="at">formula =</span> y<span class="sc">~</span>x, </span>
 <span id="cb17-6"><a href="#cb17-6"></a>              <span class="at">colour =</span> <span class="fu">rgb</span>(<span class="dv">0</span>, .<span class="dv">5</span>, .<span class="dv">8</span>)) <span class="sc">+</span></span>
 <span id="cb17-7"><a href="#cb17-7"></a>  <span class="co"># customise axis labels and breaks</span></span>
-<span id="cb17-8"><a href="#cb17-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-8"><a href="#cb17-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-axes" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same scatter-line plot as above, but the points are transparent blue circles, and the regression line is a solid blue.">
+<div id="fig-build-plot-axes" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same scatter-line plot as above, but the points are transparent blue circles, and the regression line is a solid blue." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-axes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-axes-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same scatter-line plot as above, but the points are transparent blue circles, and the regression line is a solid blue.">
 </div>
@@ -1045,18 +1067,18 @@ Figure&nbsp;3.6: Formatting plot axes with scale_ functions.
 </div>
 <p>The <code>name</code> argument changes the axis label. The <code>breaks</code> argument sets the major units and needs a <a href="https://psyteachr.github.io/glossary/v#vector" target="_blank" class="glossary" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.">vector</a> of possible values, which can extend beyond the range of the data (e.g., <code>gini</code> values in this set are only between 0.2 and 0.7, but we can specify breaks 0-1 to make the maths easier or anticipate updates to the data). The <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> function creates a sequence of numbers <code>from</code> one <code>to</code> another <code>by</code> specified steps.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1065,18 +1087,18 @@ Figure&nbsp;3.6: Formatting plot axes with scale_ functions.
 </div>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb20-3"><a href="#cb20-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
 <span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, </span>
@@ -1085,7 +1107,7 @@ Figure&nbsp;3.6: Formatting plot axes with scale_ functions.
 <span id="cb20-7"><a href="#cb20-7"></a>  <span class="co"># customise axis labels and breaks</span></span>
 <span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> .<span class="dv">1</span>)) <span class="sc">+</span></span>
 <span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">20</span>),    </span>
-<span id="cb20-10"><a href="#cb20-10"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-10"><a href="#cb20-10"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="03-viz_files/figure-html/img-scale-y-continuous-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with the x-axis labelled 'Gini Index' and breaks at 0.3, 0.4, 0.5, and 0.6, and the y-axis labelled 'Mean Welfare per Capita' and breaks at 0, 20, 40, 60, and 80."></p>
@@ -1100,7 +1122,7 @@ Figure&nbsp;3.6: Formatting plot axes with scale_ functions.
 <span class="header-section-number">3.2.3</span> Axis limits</h3>
 <p>If you want to change the minimum and maximum values on an axis, use the <code>coord_cartesian()</code> function. Many plots make more sense if the minimum and maximum values represent the range of possible values, even if those values aren’t present in the data. Here, the mean_welfare ranges between 0 and 100.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb21-3"><a href="#cb21-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
 <span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, </span>
@@ -1110,9 +1132,9 @@ Figure&nbsp;3.6: Formatting plot axes with scale_ functions.
 <span id="cb21-8"><a href="#cb21-8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">20</span>),    </span>
 <span id="cb21-9"><a href="#cb21-9"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
 <span id="cb21-10"><a href="#cb21-10"></a>  <span class="co"># set axis limits</span></span>
-<span id="cb21-11"><a href="#cb21-11"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-11"><a href="#cb21-11"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-limits" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with the x-axis from 0 to 100.">
+<div id="fig-build-plot-limits" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with the x-axis from 0 to 100." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-limits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-limits-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with the x-axis from 0 to 100.">
 </div>
@@ -1122,13 +1144,13 @@ Figure&nbsp;3.7: Changing the axis limits.
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1144,7 +1166,7 @@ Figure&nbsp;3.7: Changing the axis limits.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Setting limits with the scale_ function
+Setting limits with the scale_ function
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1156,7 +1178,7 @@ Figure&nbsp;3.7: Changing the axis limits.
 <p><pkg>ggplot2</pkg> comes with several built-in themes, such as <code>theme_minimal()</code> and <code>theme_bw()</code>, but the <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/"><pkg>ggthemes</pkg></a> package provides even more themes to match different software, such as GoogleDocs or Stata, or publications, such as the Economist or the Wall Street Journal. Let’s add the light theme, but change the font size to 11 with the <code>base_size</code> argument.</p>
 <p>It’s also worth highlighting that this code is starting to look quite complicated because of the number of layers, but because we’ve built it up slowly it should (hopefully!) make sense. If you see examples of <pkg>ggplot2</pkg> code online that you’d like to adapt, build the plot up layer by layer and it will make it easier to understand what each layer adds.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb22-3"><a href="#cb22-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
 <span id="cb22-4"><a href="#cb22-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, </span>
@@ -1167,9 +1189,9 @@ Figure&nbsp;3.7: Changing the axis limits.
 <span id="cb22-9"><a href="#cb22-9"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
 <span id="cb22-10"><a href="#cb22-10"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
 <span id="cb22-11"><a href="#cb22-11"></a>  <span class="co"># change the theme</span></span>
-<span id="cb22-12"><a href="#cb22-12"></a>  <span class="fu">theme_light</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb22-12"><a href="#cb22-12"></a>  <span class="fu">theme_light</span>(<span class="at">base_size =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-theme" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with a style that makes the border around the plot lighter">
+<div id="fig-build-plot-theme" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with a style that makes the border around the plot lighter" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-theme-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with a style that makes the border around the plot lighter">
 </div>
@@ -1183,7 +1205,7 @@ Figure&nbsp;3.8: Changing the theme to another style.
 <span class="header-section-number">3.2.5</span> Theme tweaks</h3>
 <p>If you’re still not quite happy with a theme, you can customise it even further with the <code>themes()</code> function. Check the help for this function to see all of the possible options. The most common thing you’ll want to do is to remove an element entirely. You do this by setting the relevant argument to <code>element_blank()</code>. Below, we’re getting rid of the plot background, which removes the line around the plot.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb23-3"><a href="#cb23-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, </span>
@@ -1195,9 +1217,9 @@ Figure&nbsp;3.8: Changing the theme to another style.
 <span id="cb23-10"><a href="#cb23-10"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
 <span id="cb23-11"><a href="#cb23-11"></a>  <span class="fu">theme_light</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
 <span id="cb23-12"><a href="#cb23-12"></a>  <span class="co"># customise theme elements</span></span>
-<span id="cb23-13"><a href="#cb23-13"></a>  <span class="fu">theme</span>(<span class="at">plot.background =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-13"><a href="#cb23-13"></a>  <span class="fu">theme</span>(<span class="at">plot.background =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-custom-theme" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with no plot border">
+<div id="fig-build-plot-custom-theme" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with no plot border" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-custom-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-build-plot-custom-theme-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with no plot border">
 </div>
@@ -1211,7 +1233,7 @@ Figure&nbsp;3.9: Customising the theme to remove the x-axis line and background 
 <span class="header-section-number">3.3</span> Figure captions</h2>
 <p>You can add a caption directly to the image using the <code>labs()</code> function, which also allows you to add or edit the title, subtitle, and axis labels.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb24-3"><a href="#cb24-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
 <span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, </span>
@@ -1226,9 +1248,9 @@ Figure&nbsp;3.9: Customising the theme to remove the x-axis line and background 
 <span id="cb24-13"><a href="#cb24-13"></a>  <span class="co"># add labels</span></span>
 <span id="cb24-14"><a href="#cb24-14"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"The relationship between Gini index and mean welfare per captita"</span>,</span>
 <span id="cb24-15"><a href="#cb24-15"></a>       <span class="at">subtitle =</span> <span class="st">"Data from 2010"</span>,</span>
-<span id="cb24-16"><a href="#cb24-16"></a>       <span class="at">caption =</span> <span class="st">"Figure 1. Inequality and welfare have a negative relationship."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-16"><a href="#cb24-16"></a>       <span class="at">caption =</span> <span class="st">"Figure 1. Inequality and welfare have a negative relationship."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-caption" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The plot above with the title and subtitle written above the plot: 'The relationship between Gini index and mean welfare per captita' and 'Data from 2010', and the caption written below: 'Figure 1. Inequality and welfare have a negative relationship.'">
+<div id="fig-caption" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The plot above with the title and subtitle written above the plot: 'The relationship between Gini index and mean welfare per captita' and 'Data from 2010', and the caption written below: 'Figure 1. Inequality and welfare have a negative relationship.'" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-caption-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-caption-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The plot above with the title and subtitle written above the plot: 'The relationship between Gini index and mean welfare per captita' and 'Data from 2010', and the caption written below: 'Figure 1. Inequality and welfare have a negative relationship.'">
 </div>
@@ -1240,21 +1262,21 @@ Figure&nbsp;3.10: Adding a title, subtitle, and caption.
 </div>
 <p>However, when you use <code>labs()</code> you are creating a caption that appears inside the rendered plot, specifically in the bottom-right corner by default and can’t be read by a screen reader. It is more accessible to include this sort of information in plain text for screen readers. Instead of using <code>labs()</code> for captions, you can add a text caption in the code chunk header. You should also add alt-text descriptions for screen readers that describe the image.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1"></a><span class="in">```{r}</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="co">#| label: fig-gini-welfare</span></span>
 <span id="cb25-3"><a href="#cb25-3"></a><span class="co">#| fig-cap: "Inequality and welfare have a negative relationship."</span></span>
 <span id="cb25-4"><a href="#cb25-4"></a><span class="co">#| fig-alt: "A scatterplot showing Gini index on the x-axis (range ~0.2 to 0.65) and mean welfare per capita on the y-axis (range 0 to 100) with a trend line showing that as gini increases from about 0.2 to 0.65, welfare decreases from about 30 to 5."</span></span>
 <span id="cb25-5"><a href="#cb25-5"></a></span>
 <span id="cb25-6"><a href="#cb25-6"></a><span class="co"># figure code here</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-7"><a href="#cb25-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1266,7 +1288,7 @@ Figure&nbsp;3.10: Adding a title, subtitle, and caption.
 <p>You can save a ggplot using <code>ggsave()</code>. It saves the last ggplot you made, by default, but you can specify which plot you want to save if you assigned that plot to a variable.</p>
 <p>You can set the <code>width</code> and <code>height</code> of your plot. The default units are inches, but you can change the <code>units</code> argument to “in”, “cm”, or “mm”.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> gini)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>box <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> gini)) <span class="sc">+</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">geom_boxplot</span>()</span>
 <span id="cb26-3"><a href="#cb26-3"></a></span>
 <span id="cb26-4"><a href="#cb26-4"></a>violin <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> gini)) <span class="sc">+</span></span>
@@ -1274,15 +1296,15 @@ Figure&nbsp;3.10: Adding a title, subtitle, and caption.
 <span id="cb26-6"><a href="#cb26-6"></a></span>
 <span id="cb26-7"><a href="#cb26-7"></a><span class="fu">ggsave</span>(<span class="st">"violin_plot.png"</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">7</span>)</span>
 <span id="cb26-8"><a href="#cb26-8"></a></span>
-<span id="cb26-9"><a href="#cb26-9"></a><span class="fu">ggsave</span>(<span class="st">"box_plot.jpg"</span>, <span class="at">plot =</span> box, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-9"><a href="#cb26-9"></a><span class="fu">ggsave</span>(<span class="st">"box_plot.jpg"</span>, <span class="at">plot =</span> box, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1316,10 +1338,10 @@ Note
 <span class="header-section-number">3.4.1.1</span> Bar plot</h4>
 <p>If you want to count the number of things per category, you can use <code>geom_bar()</code>. You only need to provide a <code>x</code> mapping to <code>geom_bar()</code> because by default <code>geom_bar()</code> uses the number of observations in each group of <code>x</code> as the value for <code>y</code>, so you don’t need to tell it what to put on the y-axis.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code)) <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-bar" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A bar plot with region_code on the x-axis with 7 categories and count on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
+<div id="fig-bar" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A bar plot with region_code on the x-axis with 7 categories and count on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-bar-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A bar plot with region_code on the x-axis with 7 categories and count on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
 </div>
@@ -1329,31 +1351,31 @@ Figure&nbsp;3.11: A basic bar plot.
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions <code>scale_fill_manual()</code> and <code>scale_x_discrete()</code> are new, but work in the same way as the other <code>scale_</code> functions. You can learn more about this in <a href="app-plots.html" class="quarto-xref"><span>Appendix H</span></a>.</p>
 <div class="cell" data-layout-align="center" data-webex.hide="Code">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Code
+Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code, </span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code, </span>
 <span id="cb28-2"><a href="#cb28-2"></a>                <span class="at">fill =</span> region_code)) <span class="sc">+</span></span>
 <span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb28-4"><a href="#cb28-4"></a>  <span class="fu">scale_x_discrete</span>(</span>
@@ -1387,7 +1409,7 @@ Figure&nbsp;3.11: A basic bar plot.
 <span id="cb28-32"><a href="#cb28-32"></a>  ) <span class="sc">+</span></span>
 <span id="cb28-33"><a href="#cb28-33"></a>  <span class="co"># minimum = 0, maximum = 30</span></span>
 <span id="cb28-34"><a href="#cb28-34"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="sc">+</span> </span>
-<span id="cb28-35"><a href="#cb28-35"></a>  <span class="fu">ggtitle</span>(<span class="st">"Number of countries per region"</span>) <span class="co"># add a title</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-35"><a href="#cb28-35"></a>  <span class="fu">ggtitle</span>(<span class="st">"Number of countries per region"</span>) <span class="co"># add a title</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="03-viz_files/figure-html/custom-bar-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same plot above, but with the x-axis categoriesin a different order with longer labels, and the bars each a different rainbow colour. The x-axis labels are: Europe &amp; C. Asia, S. Asia, E.Asia &amp; Pacific, M.East &amp; N.Africa, Subsaharan Africa, L.America &amp; Carribean, and Other H.I."></p>
@@ -1404,9 +1426,9 @@ Figure&nbsp;3.11: A basic bar plot.
 <span class="header-section-number">3.4.1.2</span> Column plot</h4>
 <p>If your data already have a column with the number you want to plot, you can use <code>geom_col()</code> to plot it. We can use the <code>count()</code> function to make a table with a row for each <code>region_code</code> and a column called <code>n</code> with the number of observations in that category.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>count_data <span class="ot">&lt;-</span> <span class="fu">count</span>(<span class="at">x =</span> pip, </span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>count_data <span class="ot">&lt;-</span> <span class="fu">count</span>(<span class="at">x =</span> pip, </span>
 <span id="cb29-2"><a href="#cb29-2"></a>                    region_code,</span>
-<span id="cb29-3"><a href="#cb29-3"></a>                    <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb29-3"><a href="#cb29-3"></a>                    <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="kable-table">
 <table class="caption-top table">
@@ -1446,13 +1468,13 @@ Figure&nbsp;3.11: A basic bar plot.
 </tbody>
 </table>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1461,10 +1483,10 @@ Figure&nbsp;3.11: A basic bar plot.
 </div>
 <p>The mapping for <code>geom_col()</code> requires you to set both the <code>x</code> and <code>y</code> aesthetics. Set <code>y = n</code> because we want to plot the number of countries in each category, and that information is in the column called <code>n</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">ggplot</span>(count_data, <span class="fu">aes</span>(<span class="at">x =</span> region_code, <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">ggplot</span>(count_data, <span class="fu">aes</span>(<span class="at">x =</span> region_code, <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-col" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A column plot identical to the bar plot above, except the y-axis label is n and not count. It has Region on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
+<div id="fig-col" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A column plot identical to the bar plot above, except the y-axis label is n and not count. It has Region on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-col-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-col-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A column plot identical to the bar plot above, except the y-axis label is n and not count. It has Region on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27.">
 </div>
@@ -1476,11 +1498,11 @@ Figure&nbsp;3.12: A basic column plot.
 </div>
 <p>If you wish to organise the bars according to the values, there are several options. You could reorder the underlying data but you can also just make the change for this specific plot using <code>fct_reorder()</code>. Because we have techincally created a new variable, the labelling doesn’t carry over so we can use <code>labs()</code> to edit it.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">ggplot</span>(count_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(region_code, <span class="co"># variable to reorder</span></span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">ggplot</span>(count_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">fct_reorder</span>(region_code, <span class="co"># variable to reorder</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>                                       n), <span class="co"># what to order it by</span></span>
 <span id="cb31-3"><a href="#cb31-3"></a>                       <span class="at">y =</span> n)) <span class="sc">+</span></span>
 <span id="cb31-4"><a href="#cb31-4"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb31-5"><a href="#cb31-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Region"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb31-5"><a href="#cb31-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Region"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="03-viz_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
@@ -1491,13 +1513,13 @@ Figure&nbsp;3.12: A basic column plot.
 </section></section><section id="pie-chart" class="level3" data-number="3.4.2"><h3 data-number="3.4.2" class="anchored" data-anchor-id="pie-chart">
 <span class="header-section-number">3.4.2</span> Pie chart</h3>
 <p>Pie charts are a <a href="https://www.data-to-viz.com/caveat/pie.html">misleading form of data visualisation</a>, so we won’t cover them. We cover options for visualising proportions, like waffle, lollipop and treemap plots, in <a href="app-plots.html" class="quarto-xref"><span>Appendix H</span></a>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1545,8 +1567,8 @@ Figure&nbsp;3.12: A basic column plot.
 <div class="cell" data-layout-align="center">
 <ul>
 <li>What mapping would you use?
-<div id="radio_TLZHJORNQJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TLZHJORNQJ" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_TLZHJORNQJ" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_TLZHJORNQJ" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_TLZHJORNQJ" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_TLZHJORNQJ" value="x"><span>aes(y = population)</span></label>
+<div id="radio_UWWZWRHFEC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UWWZWRHFEC" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_UWWZWRHFEC" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_UWWZWRHFEC" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_UWWZWRHFEC" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_UWWZWRHFEC" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 </ul>
@@ -1560,8 +1582,8 @@ Figure&nbsp;3.12: A basic column plot.
 <div class="cell" data-layout-align="center">
 <ul>
 <li>What mapping would you use?
-<div id="radio_ENMDNKLFIS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ENMDNKLFIS" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_ENMDNKLFIS" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_ENMDNKLFIS" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_ENMDNKLFIS" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_ENMDNKLFIS" value="x"><span>aes(y = population)</span></label>
+<div id="radio_ZLKWVMLRGO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZLKWVMLRGO" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLKWVMLRGO" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLKWVMLRGO" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLKWVMLRGO" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLKWVMLRGO" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 </ul>
@@ -1573,13 +1595,13 @@ Figure&nbsp;3.12: A basic column plot.
 <p>If you have a continuous variable, like <code>welfare_mean</code>, you can use <code>geom_histogram()</code> to show the distribution. Just like <code>geom_bar()</code> you are only required to specify the <code>x</code> variable.</p>
 <p>A histogram splits the data into “bins” along the x-axis and shows the count of how many observations are in each bin along the y-axis.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="fig-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A plot with Mean Welfare per Capita on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90.">
+<div id="fig-histogram" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot with Mean Welfare per Capita on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot with Mean Welfare per Capita on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90.">
 </div>
@@ -1591,20 +1613,20 @@ Figure&nbsp;3.13: Histogram of mean welfare per capita.
 </div>
 <p>You should always set the <code>binwidth</code> or number of <code>bins</code> to something meaningful for your data (otherwise you get the annoying message above). You might need to try a few options before you find something that looks good and conveys the meaning of your plot – try changing the values of <code>binwidth</code> and <code>bins</code> in the code below to see what works best.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># adjust width of each bar</span></span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># adjust width of each bar</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>)</span>
 <span id="cb34-4"><a href="#cb34-4"></a></span>
 <span id="cb34-5"><a href="#cb34-5"></a><span class="co"># adjust number of bars</span></span>
 <span id="cb34-6"><a href="#cb34-6"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>By default, the bars start <em>centered</em> on 0, so if <code>binwidth</code> is set to 5, the first bar would include -2.5 to +2.5, which doesn’t make much sense. We can set <code>boundary = 0</code> so that each bar represents increments of 5 <em>starting</em> from 0.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">boundary =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, <span class="at">boundary =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-histogram-boundary0" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same plot as above, but the first bar spans 0-5 instead of 2.5 to 7.5.">
+<div id="fig-histogram-boundary0" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, but the first bar spans 0-5 instead of 2.5 to 7.5." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-boundary0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-boundary0-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same plot as above, but the first bar spans 0-5 instead of 2.5 to 7.5.">
 </div>
@@ -1616,15 +1638,15 @@ Figure&nbsp;3.14: A histogram with the boundary set to 0.
 </div>
 <p>Finally, the default style of grey bars is ugly, so you can change that by setting the <code>fill</code> and <code>colour</code>, as well as using <code>scale_x_continuous()</code> to update the axis labels.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, </span>
 <span id="cb36-3"><a href="#cb36-3"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
 <span id="cb36-4"><a href="#cb36-4"></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, </span>
 <span id="cb36-5"><a href="#cb36-5"></a>                 <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb36-6"><a href="#cb36-6"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Mean Welfare per Capita"</span>,</span>
-<span id="cb36-7"><a href="#cb36-7"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb36-7"><a href="#cb36-7"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-histogram-custom" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The same plot as above, but the bars are white with black borders, instead of grey with grey borders.">
+<div id="fig-histogram-custom" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, but the bars are white with black borders, instead of grey with grey borders." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-custom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-custom-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="The same plot as above, but the bars are white with black borders, instead of grey with grey borders.">
 </div>
@@ -1634,13 +1656,13 @@ Figure&nbsp;3.15: Histogram with custom styles.
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1657,8 +1679,8 @@ Figure&nbsp;3.15: Histogram with custom styles.
 <div class="cell" data-layout-align="center">
 <ul>
 <li>How would you set the mapping for this plot?
-<div id="radio_ELHAZPWGIZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ELHAZPWGIZ" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_ELHAZPWGIZ" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_ELHAZPWGIZ" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_ELHAZPWGIZ" value="x"><span>aes(x = population, y = count)</span></label>
+<div id="radio_NKVBRZDYFA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NKVBRZDYFA" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_NKVBRZDYFA" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_NKVBRZDYFA" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_NKVBRZDYFA" value="x"><span>aes(x = population, y = count)</span></label>
 </div>
 </li>
 </ul>
@@ -1674,21 +1696,21 @@ Figure&nbsp;3.15: Histogram with custom styles.
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Axis label customisation
+Axis label customisation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you’re curious how we got the x-axis labels to read “100K” instead of “100000”, you just need to add a vector of <code>labels</code> the same length as <code>breaks</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">1e6</span>, <span class="fl">1e5</span>),</span>
-<span id="cb37-2"><a href="#cb37-2"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span><span class="sc">*</span><span class="dv">100</span>, <span class="st">"K"</span>), <span class="st">"1M"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fl">1e6</span>, <span class="fl">1e5</span>),</span>
+<span id="cb37-2"><a href="#cb37-2"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">9</span><span class="sc">*</span><span class="dv">100</span>, <span class="st">"K"</span>), <span class="st">"1M"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1701,12 +1723,12 @@ Figure&nbsp;3.15: Histogram with custom styles.
 <p>In previous plots, we have used <code>fill</code> purely for visual reasons, e.g., we changed the colour of the histogram bars to make them look nicer. However, you can also use <code>fill</code> to represent another variable so that the colours become meaningful.</p>
 <p>Setting the <code>fill</code> aesthetic <strong>in the mapping</strong> will produce different coloured bars for each category of the <code>fill</code> variable, in this case <code>region_code</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean, <span class="at">fill =</span> region_code)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean, <span class="at">fill =</span> region_code)) <span class="sc">+</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">boundary =</span> <span class="dv">0</span>, </span>
 <span id="cb38-3"><a href="#cb38-3"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>,</span>
-<span id="cb38-4"><a href="#cb38-4"></a>                 <span class="at">color =</span> <span class="st">"black"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-4"><a href="#cb38-4"></a>                 <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-hist-fill" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A stacked histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-15. Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
+<div id="fig-hist-fill" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A stacked histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-15. Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-hist-fill-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-hist-fill-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A stacked histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-15. Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
 </div>
@@ -1722,45 +1744,46 @@ Figure&nbsp;3.16: Histogram with categories represented by fill.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Arguments inside aes()
+Arguments inside aes()
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>When you set an aspect to represent the data, you do this inside the <code>aes()</code> function for the mapping, not as an argument to the geom. If you try to set this in a geom, you’ll get the following error (unless you coincidentally have an object named <code>region_code</code> that is a colour word).</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">boundary =</span> <span class="dv">0</span>, </span>
 <span id="cb39-3"><a href="#cb39-3"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>, </span>
 <span id="cb39-4"><a href="#cb39-4"></a>                 <span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb39-5"><a href="#cb39-5"></a>                 <span class="at">fill =</span> region_code)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-5"><a href="#cb39-5"></a>                 <span class="at">fill =</span> region_code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error: object 'region_code' not found</code></pre>
+<pre><code>Error:
+! object 'region_code' not found</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Area plot alternative
+Area plot alternative
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The function <code>geom_area()</code> gives a similar effect when <code>stat = "bin"</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># area plot</span></span>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># area plot</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a><span class="fu">ggplot</span>(pip, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean, <span class="at">fill =</span> region_code)) <span class="sc">+</span></span>
 <span id="cb41-3"><a href="#cb41-3"></a>  <span class="fu">geom_area</span>(<span class="at">stat =</span> <span class="st">"bin"</span>, </span>
 <span id="cb41-4"><a href="#cb41-4"></a>            <span class="at">boundary =</span> <span class="dv">0</span>, </span>
 <span id="cb41-5"><a href="#cb41-5"></a>            <span class="at">binwidth =</span> <span class="dv">5</span>, </span>
-<span id="cb41-6"><a href="#cb41-6"></a>            <span class="at">color =</span> <span class="st">"black"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb41-6"><a href="#cb41-6"></a>            <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-stacked-area" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A stacked area plot like the previous stacked histogram, but the value for each bin is connected by lines and the area underneath coloured in.">
+<div id="fig-stacked-area" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A stacked area plot like the previous stacked histogram, but the value for each bin is connected by lines and the area underneath coloured in." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-stacked-area-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-stacked-area-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A stacked area plot like the previous stacked histogram, but the value for each bin is connected by lines and the area underneath coloured in.">
 </div>
@@ -1777,7 +1800,7 @@ Figure&nbsp;3.17: Stacked area plot.
 <span class="header-section-number">3.4.4.2</span> Dodged histogram</h4>
 <p>By default, the categories are positioned stacked on top of each other. If you want to compare more than one distribution, you can set the <code>position</code> argument of <code>geom_histogram()</code> to “dodge” to put the bars for each group next to each other instead of stacking them. However, this can look confusing with several categories.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># dodged histogram</span></span>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># dodged histogram</span></span>
 <span id="cb42-2"><a href="#cb42-2"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean, </span>
 <span id="cb42-3"><a href="#cb42-3"></a>               <span class="at">fill =</span> region_code,</span>
 <span id="cb42-4"><a href="#cb42-4"></a>               <span class="at">colour =</span> region_code))<span class="sc">+</span></span>
@@ -1785,9 +1808,9 @@ Figure&nbsp;3.17: Stacked area plot.
 <span id="cb42-6"><a href="#cb42-6"></a>                 <span class="at">binwidth =</span> <span class="dv">5</span>, </span>
 <span id="cb42-7"><a href="#cb42-7"></a>                 <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
 <span id="cb42-8"><a href="#cb42-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Mean Welfare per Capita"</span>,</span>
-<span id="cb42-9"><a href="#cb42-9"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb42-9"><a href="#cb42-9"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-histogram-dodge" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-7. Instead of stacking bars, each bar is very thin and placed next to the others (it is hard to read). Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
+<div id="fig-histogram-dodge" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-7. Instead of stacking bars, each bar is very thin and placed next to the others (it is hard to read). Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-histogram-dodge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-histogram-dodge-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A histogram with welfare_mean on the x-axis ranging from 0-90 and count on the y-axis ranging from 0-7. Instead of stacking bars, each bar is very thin and placed next to the others (it is hard to read). Each region_code is represented by a different colour. OHI is pink and has most of the welfare scores above 30, while the other countries are rainbow coloours red to purple and mostly have welfare scores 0-30.">
 </div>
@@ -1798,29 +1821,29 @@ Figure&nbsp;3.18: A histogram with multiple groups.
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Frequency plot alternative
+Frequency plot alternative
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alternatively, you can use <code>geom_freqpoly()</code> to plot a line connecting the top of each bin.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># frequency plot</span></span>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># frequency plot</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a><span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> welfare_mean,</span>
 <span id="cb43-3"><a href="#cb43-3"></a>                <span class="at">colour =</span> region_code)) <span class="sc">+</span></span>
 <span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">geom_freqpoly</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, </span>
 <span id="cb43-5"><a href="#cb43-5"></a>                <span class="at">boundary =</span> <span class="dv">0</span>,</span>
 <span id="cb43-6"><a href="#cb43-6"></a>                <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb43-7"><a href="#cb43-7"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Mean Welfare per Capita"</span>,</span>
-<span id="cb43-8"><a href="#cb43-8"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb43-8"><a href="#cb43-8"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-groups-freqpoly" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A plot like above, but showing lines connecting the levels instead of bars.">
+<div id="fig-groups-freqpoly" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot like above, but showing lines connecting the levels instead of bars." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-groups-freqpoly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-groups-freqpoly-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot like above, but showing lines connecting the levels instead of bars.">
 </div>
@@ -1838,7 +1861,7 @@ Figure&nbsp;3.19: A frequency plot with multiple groups.
 <p>Another way to compare groups of continuous variables is the violin plot. This is like a density plot, but rotated 90 degrees and mirrored - the fatter the violin, the larger proportion of data points there are at that value.</p>
 <p><code>geom_violin()</code> provides three scaling options. With scale = “area” (the default), each violin has the same total area, so widths reflect density only. With scale = “count”, the maximum width is proportional to the number of observations, so larger groups appear wider. With scale = “width”, each violin has the same maximum width, emphasising differences in distribution shape rather than sample size.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>violin_area <span class="ot">&lt;-</span> </span>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>violin_area <span class="ot">&lt;-</span> </span>
 <span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb44-3"><a href="#cb44-3"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">"area"</span>) <span class="sc">+</span></span>
 <span id="cb44-4"><a href="#cb44-4"></a>  <span class="fu">ggtitle</span>(<span class="st">'scale = "area" (default)'</span>)</span>
@@ -1853,9 +1876,9 @@ Figure&nbsp;3.19: A frequency plot with multiple groups.
 <span id="cb44-13"><a href="#cb44-13"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">"width"</span>) <span class="sc">+</span></span>
 <span id="cb44-14"><a href="#cb44-14"></a>  <span class="fu">ggtitle</span>(<span class="st">'scale = "width"'</span>)</span>
 <span id="cb44-15"><a href="#cb44-15"></a></span>
-<span id="cb44-16"><a href="#cb44-16"></a>violin_area <span class="sc">/</span> violin_count <span class="sc">/</span> violin_width</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb44-16"><a href="#cb44-16"></a>violin_area <span class="sc">/</span> violin_count <span class="sc">/</span> violin_width</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-violin-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Three versions of violin plots. The top panel shows scale = 'area' (default). The middle panel shows scale = 'count'. The bottom panel shows scale = 'width'.">
+<div id="fig-violin-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three versions of violin plots. The top panel shows scale = 'area' (default). The middle panel shows scale = 'count'. The bottom panel shows scale = 'width'." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-violin-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-violin-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Three versions of violin plots. The top panel shows scale = 'area' (default). The middle panel shows scale = 'count'. The bottom panel shows scale = 'width'.">
 </div>
@@ -1870,7 +1893,7 @@ Figure&nbsp;3.20: The default violin plot gives each shape the same area. Set sc
 <p>Boxplots serve a similar purpose to violin plots (without the giggles from the back row). They don’t show you the shape of the distribution, but rather some statistics about it. The middle line represents the <a href="https://psyteachr.github.io/glossary/m#median" target="_blank" class="glossary" title="The middle number in a distribution where half of the values are larger and half are smaller.">median</a>; half the data are above this line and half below it. The box encloses the 25th to 75th percentiles of the data, so 50% of the data falls inside the box. The “whiskers” extending above and below the box extend 1.5 times the height of the box, although you can change this with the <code>coef</code> argument. The points show <a href="https://psyteachr.github.io/glossary/o#outlier" target="_blank" class="glossary" title="A data point that is extremely distant from most of the other data points">outliers</a> – individual data points that fall outside of this range.</p>
 <p>Boxplots can be horizontal if you swap to x and y columns, and there are many other customisations you can apply.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>boxplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>boxplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(pip, <span class="fu">aes</span>(<span class="at">x =</span> region_code, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">ggtitle</span>(<span class="st">"Default vertical boxplot"</span>)</span>
 <span id="cb45-4"><a href="#cb45-4"></a></span>
@@ -1883,9 +1906,9 @@ Figure&nbsp;3.20: The default violin plot gives each shape the same area. Set sc
 <span id="cb45-11"><a href="#cb45-11"></a>              <span class="at">staplewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb45-12"><a href="#cb45-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"Customised horizontal boxplot"</span>)</span>
 <span id="cb45-13"><a href="#cb45-13"></a></span>
-<span id="cb45-14"><a href="#cb45-14"></a>boxplot <span class="sc">+</span> custom</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb45-14"><a href="#cb45-14"></a>boxplot <span class="sc">+</span> custom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-box-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Two boxplots. The left plot is labelled 'Default vertical boxpplot' and shows the 7 region_codes along the x-axis and melfare_mean (0-90) on the y-axis. Boxplots are white with black outlines and show the median, whiskers, and outlier points. The right plot is labelled `Customised horizontal boxplot and has grey fill in the boxes, capped whiskers, and red asterisks for outliers.">
+<div id="fig-box-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two boxplots. The left plot is labelled 'Default vertical boxpplot' and shows the 7 region_codes along the x-axis and melfare_mean (0-90) on the y-axis. Boxplots are white with black outlines and show the median, whiskers, and outlier points. The right plot is labelled `Customised horizontal boxplot and has grey fill in the boxes, capped whiskers, and red asterisks for outliers." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-box-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-box-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Two boxplots. The left plot is labelled 'Default vertical boxpplot' and shows the 7 region_codes along the x-axis and melfare_mean (0-90) on the y-axis. Boxplots are white with black outlines and show the median, whiskers, and outlier points. The right plot is labelled `Customised horizontal boxplot and has grey fill in the boxes, capped whiskers, and red asterisks for outliers.">
 </div>
@@ -1899,7 +1922,7 @@ Figure&nbsp;3.21: Boxplots.
 <span class="header-section-number">3.4.4.5</span> Combo plots</h4>
 <p>Violin plots are frequently layered with other geoms that represent the mean or median values in the data. This is a lot of code; to help your understanding, run it layer by layer to see how it builds up and change the values throughout the code.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># add fill and colour to the mapping</span></span>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># add fill and colour to the mapping</span></span>
 <span id="cb46-2"><a href="#cb46-2"></a></span>
 <span id="cb46-3"><a href="#cb46-3"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> region_code, </span>
 <span id="cb46-4"><a href="#cb46-4"></a>                 <span class="at">y =</span> welfare_mean,</span>
@@ -1924,9 +1947,9 @@ Figure&nbsp;3.21: Boxplots.
 <span id="cb46-23"><a href="#cb46-23"></a>               <span class="at">geom =</span> <span class="st">"point"</span>, </span>
 <span id="cb46-24"><a href="#cb46-24"></a>               <span class="at">size =</span> <span class="dv">2</span>,</span>
 <span id="cb46-25"><a href="#cb46-25"></a>               <span class="at">shape =</span> <span class="dv">18</span>) <span class="sc">+</span> </span>
-<span id="cb46-26"><a href="#cb46-26"></a>  <span class="fu">ggtitle</span>(<span class="st">"ViolinBox"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb46-26"><a href="#cb46-26"></a>  <span class="fu">ggtitle</span>(<span class="st">"ViolinBox"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-violin-combos" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A plot labelled 'ViolinBox' with 'Mean welfare per Capita' on the y-axis (0-90) and 'Region' (7 categories) on the x-axis. Each region is represented by a rainbow coloured violin with a boxplot inside it.">
+<div id="fig-violin-combos" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot labelled 'ViolinBox' with 'Mean welfare per Capita' on the y-axis (0-90) and 'Region' (7 categories) on the x-axis. Each region is represented by a rainbow coloured violin with a boxplot inside it." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-violin-combos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-violin-combos-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A plot labelled 'ViolinBox' with 'Mean welfare per Capita' on the y-axis (0-90) and 'Region' (7 categories) on the x-axis. Each region is represented by a rainbow coloured violin with a boxplot inside it.">
 </div>
@@ -1936,13 +1959,13 @@ Figure&nbsp;3.22: Violin plots combined with different methods to represent mean
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1969,8 +1992,8 @@ Figure&nbsp;3.22: Violin plots combined with different methods to represent mean
 <option value="x">geom_violinplot()</option></select>
 </li>
 <li>What does the mapping look like for both plots?
-<div id="radio_HWLGUEYQIF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_HWLGUEYQIF" value="answer"><span>aes(x = region_code, y = gini, fill = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_HWLGUEYQIF" value="x"><span>aes(x = region_code, y = gini, fill = gini)</span></label><label><input type="radio" autocomplete="off" name="radio_HWLGUEYQIF" value="x"><span>aes(x = region_code, y = gini, colour = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_HWLGUEYQIF" value="x"><span>aes(x = region_code, y = gini, colour = gini)</span></label>
+<div id="radio_QFGGQRUQLO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QFGGQRUQLO" value="answer"><span>aes(x = region_code, y = gini, fill = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_QFGGQRUQLO" value="x"><span>aes(x = region_code, y = gini, colour = gini)</span></label><label><input type="radio" autocomplete="off" name="radio_QFGGQRUQLO" value="x"><span>aes(x = region_code, y = gini, colour = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_QFGGQRUQLO" value="x"><span>aes(x = region_code, y = gini, fill = gini)</span></label>
 </div>
 </li>
 </ul>
@@ -1983,10 +2006,10 @@ Figure&nbsp;3.22: Violin plots combined with different methods to represent mean
 <span class="header-section-number">3.4.5.1</span> Scatterplot</h4>
 <p>The function to create a scatterplot is called <code>geom_point()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-demo-point" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A scatterplot with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are solid black.">
+<div id="fig-demo-point" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are solid black." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-demo-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-demo-point-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A scatterplot with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are solid black.">
 </div>
@@ -2002,7 +2025,7 @@ Figure&nbsp;3.23: Scatterplot with geom_point().”
 <p>When you add a trendline with <code>geom_smooth()</code>, R is creating a best-guess line that tries to follow the pattern in your data. The shaded ribbon around the line shows how confident the model is: a narrow ribbon means the pattern is fairly certain, while a wide ribbon means the data are too sparse or variable to be sure. Different methods create lines with different levels of flexibility.</p>
 <p>A linear model draws the simplest possible line, which is straight from one side of the plot to the other. A loess line adapts more to the data, so it can curve or wiggle if the pattern changes. A quadratic model sits between these two: it is still smooth, but it allows for a single bend. None of these lines are “the truth”. They are tools to help you see overall trends, and the choice between them depends on how simple or flexible you want your summary of the data to be.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>loess_plot <span class="ot">&lt;-</span> </span>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>loess_plot <span class="ot">&lt;-</span> </span>
 <span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
 <span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
 <span id="cb48-4"><a href="#cb48-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> loess, <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
@@ -2020,9 +2043,9 @@ Figure&nbsp;3.23: Scatterplot with geom_point().”
 <span id="cb48-16"><a href="#cb48-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">+</span></span>
 <span id="cb48-17"><a href="#cb48-17"></a>  <span class="fu">ggtitle</span>(<span class="st">"Quadratic: method = lm, formula = y~x + I(x^2)"</span>)</span>
 <span id="cb48-18"><a href="#cb48-18"></a></span>
-<span id="cb48-19"><a href="#cb48-19"></a>loess_plot <span class="sc">/</span> lm_plot <span class="sc">/</span> lm2_plot </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb48-19"><a href="#cb48-19"></a>loess_plot <span class="sc">/</span> lm_plot <span class="sc">/</span> lm2_plot </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-2-continuous" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Thre versions of a trend line trhough the scatterplot above with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are transparent black. The top plot 'Default: method = loess, formula = y~x' shows a wavy line through the points. The middle plot 'Linear: method = lm, formula = y~x' shows a straight line. The bottom plot 'Quadratic: method = lm, formula = y~x + I(x^2)' shows a smoothly curved line.">
+<div id="fig-2-continuous" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Thre versions of a trend line trhough the scatterplot above with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are transparent black. The top plot 'Default: method = loess, formula = y~x' shows a wavy line through the points. The middle plot 'Linear: method = lm, formula = y~x' shows a straight line. The bottom plot 'Quadratic: method = lm, formula = y~x + I(x^2)' shows a smoothly curved line." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-2-continuous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-2-continuous-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Thre versions of a trend line trhough the scatterplot above with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are transparent black. The top plot 'Default: method = loess, formula = y~x' shows a wavy line through the points. The middle plot 'Linear: method = lm, formula = y~x' shows a straight line. The bottom plot 'Quadratic: method = lm, formula = y~x + I(x^2)' shows a smoothly curved line.">
 </div>
@@ -2038,7 +2061,7 @@ Figure&nbsp;3.24: Different ways to show the relationship between two continuous
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Error shading
+Error shading
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2048,19 +2071,19 @@ Figure&nbsp;3.24: Different ways to show the relationship between two continuous
 </section></section><section id="simulated-data" class="level3" data-number="3.4.6"><h3 data-number="3.4.6" class="anchored" data-anchor-id="simulated-data">
 <span class="header-section-number">3.4.6</span> Simulated data</h3>
 <p>We’ll need some different data for the next few plots.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Run the following code to simulate some data with random dates in the year 2025, random rating on an ordinal scale from 1 to 5, and random scores on a continuous scale from 0-100 that increase over the year and have an inverted-U shaped relationship to rating.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes the simulation reproducible</span></span>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes the simulation reproducible</span></span>
 <span id="cb49-2"><a href="#cb49-2"></a></span>
 <span id="cb49-3"><a href="#cb49-3"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="co"># number of data points to simulate</span></span>
 <span id="cb49-4"><a href="#cb49-4"></a></span>
@@ -2075,33 +2098,33 @@ Figure&nbsp;3.24: Different ways to show the relationship between two continuous
 <span id="cb49-13"><a href="#cb49-13"></a>  <span class="at">rating =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb49-14"><a href="#cb49-14"></a>  <span class="at">mean =</span> <span class="dv">50</span> <span class="sc">+</span> <span class="fu">month</span>(datetime) <span class="sc">-</span> <span class="dv">6</span> <span class="sc">+</span> <span class="fu">abs</span>(rating <span class="sc">-</span> <span class="dv">3</span>)<span class="sc">*</span><span class="dv">5</span> <span class="sc">-</span> <span class="dv">5</span>,</span>
 <span id="cb49-15"><a href="#cb49-15"></a>  <span class="at">score =</span> <span class="fu">rnorm</span>(n, mean, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb49-16"><a href="#cb49-16"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb49-16"><a href="#cb49-16"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Explain what the data simulation is doing
+Explain what the data simulation is doing
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>This fixes the random-number generator so that every time you run the simulation, you get the same random values. This is essential for reproducibility, especially in teaching materials.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>This sets the number of simulated data points you want to create. You will end up with 10,000 rows in your final tibble.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>This creates a huge sequence of datetimes:</li>
@@ -2113,7 +2136,7 @@ Figure&nbsp;3.24: Different ways to show the relationship between two continuous
 </ul>
 <p>There are about 31.5 million seconds in a year, so <code>d</code> contains roughly 31.5 million possible timestamps. You will later sample from this vector to give each simulated observation a random datetime somewhere in 2025.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>d <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.POSIXct</span>(<span class="st">'2025-01-01'</span>), <span class="fu">as.POSIXct</span>(<span class="st">'2025-12-31'</span>), <span class="at">by =</span> <span class="st">"sec"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>d <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.POSIXct</span>(<span class="st">'2025-01-01'</span>), <span class="fu">as.POSIXct</span>(<span class="st">'2025-12-31'</span>), <span class="at">by =</span> <span class="st">"sec"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>The simulated dataset is created using <code>tibble()</code>, which lets you define each column directly. The first column, <code>datetime</code>, is generated by taking 10,000 random samples from the long vector of <code>datetimes</code> using <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code>, so each observation receives a timestamp somewhere in 2025.</li>
@@ -2121,12 +2144,12 @@ Figure&nbsp;3.24: Different ways to show the relationship between two continuous
 <p>The second column, rating, uses another call to <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> to assign each observation a random value from 1 to 5, mimicking a five-point rating scale. The mean column calculates an expected score for each observation by combining the month (extracted with <code>month(datetime)</code>) and the rating, so scores tend to rise later in the year and vary depending on how far the rating is from the midpoint.</p>
 <p>The final column, <code>score</code>, uses <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> to add random variation by drawing a value from a normal distribution centred on the calculated mean, with a standard deviation of 12.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>simdat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>simdat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb53-2"><a href="#cb53-2"></a>  <span class="at">datetime =</span> <span class="fu">sample</span>(d, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb53-3"><a href="#cb53-3"></a>  <span class="at">rating =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb53-4"><a href="#cb53-4"></a>  <span class="at">mean =</span> <span class="dv">50</span> <span class="sc">+</span> <span class="fu">month</span>(datetime) <span class="sc">-</span> <span class="dv">6</span> <span class="sc">+</span> <span class="fu">abs</span>(rating <span class="sc">-</span> <span class="dv">3</span>)<span class="sc">*</span><span class="dv">5</span> <span class="sc">-</span> <span class="dv">5</span>,</span>
 <span id="cb53-5"><a href="#cb53-5"></a>  <span class="at">score =</span> <span class="fu">rnorm</span>(n, mean, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb53-6"><a href="#cb53-6"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb53-6"><a href="#cb53-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2136,10 +2159,10 @@ Figure&nbsp;3.24: Different ways to show the relationship between two continuous
 <p>When you have a limited range of numeric values, such as an ordinal rating scale, sometimes overlapping data makes it difficult to see what is going on in a point plot. For example, the plot below shows score by rating, but because there are only 5 levels and a lot of data, it makes it hard to see exactly how many data points there are at each rating level.</p>
 <p>In this section, we’ll explore a few options for dealing with this.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
-<span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
+<span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-over-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read.">
+<div id="fig-over-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-over-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-over-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read.">
 </div>
@@ -2152,20 +2175,20 @@ Figure&nbsp;3.25: Overlapping data makes plots hard to understand.
 <section id="jitter-plot" class="level4" data-number="3.4.7.1"><h4 data-number="3.4.7.1" class="anchored" data-anchor-id="jitter-plot">
 <span class="header-section-number">3.4.7.1</span> Jitter plot</h4>
 <p>You can use <code>geom_jitter()</code> to move the points around a bit to make them easier to see. You can also set alpha transparency. Here, the x-axis is continuous, so there is no need to jitter the <code>width</code>, but the y-axis is ordinal, so the <code>height</code> is jittered between -0.2 and +0.2 days away from the true y-value.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Change the values in this code (range between 0 and 1) to understand what jitter is doing</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
-<span id="cb55-2"><a href="#cb55-2"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.2</span>, <span class="at">width =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
+<span id="cb55-2"><a href="#cb55-2"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.2</span>, <span class="at">width =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2173,7 +2196,7 @@ Figure&nbsp;3.25: Overlapping data makes plots hard to understand.
 <span class="header-section-number">3.4.7.2</span> Facets</h4>
 <p>Alternatively, you can use <code>facet_wrap()</code> to create a separate plot for each rating. <code>facet_wrap()</code> uses the tilde (~) symbol, which you can roughly translate as “by”, e.g., facet the plot <em>by</em> rating. The <code>labeller</code> function controls the labels above each plot. <code>label_both</code> specifies that we want both the variable name (rating) and the value (e.g., 1) printed on the plot to make it easier to read.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score)) <span class="sc">+</span></span>
 <span id="cb56-2"><a href="#cb56-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, </span>
 <span id="cb56-3"><a href="#cb56-3"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
 <span id="cb56-4"><a href="#cb56-4"></a>                 <span class="at">fill =</span> <span class="st">"dodgerblue"</span>, </span>
@@ -2182,9 +2205,9 @@ Figure&nbsp;3.25: Overlapping data makes plots hard to understand.
 <span id="cb56-7"><a href="#cb56-7"></a>             <span class="at">ncol =</span> <span class="dv">1</span>, <span class="co"># try changing this to 2 </span></span>
 <span id="cb56-8"><a href="#cb56-8"></a>             <span class="at">labeller =</span> label_both) <span class="sc">+</span></span>
 <span id="cb56-9"><a href="#cb56-9"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>,</span>
-<span id="cb56-10"><a href="#cb56-10"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb56-10"><a href="#cb56-10"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-facet-plot" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5.">
+<div id="fig-facet-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-facet-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-viz_files/figure-html/fig-facet-plot-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5.">
 </div>
@@ -2200,7 +2223,7 @@ Figure&nbsp;3.26: A histogram with facets.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>More plots styles
+More plots styles
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2222,13 +2245,13 @@ Figure&nbsp;3.26: A histogram with facets.
 <li><p>The Navigator reviews in real time, thinks ahead, checks naming, design, and help pages, and catches mistakes and typos.</p></li>
 </ul>
 <p>For the final step in this chapter, we will create a report of data visualisations. You may need to refer back to <a href="02-reports.html" class="quarto-xref"><span>Chapter 2</span></a>) to help you complete these exercises. We’d also recommend you <a href="https://psyteachr.github.io/glossary/r#render" target="_blank" class="glossary" title="To create a file (usually an image or PDF) or widget from source code">render</a> at every step so that you can see how your output changes.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Activity
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2238,7 +2261,7 @@ Figure&nbsp;3.26: A histogram with facets.
 <li><p>Create and save a new quarto document named <code>03-dataviz-exercises.qmd</code>. Give it the title “Personality Data” and remove the default template text.</p></li>
 <li><p>Add the code below in the set-up code chunk:</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a href="#cb57-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a href="#cb57-1"></a><span class="in">```{r}</span></span>
 <span id="cb57-2"><a href="#cb57-2"></a><span class="co">#| label: setup</span></span>
 <span id="cb57-3"><a href="#cb57-3"></a><span class="co">#| include: false</span></span>
 <span id="cb57-4"><a href="#cb57-4"></a></span>
@@ -2247,7 +2270,7 @@ Figure&nbsp;3.26: A histogram with facets.
 <span id="cb57-7"><a href="#cb57-7"></a><span class="fu">library</span>(ggthemes)  </span>
 <span id="cb57-8"><a href="#cb57-8"></a></span>
 <span id="cb57-9"><a href="#cb57-9"></a>personality <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://psyteachr.github.io/ads-v3/data/personality_scores.csv"</span>)</span>
-<span id="cb57-10"><a href="#cb57-10"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb57-10"><a href="#cb57-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li>Give human-readable labels to the columns you’ll be plotting:</li>
 </ol>

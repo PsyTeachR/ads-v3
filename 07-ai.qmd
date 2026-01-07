@@ -29,8 +29,7 @@ A few hints, tip, and rules to get you on your way:
 -   Check everything it produces. Just because it doesn't throw an error, doesn't mean it's right. Check the values it produces against your original solution.
 -   Think about the specificity of your prompts. If you want it to produce solutions closer to our solution, tell it to use the `tidyverse`. If you'd like to see what other approaches it might take, don't give it a steer on packages (be mindful you might need to install some new packages).
 
-::: callout-tip
-## Activity
+::: {.callout-tip .activity}
 
 1.  Each person should create a separate Qmd file from your original backwards report Qmd to avoid any confusion.
 2.  For each step of the report, agree on what you want to achieve with the AI, e.g., "at this step, we'll load in the data, rename and clean the columns and set the factors". To make this more meaningful, don't make each step too simple (load in the data), but also don't assign too many tasks to each step (code the whole report).

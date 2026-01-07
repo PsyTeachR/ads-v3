@@ -35,8 +35,8 @@ Download the [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/html
 
 R is a programming language that you will write code in and RStudio is a program that makes working in R easier. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Install R and RStudio on your computer. We have written [a guide](https://psyteachr.github.io/RSetGo/) for how to do this on Windows and Mac and also how to use RStudio on a UofG desktop computer.
 
@@ -83,8 +83,7 @@ When you do things reproducibly, others (and future you) can understand and chec
 
 There are a few settings you should fix immediately after updating RStudio. , uncheck the box that says <if>Restore .RData into workspace at startup</if>.  If you keep objects around in your workspace, things will get messy, and unexpected issues will occur. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit, so set this to <if>Never</if>. The only thing you want to save are your scripts.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
 
 Go to <if>Tools > Global Options...</if> (<mac>&#8984;,</mac>):
 
@@ -98,8 +97,8 @@ You will need to change these settings each time you update RStudio.
 
 You can customise how RStudio looks to make it work for you. You can change the default font, font size, and general appearance of RStudio, including using dark mode. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Click <if>Tools > Global Options > Appearance</if>. Play around with the settings and see what you prefer -- you're going to spend a lot of time with R, it might as well look nice!
 :::
@@ -113,8 +112,8 @@ If you have the above settings configured correctly, when you open up RStudio an
 * <mac>Cmd-Shift-F10</mac> or <pc>Ctl-Shift-F10</pc>
 * type `.rs.restartR()` in the console
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Try each method of restarting R. Additionally, now would be a good time to start your reflective log where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item. 
 :::
@@ -137,8 +136,8 @@ There is an important distinction between **installing** a package and **loading
 
 This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Install the <pkg>tidyverse</pkg> package on your system. This is the main package we will use throughout this book for data wrangling, summaries, and visualisation. It is actually a bundle of packages, which we'll explain further in @sec-tidyverse.
 
@@ -160,8 +159,8 @@ If you get a message that says something like `package ‘tidyverse’ successfu
 Never install a package from inside a script. Only do this from the console pane or the packages tab of the lower right pane. This is because if you put the install code in a script, you might run it accidentaly and reinstall the package which will update it. Sometimes you want to do this, and sometimes a package update might cause your code to stop working.
 :::
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Here are some other packages you'll want to install for the first two chapters.
 
@@ -189,8 +188,8 @@ devtools::install_github("hrbrmstr/waffle")
 
 This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run `library(devtools)` within a session, the functions in the package referred to by `devtools` will be made available for your R session. The next time you start R, you will need to run `library(devtools)` again if you want to access that package.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 After installing the <pkg>beepr</pkg> package, you can load it for your current R session as follows:
 
@@ -209,8 +208,8 @@ You can use the convention `package::function()` to indicate in which add-on pac
 
 ### Using a function
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Now you can run the function `beep()` (make sure you have the sound on or your headphones plugged in).
 
@@ -225,8 +224,8 @@ beep()
 
 A `r glossary("function")` is a name that refers to some code you can reuse. We'll start by using functions that are provided for you in packages, but you can also write your own functions. After the function name, there is a pair of parentheses, which contain zero or more `r glossary("argument", "arguments")`. These are options that you can set. In the example above, the `sound` argument has a `r glossary("default value")` of `1`, which makes a "ping" sound. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Try changing the argument to an integer between 1 and 11.
 
@@ -245,8 +244,8 @@ If you type a function into the console pane, it will run as soon as you hit ent
 <pkg>tidyverse</pkg> is a meta-package that loads several packages we'll be using in almost every chapter in this book:
 
 - <pkg>ggplot2</pkg>, for data visualisation (@sec-viz)
-- <pkg>readr</pkg>, for data import (@sec-data)
-- <pkg>tibble</pkg>, for tables (@sec-data)
+- <pkg>readr</pkg>, for data import (@sec-import)
+- <pkg>tibble</pkg>, for tables (@sec-tables)
 - <pkg>tidyr</pkg>, for data tidying (@sec-tidy)
 - <pkg>dplyr</pkg>, for data manipulation (@sec-wrangle)
 - <pkg>stringr</pkg>, for `r glossary("string", "strings")` (@sec-data-types)
@@ -267,8 +266,8 @@ When you load the <pkg>tidyverse</pkg> it automatically loads all of the above p
 
 If the package isn't loaded, use `?package_name::function_name` or specify the package in the `help()` function. When you aren't sure what package the function is in, use the shortcut `??function_name`.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Use the methods above to get help for the `beepr::beep()` function.
 
@@ -297,8 +296,8 @@ help("beep", package="beepr")
 Function help is always organised in the same way. For example, look at the help for `?beepr::beep`. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The **Usage** section shows the function with all of its `r glossary("argument", "arguments")`. If any of those arguments have default values, they will be shown like `function(arg = default)`. The **Arguments** section lists each argument with an explanation. There may be a **Details** section after this with even more detail about the functions. The **Examples** section is last, and shows examples that you can run in your console window to see how the function works.
 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Use function help to answer the following questions.
 
@@ -312,8 +311,8 @@ Use function help to answer the following questions.
 
 You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 As an example, look at the help documentation for the function `sample()` which randomly samples items from a list. 
 
@@ -342,8 +341,8 @@ In the arguments section, there are explanations for each of the arguments:
 
 In the details section it notes that if no values are entered for `replace` or `prob` it will use defaults of `FALSE` (each item can only be chosen once) and `NULL` (all items will have equal probability of being chosen). Because there is no default value for `x` or `size`, they must be specified otherwise the code won't run.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Let's try an example and just change the required arguments `x` and `size` to ask R to choose from the set of `letters` (a built-in `r glossary("vector")` of the 26 lower-case Latin letters), 5 random values. 
 
@@ -364,8 +363,8 @@ sample(x = letters, size = 5)
 `sample()` generates a random sample. Each time you run the code, you'll generate a different set of random letters (try it). The function `set.seed()` controls the random number generator - if you're using any functions that use randomness (such as `sample()`), running `set.seed()` will ensure that you get the same result (in many cases this may not be what you want to do). To get the same numbers we do, run `set.seed(1242016)` in the console, and then run `sample(x = letters, size = 5)` again.
 :::
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Now we can change the default value for the `replace` argument to produce a set of letters that is allowed to have duplicates.
 
@@ -412,8 +411,8 @@ One very useful feature of R Studio is  tab auto-complete for functions. If you 
 
 ![Tab auto-complete](images/intro/autocomplete.png){#fig-autocomplete fig-alt="The code reads `sample()` and there is a drop-down menu with the options `x =`, `size =`, replace =` and prob =`. The third option is highlighted blue and there is a yellow text box reading 'replace: should sampling be with replacements? Press F1 for additional help'"}
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Use tab autocomplete to figure out the arguments to `rnorm()`. Create a vector of 20 numbers from a normal distribution with a mean of 100 and a standard deviation of 10.
 
@@ -428,8 +427,8 @@ rnorm(n = 20, mean = 100, sd = 10)
 
 The main purpose of this course is to teach you how to make fully reproducible reports where your text and code are all in one document. We will start using a document type called Quarto for this purpose next week but for now, we'll just use a simple script which allows us to save our code.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 There are several ways to create a new script:
 
@@ -443,8 +442,8 @@ Once you've created your new script, hit Ctrl/Cmd + S to save it. Name it `ads-w
 
 Scripts are useful for when you need to save the code you're writing but you're not bothered about making a full report. By default, everything you write in a script will be treat as code If you want to add any text as notes, you must use a `r glossary("comment", "comments")`. You can add comments inside scripts with the hash symbol (`#`). R will ignore characters from the hash to the end of the line.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 In your script, copy and paste the following code and comments:
 
@@ -472,8 +471,8 @@ To run the code in your script, use the keyboard shortcut `Ctrl/Cmd + Enter` on 
 
 A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using `<-` or `=` (we will use `<-` in this book).
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add the following code to your script then run it, but change the values of `name` and `age` to your own details and change `halloween` to a holiday or date you care about.
 
@@ -494,16 +493,16 @@ You'll see that four objects now appear in the environment pane:
 * `today` stores the result of the function `Sys.Date()`. This function returns your computer system's date. Unlike `name` and `age`, which are hard-coded (i.e., they will always return the values you enter), the contents of the object `today` will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.
 * `halloween` is also a date but it's hard-coded as a specific date. It's wrapped within the `as.Date()` function that tells R to interpret the character string you provide as a date rather than text.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 To print the contents of an object, type the object's name in the console and press enter. Try printing all four objects now.
 :::
 
 Finally, a key concept to understand is that objects can interact and you can save the results of those interactions in new object. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Edit and run the following code to create these new objects, and then print the contents of each new object. 
 
@@ -576,8 +575,8 @@ For each exercise, you'll work in a pair programming team. Pair programming is w
 
 You should work in short cycles (5-10 minutes or two or three tasks), then switch roles. You will likely feel a bit awkward doing this to begin with but you will quickly get used to it (we're going to to it every week).
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
 

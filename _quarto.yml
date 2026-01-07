@@ -86,11 +86,13 @@ format:
     - include/webex.css
     - include/style.css
     df-print: kable
+    toc-depth: 4
+    toc-expand: 2
     html-table-processing: none
     code-link: true
     code-fold: false
     code-line-numbers: true
-    code-overflow: wrap
+    #code-overflow: wrap
     code-copy: hover
     highlight-style: a11y
     # mainfont: ''

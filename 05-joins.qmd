@@ -1,20 +1,18 @@
 # Data Relations {#sec-joins}
 
+```{r}
+#| label: setup-joins
+#| include: false
+
+library(tidyverse)
+```
+
 ## Intended Learning Outcomes {#sec-ilo-joins .unnumbered}
 
 - [ ] Be able to match related data across multiple tables
 - [ ] Be able to combine data from multiple files
 
 ## Functions used {#functions-joins}
-
-```{r, include = FALSE}
-# load tidyverse packages separately so auto-links work in `func()` notation
-library(readr)
-library(dplyr)
-library(tibble)
-library(purrr)
-library(stringr)
-```
 
 * built-in (you can always use these without loading any packages)
     * base:: `library()`, `dir.create()`, `list.files()`, `as.numeric()`, `as.factor()`, `as.character()`, `as.data.frame()`
@@ -28,21 +26,23 @@ library(stringr)
 
 ## Set-up {#sec-setup-joins}
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Open your `ADS-2026` project 
+1. Download the [Data transformation cheatsheet](https://rstudio.github.io/cheatsheets/html/data-transformation.html)
 1. Create a new quarto file called `05-relations.qmd`
 1. Update the YAML header 
-1. Replace the setup chunk with the one below: 
+1. Replace the setup chunk with the one below
 
-```{r setup-joins, message=FALSE, verbatim="r setup, include=FALSE"}
-#| eval: false
-#| 
-library(tidyverse)     # includes readr & tibble
+````
+```{{r}}
+#| label: setup
+#| include: false
+
+library(tidyverse)
 ```
-
-* Download the [Data transformation cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf).
+````
 
 :::
 
@@ -80,8 +80,8 @@ visits <- tibble(
 
 `r kable(visits, caption="Demo visits table.")`
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Insert a new code chunk and create the objects `patients` and `visits`.
 
@@ -104,8 +104,8 @@ All the mutating joins have this basic syntax:
 You can leave out the `by` argument if you're matching on all of the columns with the same name, but it's good practice to always specify it so your code is robust to changes in the loaded data.
 :::
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 For each of the joins below, run the code and inspect the object it creates and make a note of three things in your Quarto document alongside each bit of code:
 
@@ -183,8 +183,8 @@ full_data
 ```
 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. You have two datasets: people registered with a GP practice (registrations) and people who received a flu jab (jabs). You only want people who appear in both datasets, because you are analysing outcomes for those registered and vaccinated. Which should you use?
 
@@ -279,8 +279,8 @@ anti2_data
 ```
 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. You have a dataset of people discharged from hospital (discharges) and a dataset of people who received a follow up call within 72 hours (followups). You want a list of people who were discharged but did not receive the follow up call. Which should you use?
 
@@ -517,8 +517,8 @@ base::setdiff(patients, new_patients)
 ```
 :::
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Two  surveys used the same questions and columns, one run in 2023 (survey_2023) and one in 2024 (survey_2024). You want one dataset with all responses from both years, keeping duplicates if the same respondent appears twice. Which should you use?
 
@@ -638,9 +638,9 @@ You should work in short cycles (5 to 10 minutes or two or three tasks), then sw
 
 There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
 
-::: {.callout-tip}
+::: {.callout-tip .activity}
 
-## Activity
+
 
 
 ### Set up
@@ -661,9 +661,9 @@ The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumer
 
 Often when we're working with student grades they are provided to us in only one of these forms, but we need to be able to go between the two. For example, we need the numeric form in order to be able to calculate descriptive statistics about the mean grade, but we need the alphanumeric form to release to student records.
 
-::: {.callout-tip}
+::: {.callout-tip .activity}
 
-## Activity
+
 
 5 Download <a href="data/grade_data1.csv" download>grade_data.csv</a>, <a href="data/grade_data2.csv" download>grade_data2.csv</a> and <a href="data/scheduleA.csv" download>scheduleA.csv</a> into your data folder.
 
@@ -686,9 +686,9 @@ grades2 <- read_csv("data/grade_data2.csv")
 
 At UofG, all students are given a GUID, a numeric ID number. However, that ID number is also then combined with the first letter from your surname to create your username that is used with your email address. For example, if your ID is 1234567 and your surname is Nordmann, your username would be 1234567n. From a data wrangling perspective this is very annoying because the numeric ID will be stored as numeric data, but the username will be stored as character because of the letter at the end. `grades1` has a numeric id whilst `grades2` has the additional letter. In order to join these datasets, we need to standardise the variables.
 
-::: {.callout-tip}
+::: {.callout-tip .activity}
 
-## Activity
+
 
 7. First, remove the letter character from `id` using the function `stringr::str_replace_all()`, which replaces text that matches a pattern. Here, we're using the pattern `"[a-z]"`, which matches all lowercase letters a through z, and replacing them with `""`. See the help for `?about_search_regex` for more info about how to set patterns (these can get really complex).
 
@@ -718,9 +718,9 @@ grades1 <- grades1 %>%
 
 In this example, we want to join the grade data to schedule A so that each student with a grade has both the grade and the grade point. But we also want a complete record of all students on the course, so students with missing grades should still be included in the data.
 
-::: {.callout-tip}
+::: {.callout-tip .activity}
 
-## Activity
+
 
 9. Join `grades1` and `scheduleA` and store this table in an object named `exam_all`.
 10. Do the same for `grades2` and save it in `essay_all`.

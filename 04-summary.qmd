@@ -1,5 +1,19 @@
 # Data Summaries {#sec-summary}
 
+```{r}
+#| label: setup-summary
+#| include: false
+
+# packages needed for this chapter
+library(tidyverse)     # loads readr for importing data
+                       #   and tibble for creating tables
+library(readxl)        # importing excel files
+library(jsonlite)      # importing JSON files
+library(rio)           # importing and exporting many types of files
+library(skimr)         # summarising datasets
+library(janitor)       # clean up data
+```
+
 <!-- checked for alt-text -->
 
 <div class="right meme"><img src="images/memes/read_csv.png"
@@ -28,14 +42,14 @@
 
 ## Setup {#sec-setup-summary -}
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Open your `ADS-2026` project 
+1. Download the [Data import cheatsheet](https://rstudio.github.io/cheatsheets/html/data-import.html)
 1. Create a new quarto file called `04-data.qmd`
 1. Update the YAML header 
-1. Replace the setup chunk with the one below: 
-
+1. Replace the setup chunk with the one below
 
 ````
 ```{{r}}
@@ -53,30 +67,14 @@ library(janitor)       # clean up data
 ```
 ````
 
-```{r}
-#| label: setup-summary
-#| include: false
-
-# packages needed for this chapter
-library(tidyverse)     # loads readr for importing data
-                       #   and tibble for creating tables
-library(readxl)        # importing excel files
-library(jsonlite)      # importing JSON files
-library(rio)           # importing and exporting many types of files
-library(skimr)         # summarising datasets
-library(janitor)       # clean up data
-```
-
 :::
-
-You may also wish to download the [Data import cheatsheet](https://rstudio.github.io/cheatsheets/html/data-import.html).
 
 ## Import Data {#sec-import-data}
 
-The data we'll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at [Method of Delivery](https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb), but we'll be working from a saved version.  The data are in a `r glossary("CSV")` file, so we can read this with the function `read_csv()` , and assign it to a new object that we'll call `births`. You can learn more about importing data from other file types in @sec-data.
+The data we'll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at [Method of Delivery](https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb), but we'll be working from a saved version.  The data are in a `r glossary("CSV")` file, so we can read this with the function `read_csv()` , and assign it to a new object that we'll call `births`. You can learn more about importing data from other file types in @sec-import.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Download <a href="data/12.1_delivery.csv" download>12.1_delivery.csv</a>), save it in your data folder, and then in a new code chunk, load in the data.
 
@@ -102,8 +100,8 @@ You can also use the `glimpse()` function to check the type of each column, and 
 glimpse(births)
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Run `spec()` on the dataset.
 2. Run `glimpse()` on the dataset.
@@ -124,8 +122,8 @@ To do this at the point of loading in the data, we:
 1. Create an object (`birth_cols`) that contains our column specification using the `col_types` argument and two helper functions, `cols()` and `col_skip()`. 
 2. Pass `birth_cols` to the `col_types` argument of `read_csv()` which uses this info to amend the file that is loaded in.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Amend the code so that the column we do not need is skipped on loading.
 
@@ -172,8 +170,8 @@ dput(delivery_table$Delivery) # print the text from the variable Delivery in tha
 
 :::
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Edit your birth_cols code to add the factor orders and then reload the dataset.
 
@@ -203,8 +201,8 @@ Data sets often imported with column names that are a little difficult to use in
 
 You can manually rename them, but the `r pkg("janitor")` package makes this incredibly easy. This dataset has pretty good names, with no spaces or special characters, but it does use uppercase letters to separate words. The `clean_names()` function changes everything to lowercase and uses underscores to separate word parts. Using `clean_names` every time you import a dataset is a good habit to get into. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Clean the names using `clean_names()` and then view the new names.
 
@@ -311,8 +309,8 @@ You can count categorical data with the `count()` function. This will give you a
 
 Let's figure out how many entries there were per delivery type. The first argument is the name of the data table object, and the second argument is the name of the column we want to count.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Count the number of deliveries by type of delivery.
 
@@ -352,8 +350,8 @@ mcq1 <- c(answer = "`count(births, induced, sort = TRUE)`",
   longmcq()
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 How would you create the table of counts below? 
 
@@ -462,8 +460,8 @@ You may get the following message when using `summarise()` after `group_by()`.
 Tidyverse recently added a message to remind you whether the `summarise()` function automatically ungroups grouped data or not (it may do different things depending on how it's used). You can set the argument `.groups` to "drop", "drop_last", "keep", or "rowwise" (see the help for `?summarise`), but it's good practice to explicitly use `ungroup()` when you're done working by groups, regardless. 
 :::
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Using either method of grouping, count the number of livebirths in each age category.
 1. Then, add on a column that expresses these numbers as a percent.
@@ -555,8 +553,8 @@ births_per_year_type_age <- births |>
 head(births_per_year_type_age)
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Re-write the code above using `group_by()` instead of the `.by` argument
 :::
@@ -597,8 +595,8 @@ If you’re enrolled on PSYCH1012 Applied Data Skills, do not do these exercises
 
 For the final step in this chapter, we will create a report of data visualisations. You may need to refer back to @sec-reports) to help you complete these exercises. We'd also recommend you `r glossary("render")` at every step so that you can see how your output changes.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 There are no solutions provided for the pair programming activities. Everything you need is covered in this book so use the search function and work together to solve any problems.
 

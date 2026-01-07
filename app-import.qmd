@@ -155,7 +155,7 @@ demo_xls <- readxl::read_excel("data/demo.xlsx")
 demo_sav <- haven::read_sav("data/demo.sav")
 ```
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 Look at the help for each function above and read through the Arguments section to see how you can customise import.
 :::
 
@@ -338,7 +338,7 @@ demo <- read_sheet(ss = sheet_id, sheet = "letters")
 ```
 
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 * Create a new table called `family` with the first name, last name, and age of your family members (biological, adopted, or chosen). 
 * Save it to a CSV file called "family.csv". 
 * Clear the object from your environment by restarting R or with the code `remove(family)`.

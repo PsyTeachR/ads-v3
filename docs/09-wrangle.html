@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>9&nbsp; Data Wrangling – Applied Data Skills</title>
 <style>
@@ -66,19 +66,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea06de1ba525ceca656e3b09b4cd3316.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-055205720082bea6cf7d6c8b816a8014.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-18a2161c37a28c2ad2b6bf620dd7650e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-055205720082bea6cf7d6c8b816a8014.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8f2db377de619df7931067401f8d1149.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -292,9 +291,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
         <div class="sidebar-tools-main">
@@ -462,17 +459,23 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li><a href="#sec-ilo-wrangle" id="toc-sec-ilo-wrangle" class="nav-link active" data-scroll-target="#sec-ilo-wrangle">Intended Learning Outcomes</a></li>
   <li><a href="#functions-wrangle" id="toc-functions-wrangle" class="nav-link" data-scroll-target="#functions-wrangle"><span class="header-section-number">9.1</span> Functions used</a></li>
-  <li><a href="#sec-walkthrough-wrangle" id="toc-sec-walkthrough-wrangle" class="nav-link" data-scroll-target="#sec-walkthrough-wrangle">Walkthrough video</a></li>
   <li><a href="#sec-setup-wrangle" id="toc-sec-setup-wrangle" class="nav-link" data-scroll-target="#sec-setup-wrangle"><span class="header-section-number">9.2</span> Set-up</a></li>
   <li>
 <a href="#wrangling-functions" id="toc-wrangling-functions" class="nav-link" data-scroll-target="#wrangling-functions"><span class="header-section-number">9.3</span> Wrangling functions</a>
+  <ul>
+<li>
+<a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">9.3.1</span> Select</a>
   <ul class="collapse">
-<li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">9.3.1</span> Select</a></li>
+<li><a href="#by-name-or-index" id="toc-by-name-or-index" class="nav-link" data-scroll-target="#by-name-or-index"><span class="header-section-number">9.3.1.1</span> By name or index</a></li>
+  <li><a href="#un-selecting-columns" id="toc-un-selecting-columns" class="nav-link" data-scroll-target="#un-selecting-columns"><span class="header-section-number">9.3.1.2</span> Un-selecting columns</a></li>
+  <li><a href="#select-helpers" id="toc-select-helpers" class="nav-link" data-scroll-target="#select-helpers"><span class="header-section-number">9.3.1.3</span> Select helpers</a></li>
+  </ul>
+</li>
   <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">9.3.2</span> Filter</a></li>
   <li><a href="#sec-arrange" id="toc-sec-arrange" class="nav-link" data-scroll-target="#sec-arrange"><span class="header-section-number">9.3.3</span> Arrange</a></li>
   <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">9.3.4</span> Mutate</a></li>
@@ -482,14 +485,23 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
   <li>
 <a href="#complications" id="toc-complications" class="nav-link" data-scroll-target="#complications"><span class="header-section-number">9.4</span> Complications</a>
-  <ul class="collapse">
+  <ul>
 <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding"><span class="header-section-number">9.4.1</span> Rounding</a></li>
-  <li><a href="#sec-missing-values" id="toc-sec-missing-values" class="nav-link" data-scroll-target="#sec-missing-values"><span class="header-section-number">9.4.2</span> Missing values</a></li>
+  <li>
+<a href="#sec-missing-values" id="toc-sec-missing-values" class="nav-link" data-scroll-target="#sec-missing-values"><span class="header-section-number">9.4.2</span> Missing values</a>
+  <ul class="collapse">
+<li><a href="#bad-missing-values" id="toc-bad-missing-values" class="nav-link" data-scroll-target="#bad-missing-values"><span class="header-section-number">9.4.2.1</span> Bad missing values</a></li>
+  <li><a href="#convert-missing-values-to-na" id="toc-convert-missing-values-to-na" class="nav-link" data-scroll-target="#convert-missing-values-to-na"><span class="header-section-number">9.4.2.2</span> Convert missing values to NA</a></li>
+  <li><a href="#ignore-missing-values" id="toc-ignore-missing-values" class="nav-link" data-scroll-target="#ignore-missing-values"><span class="header-section-number">9.4.2.3</span> Ignore missing values</a></li>
+  <li><a href="#count-missing-values" id="toc-count-missing-values" class="nav-link" data-scroll-target="#count-missing-values"><span class="header-section-number">9.4.2.4</span> Count missing values</a></li>
+  <li><a href="#omit-missing-values" id="toc-omit-missing-values" class="nav-link" data-scroll-target="#omit-missing-values"><span class="header-section-number">9.4.2.5</span> Omit missing values</a></li>
+  </ul>
+</li>
   </ul>
 </li>
   <li>
 <a href="#sec-together-wrangle" id="toc-sec-together-wrangle" class="nav-link" data-scroll-target="#sec-together-wrangle"><span class="header-section-number">9.5</span> Exercises</a>
-  <ul class="collapse">
+  <ul>
 <li><a href="#creating-new-categories" id="toc-creating-new-categories" class="nav-link" data-scroll-target="#creating-new-categories"><span class="header-section-number">9.5.1</span> Creating new categories</a></li>
   <li><a href="#filter-by-calculated-score" id="toc-filter-by-calculated-score" class="nav-link" data-scroll-target="#filter-by-calculated-score"><span class="header-section-number">9.5.2</span> Filter by calculated score</a></li>
   <li><a href="#multiple-critera" id="toc-multiple-critera" class="nav-link" data-scroll-target="#multiple-critera"><span class="header-section-number">9.5.3</span> Multiple critera</a></li>
@@ -518,10 +530,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 
 </header><section id="sec-ilo-wrangle" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-ilo-wrangle">Intended Learning Outcomes</h2>
-<ul>
-<li>Be able to select and filter data for relevance</li>
-<li>Be able to create new columns and edit existing ones</li>
-<li>Be able to handle missing data</li>
+<ul class="task-list">
+<li><label><input type="checkbox">Be able to select and filter data for relevance</label></li>
+<li><label><input type="checkbox">Be able to create new columns and edit existing ones</label></li>
+<li><label><input type="checkbox">Be able to handle missing data</label></li>
 </ul></section><section id="functions-wrangle" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="functions-wrangle">
 <span class="header-section-number">9.1</span> Functions used</h2>
 <ul>
@@ -551,18 +563,39 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
 </ul>
 </li>
-</ul></section><section id="sec-walkthrough-wrangle" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-walkthrough-wrangle">Walkthrough video</h2>
-<p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/dc1e2869-a6c2-45d8-ab40-cb85cdb67f43/public">Echo360</a>. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
-</section><section id="sec-setup-wrangle" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="sec-setup-wrangle">
+</ul></section><section id="sec-setup-wrangle" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="sec-setup-wrangle">
 <span class="header-section-number">9.2</span> Set-up</h2>
-<p>First, create a new project for the work we’ll do in this chapter named <code class="path">09-wrangle</code>. Second, open and save and new R Markdown document named <code>wrangle.Rmd</code>, delete the welcome text and load the required packages for this chapter.</p>
-<div class="cell" data-layout-align="center">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Chapter packages</strong></pre>
+<div class="activity callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)   <span class="co"># data wrangling functions</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(janitor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Open your <code>ADS-2026</code> project</li>
+<li>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-transformation.html">Data transformation cheat sheet</a>
+</li>
+<li>Download a data file into the “data” folder:
+<ul>
+<li><a href="https://psyteachr.github.io/ads-v2/data/budget.csv" download="">budget.csv</a></li>
+</ul>
+</li>
+<li>Create a new quarto file called <code>09-wrangle.qmd</code>
+</li>
+<li>Update the YAML header</li>
+<li>Replace the setup chunk with the one below</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(tidyverse) <span class="co"># for data wrangling</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -578,15 +611,13 @@ Warning
 <p>At this point in ADS it’s very likely you will have the most recent version of the <pkg>tidyverse</pkg> packages but just in case, be aware that the function <code>case_when()</code> that we will use in this chapter was updated in to introduce new arguments and ways of handling <code>NA</code>. The code we provide in this chapter will only work if you have v1.1.0 or above of <pkg>dplyr</pkg> installed. To check run <code>packageVersion("dplyr")</code> and if it’s below 1.1.0, install it again to update.</p>
 </div>
 </div>
-<p>You’ll need to make a folder called “data” and download a data file into it: <a href="https://psyteachr.github.io/ads-v2/data/budget.csv" download="">budget.csv</a>.</p>
-<p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheat sheet</a>.</p>
 </section><section id="wrangling-functions" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="wrangling-functions">
 <span class="header-section-number">9.3</span> Wrangling functions</h2>
 <p>Data wrangling refers to the process of cleaning, transforming, and restructuring your data to get it into the format you need for analysis and it’s something you will spend an awful lot of time doing. Most <a href="https://psyteachr.github.io/glossary/d#data-wrangling" target="_blank" class="glossary" title="The process of preparing data for visualisation and statistical analysis.">data wrangling</a> involves the reshaping functions you learned in <a href="08-tidy.html" class="quarto-xref"><span>Chapter 8</span></a> and six functions from the <pkg>dplyr</pkg> package that is loaded as part of the <pkg>tidyverse</pkg>: <code>select</code>, <code>filter</code>, <code>arrange</code>, <code>mutate</code>, <code>summarise</code>, and <code>group_by</code>. You’ll remember the last two from <a href="04-summary.html" class="quarto-xref"><span>Chapter 4</span></a>, so we’ll only cover them briefly.</p>
 <p>It’s worth highlighting that in this chapter we’re going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> (and packages beyond it) has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven’t explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how.</p>
 <p>We’ll use a small example table with the sales, expenses, and satisfaction for two years from four regions over two products. After you load the data, use <code>glimpse(budget)</code> or <code>View(budget)</code> to get familiar with the data.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>budget <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/budget.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>budget <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/budget.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -705,26 +736,26 @@ Warning
 <span class="header-section-number">9.3.1.1</span> By name or index</h4>
 <p>You can select columns by name or number (which is sometimes referred to as the column index). Selecting by number can be useful when the column names are long or complicated.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># select single column by name</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># select single column by name</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>product_dat <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(product) </span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="co"># select single column by number</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>product_dat <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-5"><a href="#cb3-5"></a>product_dat <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can select each column individually, separated by commas (e.g., <code>region, sales_2019</code>) but you can also select all columns from one to another by separating them with a colon (e.g., <code>sales_2019:expenses_2020</code>).</p>
 <p>The colon notation can be much faster because you don’t need to type out each individual variable name, but make sure that you know what order your columns are in and always check the output to make sure you have selected what you intended.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># select columns individually</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># select columns individually</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>sales2019 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(region, product, sales_2019)</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="co"># select columns with colon</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>sales2019 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(region<span class="sc">:</span>sales_2019)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-5"><a href="#cb4-5"></a>sales2019 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(region<span class="sc">:</span>sales_2019)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can rename columns at the same time as selecting them by setting <code>new_name = old_col</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>regions <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="st">`</span><span class="at">Sales Region</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>regions <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="st">`</span><span class="at">Sales Region</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="dv">3</span><span class="sc">:</span><span class="dv">6</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">head</span>(regions, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">head</span>(regions, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -759,11 +790,11 @@ Warning
 <span class="header-section-number">9.3.1.2</span> Un-selecting columns</h4>
 <p>You can select columns either by telling R which ones you want to keep as in the previous examples, or by specifying which ones you want to exclude by using a minus symbol to un-select columns. You can also use the colon notation to de-select columns, but to do so you need to put parentheses around the span first, e.g., <code>-(sales_2019:expenses_2020)</code>, not <code>-sales_2019:expenses_2020</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># de-select individual columns</span></span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># de-select individual columns</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>sales <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>expenses_2019, <span class="sc">-</span>expenses_2020)</span>
 <span id="cb6-3"><a href="#cb6-3"></a></span>
 <span id="cb6-4"><a href="#cb6-4"></a><span class="co"># de-select a range of columns</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>sales <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>(expenses_2019<span class="sc">:</span>expenses_2020))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-5"><a href="#cb6-5"></a>sales <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>(expenses_2019<span class="sc">:</span>expenses_2020))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="select-helpers" class="level4" data-number="9.3.1.3"><h4 data-number="9.3.1.3" class="anchored" data-anchor-id="select-helpers">
 <span class="header-section-number">9.3.1.3</span> Select helpers</h4>
@@ -797,13 +828,13 @@ Warning
 </tr>
 </tbody>
 </table>
-<div class="try callout callout-style-default callout-note callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -811,26 +842,26 @@ Note
 <ul>
 <li>
 <code>budget %&gt;% select(contains("_"))</code>
-<div id="radio_QJRDFARFBQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QJRDFARFBQ" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_QJRDFARFBQ" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_QJRDFARFBQ" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_QJRDFARFBQ" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_PMSCHKROQB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PMSCHKROQB" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_PMSCHKROQB" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_PMSCHKROQB" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_PMSCHKROQB" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(num_range("expenses_", 2019:2020))</code>
-<div id="radio_MNEYLUVMUZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MNEYLUVMUZ" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_MNEYLUVMUZ" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_MNEYLUVMUZ" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_MNEYLUVMUZ" value="answer"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_QTURDDHFTW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QTURDDHFTW" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_QTURDDHFTW" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_QTURDDHFTW" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_QTURDDHFTW" value="answer"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(starts_with("sales"))</code>
-<div id="radio_XFHCTTGBMK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XFHCTTGBMK" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_XFHCTTGBMK" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_XFHCTTGBMK" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_XFHCTTGBMK" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_AVNRMCTOYS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_AVNRMCTOYS" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_AVNRMCTOYS" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_AVNRMCTOYS" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_AVNRMCTOYS" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(ends_with("2020"))</code>
-<div id="radio_OALWEBMOMG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_OALWEBMOMG" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_OALWEBMOMG" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_OALWEBMOMG" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_OALWEBMOMG" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_IDCRZXVQVZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IDCRZXVQVZ" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_IDCRZXVQVZ" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_IDCRZXVQVZ" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_IDCRZXVQVZ" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 </ul>
@@ -841,7 +872,7 @@ Note
 <p>Whilst <code>select()</code> chooses the columns you want to retain, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> chooses the rows to retain by matching row or column criteria.</p>
 <p>You can filter by a single criterion. This criterion can be rows where a certain column’s value matches a character value (e.g., “North”) or a number (e.g., 9003). It can also be the result of a logical equation (e.g., keep all rows with a specific column value larger than a certain value). The criterion is checked for each row, and if the result is FALSE, the row is removed. You can reverse equations by specifying <code>!=</code> where <code>!</code> means “not”.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># select all rows where region equals North</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># select all rows where region equals North</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(region <span class="sc">==</span> <span class="st">"North"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="co"># select all rows where expenses_2020 were exactly equal to 200</span></span>
@@ -851,7 +882,7 @@ Note
 <span id="cb7-8"><a href="#cb7-8"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(sales_2019 <span class="sc">&gt;</span> <span class="dv">100</span>)</span>
 <span id="cb7-9"><a href="#cb7-9"></a></span>
 <span id="cb7-10"><a href="#cb7-10"></a><span class="co"># everything but the North</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"North"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-11"><a href="#cb7-11"></a>budget <span class="sc">%&gt;%</span> <span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"North"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -866,13 +897,13 @@ Warning
 <p>Remember to use <code>==</code> and not <code>=</code> to check if two things are equivalent. A single <code>=</code> assigns the right-hand value to the left-hand variable (much like the <code>&lt;-</code> operator).</p>
 </div>
 </div>
-<div class="try callout callout-style-default callout-note callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -946,7 +977,7 @@ Note
 </div>
 <p>You can also select on multiple criteria by separating them by commas (rows will be kept if they match <em>all</em> criteria). Additionally, you can use <code>&amp;</code> (“and”) and <code>|</code> (“or”) to create complex criteria.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># regions and products with profit in both 2019 and 2020</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># regions and products with profit in both 2019 and 2020</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>profit_both <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span> </span>
 <span id="cb8-3"><a href="#cb8-3"></a>  <span class="fu">filter</span>(</span>
 <span id="cb8-4"><a href="#cb8-4"></a>    sales_2019 <span class="sc">&gt;</span> expenses_2019,</span>
@@ -969,11 +1000,11 @@ Note
 <span id="cb8-21"><a href="#cb8-21"></a></span>
 <span id="cb8-22"><a href="#cb8-22"></a><span class="co"># 2020 profit greater than 1000</span></span>
 <span id="cb8-23"><a href="#cb8-23"></a>profit_1000 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span></span>
-<span id="cb8-24"><a href="#cb8-24"></a>  <span class="fu">filter</span>(sales_2020 <span class="sc">-</span> expenses_2020 <span class="sc">&gt;</span> <span class="dv">1000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-24"><a href="#cb8-24"></a>  <span class="fu">filter</span>(sales_2020 <span class="sc">-</span> expenses_2020 <span class="sc">&gt;</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you want the filter to retain multiple specific values in the same variable, the “match operator” (<code>%in%</code>) should be used rather than <code>|</code> (or). The <code>!</code> can also be used in combination here, but it is placed before the variable name.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># retain any rows where region is north or south, and where product equals widget</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># retain any rows where region is north or south, and where product equals widget</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>budget <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(region <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"South"</span>),</span>
 <span id="cb9-4"><a href="#cb9-4"></a>         product <span class="sc">==</span> <span class="st">"widgets"</span>)</span>
@@ -981,7 +1012,7 @@ Note
 <span id="cb9-6"><a href="#cb9-6"></a><span class="co"># retain any rows where the region is not east or west, and where the product does not equal gadgets</span></span>
 <span id="cb9-7"><a href="#cb9-7"></a>budget <span class="sc">%&gt;%</span></span>
 <span id="cb9-8"><a href="#cb9-8"></a>  <span class="fu">filter</span>(<span class="sc">!</span>region <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"East"</span>, <span class="st">"West"</span>),</span>
-<span id="cb9-9"><a href="#cb9-9"></a>         product <span class="sc">!=</span> <span class="st">"gadgets"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-9"><a href="#cb9-9"></a>         product <span class="sc">!=</span> <span class="st">"gadgets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <table class="caption-top table">
 <colgroup>
@@ -1034,8 +1065,8 @@ Note
 </table>
 <p>Finally, you can also pass many other functions to filter. For example, the package <pkg>stringr</pkg> that is loaded as part of the <pkg>tidyverse</pkg> contains many different functions for working with <a href="https://psyteachr.github.io/glossary/s#string" target="_blank" class="glossary" title="A piece of text inside of quotes.">strings</a> (character data). For example, you you use <code>str_detect()</code> to only retain rows where the customer satisfaction rating includes the word “high”</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>budget <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(satisfaction_2019, <span class="st">"high"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>budget <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(satisfaction_2019, <span class="st">"high"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1113,11 +1144,11 @@ Warning
 <span class="header-section-number">9.3.3</span> Arrange</h3>
 <p>You can sort your dataset using <code>arrange()</code>. You will find yourself needing to sort data in R much less than you do in Excel, since you don’t need to have rows next to each other in order to, for example, calculate group means. But <code>arrange()</code> can be useful when preparing data for display in tables. <code>arrange()</code> works on character data where it will sort alphabetically, as well as numeric data where the default is ascending order (smallest to largest). Reverse the order using <code>desc()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># arranging the table </span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># arranging the table </span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="co"># first by product in alphabetical order</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="co"># then by "region" in reverse alphabetical order</span></span>
 <span id="cb11-4"><a href="#cb11-4"></a>budget <span class="sc">%&gt;%</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">arrange</span>(product, <span class="fu">desc</span>(region))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">arrange</span>(product, <span class="fu">desc</span>(region))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1227,22 +1258,22 @@ Warning
 </div>
 </div>
 </div>
-<div class="try callout callout-style-default callout-note callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>If you want to sort character data/categories in a specific order, turn the column into a <a href="https://psyteachr.github.io/glossary/f#factor" target="_blank" class="glossary" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter">factor</a> and set the <code>levels</code> in the desired order.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>budget <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>budget <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">factor</span>(region, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"North"</span>, <span class="st">"South"</span>, <span class="st">"East"</span>, <span class="st">"West"</span>))) <span class="sc">%&gt;%</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">filter</span>(product <span class="sc">==</span> <span class="st">"gadgets"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">arrange</span>(region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">arrange</span>(region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1318,19 +1349,19 @@ Note
 <span class="header-section-number">9.3.4</span> Mutate</h3>
 <p>The function <code>mutate()</code> allows you to add new columns or change existing ones by overwriting them by using the syntax <code>new_column = operation</code>. You can add more than one column in the same mutate function by separating the columns with a comma. Once you make a new column, you can use it in further column definitions. For example, the creation of <code>profit</code> below uses the column <code>expenses</code>, which is created above it.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>budget2 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>budget2 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb13-3"><a href="#cb13-3"></a>    <span class="at">sales =</span> sales_2019 <span class="sc">+</span> sales_2020,</span>
 <span id="cb13-4"><a href="#cb13-4"></a>    <span class="at">expenses =</span> expenses_2019 <span class="sc">+</span> expenses_2020,</span>
 <span id="cb13-5"><a href="#cb13-5"></a>    <span class="at">profit =</span> sales <span class="sc">-</span> expenses,</span>
 <span id="cb13-6"><a href="#cb13-6"></a>    <span class="at">region =</span> <span class="fu">paste</span>(region, <span class="st">"Office"</span>)</span>
-<span id="cb13-7"><a href="#cb13-7"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-7"><a href="#cb13-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>mutate()</code> can also be used in conjunction with other functions and Boolean operators. For example, we can add another column to <code>budget2</code> that states whether a profit was returned that year or overwrite our <code>product</code> variable as a factor. Just like when we used <a href="https://psyteachr.github.io/glossary/b#boolean-expression" target="_blank" class="glossary" title="An expression that evaluates to TRUE or FALSE.">Boolean expressions</a> with filter, it will evaluate the equation and return TRUE or FALSE depending on whether the observation meets the criteria.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>budget2 <span class="ot">&lt;-</span> budget2 <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>budget2 <span class="ot">&lt;-</span> budget2 <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">mutate</span>(<span class="at">profit_category =</span> profit <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
-<span id="cb14-3"><a href="#cb14-3"></a>         <span class="at">product =</span> <span class="fu">as.factor</span>(product))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-3"><a href="#cb14-3"></a>         <span class="at">product =</span> <span class="fu">as.factor</span>(product))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1347,30 +1378,30 @@ Warning
 </div>
 <p>You can also use <code>case_when()</code> to specify what values to return, rather than defaulting to TRUE or FALSE:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>budget3 <span class="ot">&lt;-</span> budget2 <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>budget3 <span class="ot">&lt;-</span> budget2 <span class="sc">%&gt;%</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">mutate</span>(<span class="at">profit_category =</span> <span class="fu">case_when</span>(profit <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"PROFIT"</span>,</span>
-<span id="cb15-3"><a href="#cb15-3"></a>                                     profit <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"NO PROFIT"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-3"><a href="#cb15-3"></a>                                     profit <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"NO PROFIT"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Use it to recode values:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># create a column where people get a bonus if customer satisfaction was overall high or very high</span></span>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># create a column where people get a bonus if customer satisfaction was overall high or very high</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3"></a>bonus <span class="ot">&lt;-</span> budget3 <span class="sc">%&gt;%</span></span>
 <span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">mutate</span>(<span class="at">bonus_2019 =</span> <span class="fu">case_when</span>(satisfaction_2019 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"very low"</span>, <span class="st">"low"</span>, <span class="st">"neutral"</span>) <span class="sc">~</span> <span class="st">"no bonus"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5"></a>                                satisfaction_2019 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"high"</span>, <span class="st">"very high"</span>) <span class="sc">~</span> <span class="st">"bonus"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-5"><a href="#cb16-5"></a>                                satisfaction_2019 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"high"</span>, <span class="st">"very high"</span>) <span class="sc">~</span> <span class="st">"bonus"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And combine different criteria:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># new management takes over - people only get a bonus if customer satisfaction was overall high or very high AND if a profit was returned</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># new management takes over - people only get a bonus if customer satisfaction was overall high or very high AND if a profit was returned</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
 <span id="cb17-3"><a href="#cb17-3"></a>bonus2 <span class="ot">&lt;-</span> budget3 <span class="sc">%&gt;%</span></span>
 <span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">mutate</span>(<span class="at">bonus_2020 =</span> <span class="fu">case_when</span>(satisfaction_2020 <span class="sc">==</span> <span class="st">"high"</span> <span class="sc">&amp;</span> </span>
 <span id="cb17-5"><a href="#cb17-5"></a>                                  profit_category <span class="sc">==</span> <span class="st">"PROFIT"</span> <span class="sc">~</span> <span class="st">"bonus"</span>,</span>
 <span id="cb17-6"><a href="#cb17-6"></a>                                satisfaction_2020 <span class="sc">==</span> <span class="st">"very high"</span> <span class="sc">&amp;</span> </span>
 <span id="cb17-7"><a href="#cb17-7"></a>                                  profit_category <span class="sc">==</span> <span class="st">"PROFIT"</span> <span class="sc">~</span> <span class="st">"bonus"</span>,</span>
-<span id="cb17-8"><a href="#cb17-8"></a>                                <span class="at">.default =</span> <span class="st">"No bonus"</span>)) <span class="co"># set all other values to "no bonus"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-8"><a href="#cb17-8"></a>                                <span class="at">.default =</span> <span class="st">"No bonus"</span>)) <span class="co"># set all other values to "no bonus"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1389,7 +1420,7 @@ Tip
 <p>You were introduced to the <code>summarise()</code> function in <a href="04-summary.html#sec-summary-summarise" class="quarto-xref"><span>Section 4.4</span></a>. This applies summary functions to an entire table (or groups, as you’ll see in the next section).</p>
 <p>Let’s say we want to determine the mean sales and expenses, plus the minimum and maximum profit, for any region, product and year. First, we need to reshape the data like we learned in <a href="08-tidy.html" class="quarto-xref"><span>Chapter 8</span></a>, so that there is a column for year and one column each for sales and expenses, instead of separate columns for each year. We’ll also drop the satisfaction data as we don’t need it for this analysis.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>budget4 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>budget4 <span class="ot">&lt;-</span> budget <span class="sc">%&gt;%</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>satisfaction_2019, <span class="sc">-</span>satisfaction_2020) <span class="sc">%&gt;%</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> sales_2019<span class="sc">:</span>expenses_2020,</span>
 <span id="cb18-4"><a href="#cb18-4"></a>               <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">"type"</span>, <span class="st">"year"</span>),</span>
@@ -1398,7 +1429,7 @@ Tip
 <span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type,</span>
 <span id="cb18-8"><a href="#cb18-8"></a>              <span class="at">values_from =</span> value)</span>
 <span id="cb18-9"><a href="#cb18-9"></a></span>
-<span id="cb18-10"><a href="#cb18-10"></a><span class="fu">head</span>(budget4) <span class="co"># check the format</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-10"><a href="#cb18-10"></a><span class="fu">head</span>(budget4) <span class="co"># check the format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1459,13 +1490,13 @@ Tip
 </div>
 <p>Now we can create summary statistics for the table.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>budget4 <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>budget4 <span class="sc">%&gt;%</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb19-3"><a href="#cb19-3"></a>    <span class="at">mean_sales =</span> <span class="fu">mean</span>(sales),</span>
 <span id="cb19-4"><a href="#cb19-4"></a>    <span class="at">mean_expenses =</span> <span class="fu">mean</span>(expenses),</span>
 <span id="cb19-5"><a href="#cb19-5"></a>    <span class="at">min_profit =</span> <span class="fu">min</span>(expenses <span class="sc">-</span> sales),</span>
 <span id="cb19-6"><a href="#cb19-6"></a>    <span class="at">max_profit =</span> <span class="fu">max</span>(expenses <span class="sc">-</span> sales)</span>
-<span id="cb19-7"><a href="#cb19-7"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-7"><a href="#cb19-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1489,7 +1520,7 @@ Tip
 <span class="header-section-number">9.3.6</span> Group By</h3>
 <p>You were introduced to the <code>group_by()</code> function in <a href="04-summary.html#sec-grouping" class="quarto-xref"><span>Section 4.5</span></a>. For example, you can break down the summary statistics above by year and product.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>year_prod <span class="ot">&lt;-</span> budget4 <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>year_prod <span class="ot">&lt;-</span> budget4 <span class="sc">%&gt;%</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">group_by</span>(year, product) <span class="sc">%&gt;%</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb20-4"><a href="#cb20-4"></a>    <span class="at">mean_sales =</span> <span class="fu">mean</span>(sales),</span>
@@ -1497,12 +1528,12 @@ Tip
 <span id="cb20-6"><a href="#cb20-6"></a>    <span class="at">min_profit =</span> <span class="fu">min</span>(expenses <span class="sc">-</span> sales),</span>
 <span id="cb20-7"><a href="#cb20-7"></a>    <span class="at">max_profit =</span> <span class="fu">max</span>(expenses <span class="sc">-</span> sales)</span>
 <span id="cb20-8"><a href="#cb20-8"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-9"><a href="#cb20-9"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'year'. You can override using the
 `.groups` argument.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>year_prod</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>year_prod</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1554,43 +1585,43 @@ Tip
 </div>
 <p>Note that you can use the other wrangling functions on the summary table, for example:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># arrange by maximum profit</span></span>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># arrange by maximum profit</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>year_prod <span class="sc">%&gt;%</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(max_profit))</span>
 <span id="cb23-4"><a href="#cb23-4"></a></span>
 <span id="cb23-5"><a href="#cb23-5"></a><span class="co"># filter out gadgets</span></span>
 <span id="cb23-6"><a href="#cb23-6"></a>year_prod <span class="sc">%&gt;%</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a>  <span class="fu">filter</span>(product <span class="sc">!=</span> <span class="st">"gadgets"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-7"><a href="#cb23-7"></a>  <span class="fu">filter</span>(product <span class="sc">!=</span> <span class="st">"gadgets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="try callout callout-style-default callout-note callout-titled">
+<div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>How would you find out the maximum sales for each region?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_LTMVWWCXZG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LTMVWWCXZG" value="x"><span>
-<pre>budget3 %&gt;%
-  group_by(sales) %&gt;%
-  summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_LTMVWWCXZG" value="x"><span>
-<pre>budget3 %&gt;%
-  group_by(region) %&gt;%
-  summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_LTMVWWCXZG" value="x"><span>
-<pre>budget3 %&gt;%
-  group_by(sales) %&gt;%
-  summarise(max_sales = max(sales)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_LTMVWWCXZG" value="answer"><span>
+<div id="radio_IQZUMYHSNH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IQZUMYHSNH" value="answer"><span>
 <pre>budget3 %&gt;%
   group_by(region) %&gt;%
   summarise(max_sales = max(sales)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_IQZUMYHSNH" value="x"><span>
+<pre>budget3 %&gt;%
+  group_by(sales) %&gt;%
+  summarise(max_sales = max(sales)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_IQZUMYHSNH" value="x"><span>
+<pre>budget3 %&gt;%
+  group_by(region) %&gt;%
+  summarise(max_sales = max(region)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_IQZUMYHSNH" value="x"><span>
+<pre>budget3 %&gt;%
+  group_by(sales) %&gt;%
+  summarise(max_sales = max(region)</pre>
 </span></label>
 </div>
 </div>
@@ -1598,9 +1629,9 @@ Note
 </div>
 <p>You can also use <code>group_by()</code> in combination with other functions. For example, <code>slice_max()</code> returns the top N rows, ordered by a specific variable.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># return top 3 sales</span></span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># return top 3 sales</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>budget4 <span class="sc">%&gt;%</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">order_by =</span> sales)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">order_by =</span> sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1640,10 +1671,10 @@ Note
 </div>
 <p>But this can be combined with <code>group_by()</code> to return the top sales for each region:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># return top sale for each region</span></span>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># return top sale for each region</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>budget4 <span class="sc">%&gt;%</span></span>
 <span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">order_by =</span> sales)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">order_by =</span> sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1694,9 +1725,9 @@ Note
 <span class="header-section-number">9.4.1</span> Rounding</h3>
 <p>Let’s say we want to round all the values to the nearest pound. The pattern below uses the <code>across()</code> function to apply the <code><a href="https://rdrr.io/r/base/Round.html">round()</a></code> function to the columns from <code>mean_sales</code> to <code>max_profit</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>year_prod <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>year_prod <span class="sc">%&gt;%</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> mean_sales<span class="sc">:</span>max_profit, </span>
-<span id="cb26-3"><a href="#cb26-3"></a>                <span class="at">.fns =</span> round))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-3"><a href="#cb26-3"></a>                <span class="at">.fns =</span> round))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1749,8 +1780,8 @@ Note
 <p>If you compare this table to the one in <a href="#sec-dplyr-groupby" class="quarto-xref"><span>Section 9.3.6</span></a>, you’ll see that the 2019 gadgets mean sales rounded up from 881.5 to 882, while the mean expenses rounded down from 238.5 to 238. What’s going on!?</p>
 <p>This may seem like a mistake, but R rounds .5 to the nearest even number, rather than always up, like you were probably taught in school. This prevents overestimation biases, since x.5 is <em>exactly</em> halfway between x and x+1, so there is no reason it should always round up.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">round</span>(<span class="fl">0.5</span>)</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">round</span>(<span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">round</span>(<span class="fl">0.5</span>)</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">round</span>(<span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0
 [1] 2</code></pre>
@@ -1760,8 +1791,8 @@ Note
 <p>when you run this code, a new section will appear in the environment pane labelled “Functions”. In addition to using functions from packages, you can also make your own. It’s not something we are going to go into detail on in this course, but it’s useful to know the functionality exists.</p>
 <p>This should work as you’d expect.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">round_half_up</span>(<span class="fl">0.5</span>)</span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">round_half_up</span>(<span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">round_half_up</span>(<span class="fl">0.5</span>)</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fu">round_half_up</span>(<span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2</code></pre>
@@ -1777,13 +1808,13 @@ Note
 <p>First, we’re going to recode the data to add in the missing values</p>
 <p>For the South data, we can use <code>case_when()</code> to set the value of expenses to 0 if the year is 2020 and region is “South”, otherwise use the value from the expenses column (i.e., don’t change).</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>missing_bad <span class="ot">&lt;-</span> budget4 <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>missing_bad <span class="ot">&lt;-</span> budget4 <span class="sc">%&gt;%</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">mutate</span>(<span class="at">expenses =</span> <span class="fu">case_when</span>(</span>
 <span id="cb31-3"><a href="#cb31-3"></a>    <span class="co"># set to 0 when year is 2020 and region is North</span></span>
 <span id="cb31-4"><a href="#cb31-4"></a>    year <span class="sc">==</span> <span class="dv">2020</span> <span class="sc">&amp;</span> region <span class="sc">==</span> <span class="st">"South"</span> <span class="sc">~</span> <span class="dv">0</span>, </span>
 <span id="cb31-5"><a href="#cb31-5"></a>    <span class="co"># otherwise, set to the value in the expenses column</span></span>
 <span id="cb31-6"><a href="#cb31-6"></a>    <span class="at">.default =</span> expenses   </span>
-<span id="cb31-7"><a href="#cb31-7"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb31-7"><a href="#cb31-7"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="webex-solution">
 <button>
@@ -1792,7 +1823,7 @@ Using case_when() for multiple criteria
 <p>The <code>case_when()</code> function allows allows you to set multiple criteria, although we’re only using one non-default criterion here. It can be very useful, but takes a little practice.</p>
 <p>The example below creates a label for each row. Notice how the label for the first row is “x &lt; 2”, even though this row also fits the second criterion “y &lt; 4”. This is because <code>case_when()</code> applies the first match to each row, even if other criteria in the function also match that row.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
 <span id="cb32-3"><a href="#cb32-3"></a>  <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb32-4"><a href="#cb32-4"></a>)</span>
@@ -1803,7 +1834,7 @@ Using case_when() for multiple criteria
 <span id="cb32-9"><a href="#cb32-9"></a>    y <span class="sc">&lt;</span> <span class="dv">4</span>           <span class="sc">~</span> <span class="st">"y &lt; 4"</span>,</span>
 <span id="cb32-10"><a href="#cb32-10"></a>    x <span class="sc">==</span> <span class="dv">5</span> <span class="sc">&amp;</span> y <span class="sc">==</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">"both 5"</span>,</span>
 <span id="cb32-11"><a href="#cb32-11"></a>    <span class="at">.default        =</span> <span class="st">"default"</span></span>
-<span id="cb32-12"><a href="#cb32-12"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb32-12"><a href="#cb32-12"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1846,14 +1877,14 @@ Using case_when() for multiple criteria
 </div>
 <p>For the North, we will recode these values as “missing”. Since this is character data, and sales are currently numeric data, we first need to change it to a character variable.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># set sales values to "missing" for North 2020 rows</span></span>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># set sales values to "missing" for North 2020 rows</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>missing_bad <span class="ot">&lt;-</span> missing_bad <span class="sc">%&gt;%</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">mutate</span>(<span class="at">sales =</span> <span class="fu">as.character</span>(sales),  <span class="co"># Convert all sales to character</span></span>
 <span id="cb33-4"><a href="#cb33-4"></a>         <span class="at">sales =</span> <span class="fu">case_when</span>(year <span class="sc">==</span> <span class="dv">2020</span> <span class="sc">&amp;</span> region <span class="sc">==</span> <span class="st">"North"</span> <span class="sc">~</span> <span class="st">"missing"</span>, </span>
 <span id="cb33-5"><a href="#cb33-5"></a>                          <span class="cn">TRUE</span> <span class="sc">~</span> sales))  <span class="co"># Set specific condition to "missing"</span></span>
 <span id="cb33-6"><a href="#cb33-6"></a></span>
 <span id="cb33-7"><a href="#cb33-7"></a></span>
-<span id="cb33-8"><a href="#cb33-8"></a><span class="fu">str</span>(missing_bad)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb33-8"><a href="#cb33-8"></a><span class="fu">str</span>(missing_bad)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [16 × 5] (S3: tbl_df/tbl/data.frame)
  $ region  : chr [1:16] "North" "North" "North" "North" ...
@@ -1865,9 +1896,9 @@ Using case_when() for multiple criteria
 </div>
 <p>Now, if you try to compute the mean sales, you will get an error message and the result will be <code>NA</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># try to compute mean sales</span></span>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># try to compute mean sales</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>missing_bad <span class="sc">%&gt;%</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_sales =</span> <span class="fu">mean</span>(sales))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_sales =</span> <span class="fu">mean</span>(sales))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: There was 1 warning in `summarise()`.
 ℹ In argument: `mean_sales = mean(sales)`.
@@ -1891,7 +1922,7 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.2</span> Convert missing values to NA</h4>
 <p>To set the missing values to NA, we can use the handy function <code>na_if()</code>. We’ll also need to transform <code>sales</code> back to numeric.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>missing_data <span class="ot">&lt;-</span> missing_bad <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>missing_data <span class="ot">&lt;-</span> missing_bad <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb37-3"><a href="#cb37-3"></a>    <span class="co"># if expenses = 0, set as NA</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a>    <span class="at">expenses =</span> <span class="fu">na_if</span>(expenses,<span class="dv">0</span>),</span>
@@ -1899,18 +1930,18 @@ Caused by warning in `mean.default()`:
 <span id="cb37-6"><a href="#cb37-6"></a>    <span class="at">sales =</span> <span class="fu">na_if</span>(sales, <span class="st">"missing"</span>),</span>
 <span id="cb37-7"><a href="#cb37-7"></a>    <span class="co"># convert to numeric</span></span>
 <span id="cb37-8"><a href="#cb37-8"></a>    <span class="at">sales =</span> <span class="fu">as.numeric</span>(sales)</span>
-<span id="cb37-9"><a href="#cb37-9"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb37-9"><a href="#cb37-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, if we try to calculate the mean sales and profits, we get missing values for any summary value that used one of the North 2020 sales values or the South 2020 expenses.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>missing_data <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>missing_data <span class="sc">%&gt;%</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb38-4"><a href="#cb38-4"></a>    <span class="at">mean_sales =</span> <span class="fu">mean</span>(sales),</span>
 <span id="cb38-5"><a href="#cb38-5"></a>    <span class="at">mean_expenses =</span> <span class="fu">mean</span>(expenses),</span>
 <span id="cb38-6"><a href="#cb38-6"></a>    <span class="at">min_profit =</span> <span class="fu">min</span>(expenses <span class="sc">-</span> sales),</span>
 <span id="cb38-7"><a href="#cb38-7"></a>    <span class="at">max_profit =</span> <span class="fu">max</span>(expenses <span class="sc">-</span> sales),</span>
-<span id="cb38-8"><a href="#cb38-8"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-8"><a href="#cb38-8"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1959,7 +1990,7 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.3</span> Ignore missing values</h4>
 <p>This is because <code>NA</code> basically means “I don’t know”, and the sum of 100 and “I don’t know” is “I don’t know”, not 100. However, when you’re calculating means, you often want to just ignore missing values. Set <code>na.rm = TRUE</code> in the summary function to remove missing values before calculating.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>missing_data <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>missing_data <span class="sc">%&gt;%</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span></span>
 <span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb39-4"><a href="#cb39-4"></a>    <span class="at">mean_sales =</span> <span class="fu">mean</span>(sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
@@ -1967,7 +1998,7 @@ Caused by warning in `mean.default()`:
 <span id="cb39-6"><a href="#cb39-6"></a>    <span class="at">min_profit =</span> <span class="fu">min</span>(expenses <span class="sc">-</span> sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb39-7"><a href="#cb39-7"></a>    <span class="at">max_profit =</span> <span class="fu">max</span>(expenses <span class="sc">-</span> sales, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb39-8"><a href="#cb39-8"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb39-9"><a href="#cb39-9"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-9"><a href="#cb39-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -2016,14 +2047,14 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.4</span> Count missing values</h4>
 <p>If you want to find out how many missing or non-missing values there are in a column, use the <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> function to get a <a href="https://psyteachr.github.io/glossary/l#logical" target="_blank" class="glossary" title="A data type representing TRUE or FALSE values.">logical</a> vector of whether or not each value is missing, and use <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> to count how many values are TRUE or <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> to calculate the proportion of TRUE values.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>missing_data <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>missing_data <span class="sc">%&gt;%</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">group_by</span>(year, product) <span class="sc">%&gt;%</span></span>
 <span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb40-4"><a href="#cb40-4"></a>    <span class="at">n_valid =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(sales)),</span>
 <span id="cb40-5"><a href="#cb40-5"></a>    <span class="at">n_missing =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(sales)),</span>
 <span id="cb40-6"><a href="#cb40-6"></a>    <span class="at">prop_missing =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(sales)),</span>
 <span id="cb40-7"><a href="#cb40-7"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb40-8"><a href="#cb40-8"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb40-8"><a href="#cb40-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -2072,13 +2103,13 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.5</span> Omit missing values</h4>
 <p>You may also want to remove rows that have missing values and only work from complete datasets. <code>drop_na()</code> will remove any row that has a missing observation. You can use <code>drop_na()</code> on the entire dataset which will remove any row that has <em>any</em> missing value, or you can specify to only remove rows that are missing a specific value.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># remove any rows with any missing values</span></span>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># remove any rows with any missing values</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a>complete_data <span class="ot">&lt;-</span> missing_data <span class="sc">%&gt;%</span></span>
 <span id="cb41-3"><a href="#cb41-3"></a>  <span class="fu">drop_na</span>()</span>
 <span id="cb41-4"><a href="#cb41-4"></a></span>
 <span id="cb41-5"><a href="#cb41-5"></a><span class="co"># remove any rows that are missing a value for sales</span></span>
 <span id="cb41-6"><a href="#cb41-6"></a>complete_sales <span class="ot">&lt;-</span> missing_data <span class="sc">%&gt;%</span></span>
-<span id="cb41-7"><a href="#cb41-7"></a>  <span class="fu">drop_na</span>(sales)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb41-7"><a href="#cb41-7"></a>  <span class="fu">drop_na</span>(sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Missing data can be quite difficult to deal with depending on how it is represented. As always, no amount of coding expertise can make up for not understanding the structure and idiosyncrasies of your data.</p>
 </section></section></section><section id="sec-together-wrangle" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="sec-together-wrangle">
@@ -2091,20 +2122,20 @@ Caused by warning in `mean.default()`:
 </ul>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># from https://www.kaggle.com/kyanyoga/sample-sales-data</span></span>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># from https://www.kaggle.com/kyanyoga/sample-sales-data</span></span>
 <span id="cb42-2"><a href="#cb42-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb42-3"><a href="#cb42-3"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://psyteachr.github.io/ads-v2/data/survey_data.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb42-3"><a href="#cb42-3"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://psyteachr.github.io/ads-v2/data/survey_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 707 Columns: 7
 ── Column specification ────────────────────────────────────────────────────────
@@ -2130,18 +2161,18 @@ dttm (1): call_start
 <p><code>r hide("Hint")</code> To add the trainer column you can use <code>case_when()</code> and specify multiple criteria (e.g., if the employee is 1-5, Michael, if the employee is 6-10 Dwight) <code>r unhide()</code></p>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># case_when() method</span></span>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># case_when() method</span></span>
 <span id="cb44-2"><a href="#cb44-2"></a>survey_data <span class="ot">&lt;-</span> survey_data <span class="sc">%&gt;%</span></span>
 <span id="cb44-3"><a href="#cb44-3"></a>  <span class="fu">mutate</span>(<span class="at">trainer =</span> <span class="fu">case_when</span>(employee_id <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"E01"</span>, <span class="st">"E02"</span>, <span class="st">"E03"</span>, <span class="st">"E04"</span>, <span class="st">"E05"</span>) <span class="sc">~</span> <span class="st">"Michael"</span>,</span>
 <span id="cb44-4"><a href="#cb44-4"></a>                             employee_id <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"E06"</span>, <span class="st">"E07"</span>, <span class="st">"E08"</span>, <span class="st">"E09"</span>, <span class="st">"E10"</span>) <span class="sc">~</span> <span class="st">"Dwight"</span>))</span>
@@ -2157,10 +2188,10 @@ dttm (1): call_start
 <span id="cb44-14"><a href="#cb44-14"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> satisfaction, <span class="at">fill =</span> trainer)) <span class="sc">+</span></span>
 <span id="cb44-15"><a href="#cb44-15"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb44-16"><a href="#cb44-16"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>trainer) <span class="sc">+</span></span>
-<span id="cb44-17"><a href="#cb44-17"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Satisfaction scores by employee trainer"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb44-17"><a href="#cb44-17"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Satisfaction scores by employee trainer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -2199,24 +2230,24 @@ Hint
 </div>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># method 1 - tidyverse</span></span>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># method 1 - tidyverse</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>mean_wait <span class="ot">&lt;-</span> survey_data <span class="sc">%&gt;%</span></span>
 <span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_wait =</span> <span class="fu">mean</span>(wait_time)) <span class="sc">%&gt;%</span></span>
 <span id="cb45-4"><a href="#cb45-4"></a>  <span class="fu">pull</span>(mean_wait)</span>
 <span id="cb45-5"><a href="#cb45-5"></a></span>
 <span id="cb45-6"><a href="#cb45-6"></a><span class="co"># method 2 - base R</span></span>
-<span id="cb45-7"><a href="#cb45-7"></a>mean_wait <span class="ot">&lt;-</span> <span class="fu">mean</span>(survey_data<span class="sc">$</span>wait_time)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb45-7"><a href="#cb45-7"></a>mean_wait <span class="ot">&lt;-</span> <span class="fu">mean</span>(survey_data<span class="sc">$</span>wait_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2224,19 +2255,19 @@ Hint
 <p>Now create a dataset named <code>long_wait</code> that just contains data from customers who waited more than the average wait time.</p>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>long_wait <span class="ot">&lt;-</span> survey_data <span class="sc">%&gt;%</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">filter</span>(wait_time <span class="sc">&gt;</span> mean_wait)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>long_wait <span class="ot">&lt;-</span> survey_data <span class="sc">%&gt;%</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">filter</span>(wait_time <span class="sc">&gt;</span> mean_wait)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2244,23 +2275,23 @@ Hint
 <p>Create a visualisation that shows how many customers waited more than the average wait time for each employee.</p>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>long_wait <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>long_wait <span class="sc">%&gt;%</span></span>
 <span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> employee_id)) <span class="sc">+</span></span>
-<span id="cb47-3"><a href="#cb47-3"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb47-3"><a href="#cb47-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -2282,18 +2313,18 @@ Hint
 <p>Call the final object <code>follow_data</code> and keep only the customer ID, employee ID, trainer, and follow up columns.</p>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># this is one possible solution, there are many other valid approaches </span></span>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># this is one possible solution, there are many other valid approaches </span></span>
 <span id="cb48-2"><a href="#cb48-2"></a></span>
 <span id="cb48-3"><a href="#cb48-3"></a><span class="co"># calculate mean wait time across all calls</span></span>
 <span id="cb48-4"><a href="#cb48-4"></a>mean_wait <span class="ot">&lt;-</span> <span class="fu">mean</span>(survey_data<span class="sc">$</span>wait_time)</span>
@@ -2309,7 +2340,7 @@ Hint
 <span id="cb48-14"><a href="#cb48-14"></a>                               call_time <span class="sc">&gt;</span> mean_call <span class="sc">&amp;</span> </span>
 <span id="cb48-15"><a href="#cb48-15"></a>                               satisfaction <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"yes"</span>,</span>
 <span id="cb48-16"><a href="#cb48-16"></a>                               <span class="at">.default =</span> <span class="st">"no"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb48-17"><a href="#cb48-17"></a>  <span class="fu">select</span>(caller_id, employee_id, trainer, follow_up)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb48-17"><a href="#cb48-17"></a>  <span class="fu">select</span>(caller_id, employee_id, trainer, follow_up)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2341,18 +2372,18 @@ Hint
 </div>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Solution
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># in total</span></span>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># in total</span></span>
 <span id="cb49-2"><a href="#cb49-2"></a>follow_data <span class="sc">%&gt;%</span></span>
 <span id="cb49-3"><a href="#cb49-3"></a>  <span class="fu">group_by</span>(follow_up) <span class="sc">%&gt;%</span></span>
 <span id="cb49-4"><a href="#cb49-4"></a>  <span class="fu">count</span>()<span class="sc">%&gt;%</span></span>
@@ -2390,7 +2421,7 @@ Hint
 <span id="cb49-36"><a href="#cb49-36"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb49-37"><a href="#cb49-37"></a>  <span class="fu">filter</span>(follow_up <span class="sc">==</span> <span class="st">"yes"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb49-38"><a href="#cb49-38"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">order_by =</span> n) <span class="sc">%&gt;%</span></span>
-<span id="cb49-39"><a href="#cb49-39"></a>  <span class="fu">pull</span>(employee_id)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb49-39"><a href="#cb49-39"></a>  <span class="fu">pull</span>(employee_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 120
 [1] 16

@@ -1,13 +1,14 @@
 # Advanced: Dates and Times {#sec-dates-times}
 
-Working with dates and times can be a little tricky, but the <pkg>lubridate", "https://lubridate.tidyverse.org/")` package is there to help. Their website has a helpful [cheatsheet](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf) and you can view a tutorial by typing `vignette("lubridate")` in the console pane. The [Dates and Times](https://r4ds.had.co.nz/dates-and-times.html){target="_blank"} in R for Data Science also gives a helpful overview.
+Working with dates and times can be a little tricky, but the <pkg>lubridate", "https://lubridate.tidyverse.org/")` package in tidyverse is there to help. Their website has a helpful [cheatsheet](https://rstudio.github.io/cheatsheets/html/lubridate.html) and you can view a tutorial by typing `vignette("lubridate")` in the console pane. The [Dates and Times](https://r4ds.had.co.nz/dates-and-times.html){target="_blank"} in R for Data Science also gives a helpful overview.
 
 This appendix is a quick intro to some of the most useful functions for making reproducible reports.
 
-```{r setup, message=FALSE}
+```{r}
+#| label: setup-app-dates
+#| message: false
 # packages needed for this appendix
 library(tidyverse)
-library(lubridate)
 ```
 
 ## Formats
@@ -15,6 +16,7 @@ library(lubridate)
 While there is only one correct way to write date (The ISO 8601 format of "YYYY-MM-DD"), dates can be found in many formats. When you are reading a data file, you might need to specify the date format so it can be read properly. Date format specification uses abbreviations to represent the different ways people can write. the year, month, and day (as well as hours, minutes, and seconds). For example, the date `2023-01-03` is represented by the formatting string `"%Y-%m-%d`. The fastest way to find the list of formatting abbreviations is to look in the help for the function `col_date()`.
 
 ```{r, filename = "Run in the console"}
+#| eval: false
 ?col_date
 ```
 
@@ -42,8 +44,8 @@ ct <- cols(ok = col_date("%Y %B %d"),
            bad = col_date("%B %d, %Y"),
            terrible = col_date("%a is %m %y %d"))
 
-read_csv("data/date_formats.csv", 
-         col_types = ct)
+df <- read_csv("data/date_formats.csv", 
+               col_types = ct)
 ```
 
 
@@ -65,7 +67,7 @@ dmy("3JAN22")
 dmy("3rd of January in the year 2022")
 ```
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 See if you can make a date format that one of the parsers *can't* handle.
 :::
 
@@ -120,7 +122,7 @@ month(jan1, label = TRUE)
 month(jan1, label = TRUE, abbr = TRUE)
 ```
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 What day of the week were you born?
 
 ```{r, webex.hide = TRUE}
@@ -139,7 +141,7 @@ You can add and subtract dates. For example, you can get the dates two weeks fro
 today() + weeks(1)
 ```
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 What day of the week will your 100th birthday be? 
 
 ```{r, webex.hide = TRUE}
@@ -181,9 +183,9 @@ rollforward(d, roll_to_first = TRUE) # first day of the next month
 You can round dates and times to the nearest unit. This can be useful when you have, for example, time measured to the nearest second, but want to group data by the nearest hour, rather than extract the hour component. 
 
 ```{r}
-ymd_hm("2022-01-24 10:25") %>% round_date(unit = "hour")
-ymd_hm("2022-01-24 10:30") %>% round_date(unit = "hour")
-ymd_hm("2022-01-24 10:35") %>% round_date(unit = "hour")
+ymd_hm("2022-01-24 10:25") |> round_date(unit = "hour")
+ymd_hm("2022-01-24 10:30") |> round_date(unit = "hour")
+ymd_hm("2022-01-24 10:35") |> round_date(unit = "hour")
 ```
 
 ## Internationalisation
@@ -216,23 +218,24 @@ system("locale -a")
 
 Let's work through some examples with downloaded tweets from the [class data](data/data.zip).
 
-```{r, message=FALSE}
+```{r}
+#| message: false
 # read all metrics files in data/tweets/
 tweets <- list.files(
   path = "data/tweets", 
   pattern = "^tweet_activity_metrics",
   full.names = TRUE
-) %>%
-  map_df(read_csv) %>%
+) |>
+  map_df(read_csv) |>
   select(!starts_with("promoted"))
 ```
 
 The `time` column is already in date/time (POSIXct) format, but what if we wanted to plot tweets by hour for each day of the week? 
 
 ```{r weekday-tweets, fig.width = 12/2, fig.height = 2.5/2}
-tweets %>%
+tweets |>
   mutate(weekday = wday(time, label = TRUE),
-         hour = hour(time)) %>%
+         hour = hour(time)) |>
   ggplot(aes(x = hour, fill = weekday)) +
   geom_bar(size = 1, alpha = 0.5, show.legend = FALSE) +
   facet_grid(~weekday) +
@@ -244,8 +247,8 @@ tweets %>%
 A nice side-effect of using the lubridate function to get days of the week or months of the year is that the results are an ordered factor, so display correctly in a plot. Let's display the months in Greek (if that's available on your system).
 
 ```{r month-tweets, error = TRUE}
-tweets %>%
-  mutate(month = month(time, label = TRUE, abbr = FALSE, locale = "el_GR.UTF-8")) %>%
+tweets |>
+  mutate(month = month(time, label = TRUE, abbr = FALSE, locale = "el_GR.UTF-8")) |>
   ggplot(aes(x = month, fill = month)) +
   geom_bar(show.legend = FALSE) +
   scale_x_discrete(name = NULL, guide = guide_axis(n.dodge=2))

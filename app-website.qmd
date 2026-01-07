@@ -13,8 +13,8 @@ GitHub is a free online platform for storing, sharing, and collaborating on code
 
 Most importantly for this chapter, you can also host a free website through GitHub pages, which is what we're going to do here.
 
-:::{.callout-tip}
-## Activity 
+::: {.callout-tip .activity}
+ 
 
 Go to [https://github.com/signup](https://github.com/signup) and create a new GitHUb account. Make sure you give yourself a professional username given that we're going to use this for professional purposes 
 
@@ -24,8 +24,7 @@ Go to [https://github.com/signup](https://github.com/signup) and create a new Gi
 
 Git is the version control software that keeps track of changes in your files over time. Every time you save (or commit) your work, Git records exactly what changed, when, and why, allowing you to revisit earlier versions or undo mistakes without losing progress. Git also makes collaboration easier, multiple people can work on the same project simultaneously, and Git will manage the merging of their edits. RStudio uses Git behind the scenes to talk to GitHub, so you can work locally on your computer and then publish or back up your work online with a single click.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
 
 Now you need to install Git.
 
@@ -48,8 +47,8 @@ Before Git can record your work, it needs to know who is making the changes. Eve
 
 You only have to do this once per computer. After that, Git will use the same details every time you save or publish. Make sure you use the same email address as the one you used for GitHub, otherwise RStudio may not recognise you when you try to connect.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 In the RStudio Terminal, type:
 
@@ -82,8 +81,8 @@ Now that Git knows who you are, the next step is to connect your computer to you
 
 Because GitHub requires secure authentication, we do this using something called a Personal Access Token (PAT). A PAT is like a long, random password that gives RStudio permission to talk to GitHub on your behalf. It is more secure than saving your actual password, and you can easily revoke or regenerate it at any time. You only have to create and save a token once per computer. After that, RStudio will remember it for you.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 To create a token, enter the following command in the console. It will open up a website where you can set a note, usually the name of the computer you’re using this token on. You’re meant to set it to expire for security purposes, but you can also set it up without an expiry date.
 
@@ -96,8 +95,8 @@ usethis::create_github_token()
 
 Now we have to go back to RStudio and enter the token.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 In the RStudio Console, type:
 
@@ -131,9 +130,7 @@ usethis::gh_token_help()
 
 Now that we have RStudio, Git, and GitHub all talking to each other, create a new Quarto Website project in RStudio. 
 
-:::{.callout-tip}
-## Activity
-
+::: {.callout-tip .activity}
 In RStudio
 
 1. File - New Project - New Directory - Quarto Website
@@ -153,23 +150,19 @@ You can open it in RStudio and edit the text just like you would for any other Q
 
 To make our website play nice with GitHub, we need to make a small initial change to the `_quarto.yml` file so that when it produces the website, it saves the files in a directory named `docs`.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Open `_quarto.yml`. At the top it will say:
 
-```{r}
-#| eval: false
-
+``` yaml
 project:
   type: website
 ```
 
 Amend this to add:
 
-```{r}
-#| eval: false
-
+``` yaml
 project:
   type: website
   output-dir: docs
@@ -178,8 +171,8 @@ project:
 Then save the file.
 :::
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Before we make any edits, to see the basic website shell, click "Build" then "Render website". You'll see in the files tab that there is now a folder named `docs`. This is the folder that contains the rendered html files.
 2. Go into the Files tab then the `docs` folder and open the `index.html` file in the browser to see your website. It looks very basic now but we will soon populate it. 
@@ -191,8 +184,8 @@ Now that you’ve built your website locally, we need to connect it to Git and G
 
 When the repository is stored on GitHub, it becomes both a backup and a showcase: a cloud-based version of your project that you can share with others, collaborate on, or publish as part of your portfolio. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 In the console, run:
 
@@ -223,8 +216,7 @@ It works by taking the files in your repository (for example, HTML pages created
 
 For this course, GitHub Pages is what allows you to publish your Quarto website publicly. It’s completely free, integrates directly with RStudio and version control, and gives you a professional web address where you can showcase your Applied Data Skills work, portfolio, CV, and blog.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
 
 1. In your repository on GitHub, click on Settings then click Pages, which is in the left hand pane. 
 2. Under Branch, select `master` and then `docs` then click save.
@@ -239,8 +231,8 @@ I'm going to show you how to set up your website to mirror my own academic websi
 
 We don't need them straight away but it will help us to set up a few new folders. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 In the Files pane, create four new folders in your main website folder (e.g., where your `_quarto.yml` is stored).
 
@@ -258,7 +250,7 @@ No guesses for what we'll be using these for.
 First, we'll update the homepage, which is the page controlled by `index.qmd` and add a photo, title, biography and links to e.g., social media stuff. Here is the full contents of my `index.qmd`.
 
 
-```
+``` markdown
 ---
 title: "Professor Emily Nordmann"
 page-layout: full
@@ -296,7 +288,6 @@ I am based in the School of Psychology and Neuroscience. My teaching is varied a
 
 :::
 :::
-
 ```
 
 Let's break it down bit by bit and show you what to change.
@@ -311,12 +302,11 @@ Let's break it down bit by bit and show you what to change.
 * Change the title to your name / whatever you want the website to be called.
 
   
-```
+``` yaml
 ---
 title: "Professor Emily Nordmann"
 page-layout: full
 ---
-
 ```
 
 ### Grid layout
@@ -337,15 +327,12 @@ page-layout: full
 * `class="avatar"` applies circular styling (you can change this later in styles.css).
 * `alt="..."` provides alternative text for accessibility - update this text to describe your photo.
 
-```
-
+``` markdown
 <div class="profile-card">
 <p>Associate Dean of Learning and Teaching</p>
 <p>University of Glasgow</p>
 
 <img src="images/headshot_2025.jpg" class="avatar" alt="Headshot of Emily Nordmann" />
-
-
 ```
 
 ### Social and contact icons
@@ -358,7 +345,7 @@ page-layout: full
 * If you don’t use one (for example, Google Scholar), you can safely delete that line.
 
 
-```
+``` markdown
 <p class="icons">
 <a href="mailto:emily.nordmann@glasgow.ac.uk" aria-label="Email"><i class="bi bi-envelope"></i></a>
 <a href="https://www.linkedin.com/in/emilynordmann/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -370,14 +357,14 @@ page-layout: full
 
 ### Second column and biography
 
-* ::: closes the first column and opens the second one.
+* ::: closes the first column and the next ::: opens the second one.
 * `.g-col-12 .g-col-md-8` means this section takes up eight columns on medium or larger screens.
 * The `## Biography` heading introduces the text that follows.
 * Everything below is normal Markdown — just edit or replace it with your own biography paragraph.
-* At the very end, you’ll see one more ::: which closes the grid layout.
+* At the very end, you’ll see two more :::, the first closes the second column and the second closes the grid layout.
 * This tells Quarto you’ve finished describing the page structure.
 
-```
+``` markdown
 :::
 ::: {.g-col-12 .g-col-md-8}
 
@@ -386,11 +373,11 @@ page-layout: full
 I am Associate Dean for Learning and Teaching ...
 
 :::
-  
+:::
 ```
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Copy and paste in my bio to your `.index.qmd` file and render it just to make sure it works and you can see what it looks like.
 2. Then update it with your title, picture, bio, and social contact links. Remove any sections that aren't relevant to you.To help debugging, I would render after you have changed each section to make sure it has worked as intended. 
@@ -404,9 +391,7 @@ If you have added an image, with the default style settings it will likely be ma
 The styling settings are contained in `styles.css`. Again, here's my full style sheet which you can copy and paste. The adjustments you can make to the style are almost infinite and I am not the person to teach you (I used AI to generate mine). There's a bunch of free courses you can use to learn CSS (e.g., there's a basic intro available from [Microsoft](https://learn.microsoft.com/en-us/training/modules/use-css-styles/)) and you can also use AI to help you get what you want.
 
 
-```
-#| eval: false
-
+``` css
 /* general spacing */
 main.content { margin-top: 1rem; }
 
@@ -443,13 +428,9 @@ body {
 h1, .h1 { font-size: 2.2rem; }
 h2, .h2 { font-size: 1.8rem; }
 h3, .h3 { font-size: 1.5rem; }
-
-
-  
 ```
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
 
 1. Update your `style.css` with my styling. Change some of the numbers then render the site to see how it changes the look.
 2. Once you've settled on a style, render your website again. Your profile should now be a sensible size.
@@ -488,8 +469,7 @@ gert::git_push()
 ```
 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
 
 Stage and commit all your changes then push them to to GitHub. If you wait a minute or two and reload your website, your changes will now be live.
 :::
@@ -501,12 +481,11 @@ How you use your website is up to you but adding a blog is quite common. You cou
 
 First, we need to edit the `_quarto.yml` to add a new section that tells Quarto to treat posts/ as a listing (a page that automatically shows all your posts).
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
 
 1. Open `_quarto.yml`  and edit to the following. The main reason for the edit is to add the blog but whilst we're here, let's add in a dark mode toggle.
 
-```
+``` yaml
 project:
   type: website
   output-dir: docs
@@ -536,10 +515,7 @@ format:
 
 Paste in the following:
 
-```
-#| eval: false
-
-
+``` yaml
 ---
 title: "Blog"
 listing:
@@ -551,18 +527,16 @@ listing:
 ---
 
 Welcome to my blog! Here I’ll share notes from my Applied Data Skills journey, project reflections, and other things I’ve learned along the way.
-
 ```
 
 3. Still inside the posts folder, create a new file called something like `2025-11-04-first-post.qmd`. Each post needs its own YAML header at the top with the date in YYYY-MM-DD format as this is what it will use to order your blog correctly:
 
-```
+``` yaml
 ---
 title: "My First Post"
 date: 2025-11-04
 categories: [reflection, coding]
 ---
-
 ```
 And then underneath this....write your blog which can be text or code or anything else you've learned how to do in Quarto. If your blog involves data analysis, put your data in the `data` folder and then load it in with e.g., `read_csv("data/my_file.csv")`.
 
@@ -577,7 +551,7 @@ By default, when you created a new Quarto Website project it gave you a file nam
 2. Use it for a different purpose (e.g., a Contact page, a list of your publications, photos of your cats). Update the name of the file to match the new purpose e.g., `contact.qmd` and then make sure to update the resulting line in the `_quarto.yml` for the navbar (both `href` and `text`).
 3. If you want it to link to a file download (like with my CV), then put the file you want people to be able to download in your `files` folder and then update `_quarto.yml` to reflect the file name, like this:
 
-```
+``` yaml
   navbar:
     left:
       - text: "Blog"

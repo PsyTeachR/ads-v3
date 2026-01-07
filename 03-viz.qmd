@@ -1,5 +1,14 @@
 # Data Visualisation {#sec-viz}
 
+```{r}
+#| label: setup-viz
+#| include: false
+
+library(tidyverse) # includes readr, ggplot2, dplyr, and lubridate
+library(patchwork) # for multi-part plots
+library(ggthemes)  # for plot themes
+```
+
 <!-- checked for alt-text -->
 
 <div class="right meme"><img src="images/memes/better_graphs.png" alt="xkcd comic titled 'General quality of charts and graphs in scientific papers'; y-axis: BAD on the bottom to GOOD on the top; x-axis: 1950s to 2010s; Line graph increases with time except for a dip between 1990 and 2010 labelled POWERPOINT/MSPAINT ERA" /></div>
@@ -26,13 +35,14 @@
 
 ## Set-up {#sec-setup-viz -}
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Open your `ADS-2026` project 
+1. Download the [ggplot2 cheat sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
 1. Create a new quarto file called `03-dataviz.qmd`
 1. Update the YAML header 
-1. Replace the setup chunk with the one below: 
+1. Replace the setup chunk with the one below
 
 ````
 ```{{r}}
@@ -45,26 +55,12 @@ library(ggthemes)  # for plot themes
 ```
 ````
 
-```{r}
-#| label: setup-viz
-#| include: false
-
-library(tidyverse) # includes readr, ggplot2, dplyr, and lubridate
-library(patchwork) # for multi-part plots
-library(ggthemes)  # for plot themes
-```
-
 :::
 
 If you get the message `Error in library(x) : there is no package called ‘x’`, please refer to @sec-install-package.
 
 We'd recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you'd like to ask the course team.
 
-::: {.callout-tip}
-## Activity
-
-Download the [ggplot2 cheat sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html).
-:::
 
 ## Building plots {#sec-plots}
 
@@ -133,10 +129,10 @@ ggplot(pip, aes(x = gini, y = welfare_mean)) +
 
 ### Loading data {#sec-plots-loading-data}
 
-Let's build up the plot above, layer by layer. First we need to get the data. We'll learn how to load data from different sources in @sec-data, but this time we'll use the same method as we did in @sec-loading-online and load it from an online source. 
+Let's build up the plot above, layer by layer. First we need to get the data. You can see how to load data from different sources in @sec-import, but this time we'll use the same method as we did in @sec-loading-online and load it from an online source. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Load the data by copying the following into a code block in your script, and running the code.
 
@@ -169,8 +165,8 @@ The first thing you should do when you need to plot data is to get familiar with
 
 Plots in this book use the black-and-white theme, not the default grey theme, so set your default theme to the same so your plots will look like the examples below. At the top of your script, in the setup chunk after you've loaded the tidyverse package, add the following code and run it. You'll learn more ways to customise your theme in @sec-themes and @sec-themes-appendix.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add this code to your setup chunk. It needs to run before you make the first plot in this script.
 
@@ -183,8 +179,8 @@ theme_set(theme_bw()) # set the default theme
 
 Every plot starts with the `ggplot()` function and a data table. If your data are not loaded or you have a typo in your code, this will give you an error message. It's best to check your plot after each step, so that you can figure out where errors are more easily.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 In a new code chunk, create a blank plot.
 
@@ -199,8 +195,8 @@ ggplot(data = pip)
 
 The next `r glossary("argument")` to `ggplot()` is the `mapping`. This tells the plot which columns in the data should be represented by, or "mapped" to, different aspects of the plot, such as the x-axis, y-axis, line colour, object fill, or line style. These aspects, or "aesthetics", are listed inside the `aes()` function.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Set the arguments `x` and `y` to the names of the columns you want to be plotted on those axes. Here, we want to plot `gini` (the measure of inequality) on the x-axis and `welfare_mean` (average welfore per capita) on the y-axis.
 
@@ -228,8 +224,8 @@ You probably don't want the axis labels to read "gini" and "welfare_mean". These
 
 Before ggplot2 version 4.0.0, you had to always manually change the aesthetic labels with `labs()` or a scale_* function. But now you can add plot-friendly labels directly to the data table so they are always used. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Update the labels for each variable.
 
@@ -256,8 +252,8 @@ If this doesn't work, check what version of ggplot2 you're using with `packageVe
 
 Now we can add our plot elements in layers. These are referred to as `r glossary("geom", "geoms")` and their functions start with `geom_`. You **add** layers onto the base plot created by `ggplot()` with a plus (`+`). 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add a scatterplot to your plot using `geom_point()`. Notice how the axis labels have updated themselves from the label attributes we set above!
 
@@ -357,8 +353,8 @@ points_top # view first plot
 points_bottom # view second plot
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Save your two plots to objects with appropriate names and then view them.
 :::
@@ -377,8 +373,8 @@ One of the reasons to save your plots to objects is so that you can combine mult
 points_top + points_bottom + plot_layout(nrow = 1)
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Combine your plots using `plot_layout()`. 
 2. Try changing the value of `nrow` to 2.
@@ -412,8 +408,8 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
               linetype = 3) 
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Play around with different values above and figure out what the `r glossary("default value", "default values")` are for `shape` and `size`. 
 :::
@@ -450,8 +446,8 @@ seq(from = 0, to = 1, by = .1)
 ```
 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Set the y-axis name to "Mean Welfare per Capita" and the breaks to every 20 with minor breaks every 5. Check the help for `?scale_y_continuous` to see how you would set the minor units.
 :::
@@ -493,8 +489,8 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
   coord_cartesian(ylim = c(0, 100))
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Update the ylim limits of `mean_welfare` as above.
 2. Then, update the xlim of `gini` according to their minimum and maximum values (these were described earlier). This plot looks quite strange and we wouldn't recommend this is how you present the data, but consider the story it tells and how it might change your interpretation.
@@ -593,8 +589,8 @@ However, when you use `labs()` you are creating a caption that appears inside th
 ```
 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add a title, subtitle, caption, and alt-text to your plot.
 :::
@@ -622,8 +618,8 @@ ggsave("box_plot.jpg", plot = box, width = 7, height = 7)
 
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Save two copies of a plot you have made from this chapter with different sizes.
 2. Make sure you can find them on your computer - they should be stored in your project folder.
@@ -659,8 +655,8 @@ ggplot(pip, aes(x = region_code)) +
   geom_bar()
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions `scale_fill_manual()` and `scale_x_discrete()` are new, but work in the same way as the other `scale_` functions. You can learn more about this in @sec-more-plots.
 
@@ -719,8 +715,8 @@ count_data <- count(x = pip,
 
 `r count_data`
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Create the table of counts and then view the object `count_data`.What is each column named?
 :::
@@ -750,8 +746,8 @@ ggplot(count_data, aes(x = fct_reorder(region_code, # variable to reorder
 
 Pie charts are a [misleading form of data visualisation](https://www.data-to-viz.com/caveat/pie.html), so we won't cover them. We cover options for visualising proportions, like waffle, lollipop and treemap plots, in @sec-more-plots.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 ```{r}
 #| include: false
@@ -851,8 +847,8 @@ ggplot(pip, aes(x = welfare_mean)) +
                      breaks = seq(0, 100, 10))
 ```
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Test your understanding
 
@@ -1098,8 +1094,8 @@ ggplot(pip,  aes(x = region_code,
 
 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Test your understanding
 
@@ -1207,8 +1203,8 @@ If there isn't much data at the extremes of the x-axis, the curve can be very un
 
 We'll need some different data for the next few plots. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Run the following code to simulate some data with random dates in the year 2025, random rating on an ordinal scale from 1 to 5, and random scores on a continuous scale from 0-100 that increase over the year and have an inverted-U shaped relationship to rating.
 
@@ -1300,8 +1296,8 @@ ggplot(simdat, aes(x = score, y = rating)) +
 
 You can use `geom_jitter()` to move the points around a bit to make them easier to see. You can also set alpha transparency. Here, the x-axis is continuous, so there is no need to jitter the `width`, but the y-axis is ordinal, so the `height` is jittered between -0.2 and +0.2 days away from the true y-value. 
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Change the values in this code (range between 0 and 1) to understand what jitter is doing
 
@@ -1361,8 +1357,8 @@ If you’re enrolled on PSYCH1012 Applied Data Skills, do not do these exercises
 
 For the final step in this chapter, we will create a report of data visualisations. You may need to refer back to @sec-reports) to help you complete these exercises. We'd also recommend you `r glossary("render")` at every step so that you can see how your output changes.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
 

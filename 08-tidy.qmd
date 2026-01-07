@@ -1,6 +1,15 @@
 # Data Tidying {#sec-tidy}
 
-```{r, include=FALSE, eval = FALSE}
+```{r}
+#| label: setup-tidy
+#| include: false
+
+library(tidyverse) # for data wrangling
+```
+
+```{r}
+#| include: false
+#| eval: false
 # setup - doesn't need to run every time
 # creates and saves tidy_data.csv and untidy_data.csv
 set.seed(90210)
@@ -31,20 +40,11 @@ write_csv(untidy_data, "data/untidy_data.csv")
 
 ## Intended Learning Outcomes {#sec-ilo-tidy .unnumbered}
 
--   Be able to reshape data between long and wide formats
--   Separate, change, reorder, and rename columns
--   Use pipes to chain together functions
+- [ ] Be able to reshape data between long and wide formats
+- [ ] Separate, change, reorder, and rename columns
+- [ ] Use pipes to chain together functions
 
 ## Functions used {#functions-tidy}
-
-```{r, include = FALSE}
-# load tidyverse packages separately so auto-links work in `func()` notation
-library(readr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(stringr)
-```
 
 * built-in (you can always use these without loading any packages)
     * base:: `library()`, `c()`, `list()`
@@ -56,24 +56,31 @@ library(stringr)
     * stringr:: `str_replace_all()`
     
 
-
-## Walkthrough video {#sec-walkthrough-tidy .unnumbered}
-
-There is a walkthrough video of this chapter available via [Echo360](https://echo360.org.uk/media/3f9cbd60-622e-4128-95e7-d825e5fa922c/public). Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
-
 ## Set-up {#sec-setup-tidy}
 
-First, create a new project for the work we'll do in this chapter named `r path("08-tidy")`. Second, open and save and new R Markdown document named `tidy.Rmd`, delete the welcome text and load the required packages for this chapter.
+::: {.callout-tip .activity}
 
-```{r setup-tidy, message=FALSE, verbatim="r setup, include=FALSE"}
-library(tidyverse) # for data wrangling
+
+
+1. Open your `ADS-2026` project 
+1. Download the [Data tidying cheat sheet](https://rstudio.github.io/cheatsheets/html/tidyr.html)
+1. Download two data files into the "data" folder:
+    * <a href="https://psyteachr.github.io/ads-v3/data/tidy_data.csv" download>tidy_data.csv</a>
+    * <a href="https://psyteachr.github.io/ads-v3/data/untidy_data.csv" download>untidy_data.csv</a>
+1. Create a new quarto file called `08-tidy.qmd`
+1. Update the YAML header 
+1. Replace the setup chunk with the one below
+
+````
+```{{r}}
+#| label: setup
+#| include: false
+
+library(tidyverse) 
 ```
+````
 
-You'll need to make a folder called "data" and download two data files into it: 
-<a href="https://psyteachr.github.io/ads-v2/data/tidy_data.csv" download>tidy_data.csv</a> and
-<a href="https://psyteachr.github.io/ads-v2/data/untidy_data.csv" download>untidy_data.csv</a>.
-
-Download the [Data tidying cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf).
+:::
 
 ## Data Structures
 
@@ -91,7 +98,7 @@ A `r glossary("variable")` is one type of information about the observation. For
 
 A `r glossary("value")` is the data for one variable for one observation. For example, the value of the date variable from the observation of a sale might be `2021-08-20`.
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 The following table is data that shows the number of items each customer bought each year.
 
 ```{r, echo = FALSE}
@@ -147,7 +154,7 @@ You would probably normally use Excel to
 4.  add `item_2018 + item_2019 + item_2020` to get the total number of items bought per customer
 5.  add `totalprice_2018 + totalprice_2019 + totalprice_2020` to get the total price per customer
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 Think about how many steps in Excel this would be if there were 10 years in the table, or a different number of years each time you encountered data like this.
 :::
 
@@ -263,7 +270,7 @@ ggplot(long_totalprice, aes(x = totalprice, fill = year)) +
 ```
 
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 Create a long version of the following table of how many million followers each band has on different social media platforms. You don't need to use code, just sketch it in a notebook or make a table in a spreadsheet.
 
 | band               | twitter | instagram |
@@ -467,7 +474,7 @@ The `price_per_item` and `totalprice` columns are still characters, so you can't
 glimpse(mutated_data)
 ```
 
-Once the data are clean and tidy, you can fix all of your column data types in one step using `readr::type_convert()`. This is good practice when you've finished cleaning a data set. If the automatic type detection doesn't work as expected, this usually means that you still have non-numeric characters in a column where there were only supposed to be numbers. You can also manually set the column types in the same way as for `readr::read_csv()` (see @sec-data)).
+Once the data are clean and tidy, you can fix all of your column data types in one step using `readr::type_convert()`. This is good practice when you've finished cleaning a data set. If the automatic type detection doesn't work as expected, this usually means that you still have non-numeric characters in a column where there were only supposed to be numbers. You can also manually set the column types in the same way as for `readr::read_csv()` (see @sec-import).
 
 ```{r, message = FALSE}
 tidy_data <- type_convert(

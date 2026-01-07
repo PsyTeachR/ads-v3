@@ -21,7 +21,11 @@
 * other (you need to load each package to use these)
     * tinytex:: `tinytex::install_tinytex()`  
 
+::: {.callout-tip .activity}
+
+
 Download the [Quarto Cheat Sheet](https://rstudio.github.io/cheatsheets/html/quarto.html) and [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/).
+:::
 
 ## Setup {#sec-setup-reports -}
 
@@ -47,8 +51,8 @@ For example, if Lisa is looking for a file called `report.qmd`on their Desktop, 
 
 ### Default working directory
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 First, make a new `r glossary("directory")` (i.e., folder) on your computer where you will keep all of your R projects. Name it something like "R-projects" (avoid spaces and other special characters). Make sure you know how to get to this directory using your computer's Finder or Explorer. 
 
@@ -67,8 +71,8 @@ You can set the working directory to another location manually with menu command
 
 ### Start a Project {#sec-project-start}
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 To create a new project for the work we'll do in this chapter:
 
 * <if>File > New Project...</if>
@@ -136,7 +140,7 @@ Here is one way to structure them so that similar files have the same structure 
 -   `r path("data_customer_2021-11-15.xls")`
 -   `r mcq(c("vendor-data_2021-11-15.xls", "data-vendor-2021_11_15.xls", answer = "data_vendor_2021-11-15.xls", "data_2021-11-15_vendor.xls"))`
 
-::: {.callout-note .try}
+::: {.callout-tip .activity}
 ## Naming practice
 
 Think of other ways to name the files above. Look at some of your own project files and see what you can improve.
@@ -154,8 +158,8 @@ You may have learned `r glossary("R Markdown")` in other classes, or see .Rmd fi
 
 ### New document {#sec-quarto-newdoc}
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 To open a new quarto document, click <if>File > New File > Quarto Document...</if>. You will be prompted to give it a title; title it `Reports`. You can also change the author name. Keep the output format as HTML. Save the file as `r path("02-reports.qmd")`.
 
@@ -187,8 +191,8 @@ format: html
 
 This is the `r glossary("YAML")` header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add a new line with the date, e.g., `date: 2026-01-20`.
 
@@ -198,8 +202,8 @@ You will learn in @sec-yaml how to further customise your document using informa
 
 ### Markdown {#sec-markdown}
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Now replace all of the text beneath the header with the following text. Make sure to skip a line or two after the three dashes.
 
@@ -225,16 +229,16 @@ Put a blank line between paragraphs of text. Bullet-point list items start with 
 
 See [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html) for a quick reference.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add an ordered list of different text styles to your document, like bold, italic, strikethrough, subscript, superscript, code, and a task item.
 :::
 
 ### Code chunks {#sec-code-chunks}
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add a new level-2 header called "Code Chunks", skip a line, and add the following text at the end:
 
@@ -253,8 +257,8 @@ When you create a new code chunk you should notice that the grey box starts and 
 :::
 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Inside your code chunk, add the code you created in @sec-objects.
 
@@ -286,8 +290,8 @@ When you're working in a quarto document, there are several ways to run your lin
 
 Even better is to learn some of the keyboard shortcuts for RStudio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere, just not selecting any characters) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Run your code using each of the methods above. You should see the variables `name`, `age`, `today`, and `halloween` appear in the environment pane. 
 
@@ -300,8 +304,8 @@ Even better is to learn some of the keyboard shortcuts for RStudio. To run a sin
 
 One important feature of quarto for reproducible reports is that you can combine text and code to insert values into your writing using **inline coding**. If you've ever had to copy and paste a value or text from one file to another, you'll know how easy it can be to make mistakes. Inline code avoids this. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add a new level-2 header called "Inline Code", then copy and paste the text below. If you used a different variable name than `halloween`, you should update this with the name of the object you created, but otherwise don't change anything else.
 
@@ -316,8 +320,8 @@ It is `r halloween - today` days until Halloween, which is my favourite holiday.
 
 Now we are going to `r glossary("render")` the file into a document type of our choosing. In this case we'll create a default html file, but you will learn how to create other files like Word and PDF in @sec-formats. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 To render your file, click the <if>Render</if> button at the top of the source pane.
 
@@ -341,8 +345,8 @@ quarto::quarto_render("02-reports.qmd")
 ```
 :::
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Edit your file to put the code chunk that defines the objects `name`, `age`, `today` and `halloween` *after* the inline text that uses it and render. What happened and why?
 :::
@@ -355,8 +359,8 @@ We're going to write a basic report for this dataset using quarto to show you so
 
 Most of your quarto documents should have a setup chunk at the top that loads any necessary libraries and sets default values. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add the following just below the YAML header.
 
@@ -386,8 +390,8 @@ Make sure there are no blank lines, code, or comments before any chunk options, 
 
 Now, rather than using objects we have created from scratch, we will read in a data file. First, let's try loading data that is stored online. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Create a new level 2 header called "Data Analysis", add a code chunk below it, and copy, paste, and run the below code. This code loads some simulated experiment data.
 
@@ -434,8 +438,8 @@ More commonly, you will be working from data files that are stored locally on yo
 
 You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a subdirectory called `r path("data")` and saving any image files to a subdirectory called `r path("images")`. Using subdirectories helps avoid one single folder becoming too cluttered, which is important when you're working on big projects.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 In your `r path("ADS-2026")` directory, create a new folder named `r path("data")`, [download a copy of the data file](https://psyteachr.github.io/ads-v3/data/smalldata.csv){download=""}, and save it in this new subdirectory. Or you can run the following code in the console (do not add it to the script or you will unnecessarily download data every time you run it).
 
@@ -451,8 +455,8 @@ download.file(url = url, destfile = "data/smalldata.csv")
 
 To load in data from a local file, again we can use the `read_csv()` function, but this time rather than specifying a url, give it the subdirectory and file name. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Change the code in your file to the following.
 
@@ -475,8 +479,8 @@ Things to note:
 -   The subdirectory folder name (`data`) and the file name are separated by a forward slash `/` (even on Windows!)
 -   Precision is important, if you have a typo in the file name it won't be able to find your file; remember that R is case sensitive -- `SmallData.csv` is a completely different file to `smalldata.csv` as far as R is concerned.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Run `head()`, `summary()`, `str()`, and `View()` on `smalldata` to confirm that the data is the same as before.
 :::
@@ -485,8 +489,8 @@ Run `head()`, `summary()`, `str()`, and `View()` on `smalldata` to confirm that 
 
 For this report we're just going to present some simple stats for two groups: "control" and "exp". We'll come back to how to write this kind of code yourself in @sec-summary. For now, see if you can follow the logic of what the code is doing via the code comments.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Create a new code chunk, then copy, paste and run the following code and then view `group_counts` by clicking on the object in the environment pane.
 
@@ -505,8 +509,8 @@ Because each row of the dataset is a participant, this code gives us a nice and 
 group_counts
 ```
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Copy and paste the text below into the white space below the code chunk that loads in the data. Save the file and then render to view the results.
 
@@ -521,8 +525,8 @@ Try and match up the inline code with what is in the `group_counts` table. Of no
 * Square brackets with a number e.g., `[1]`, indicate a particular observation
 * So `group_counts$n[1]` asks the inline code to display the first observation of the variable `n` in the dataset `group_counts`.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add another line that reports the total numbers of participants in the **experimental** condition using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.
 
@@ -554,8 +558,8 @@ If you name your objects clearly, you often don't need to add clarifying comment
 
 As the saying goes, a picture paints a thousand words, and sometimes you will want to communicate your data using visualisations. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Create a code chunk to display a graph of the data in your document after the text we've written so far. We'll use some code that you'll learn more about in @sec-viz to make a simple bar chart that represents the data -- focus on trying to follow how bits of the code map on to the plot that is created.
 
@@ -615,8 +619,8 @@ knitr::include_graphics("images/reports/google-images.png")
 
 Rather than a figure, we might want to display our data in a table. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 1. Add a new level 3 heading to your document, name the heading "Tables" and then create a new code chunk below this. 
 
@@ -646,8 +650,8 @@ smalldata
 
 This isn't very pretty, but we can change the print style. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Change the line `format: html` in the YAML header to the following. 
 
@@ -675,8 +679,8 @@ Make sure to keep the spaces exactly the same (YAML is very picky about spaces).
 
 You can automatically number your figures and tables by giving them labels that start with `fig-` or `tbl-`, and referring to them in the text like `@fig-name` or `@tbl-name` (see [quarto cross references](https://quarto.org/docs/authoring/cross-references.html) for more details).
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add the following text above the chunk containing the table:
 
@@ -720,8 +724,8 @@ Let's finish by tidying up the report and organising our code a bit better.
 
 You can set more default options for your document in the YAML header. The help pages for [quarto execution options](https://quarto.org/docs/computations/execution-options.html) has a full list of options. However, the most useful and common options to change for the purposes of writing reports revolve around whether you want to show your code and the size of your images.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Add the code below to your YAML header and then try changing each option from `false` to `true` and changing the numeric values then render the file again to see the difference it makes.
 
@@ -789,8 +793,8 @@ These setup options change the behaviour for the entire document, however, you c
 
 For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set `#| echo: false` in your setup chunk to make hiding code the default but in the individual code chunk for your plot set `#| echo: true`. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Try this now and knit the file to see the results.
 :::
@@ -818,8 +822,8 @@ ggplot(data = smalldata,
 
 Finally, the `r glossary("YAML")` header is the bit at the very top of your quarto document. You can set several options here as well. See the [quarto HTML reference](https://quarto.org/docs/reference/formats/html.html) for more options.
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Update the format section. Try changing the values from `false` to `true` to see what the options do.
 
@@ -838,8 +842,8 @@ The `df-print: paged` option prints data frames using `rmarkdown::paged_table()`
 
 The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/). 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Try changing the theme to see which one you like best.
 
@@ -865,8 +869,8 @@ The error message will tell you exactly where the problem is (the second charact
 
 The table of contents is created by setting `toc: true`. This will use the markdown header structure to create the table of contents. The option `toc-depth: 3` means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: `###`), and `toc-expand` sets whether the sections are expanded or collapsed. 
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Try changing the values of the toc settings and re-render. 
 
@@ -895,8 +899,8 @@ If your table of contents isn't showing up correctly, this probably means that y
 
 So far we've just rendered to html. To generate PDF reports, you need to install <pkg>tinytex</pkg> [@R-tinytex].
 
-:::{.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 Run the following code in the console (do **not** add this to your Rmd file):
 
@@ -950,8 +954,8 @@ The goal this week is for each person to create and render their own reproducibl
 
 You're still going to assume the roles of Driver and Navigator but you'll both do each step. The Driver will do it first, with the Navigator providing feedback as usual, and then the Navigator will quickly reproduce the same step having learned from the process of the Driver.
 
-::: {.callout-tip}
-## Activity
+::: {.callout-tip .activity}
+
 
 There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
 

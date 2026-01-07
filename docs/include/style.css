@@ -100,3 +100,32 @@ a.video {
 
 .inline-figure { border: none; }
 
+.callout.activity {
+  border-left-color: var(--purple) !important;
+}
+
+.callout.activity .callout-title-container {
+  text-indent: -9999px;
+  line-height: 0;
+}
+
+.callout.activity .callout-title-container::after {
+  content: "Activity";
+  text-indent: 0;
+  display: block;
+  line-height: 1.5em;
+}
+
+.callout.activity .callout-header {
+  background-color: #61589C44 !important;
+}
+
+.callout.activity i.callout-icon::before {
+  background-image: url(../images/alerts/activity.svg) !important;
+}
+
+/* fix code wrapping */
+
+code.sourceCode > span {
+
+}
