@@ -190,34 +190,26 @@ full_data
 
 `r mcq(c(answer = "inner_join", "left_join", "right_join", "full_join"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
-
-inner_join(registrations, jabs, by = "nhs_number") returns only the people whose NHS number appears in both datasets. This is appropriate when you want to analyse the subset who are both registered and vaccinated, excluding anyone who is only in one list.
-
-:::
+`r hide("Explain this answer")`
+`inner_join(registrations, jabs, by = "nhs_number")` returns only the people whose NHS number appears in both datasets. This is appropriate when you want to analyse the subset who are both registered and vaccinated, excluding anyone who is only in one list.
+`r unhide()`
 
 1. A local authority has two separate lists of households receiving support: one for fuel poverty payments (fuel_support) and one for disability-related housing adaptations (adaptations). You want a combined dataset that includes everyone in either list, keeping both sets of variables and using NA where a household is only in one list. Which should you use?
 
 `r mcq(c("inner_join", "left_join", "right_join", answer = "full_join"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
+`r hide("Explain this answer")`
+`full_join(fuel_support, adaptations, by = "household_id")` keeps all households from both lists and combines the variables, filling unmatched values with NA. This is the correct choice when you want a complete picture of anyone receiving either type of support, not just the overlap.
+`r unhide()`
 
-full_join(fuel_support, adaptations, by = "household_id") keeps all households from both lists and combines the variables, filling unmatched values with NA. This is the correct choice when you want a complete picture of anyone receiving either type of support, not just the overlap.
-
-:::
 
 3. You have a table of all NHS boards with their deprivation quintile and population (boards), and a second table with the number of people who attended a new vaccination clinic (attendances). You want a dataset that keeps every NHS board, and adds the attendance numbers where available, showing NA for boards with no recorded attendances. Which should you use?
 
 `r mcq(c("inner_join", answer = "left_join", "right_join", "full_join"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
-
-left_join(boards, attendances, by = "board_id") keeps all rows from boards and adds attendance information where a match exists. NHS boards with no recorded attendances remain in the dataset with NA in the attendance columns, which is what you need for comparing service uptake across all boards.
-
-:::
+`r hide("Explain this answer")`
+`left_join(boards, attendances, by = "board_id")` keeps all rows from boards and adds attendance information where a match exists. NHS boards with no recorded attendances remain in the dataset with NA in the attendance columns, which is what you need for comparing service uptake across all boards.
+`r unhide()`
 
 :::
 
@@ -280,29 +272,21 @@ anti2_data
 
 
 ::: {.callout-tip .activity}
-
-
 1. You have a dataset of people discharged from hospital (discharges) and a dataset of people who received a follow up call within 72 hours (followups). You want a list of people who were discharged but did not receive the follow up call. Which should you use?
 
 `r mcq(c(answer = "anti_join", "semi_join"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
-
-anti_join(discharges, followups, by = "patient_id") keeps the rows in discharges that do not have a matching patient_id in followups. This directly returns the list of discharged patients who did not receive a follow up call within the specified window.
-
-:::
+`r hide("Explain this answer")`
+`anti_join(discharges, followups, by = "patient_id")` keeps the rows in discharges that do not have a matching patient_id in followups. This directly returns the list of discharged patients who did not receive a follow up call within the specified window.
+`r unhide()`
 
 2. You have a dataset of all patients referred to a specialist service (referrals) and a dataset containing those who meet an eligibility criterion after triage (eligible). You want to keep only the referrals that are eligible, but you do not need any additional columns from eligible. Which should you use?
 
 `r mcq(c("anti_join", answer = "semi_join"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
-
-semi_join(referrals, eligible, by = "referral_id") filters referrals to only those rows with a matching referral_id in eligible, but it does not bring in any columns from eligible. This is appropriate when you want an eligibility filter rather than a merged dataset.
-
-:::
+`r hide("Explain this answer")`
+`semi_join(referrals, eligible, by = "referral_id")` filters referrals to only those rows with a matching referral_id in eligible, but it does not bring in any columns from eligible. This is appropriate when you want an eligibility filter rather than a merged dataset.
+`r unhide()`
 
 :::
 
@@ -524,46 +508,34 @@ base::setdiff(patients, new_patients)
 
 `r mcq(c("union", answer = "bind_rows", "bind_cols", "setdiff"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
+`r hide("Explain this answer")`
+`bind_rows()` stacks two data frames on top of each other, so you get all responses from 2023 and 2024 in one long dataset. It keeps duplicates by default, which is appropriate if the same respondent appears in both years and you want both records retained.
 
-bind_rows() stacks two data frames on top of each other, so you get all responses from 2023 and 2024 in one long dataset. It keeps duplicates by default, which is appropriate if the same respondent appears in both years and you want both records retained.
-
-:::
 
 
 1. You have two extracts of the same equality register (register_a, register_b) with identical columns. Some rows are exact duplicates across the two extracts. You want a combined dataset that removes exact duplicate rows. Which should you use?
 
 `r mcq(c(answer = "union", "bind_rows", "bind_cols", "setdiff"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
-
-union() combines the rows from both extracts but drops exact duplicate rows, so repeated entries across register_a and register_b are removed. This is useful when the columns match and you want a deduplicated combined register without having to identify duplicates manually.
-
-:::
+`r hide("Explain this answer")`
+`union()` combines the rows from both extracts but drops exact duplicate rows, so repeated entries across register_a and register_b are removed. This is useful when the columns match and you want a deduplicated combined register without having to identify duplicates manually.
+`r unhide()`
 
 1. You have a master list of staff IDs expected in an annual pay gap analysis (master_staff) and a list of staff IDs present in the HR export you received (hr_export). You want to identify staff who are in the master list but missing from the export. Which should you use?
 
 `r mcq(c(answer = "union", "bind_rows", "bind_cols", answer = "setdiff"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
-
-setdiff(master_staff, hr_export) returns the IDs that are in master_staff but not in hr_export, which is exactly what you want for a missingness check. Order matters, so reversing the inputs would answer a different question (who is in the export but not the master list).
-
-:::
+`r hide("Explain this answer")`
+`setdiff(master_staff, hr_export)` returns the IDs that are in master_staff but not in hr_export, which is exactly what you want for a missingness check. Order matters, so reversing the inputs would answer a different question (who is in the export but not the master list).
+`r unhide()`
 
 1. You have a dataset with one row per patient (patients) and a separate table with model predictions in the same row order (preds), with no shared identifier. You want to add the prediction column to the patients dataset. Which should you use?
 
 `r mcq(c(answer = "union", "bind_rows", "bind_cols", answer = "setdiff"))`
 
-::: {.callout-tip collapse="true"}
-## Explain this answer
-
-bind_cols() adds columns side by side, which is the right choice when patients and preds have the same number of rows and are already aligned in the same row order. Because there is no shared identifier to join on, a join would be inappropriate and could silently misalign records if the order differs.
-
-:::
+`r hide("Explain this answer")`
+`bind_cols()` adds columns side by side, which is the right choice when patients and preds have the same number of rows and are already aligned in the same row order. Because there is no shared identifier to join on, a join would be inappropriate and could silently misalign records if the order differs.
+`r unhide()`
 
 
 :::
@@ -628,6 +600,9 @@ If you would like to go beyond what we've covered in this chapter, we recommend 
 
 If you are enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.
 
+
+### Set up 
+
 For each exercise, you will work in a pair programming team. Pair programming is when two people work on the same code with distinct, rotating roles:
 
 - The Driver operates the keyboard, implements the next small step, narrates what they are doing.
@@ -640,22 +615,17 @@ There are no solutions provided for the pair programming activities. Everything 
 
 ::: {.callout-tip .activity}
 
-
-
-
-### Set up
-
 1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often. The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
 
-1. Open RStudio, ensure the environment is clear, and restart R.
+2. Open RStudio, ensure the environment is clear, and restart R.
 
-1. Create a new quarto document and save it as ads-week6-joins.qmd
+3. Create a new quarto document and save it as ads-week6-joins.qmd
 
-1. In a new code chunk, load the tidyverse.
+4. In a new code chunk, load the tidyverse.
 
 :::
 
-### Grade data
+### Grade data 
 
 The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumeric scale (there's more information in your summative report [assessment information sheet](https://sway.office.com/k0CnXGd6RjbVokkR){target="_blank"}). Each alphanumeric grade (e.g., B2) has an underlying numeric Grade Point (e.g., 16). 
 
@@ -663,17 +633,13 @@ Often when we're working with student grades they are provided to us in only one
 
 ::: {.callout-tip .activity}
 
-
-
-5 Download <a href="data/grade_data1.csv" download>grade_data.csv</a>, <a href="data/grade_data2.csv" download>grade_data2.csv</a> and <a href="data/scheduleA.csv" download>scheduleA.csv</a> into your data folder.
+5. Download <a href="data/grade_data1.csv" download>grade_data.csv</a>, <a href="data/grade_data2.csv" download>grade_data2.csv</a> and <a href="data/scheduleA.csv" download>scheduleA.csv</a> into your data folder.
 
 6. Read each file into R and store them as grades1, grades2, and schedule.
 
 
 ```{r}
-#| echo: false
-#| message: false
-#| warning: false
+#| include: false
 
 schedule <- read_csv("data/scheduleA.csv")
 grades1 <- read_csv("data/grade_data1.csv") 
@@ -682,17 +648,16 @@ grades2 <- read_csv("data/grade_data2.csv")
 
 :::
 
-### Matching the variable types
+### Matching the variable types 
 
 At UofG, all students are given a GUID, a numeric ID number. However, that ID number is also then combined with the first letter from your surname to create your username that is used with your email address. For example, if your ID is 1234567 and your surname is Nordmann, your username would be 1234567n. From a data wrangling perspective this is very annoying because the numeric ID will be stored as numeric data, but the username will be stored as character because of the letter at the end. `grades1` has a numeric id whilst `grades2` has the additional letter. In order to join these datasets, we need to standardise the variables.
 
 ::: {.callout-tip .activity}
 
-
-
 7. First, remove the letter character from `id` using the function `stringr::str_replace_all()`, which replaces text that matches a pattern. Here, we're using the pattern `"[a-z]"`, which matches all lowercase letters a through z, and replacing them with `""`. See the help for `?about_search_regex` for more info about how to set patterns (these can get really complex).
 
 ```{r}
+#| include: false
 grades1 <- grades1 %>%
   mutate(id = str_replace_all(
     id, # the variable you want to search
@@ -701,13 +666,14 @@ grades1 <- grades1 %>%
   ))  
 ```
 
+:::
+
+::: {.callout-tip .activity}
 
 8. Now, transform the data type of `id` so that it matches the data type in `grades2`.
 
 ```{r}
-#| echo: false
-#| message: false
-#| warning: false
+#| include: false
 grades1 <- grades1 %>%
   mutate(id = as.numeric(id))
 ```
@@ -719,9 +685,6 @@ grades1 <- grades1 %>%
 In this example, we want to join the grade data to schedule A so that each student with a grade has both the grade and the grade point. But we also want a complete record of all students on the course, so students with missing grades should still be included in the data.
 
 ::: {.callout-tip .activity}
-
-
-
 9. Join `grades1` and `scheduleA` and store this table in an object named `exam_all`.
 10. Do the same for `grades2` and save it in `essay_all`.
 11. Both `exam_all` and `essay_all` should have 100 observations of 4 variables.
@@ -732,15 +695,13 @@ You want to keep all of the data from `grade_data1` and `grade_data2`, but you o
 
 `r unhide()`
 
-```{r, webex.hide = TRUE}
-#| echo: false
-#| message: false
-#| warning: false
-#
+```{r}
+#| include: false
 exam_all <- left_join(grades1, schedule, by = "Points")
 essay_all <- left_join(grades2, schedule, by = "Points")
 ```
 
+:::
 
 ### Missing data
 
@@ -749,6 +710,7 @@ Alternatively, you may wish to have a dataset that only contains data for studen
 * How many exam grades are missing? `r fitb(sum(is.na(exam_all$Grade)))`
 * How many essay grades are missing? `r fitb(sum(is.na(essay_all$Grade)))`
 
+::: {.callout-tip .activity}
 12. Now, create an object `exam_grades` that joins together `grades1` and `schedule`, but this time the resulting object should only contain data from students who have a grade. Do the same but for `grades2` and store it in `essay_grades`.
 
 Before you do this, given what you know about how many data points are missing in each data set:
@@ -757,9 +719,7 @@ Before you do this, given what you know about how many data points are missing i
 * How many observations should `essay_grades` have? `r fitb(sum(!is.na(essay_all$Grade)))`
 
 ```{r}
-#| echo: false
-#| message: false
-#| warning: false
+#| include: false
 
 exam_grades <- inner_join(grades1, schedule, by = "Points")
 essay_grades <- inner_join(grades2, schedule, by = "Points")
@@ -771,7 +731,13 @@ It's worth noting that in reality you wouldn't actually go back to the raw data 
 
 `r unhide()`
 
+:::
+
+::: {.callout-tip .activity}
 13. Now, create a dataset `completes` that joins the grades for students who have a grade for **both** the essay and the exam.  Because both `exam_grades` and `essay_grades` have the variables `Assessment`, `Points` and `Grades` that are named the same, but have different data, you should amend the suffix so that the resulting variables are named `Points_exam` and `Points_essay` etc. You may need to consult the help documentation to see an example to figure this out. 
+:::
+
+::: {.callout-tip .activity}
 14. Clean up the file with `select()` and only keep the variables `id`, `Grade_exam`, and `Grade_essay`
 
 ```{r, webex.hide = TRUE}
@@ -782,7 +748,9 @@ completes <- inner_join(exam_grades, essay_grades,
 ```
 
 * How many students have a grade for both the exam and the essay? `r fitb(nrow(completes))`
+:::
 
+::: {.callout-tip .activity}
 15. Now create a dataset `no_essay` that contains students that have a grade for the exam, but not the essay.
 
 ```{r, webex.hide = TRUE}
@@ -790,16 +758,18 @@ no_essay <- anti_join(exam_grades, essay_grades, by = "id")
 ```
 
 *   How many students have a grade for the exam but not the essay? `r fitb(nrow(no_essay))`
+:::
 
-
+::: {.callout-tip .activity}
 16. Finally, now make a dataset `no_exam` that contains students have have a grade for the essay but not the exam
 
 ```{r, webex.hide = TRUE}
 no_exam <- anti_join(essay_grades, exam_grades, by = "id")
 ```
+:::
 
+::: {.callout-tip .activity}
 17.  How many students have a grade for the exam but not the essay? `r fitb(nrow(no_exam))`
-
 :::
 
 ## Glossary {#sec-glossary-joins}

@@ -1,5 +1,4 @@
-
-# Advanced: Referencing
+# Referencing
 
 ## Bibliography {#sec-bibliography}
 

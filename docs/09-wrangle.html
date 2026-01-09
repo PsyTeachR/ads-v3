@@ -241,13 +241,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Advanced: Websites</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Websites</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-referencing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Advanced: Referencing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Referencing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -259,7 +259,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Advanced: Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -271,13 +271,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -387,7 +387,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <ul>
 <li>readr:: <code>read_csv()</code>
 </li>
-<li>dplyr:: <code>count()</code>, filter()<code>,</code>arrange()<code>,</code>mutate()<code>,</code>summarise()<code>,</code>group_by()<code>,</code>ungroup()<code>,</code>case_when()<code>,</code>na_if()<code>,</code>across()`</li>
+<li>dplyr:: <code>count()</code>, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>, <code>arrange()</code>, <code>mutate()</code>, <code>summarise()</code>, <code>group_by()</code>, <code>ungroup()</code>, <code>case_when()</code>, <code>na_if()</code>, <code>across()</code>
+</li>
 <li>tidyselect:: <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, <code>matches()</code>, <code>num_range()</code>, <code>all_of()</code>, <code>any_of()</code>, <code>everything()</code>, <code>where()</code>
 </li>
 </ul>
@@ -455,8 +456,9 @@ Warning
 <p>It’s worth highlighting that in this chapter we’re going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> (and packages beyond it) has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven’t explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how.</p>
 <p>We’ll use data from the United Nations <a href="https://unstats.un.org/sdgs/dataportal/database">SDG Indicators Database</a> on sustainable development goal 11.2.1: Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities. You can access <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-02-01.pdf">metadata about this data</a> to find out more.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>transport <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/SDG-11.2.1.xlsx"</span>)  <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>transport <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/SDG-11.2.1.xlsx"</span>)  <span class="sc">|&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="explore" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="explore">
 <span class="header-section-number">9.3.1</span> Explore</h3>
@@ -494,8 +496,8 @@ $ units              &lt;chr&gt; "PERCENT", "PERCENT", "PERCENT", "PERCENT", "PE
 </div>
 <p>It is useful to use the <code>count()</code> function to explore data, especially where there are too many rows or columns to view on one screen.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">count</span>(transport, age, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">count</span>(transport, age, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -554,9 +556,10 @@ Solution
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># two ways to get the number of unique values in a column</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># two ways to get the number of unique values in a column</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>n_countries <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> <span class="fu">count</span>(geo_area_name) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span>
 <span id="cb5-3"><a href="#cb5-3"></a>n_years <span class="ot">&lt;-</span> transport<span class="sc">$</span>time_period <span class="sc">|&gt;</span> <span class="fu">unique</span>() <span class="sc">|&gt;</span> <span class="fu">length</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </div>
@@ -565,14 +568,14 @@ Solution
 </div>
 <p>There are also several columns that seem to have no data, but sometimes there are important values later in the dataset. We can use count to confirm that these columns are entirely NAs.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">count</span>(transport, goal)</span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">count</span>(transport, goal)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="fu">count</span>(transport, target)</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="fu">count</span>(transport, indicator)</span>
 <span id="cb6-4"><a href="#cb6-4"></a><span class="fu">count</span>(transport, series_code)</span>
 <span id="cb6-5"><a href="#cb6-5"></a><span class="fu">count</span>(transport, series_description)</span>
 <span id="cb6-6"><a href="#cb6-6"></a><span class="fu">count</span>(transport, reporting_type)</span>
 <span id="cb6-7"><a href="#cb6-7"></a><span class="fu">count</span>(transport, units)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -687,12 +690,13 @@ Solution
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">count</span>(transport, time_coverage)</span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">count</span>(transport, time_coverage)</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">count</span>(transport, upper_bound) </span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="fu">count</span>(transport, lower_bound) </span>
 <span id="cb7-4"><a href="#cb7-4"></a><span class="fu">count</span>(transport, base_period)</span>
 <span id="cb7-5"><a href="#cb7-5"></a><span class="fu">count</span>(transport, geo_info_url) </span>
 <span id="cb7-6"><a href="#cb7-6"></a><span class="fu">count</span>(transport, custom_breakdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </div>
@@ -706,32 +710,34 @@ Solution
 <span class="header-section-number">9.3.2.1</span> By name or index</h4>
 <p>You can select columns by name or number (which is sometimes referred to as the column index). Selecting by number can be useful when the column names are long or complicated.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># select single column by name</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># select single column by name</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>value <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> <span class="fu">select</span>(value) </span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="co"># select single column by number</span></span>
 <span id="cb8-5"><a href="#cb8-5"></a>value <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="dv">9</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>You can select each column individually, separated by commas (e.g., <code>age, sex</code>) but you can also select all columns from one to another by separating them with a colon (e.g., <code>goal:value</code>).</p>
 <p>The colon notation can be much faster because you don’t need to type out each individual variable name, but make sure that you know what order your columns are in and always check the output to make sure you have selected what you intended.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># select columns individually</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># select columns individually</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
 <span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">select</span>(geo_area_name, time_period, value)</span>
 <span id="cb9-4"><a href="#cb9-4"></a></span>
 <span id="cb9-5"><a href="#cb9-5"></a><span class="co"># select columns with colon</span></span>
 <span id="cb9-6"><a href="#cb9-6"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
 <span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">select</span>(geo_area_name<span class="sc">:</span>value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>You can rename columns at the same time as selecting them by setting <code>new_name = old_col</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">select</span>(<span class="at">country =</span> geo_area_name, </span>
 <span id="cb10-3"><a href="#cb10-3"></a>         <span class="at">year =</span> time_period, </span>
 <span id="cb10-4"><a href="#cb10-4"></a>         value)</span>
 <span id="cb10-5"><a href="#cb10-5"></a></span>
 <span id="cb10-6"><a href="#cb10-6"></a><span class="fu">head</span>(country_year, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -759,7 +765,7 @@ Solution
 <span class="header-section-number">9.3.2.2</span> Un-selecting columns</h4>
 <p>You can select columns either by telling R which ones you want to keep as in the previous examples, or by specifying which ones you want to exclude by using a minus symbol to un-select columns. You can also use the colon notation to de-select columns, but to do so you need to put parentheses around the span first, e.g., <code>-(time_coverage:base_period)</code>, not <code>-time_coverage:base_period</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># de-select individual columns</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># de-select individual columns</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">select</span>(<span class="sc">-</span>time_coverage, </span>
 <span id="cb11-4"><a href="#cb11-4"></a>         <span class="sc">-</span>upper_bound, </span>
@@ -773,6 +779,7 @@ Solution
 <span id="cb11-12"><a href="#cb11-12"></a>  <span class="fu">select</span>(<span class="sc">-</span>(time_coverage<span class="sc">:</span>base_period), </span>
 <span id="cb11-13"><a href="#cb11-13"></a>         <span class="sc">-</span>geo_info_url, </span>
 <span id="cb11-14"><a href="#cb11-14"></a>         <span class="sc">-</span>custom_breakdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section><section id="select-helpers" class="level4" data-number="9.3.2.3"><h4 data-number="9.3.2.3" class="anchored" data-anchor-id="select-helpers">
 <span class="header-section-number">9.3.2.3</span> Select helpers</h4>
@@ -828,7 +835,7 @@ Solution
 </table>
 <p>Below, we make a vector of column names for columns that have only one value.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>one_val_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>one_val_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="st">"goal"</span>,</span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="st">"target"</span>,</span>
 <span id="cb12-4"><a href="#cb12-4"></a>  <span class="st">"indicator"</span>,</span>
@@ -843,11 +850,13 @@ Solution
 <span id="cb12-13"><a href="#cb12-13"></a>  <span class="st">"reporting_type"</span>,</span>
 <span id="cb12-14"><a href="#cb12-14"></a>  <span class="st">"units"</span></span>
 <span id="cb12-15"><a href="#cb12-15"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now we can use this vector to unselect these columns.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">all_of</span>(one_val_cols))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -863,7 +872,7 @@ Tip
 <div class="callout-body-container callout-body">
 <p>There is a way to do this without having to type in all of the column names, but rather use functions to determine which columns have only one value and get a vector of their names. This is probaly overkill for small tables, but invaluable if you have a table with hundreds of columns, or you need to do this to many different tables.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="annotated-cell-47"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-47-1"><a href="#annotated-cell-47-1"></a>n_values <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="annotated-cell-47"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-47-1"><a href="#annotated-cell-47-1"></a>n_values <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-47" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-47-2" class="code-annotation-target"><a href="#annotated-cell-47-2"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-47" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-47-3" class="code-annotation-target"><a href="#annotated-cell-47-3"></a>    <span class="at">.cols =</span> <span class="fu">everything</span>(),</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-47" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-47-4" class="code-annotation-target"><a href="#annotated-cell-47-4"></a>    <span class="at">.fns =</span> \(col) <span class="fu">unique</span>(col) <span class="sc">|&gt;</span> <span class="fu">length</span>()</span>
@@ -871,7 +880,7 @@ Tip
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-47" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-47-6" class="code-annotation-target"><a href="#annotated-cell-47-6"></a>one_val <span class="ot">&lt;-</span> n_values <span class="sc">==</span> <span class="dv">1</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-47" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-47-7" class="code-annotation-target"><a href="#annotated-cell-47-7"></a>one_val_cols <span class="ot">&lt;-</span> one_val[, one_val] <span class="sc">|&gt;</span></span>
 <span id="annotated-cell-47-8"><a href="#annotated-cell-47-8"></a>  <span class="fu">names</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
+</details><div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-47" data-target-annotation="1">1</dt>
 <dd>
@@ -913,26 +922,26 @@ Tip
 <ul>
 <li>
 <code>transport |&gt; select(contains("_area_"))</code>
-<div id="radio_NFPOFXBHFI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NFPOFXBHFI" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_NFPOFXBHFI" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_NFPOFXBHFI" value="answer"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_NFPOFXBHFI" value="x"><span>goal, geo_area_code, time_period</span></label>
+<div id="radio_CSKLWYOAJD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CSKLWYOAJD" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_CSKLWYOAJD" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_CSKLWYOAJD" value="answer"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_CSKLWYOAJD" value="x"><span>goal, geo_area_code, time_period</span></label>
 </div>
 </li>
 <li>
 <code>transport |&gt; select(where(is.numeric))</code>
-<div id="radio_HFLBEZQAUU" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_HFLBEZQAUU" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_HFLBEZQAUU" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_HFLBEZQAUU" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_HFLBEZQAUU" value="answer"><span>goal, geo_area_code, time_period</span></label>
+<div id="radio_SGYRPTTPCY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SGYRPTTPCY" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_SGYRPTTPCY" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_SGYRPTTPCY" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_SGYRPTTPCY" value="answer"><span>goal, geo_area_code, time_period</span></label>
 </div>
 </li>
 <li>
 <code>transport |&gt; select(starts_with("geo_"))</code>
-<div id="radio_FKONWFZMZU" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FKONWFZMZU" value="answer"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_FKONWFZMZU" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_FKONWFZMZU" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_FKONWFZMZU" value="x"><span>goal, geo_area_code, time_period</span></label>
+<div id="radio_SOUDDMERBE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SOUDDMERBE" value="answer"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_SOUDDMERBE" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_SOUDDMERBE" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_SOUDDMERBE" value="x"><span>goal, geo_area_code, time_period</span></label>
 </div>
 </li>
 <li>
 <code>transport |&gt; select(ends_with("_bound"))</code>
-<div id="radio_BOFOVVYWKD" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BOFOVVYWKD" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_BOFOVVYWKD" value="answer"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_BOFOVVYWKD" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_BOFOVVYWKD" value="x"><span>goal, geo_area_code, time_period</span></label>
+<div id="radio_CZOKSQKWXT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CZOKSQKWXT" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_CZOKSQKWXT" value="answer"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_CZOKSQKWXT" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_CZOKSQKWXT" value="x"><span>goal, geo_area_code, time_period</span></label>
 </div>
 </li>
 </ul>
@@ -942,141 +951,20 @@ Tip
 <span class="header-section-number">9.3.3</span> Rename and relocate</h3>
 <p>Whist you can rename and reorder columns using <code>select()</code>, sometimes it is easier to use the <code>rename()</code> and <code>relocate()</code> functions.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">all_of</span>(one_val_cols)) <span class="sc">|&gt;</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">rename</span>(<span class="at">year =</span> time_period,</span>
 <span id="cb14-4"><a href="#cb14-4"></a>         <span class="at">country =</span> geo_area_name) <span class="sc">|&gt;</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">relocate</span>(age, sex, <span class="at">.after =</span> value) <span class="sc">|&gt;</span></span>
 <span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">relocate</span>(geo_area_code, <span class="at">.before =</span> cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 2%">
-<col style="width: 90%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 1%">
-<col style="width: 0%">
-</colgroup>
-<thead><tr class="header">
-<th style="text-align: left;">country</th>
-<th style="text-align: right;">year</th>
-<th style="text-align: left;">value</th>
-<th style="text-align: left;">age</th>
-<th style="text-align: left;">sex</th>
-<th style="text-align: left;">time_detail</th>
-<th style="text-align: left;">source</th>
-<th style="text-align: left;">foot_note</th>
-<th style="text-align: right;">geo_area_code</th>
-<th style="text-align: left;">cities</th>
-<th style="text-align: left;">disability_status</th>
-<th style="text-align: left;">nature</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Afghanistan</td>
-<td style="text-align: right;">2020</td>
-<td style="text-align: left;">77.5</td>
-<td style="text-align: left;">ALLAGE</td>
-<td style="text-align: left;">BOTHSEX</td>
-<td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">AF_CHARIKAR</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Afghanistan</td>
-<td style="text-align: right;">2020</td>
-<td style="text-align: left;">69.5</td>
-<td style="text-align: left;">ALLAGE</td>
-<td style="text-align: left;">BOTHSEX</td>
-<td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">AF_FARAH</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Afghanistan</td>
-<td style="text-align: right;">2020</td>
-<td style="text-align: left;">43.1</td>
-<td style="text-align: left;">ALLAGE</td>
-<td style="text-align: left;">BOTHSEX</td>
-<td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">AF_KANDAHAR</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Afghanistan</td>
-<td style="text-align: right;">2020</td>
-<td style="text-align: left;">82.4</td>
-<td style="text-align: left;">ALLAGE</td>
-<td style="text-align: left;">BOTHSEX</td>
-<td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">AF_KHAN_ABAD</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Afghanistan</td>
-<td style="text-align: right;">2020</td>
-<td style="text-align: left;">19.1</td>
-<td style="text-align: left;">ALLAGE</td>
-<td style="text-align: left;">BOTHSEX</td>
-<td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">AF_KABUL</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Afghanistan</td>
-<td style="text-align: right;">2020</td>
-<td style="text-align: left;">44.2</td>
-<td style="text-align: left;">ALLAGE</td>
-<td style="text-align: left;">BOTHSEX</td>
-<td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">AF_JALALABAD</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+</details>
 </div>
 </section><section id="filter" class="level3" data-number="9.3.4"><h3 data-number="9.3.4" class="anchored" data-anchor-id="filter">
 <span class="header-section-number">9.3.4</span> Filter</h3>
 <p>Whilst <code>select()</code> chooses the columns you want to retain, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> chooses the rows to retain by matching row or column criteria.</p>
 <p>You can filter by a single criterion. This criterion can be rows where a certain column’s value matches a character value (e.g., “North”) or a number (e.g., 9003). It can also be the result of a logical equation (e.g., keep all rows with a specific column value larger than a certain value). The criterion is checked for each row, and if the result is FALSE, the row is removed. You can reverse equations by specifying <code>!=</code> where <code>!</code> means “not”.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># select all rows where country is Togo</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># select all rows where country is Togo</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>transport_clean <span class="sc">|&gt;</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Togo"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3"></a></span>
 <span id="cb15-4"><a href="#cb15-4"></a><span class="co"># select all rows where country is NOT Togo</span></span>
@@ -1087,6 +975,7 @@ Tip
 <span id="cb15-9"><a href="#cb15-9"></a></span>
 <span id="cb15-10"><a href="#cb15-10"></a><span class="co"># select rows where sex is FEMALE or MALE</span></span>
 <span id="cb15-11"><a href="#cb15-11"></a>transport_clean <span class="sc">|&gt;</span> <span class="fu">filter</span>(sex <span class="sc">%in%</span>  <span class="fu">c</span>(<span class="st">"FEMALE"</span>, <span class="st">"MALE"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1181,7 +1070,7 @@ Tip
 </div>
 <p>You can also select on multiple criteria by separating them by commas (rows will be kept if they match <em>all</em> criteria). Additionally, you can use <code>&amp;</code> (“and”) and <code>|</code> (“or”) to create complex criteria.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># only data from Togo in 2020</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># only data from Togo in 2020</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>togo_2020 <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span> </span>
 <span id="cb16-3"><a href="#cb16-3"></a>  <span class="fu">filter</span>(</span>
 <span id="cb16-4"><a href="#cb16-4"></a>    country <span class="sc">==</span> <span class="st">"Togo"</span>,</span>
@@ -1198,16 +1087,18 @@ Tip
 <span id="cb16-15"><a href="#cb16-15"></a><span class="co"># values under 10 or over 90</span></span>
 <span id="cb16-16"><a href="#cb16-16"></a>extreme_values <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span>  </span>
 <span id="cb16-17"><a href="#cb16-17"></a>  <span class="fu">filter</span>( value <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">|</span> value <span class="sc">&gt;</span> <span class="dv">90</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>If you want the filter to retain multiple specific values in the same variable, the “match operator” (<code>%in%</code>) should be used rather than <code>|</code> (or). The <code>!</code> can also be used in combination here, but it is placed before the variable name.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>islands <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Solomon Islands"</span>, <span class="st">"Northern Mariana Islands"</span>)</span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>islands <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Solomon Islands"</span>, <span class="st">"Northern Mariana Islands"</span>)</span>
 <span id="cb17-2"><a href="#cb17-2"></a></span>
 <span id="cb17-3"><a href="#cb17-3"></a>only_islands <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span></span>
 <span id="cb17-4"><a href="#cb17-4"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> islands)</span>
 <span id="cb17-5"><a href="#cb17-5"></a></span>
 <span id="cb17-6"><a href="#cb17-6"></a>no_islands <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span></span>
 <span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">filter</span>(<span class="sc">!</span>country <span class="sc">%in%</span> islands)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <table class="caption-top table">
 <colgroup>
@@ -1260,25 +1151,12 @@ Tip
 </table>
 <p>Finally, you can also pass many other functions to filter. For example, the package <pkg>stringr</pkg> that is loaded as part of the <pkg>tidyverse</pkg> contains many different functions for working with <a href="https://psyteachr.github.io/glossary/s#string" target="_blank" class="glossary" title="A piece of text inside of quotes.">strings</a> (character data). For example, you you use <code>str_detect()</code> to only retain rows where the country contains the word “Island”.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>transport_clean <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(country, <span class="st">"Island"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>transport_clean <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(country, <span class="st">"Island"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 2%">
-<col style="width: 89%">
-<col style="width: 0%">
-<col style="width: 0%">
-<col style="width: 1%">
-<col style="width: 0%">
-</colgroup>
 <thead><tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
@@ -1286,12 +1164,6 @@ Tip
 <th style="text-align: left;">age</th>
 <th style="text-align: left;">sex</th>
 <th style="text-align: left;">time_detail</th>
-<th style="text-align: left;">source</th>
-<th style="text-align: left;">foot_note</th>
-<th style="text-align: right;">geo_area_code</th>
-<th style="text-align: left;">cities</th>
-<th style="text-align: left;">disability_status</th>
-<th style="text-align: left;">nature</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1301,12 +1173,6 @@ Tip
 <td style="text-align: left;">ALLAGE</td>
 <td style="text-align: left;">BOTHSEX</td>
 <td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">90</td>
-<td style="text-align: left;">SB_HONIARA</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Northern Mariana Islands</td>
@@ -1315,12 +1181,6 @@ Tip
 <td style="text-align: left;">ALLAGE</td>
 <td style="text-align: left;">BOTHSEX</td>
 <td style="text-align: left;">2020</td>
-<td style="text-align: left;">UN-Habitat Urban Indicators Database</td>
-<td style="text-align: left;">Only public transport stops which are mapped are included in the analysis which may include both formal and informal stops. Many cities have an informal network which is not fully mapped and may thus record higher levels of access to public transport than reported here. Data on public transport stops is sourced from city maps, OSM, GTFS, UITP, Google, and point mapping in some cities. Data used to estimate population with access to public transport is based on grid level population disaggregation directly from city/country data, High Resolution Settlement Layer - HRSL (Facebook Connectivity Lab and CIESIN), WorldPop or GHS-Pop. City/urban area used in the analyis has been generated using a classification approach based on the Degree of Urbanization concept to city definition - as a result, the urban/city area used for the indicator computation in this data table may be larger or smaller than the official municipality boundary. Designation and data estimated by UN-Habitat based on the global indicator methodology. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
-<td style="text-align: right;">580</td>
-<td style="text-align: left;">MP_GARAPAN</td>
-<td style="text-align: left;">_T</td>
-<td style="text-align: left;">E</td>
 </tr>
 </tbody>
 </table>
@@ -1343,9 +1203,10 @@ Warning
 </div>
 <p>Let’s narrow down our dataset to just the rows that report values aggregated by age, but separate for sex.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>transport_filtered <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span> </span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>transport_filtered <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span> </span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">filter</span>(sex <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"FEMALE"</span>, <span class="st">"MALE"</span>),</span>
 <span id="cb19-3"><a href="#cb19-3"></a>         age <span class="sc">==</span> <span class="st">"ALLAGE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="try">
 <p>What check would you do to make sure the filtering above worked as intended?</p>
@@ -1362,11 +1223,11 @@ Solution
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># this should produce only two row, </span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># this should produce only two row, </span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="co"># with MALE and FEMALE as sex </span></span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="co"># and ALLAGE as age</span></span>
 <span id="cb20-4"><a href="#cb20-4"></a><span class="fu">count</span>(transport_filtered, sex, age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1398,11 +1259,12 @@ Solution
 <span class="header-section-number">9.3.5</span> Arrange</h3>
 <p>You can sort your dataset using <code>arrange()</code>. You will find yourself needing to sort data in R much less than you do in Excel, since you don’t need to have rows next to each other in order to, for example, calculate group means. But <code>arrange()</code> can be useful when preparing data for display in tables. <code>arrange()</code> works on character data where it will sort alphabetically, as well as numeric data where the default is ascending order (smallest to largest). Reverse the order using <code>desc()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># arranging the table </span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># arranging the table </span></span>
 <span id="cb21-2"><a href="#cb21-2"></a><span class="co"># first by country in alphabetical order</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a><span class="co"># then by year in reverse order</span></span>
 <span id="cb21-4"><a href="#cb21-4"></a>transport_arranged <span class="ot">&lt;-</span> transport_filtered <span class="sc">|&gt;</span></span>
 <span id="cb21-5"><a href="#cb21-5"></a>  <span class="fu">arrange</span>(country, <span class="fu">desc</span>(year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1416,15 +1278,16 @@ Tip
 <div class="callout-body-container callout-body">
 <p>If you want to sort character data/categories in a specific order, turn the column into a <a href="https://psyteachr.github.io/glossary/f#factor" target="_blank" class="glossary" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter">factor</a> and set the <code>levels</code> in the desired order.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>transport_factor <span class="ot">&lt;-</span> transport_filtered <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>transport_factor <span class="ot">&lt;-</span> transport_filtered <span class="sc">|&gt;</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(sex, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"MALE"</span>, <span class="st">"FEMALE"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>transport_factor <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="dv">2001</span><span class="sc">:</span><span class="dv">2003</span>) <span class="sc">|&gt;</span></span>
 <span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">select</span>(country, year, sex) <span class="sc">|&gt;</span></span>
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">arrange</span>(year, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1474,20 +1337,22 @@ Tip
 <span class="header-section-number">9.3.6</span> Mutate</h3>
 <p>The function <code>mutate()</code> allows you to add new columns or change existing ones by overwriting them by using the syntax <code>new_column = operation</code>. You can add more than one column in the same mutate function by separating the columns with a comma. Once you make a new column, you can use it in further column definitions. For example, the following code creates a new column called <code>urban</code>, which is true if the string “Urban average” is detected in the <code>foot_note</code> column, and fixes the data type of <code>value</code> by replacing it with the numeric version.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb24-3"><a href="#cb24-3"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
 <span id="cb24-4"><a href="#cb24-4"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value)</span>
 <span id="cb24-5"><a href="#cb24-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p><code>mutate()</code> can also be used in conjunction with other functions and Boolean operators. For example, we can add another column to <code>transport_data</code> that states whether the value is above the median value. Just like when we used <a href="https://psyteachr.github.io/glossary/b#boolean-expression" target="_blank" class="glossary" title="An expression that evaluates to TRUE or FALSE.">Boolean expressions</a> with filter, it will evaluate the equation and return TRUE or FALSE depending on whether the observation meets the criteria.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb25-3"><a href="#cb25-3"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
 <span id="cb25-4"><a href="#cb25-4"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
 <span id="cb25-5"><a href="#cb25-5"></a>    <span class="at">above_median =</span> value <span class="sc">&gt;</span> <span class="fu">median</span>(value)</span>
 <span id="cb25-6"><a href="#cb25-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1504,7 +1369,7 @@ Warning
 </div>
 <p>You can also use <code>case_when()</code> to specify what values to return, rather than defaulting to TRUE or FALSE:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb26-3"><a href="#cb26-3"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
 <span id="cb26-4"><a href="#cb26-4"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
@@ -1515,11 +1380,12 @@ Warning
 <span id="cb26-9"><a href="#cb26-9"></a>      <span class="at">.default =</span> <span class="cn">NA</span></span>
 <span id="cb26-10"><a href="#cb26-10"></a>    )</span>
 <span id="cb26-11"><a href="#cb26-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>The <code>case_when()</code> function allows allows you to set multiple criteria, although we’re only using one non-default criterion here. It can be very useful, but takes a little practice.</p>
 <p>You can also use <code>case_when()</code> to combine different criteria:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># use different cutoffs for urban and non-urban areas</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># use different cutoffs for urban and non-urban areas</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb27-4"><a href="#cb27-4"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
@@ -1533,7 +1399,9 @@ Warning
 <span id="cb27-12"><a href="#cb27-12"></a>      <span class="sc">!</span>urban <span class="sc">&amp;</span> value <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"high"</span>,</span>
 <span id="cb27-13"><a href="#cb27-13"></a>      <span class="at">.default =</span> <span class="cn">NA</span></span>
 <span id="cb27-14"><a href="#cb27-14"></a>    )</span>
-<span id="cb27-15"><a href="#cb27-15"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-15"><a href="#cb27-15"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb27-16"><a href="#cb27-16"></a>  <span class="fu">select</span>(<span class="sc">-</span>foot_note) <span class="co"># get rid of very long data no longer used</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1554,11 +1422,11 @@ Tip
 <p>You were introduced to the <code>summarise()</code> function in <a href="04-summary.html#sec-summary-summarise" class="quarto-xref"><span>Section 4.4</span></a>. This applies summary functions to an entire table (or groups, as you’ll see in the next section).</p>
 <p>Let’s say we want to</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>transport_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
 <span id="cb28-3"><a href="#cb28-3"></a>            <span class="at">min =</span> <span class="fu">min</span>(value), </span>
 <span id="cb28-4"><a href="#cb28-4"></a>            <span class="at">max =</span> <span class="fu">max</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1579,7 +1447,7 @@ Tip
 <span class="header-section-number">9.3.8</span> Group By</h3>
 <p>You were introduced to the <code>group_by()</code> function in <a href="04-summary.html#sec-grouping" class="quarto-xref"><span>Section 4.5</span></a>. For example, you can break down the summary statistics above by sex</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>transport_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">group_by</span>(sex) <span class="sc">|&gt;</span></span>
 <span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb29-4"><a href="#cb29-4"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
@@ -1587,7 +1455,7 @@ Tip
 <span id="cb29-6"><a href="#cb29-6"></a>    <span class="at">max =</span> <span class="fu">max</span>(value)</span>
 <span id="cb29-7"><a href="#cb29-7"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb29-8"><a href="#cb29-8"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1616,14 +1484,14 @@ Tip
 </div>
 <p>Newer code tends to use this format, however, if you just need to group the data for one function, you can use <code>.by</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>transport_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb30-3"><a href="#cb30-3"></a>    <span class="at">.by =</span> sex,</span>
 <span id="cb30-4"><a href="#cb30-4"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
 <span id="cb30-5"><a href="#cb30-5"></a>    <span class="at">min =</span> <span class="fu">min</span>(value), </span>
 <span id="cb30-6"><a href="#cb30-6"></a>    <span class="at">max =</span> <span class="fu">max</span>(value)</span>
 <span id="cb30-7"><a href="#cb30-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1662,14 +1530,14 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Functions that let you create your own argument names, like <code>mutate()</code> and <code>summarise</code>, usually have all their other arguments start with <code>.</code> so you can create new columns with names like “data” or “by”. See what happens if you accidentally use <code>by</code> instead of <code>.by</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>transport_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb31-3"><a href="#cb31-3"></a>    <span class="at">by =</span> sex,</span>
 <span id="cb31-4"><a href="#cb31-4"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
 <span id="cb31-5"><a href="#cb31-5"></a>    <span class="at">min =</span> <span class="fu">min</span>(value), </span>
 <span id="cb31-6"><a href="#cb31-6"></a>    <span class="at">max =</span> <span class="fu">max</span>(value)</span>
 <span id="cb31-7"><a href="#cb31-7"></a>  ) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1734,19 +1602,19 @@ Tip
 <div class="callout-body-container callout-body">
 <p>How would you find out the maximum value for each country, separately by sex?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_XYLSJKVXXZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XYLSJKVXXZ" value="x"><span>
-<pre>transport_data |&gt;
-  summarise(.by = sex, country, max = max(value)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_XYLSJKVXXZ" value="answer"><span>
-<pre>transport_data |&gt;
-  summarise(.by = c(sex, country), max = max(value)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_XYLSJKVXXZ" value="x"><span>
-<pre>transport_data |&gt;
-  summarise(.by = value, country, max = max(sex)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_XYLSJKVXXZ" value="x"><span>
+<div id="radio_UJEXKIOHLD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UJEXKIOHLD" value="x"><span>
 <pre>transport_data |&gt;
   summarise(by = c(value, country), max = max(sex)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_UJEXKIOHLD" value="answer"><span>
+<pre>transport_data |&gt;
+  summarise(.by = c(sex, country), max = max(value)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_UJEXKIOHLD" value="x"><span>
+<pre>transport_data |&gt;
+  summarise(.by = sex, country, max = max(value)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_UJEXKIOHLD" value="x"><span>
+<pre>transport_data |&gt;
+  summarise(.by = value, country, max = max(sex)</pre>
 </span></label>
 </div>
 </div>
@@ -1754,27 +1622,26 @@ Tip
 </div>
 <p>You can also use <code>group_by()</code> or <code>by</code> in combination with other functions. For example, <code>slice_max()</code> returns the top N rows, ordered by a specific variable.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># return top 2 values </span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># return top 2 values </span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">2</span>, <span class="at">order_by =</span> value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
+<col style="width: 6%">
 <col style="width: 2%">
-<col style="width: 10%">
-<col style="width: 71%">
-<col style="width: 2%">
-<col style="width: 1%">
 <col style="width: 3%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 35%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 4%">
+<col style="width: 3%">
+<col style="width: 5%">
 </colgroup>
 <thead><tr class="header">
 <th style="text-align: left;">country</th>
@@ -1784,7 +1651,6 @@ Tip
 <th style="text-align: left;">sex</th>
 <th style="text-align: left;">time_detail</th>
 <th style="text-align: left;">source</th>
-<th style="text-align: left;">foot_note</th>
 <th style="text-align: right;">geo_area_code</th>
 <th style="text-align: left;">cities</th>
 <th style="text-align: left;">disability_status</th>
@@ -1801,7 +1667,6 @@ Tip
 <td style="text-align: left;">FEMALE</td>
 <td style="text-align: left;">2022</td>
 <td style="text-align: left;">National&nbsp;Statistics Committee of the Republic of Uzbekistan</td>
-<td style="text-align: left;">National Urban average. Calculated based on household survey data. Designation and data provided by the country and compiled by UNHabitat. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
 <td style="text-align: right;">860</td>
 <td style="text-align: left;">NOCITI</td>
 <td style="text-align: left;">_T</td>
@@ -1817,7 +1682,6 @@ Tip
 <td style="text-align: left;">FEMALE</td>
 <td style="text-align: left;">2019</td>
 <td style="text-align: left;">National&nbsp;Statistics Committee of the Republic of Uzbekistan</td>
-<td style="text-align: left;">National Urban average. Calculated based on household survey data. Designation and data provided by the country and compiled by UNHabitat. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
 <td style="text-align: right;">860</td>
 <td style="text-align: left;">NOCITI</td>
 <td style="text-align: left;">_T</td>
@@ -1832,27 +1696,26 @@ Tip
 </div>
 <p>But this can be combined with <code>group_by()</code> to return the top sales for each region:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># return top 2 values per sex</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># return top 2 values per sex</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">2</span>, <span class="at">order_by =</span> value, <span class="at">by =</span> sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
+<col style="width: 6%">
 <col style="width: 2%">
-<col style="width: 10%">
-<col style="width: 71%">
-<col style="width: 2%">
-<col style="width: 1%">
 <col style="width: 3%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 35%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 4%">
+<col style="width: 3%">
+<col style="width: 5%">
 </colgroup>
 <thead><tr class="header">
 <th style="text-align: left;">country</th>
@@ -1862,7 +1725,6 @@ Tip
 <th style="text-align: left;">sex</th>
 <th style="text-align: left;">time_detail</th>
 <th style="text-align: left;">source</th>
-<th style="text-align: left;">foot_note</th>
 <th style="text-align: right;">geo_area_code</th>
 <th style="text-align: left;">cities</th>
 <th style="text-align: left;">disability_status</th>
@@ -1879,7 +1741,6 @@ Tip
 <td style="text-align: left;">FEMALE</td>
 <td style="text-align: left;">2022</td>
 <td style="text-align: left;">National&nbsp;Statistics Committee of the Republic of Uzbekistan</td>
-<td style="text-align: left;">National Urban average. Calculated based on household survey data. Designation and data provided by the country and compiled by UNHabitat. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
 <td style="text-align: right;">860</td>
 <td style="text-align: left;">NOCITI</td>
 <td style="text-align: left;">_T</td>
@@ -1895,7 +1756,6 @@ Tip
 <td style="text-align: left;">FEMALE</td>
 <td style="text-align: left;">2019</td>
 <td style="text-align: left;">National&nbsp;Statistics Committee of the Republic of Uzbekistan</td>
-<td style="text-align: left;">National Urban average. Calculated based on household survey data. Designation and data provided by the country and compiled by UNHabitat. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
 <td style="text-align: right;">860</td>
 <td style="text-align: left;">NOCITI</td>
 <td style="text-align: left;">_T</td>
@@ -1911,7 +1771,6 @@ Tip
 <td style="text-align: left;">MALE</td>
 <td style="text-align: left;">2022</td>
 <td style="text-align: left;">National&nbsp;Statistics Committee of the Republic of Uzbekistan</td>
-<td style="text-align: left;">National Urban average. Calculated based on household survey data. Designation and data provided by the country and compiled by UNHabitat. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
 <td style="text-align: right;">860</td>
 <td style="text-align: left;">NOCITI</td>
 <td style="text-align: left;">_T</td>
@@ -1927,7 +1786,6 @@ Tip
 <td style="text-align: left;">MALE</td>
 <td style="text-align: left;">2019</td>
 <td style="text-align: left;">National&nbsp;Statistics Committee of the Republic of Uzbekistan</td>
-<td style="text-align: left;">National Urban average. Calculated based on household survey data. Designation and data provided by the country and compiled by UNHabitat. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
 <td style="text-align: right;">860</td>
 <td style="text-align: left;">NOCITI</td>
 <td style="text-align: left;">_T</td>
@@ -1943,7 +1801,6 @@ Tip
 <td style="text-align: left;">MALE</td>
 <td style="text-align: left;">2023</td>
 <td style="text-align: left;">National&nbsp;Statistics Committee of the Republic of Uzbekistan</td>
-<td style="text-align: left;">National Urban average. Calculated based on household survey data. Designation and data provided by the country and compiled by UNHabitat. The designations employed do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area; or of its authorities, or concerning the delimitation of its frontiers or boundaries.</td>
 <td style="text-align: right;">860</td>
 <td style="text-align: left;">NOCITI</td>
 <td style="text-align: left;">_T</td>
@@ -1962,11 +1819,11 @@ Tip
 <span class="header-section-number">9.4.1</span> Rounding</h3>
 <p>Let’s say we want to round all the values to the nearest percent and add a % sign.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>transport_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">mutate</span>(<span class="at">pcnt =</span> <span class="fu">round</span>(value) <span class="sc">|&gt;</span> <span class="fu">paste0</span>(<span class="st">"%"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(value, <span class="st">"</span><span class="sc">\\</span><span class="st">.5"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">select</span>(value, pcnt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -1998,9 +1855,9 @@ Tip
 <p>If you look at the values above, you can see that the first three round up fro .5, and the last rounds down. What’s going on!?</p>
 <p>This may seem like a mistake, but R rounds .5 to the nearest even number, rather than always up, like you were probably taught in school. This prevents overestimation biases, since x.5 is <em>exactly</em> halfway between x and x+1, so there is no reason it should always round up.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">round</span>(<span class="fl">0.5</span>)</span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">round</span>(<span class="fl">0.5</span>)</span>
 <span id="cb35-2"><a href="#cb35-2"></a><span class="fu">round</span>(<span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>[1] 0
 [1] 2</code></pre>
 </div>
@@ -2008,9 +1865,9 @@ Tip
 <p>However, this might throw a monkey wrench into your own systems. For example, our school policy is to round up for course marks at x.5. The easiest solution is to use the <code>round_half_up()</code> function from the package <pkg>janitor</pkg>.</p>
 <p>This should work as you’d expect.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">round_half_up</span>(<span class="fl">0.5</span>)</span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">round_half_up</span>(<span class="fl">0.5</span>)</span>
 <span id="cb37-2"><a href="#cb37-2"></a><span class="fu">round_half_up</span>(<span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2</code></pre>
 </div>
@@ -2024,20 +1881,21 @@ Tip
 <p>What if the South region hadn’t returned their expenses (entered as 0) and the North region hadn’t returned their sales data for 2020 yet, so someone entered it as “missing”?</p>
 <p>First, we’re going to recode the data to add in the missing values. We can use <code>case_when()</code> to set the <code>value</code> to “missing” if the year is 2000 and country is “Uzbekistan”, otherwise use the original value. You can’t combine number and character data types in the same column, so you need to convert the default value into a character (thi is your first sign that this isn’t a good idea).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>missing_bad <span class="ot">&lt;-</span> transport_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>missing_bad <span class="ot">&lt;-</span> transport_data <span class="sc">|&gt;</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">case_when</span>(</span>
 <span id="cb39-3"><a href="#cb39-3"></a>    <span class="co"># set to 0 when year is 2000 and country is Uzbekistan</span></span>
 <span id="cb39-4"><a href="#cb39-4"></a>    year <span class="sc">==</span> <span class="dv">2000</span> <span class="sc">&amp;</span> country <span class="sc">==</span> <span class="st">"Uzbekistan"</span> <span class="sc">~</span> <span class="st">"missing"</span>, </span>
 <span id="cb39-5"><a href="#cb39-5"></a>    <span class="co"># otherwise, set to the existing value</span></span>
 <span id="cb39-6"><a href="#cb39-6"></a>    <span class="at">.default =</span> <span class="fu">as.character</span>(value)</span>
 <span id="cb39-7"><a href="#cb39-7"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now, if you try to compute the mean value, you will get an error message and the result will be <code>NA</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># try to compute mean value</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># try to compute mean value</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a>missing_bad <span class="sc">|&gt;</span></span>
 <span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+</details><div class="cell-output cell-output-stderr">
 <pre><code>Warning: There was 1 warning in `summarise()`.
 ℹ In argument: `mean = mean(value)`.
 Caused by warning in `mean.default()`:
@@ -2060,22 +1918,23 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.2</span> Convert missing values to NA</h4>
 <p>To set the missing values to NA, we can use the handy function <code>na_if()</code>. We’ll also need to transform <code>value</code> back to numeric.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>missing_data <span class="ot">&lt;-</span> missing_bad <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>missing_data <span class="ot">&lt;-</span> missing_bad <span class="sc">|&gt;</span></span>
 <span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb42-3"><a href="#cb42-3"></a>    <span class="co"># if value = "missing" set as NA</span></span>
 <span id="cb42-4"><a href="#cb42-4"></a>    <span class="at">value =</span> <span class="fu">na_if</span>(value, <span class="st">"missing"</span>),</span>
 <span id="cb42-5"><a href="#cb42-5"></a>    <span class="co"># convert to numeric</span></span>
 <span id="cb42-6"><a href="#cb42-6"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value)</span>
 <span id="cb42-7"><a href="#cb42-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now, if we try to calculate the mean value for each country, we get missing values for any summary value that contains an NA.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>missing_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>missing_data <span class="sc">|&gt;</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb43-3"><a href="#cb43-3"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
 <span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">.by=</span> country</span>
 <span id="cb43-5"><a href="#cb43-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -2104,12 +1963,12 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.3</span> Ignore missing values</h4>
 <p>This is because <code>NA</code> basically means “I don’t know”, and the sum of 100 and “I don’t know” is “I don’t know”, not 100. However, when you’re calculating means, you often want to just ignore missing values. Set <code>na.rm = TRUE</code> in the summary function to remove missing values before calculating.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>missing_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>missing_data <span class="sc">|&gt;</span></span>
 <span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb44-3"><a href="#cb44-3"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb44-4"><a href="#cb44-4"></a>    <span class="at">.by=</span> country</span>
 <span id="cb44-5"><a href="#cb44-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -2138,14 +1997,14 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.4</span> Count missing values</h4>
 <p>If you want to find out how many missing or non-missing values there are in a column, use the <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> function to get a <a href="https://psyteachr.github.io/glossary/l#logical" target="_blank" class="glossary" title="A data type representing TRUE or FALSE values.">logical</a> vector of whether or not each value is missing, and use <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> to count how many values are TRUE or <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> to calculate the proportion of TRUE values.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>missing_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>missing_data <span class="sc">|&gt;</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb45-3"><a href="#cb45-3"></a>    <span class="at">n_valid =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)),</span>
 <span id="cb45-4"><a href="#cb45-4"></a>    <span class="at">n_missing =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(value)),</span>
 <span id="cb45-5"><a href="#cb45-5"></a>    <span class="at">prop_missing =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(value)),</span>
 <span id="cb45-6"><a href="#cb45-6"></a>    <span class="at">.by=</span> country</span>
 <span id="cb45-7"><a href="#cb45-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
@@ -2182,13 +2041,14 @@ Caused by warning in `mean.default()`:
 <span class="header-section-number">9.4.2.5</span> Omit missing values</h4>
 <p>You may also want to remove rows that have missing values and only work from complete datasets. <code>drop_na()</code> will remove any row that has a missing observation. You can use <code>drop_na()</code> on the entire dataset which will remove any row that has <em>any</em> missing value, or you can specify to only remove rows that are missing a specific value.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># remove any rows with any missing values</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># remove any rows with any missing values</span></span>
 <span id="cb46-2"><a href="#cb46-2"></a>complete_data <span class="ot">&lt;-</span> missing_data <span class="sc">|&gt;</span></span>
 <span id="cb46-3"><a href="#cb46-3"></a>  <span class="fu">drop_na</span>()</span>
 <span id="cb46-4"><a href="#cb46-4"></a></span>
 <span id="cb46-5"><a href="#cb46-5"></a><span class="co"># remove any rows that are missing a value for sales</span></span>
 <span id="cb46-6"><a href="#cb46-6"></a>complete_values <span class="ot">&lt;-</span> missing_data <span class="sc">|&gt;</span></span>
 <span id="cb46-7"><a href="#cb46-7"></a>  <span class="fu">drop_na</span>(value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2225,10 +2085,10 @@ Solution
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># from https://www.kaggle.com/kyanyoga/sample-sales-data</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="co"># from https://www.kaggle.com/kyanyoga/sample-sales-data</span></span>
 <span id="cb47-2"><a href="#cb47-2"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb47-3"><a href="#cb47-3"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://psyteachr.github.io/ads-v2/data/survey_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+</details><div class="cell-output cell-output-stderr">
 <pre><code>Rows: 707 Columns: 7
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
@@ -2264,7 +2124,7 @@ Solution
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># case_when() method</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># case_when() method</span></span>
 <span id="cb49-2"><a href="#cb49-2"></a>survey_data <span class="ot">&lt;-</span> survey_data <span class="sc">|&gt;</span></span>
 <span id="cb49-3"><a href="#cb49-3"></a>  <span class="fu">mutate</span>(<span class="at">trainer =</span> <span class="fu">case_when</span>(</span>
 <span id="cb49-4"><a href="#cb49-4"></a>    employee_id <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"E01"</span>, <span class="st">"E02"</span>, <span class="st">"E03"</span>, <span class="st">"E04"</span>, <span class="st">"E05"</span>) <span class="sc">~</span> <span class="st">"Michael"</span>,</span>
@@ -2282,9 +2142,9 @@ Solution
 <span id="cb49-16"><a href="#cb49-16"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
 <span id="cb49-17"><a href="#cb49-17"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>trainer) <span class="sc">+</span></span>
 <span id="cb49-18"><a href="#cb49-18"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Satisfaction scores by employee trainer"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -2334,13 +2194,14 @@ Solution
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># method 1 - tidyverse</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># method 1 - tidyverse</span></span>
 <span id="cb50-2"><a href="#cb50-2"></a>mean_wait <span class="ot">&lt;-</span> survey_data <span class="sc">|&gt;</span></span>
 <span id="cb50-3"><a href="#cb50-3"></a>  <span class="fu">summarise</span>(<span class="at">mean_wait =</span> <span class="fu">mean</span>(wait_time)) <span class="sc">|&gt;</span></span>
 <span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">pull</span>(mean_wait)</span>
 <span id="cb50-5"><a href="#cb50-5"></a></span>
 <span id="cb50-6"><a href="#cb50-6"></a><span class="co"># method 2 - base R</span></span>
 <span id="cb50-7"><a href="#cb50-7"></a>mean_wait <span class="ot">&lt;-</span> <span class="fu">mean</span>(survey_data<span class="sc">$</span>wait_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </div>
@@ -2359,8 +2220,9 @@ Solution
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>long_wait <span class="ot">&lt;-</span> survey_data <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>long_wait <span class="ot">&lt;-</span> survey_data <span class="sc">|&gt;</span></span>
 <span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">filter</span>(wait_time <span class="sc">&gt;</span> mean_wait)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </div>
@@ -2379,12 +2241,12 @@ Solution
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>long_wait <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>long_wait <span class="sc">|&gt;</span></span>
 <span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> employee_id)) <span class="sc">+</span></span>
 <span id="cb52-3"><a href="#cb52-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="09-wrangle_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -2417,7 +2279,7 @@ Solution
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># this is one possible solution, there are many other valid approaches </span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># this is one possible solution, there are many other valid approaches </span></span>
 <span id="cb53-2"><a href="#cb53-2"></a></span>
 <span id="cb53-3"><a href="#cb53-3"></a><span class="co"># calculate mean wait time across all calls</span></span>
 <span id="cb53-4"><a href="#cb53-4"></a>mean_wait <span class="ot">&lt;-</span> <span class="fu">mean</span>(survey_data<span class="sc">$</span>wait_time)</span>
@@ -2434,6 +2296,7 @@ Solution
 <span id="cb53-15"><a href="#cb53-15"></a>                               satisfaction <span class="sc">&lt;</span> <span class="dv">3</span> <span class="sc">~</span> <span class="st">"yes"</span>,</span>
 <span id="cb53-16"><a href="#cb53-16"></a>                               <span class="at">.default =</span> <span class="st">"no"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb53-17"><a href="#cb53-17"></a>  <span class="fu">select</span>(caller_id, employee_id, trainer, follow_up)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </div>
@@ -2476,7 +2339,7 @@ Solution
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># in total</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># in total</span></span>
 <span id="cb54-2"><a href="#cb54-2"></a>follow_data <span class="sc">|&gt;</span></span>
 <span id="cb54-3"><a href="#cb54-3"></a>  <span class="fu">count</span>(follow_up)<span class="sc">|&gt;</span></span>
 <span id="cb54-4"><a href="#cb54-4"></a>  <span class="fu">filter</span>(follow_up <span class="sc">==</span> <span class="st">"yes"</span>) <span class="sc">|&gt;</span></span>
@@ -2509,7 +2372,7 @@ Solution
 <span id="cb54-31"><a href="#cb54-31"></a>  <span class="fu">filter</span>(follow_up <span class="sc">==</span> <span class="st">"yes"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb54-32"><a href="#cb54-32"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">order_by =</span> n) <span class="sc">|&gt;</span></span>
 <span id="cb54-33"><a href="#cb54-33"></a>  <span class="fu">pull</span>(employee_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>[1] 120
 [1] 16
 [1] 65
@@ -3352,7 +3215,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>CC-BY 2024, psyTeachR</p>
+<p>CC-BY 2026, psyTeachR</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

@@ -1229,7 +1229,7 @@ simdat <- tibble(
 
 :::
 
-::: {.callout-tip collapse="true"}
+::: {.callout-info collapse="true"}
 ## Explain what the data simulation is doing
 
 1. This fixes the random-number generator so that every time you run the simulation, you get the same random values. This is essential for reproducibility, especially in teaching materials.

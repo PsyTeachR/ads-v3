@@ -241,13 +241,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Advanced: Websites</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Websites</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-referencing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Advanced: Referencing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Referencing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -259,7 +259,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Advanced: Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -271,13 +271,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Advanced: Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Advanced: Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -356,9 +356,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>For one of the datasets, we’re going to give you a few lines of code to load in the data as it needs a little bit of wrangling we haven’t yet taught you.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>uv202 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"UV202 - National Identity.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>uv202 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"UV202 - National Identity.csv"</span>, <span class="at">skip =</span> <span class="dv">4</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">.fns =</span> as.numeric)) <span class="sc">|&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">pivot_longer</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">names_to =</span> <span class="st">"identity"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li>The Output Area is formatted as a “block quote”.</li>
@@ -1152,7 +1153,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>CC-BY 2024, psyTeachR</p>
+<p>CC-BY 2026, psyTeachR</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

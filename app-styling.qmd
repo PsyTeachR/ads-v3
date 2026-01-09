@@ -1,4 +1,4 @@
-# Advanced: Styling Plots {#sec-plotstyle}
+# Styling Plots {#sec-plotstyle}
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(

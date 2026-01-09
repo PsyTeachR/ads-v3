@@ -22,7 +22,7 @@ library(janitor)    # data table cleaning
     * utils:: `head()`, `packageVersion()`
 * tidyverse (you can use all these with `library(tidyverse)`)
     * readr:: `read_csv()`
-    * dplyr:: `count()`, filter()`, `arrange()`, `mutate()`, `summarise()`, `group_by()`, `ungroup()`, `case_when()`, `na_if()`, `across()`
+    * dplyr:: `count()`, `filter()`, `arrange()`, `mutate()`, `summarise()`, `group_by()`, `ungroup()`, `case_when()`, `na_if()`, `across()`
     * tidyselect:: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, `all_of()`, `any_of()`, `everything()`, `where()`
 * other (you need to load each package to use these)
     * readxl:: `read_xlsx()`
@@ -312,11 +312,6 @@ transport_clean <- transport |>
   relocate(geo_area_code, .before = cities)
 ```
 
-```{r}
-#| echo: false
-head(transport_clean)
-```
-
 
 
 ### Filter
@@ -439,7 +434,8 @@ Finally, you can also pass many other functions to filter. For example, the pack
 
 ```{r}
 transport_clean |>
-  filter(str_detect(country, "Island"))
+  filter(str_detect(country, "Island")) |>
+  select(1:6)
 ```
 
 Note that `str_detect()` is case sensitive so it would not return values of "island" or "ISLAND". You can use the function `tolower()` or `toupper()` to convert a string to lowercase or uppercase before you search for substring if you need case-insensitive matching.
@@ -563,7 +559,8 @@ transport_data <- transport_factor |>
       !urban & value >= 60 ~ "high",
       .default = NA
     )
-  )
+  ) |>
+  select(-foot_note) # get rid of very long data no longer used
 
 ```
 

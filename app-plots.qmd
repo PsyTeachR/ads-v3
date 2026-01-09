@@ -12,18 +12,20 @@ library(tidyverse)   # for data wrangling
 library(ggthemes)    # for themes
 library(patchwork)   # for combining plots
 library(plotly)      # for interactive plots
-# devtools::install_github("hrbrmstr/waffle")
-library(waffle)      # for waffle plots
-library(ggbump)      # for bump plots
 library(treemap)     # for treemap plots
 library(ggwordcloud) # for word clouds
 library(tidytext)    # for manipulating text for word clouds
 library(gganimate)   # for animated plots
-
-#install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", type = "source")
-library(sf)          # for mapping geoms
 library(rnaturalearth) # for map data
 library(rnaturalearthdata) # extra mapping data
+
+# Non-CRAN packages
+#install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", type = "source")
+library(sf)          # for mapping geoms
+# devtools::install_github("hrbrmstr/waffle")
+library(waffle)      # for waffle plots
+# devtools::install_github("davidsjoberg/ggbump")
+library(ggbump)      # for bump plots
 
 theme_set(theme_light())
 ```
@@ -32,7 +34,7 @@ theme_set(theme_light())
 ### Set-up {#setup-custom-viz}
 
 1. Open your `ADS-2026` project 
-1. Create a new quarto file called `10-next.qmd`
+1. Create a new quarto file called `adv-plots.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
@@ -46,24 +48,24 @@ library(tidyverse)   # for data wrangling
 library(ggthemes)    # for themes
 library(patchwork)   # for combining plots
 library(plotly)      # for interactive plots
-# devtools::install_github("hrbrmstr/waffle")
-library(waffle)      # for waffle plots
-library(ggbump)      # for bump plots
 library(treemap)     # for treemap plots
 library(ggwordcloud) # for word clouds
 library(tidytext)    # for manipulating text for word clouds
 library(gganimate)   # for animated plots
-
-#install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", type = "source")
-library(sf)          # for mapping geoms
 library(rnaturalearth) # for map data
 library(rnaturalearthdata) # extra mapping data
+
+# Non-CRAN packages
+#install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", type = "source")
+library(sf)          # for mapping geoms
+# devtools::install_github("hrbrmstr/waffle")
+library(waffle)      # for waffle plots
+# devtools::install_github("davidsjoberg/ggbump")
+library(ggbump)      # for bump plots
 
 theme_set(theme_light())
 ```
 ````
-
-Download the [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf).
 
 
 ### Defaults
@@ -388,7 +390,11 @@ rank_data
 
 A typical mapping for a bump plot puts the time variable in the x-axis, the rank variable on the y-axis, and sets colour to the identifying variable.
 
-```{r basic-bump, fig.width = 8, fig.height=3, fig.cap = "Basic bump plot"}
+```{r}
+#| label: basic-bump
+#| fig-width: 8
+#| fig-height: 3
+#| fig-cap: "Basic bump plot"
 ggplot(data = rank_data, 
        mapping = aes(x = week, 
                      y = rank, 
@@ -398,36 +404,45 @@ ggplot(data = rank_data,
 
 We can make this more attractive by customising the axes and adding text labels. Try running each line of this code to see how it builds up.
 
-* Add `label = person` to the mapping so we can add in text labels.
-* Increase the size of the lines with the `size` argument to `geom_bump()`
-* We don't need labels for weeks 1.5 and 2.5, so change the x-axis `breaks`
-* The `expand` argument for the two scale_ functions expands the plot area so we can fit text labels to the right.
-* It makes more sense to have first place at the top, so reverse the order of the y-axis with `scale_y_reverse()` and fix the breaks and expansion.
-* Add text labels with `geom_text()`, but just for week 3, so set `data =  filter(rank_data, week == 3)` for this geom. 
-* Set `x = 3.05` to move the text labels just to the right of week 3, and set `hjust = 0` to right-justify the text labels (the default is `hjust = 0.5`, which would center them on 3.05).
-* Remove the legend and grid lines. Increase the x-axis text size.
 
-```{r bump-example, fig.width = 8, fig.height=3, fig.cap = "Bump plot with added features."}
+```{r}
+#| label: bump-example
+#| fig-width: 8
+#| fig-height: 3
+#| fig-cap: "Bump plot with added customisation"
 ggplot(data = rank_data, 
        mapping = aes(x = week, 
                      y = rank, 
                      colour = person,
-                     label = person)) +
-  ggbump::geom_bump(size = 10) +
+                     label = person)) + # <1>
+  ggbump::geom_bump(linewidth = 10) + # <2>
   scale_x_continuous(name = "",
-                     breaks = 1:3, 
+                     breaks = 1:3, # <3>
                      labels = c("Week 1", "Week 2", "Week 3"),
                      expand = expansion(c(.05, .2))) +
-  scale_y_reverse(name = "Ranking",
+  scale_y_reverse(name = "Ranking", # <4>
                   breaks = 1:3, 
-                  expand = expansion(.2)) +
-  geom_text(data = filter(rank_data, week == 3),
-            color = "black", x = 3.05, hjust = 0) +
-  theme(legend.position = "none",
+                  expand = expansion(.2)) + # <5>
+  geom_text(data = filter(rank_data, week == 3), # <6>
+            color = "black", 
+            x = 3.05, # <7>
+            hjust = 0) + # <8>
+  theme(legend.position = "none", # <9>
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
-        axis.text.x = element_text(size = 12))
+        axis.text.x = element_text(size = 12)) # <10>
 ```
+
+1. Add `label = person` to the mapping so we can add in text labels.
+2. Increase the size of the lines with the `linewidth` argument to `geom_bump()`
+3. We don't need labels for weeks 1.5 and 2.5, so change the x-axis `breaks`
+4. It makes more sense to have first place at the top, so reverse the order of the y-axis with `scale_y_reverse()` and fix the breaks and expansion.
+5. The `expand` argument for the two scale_ functions expands the plot area so we can fit text labels to the right.
+6. Add text labels with `geom_text()`, but just for week 3, so set `data =  filter(rank_data, week == 3)` for this geom. 
+7. Set `x = 3.05` to move the text labels just to the right of week 3
+8. Set `hjust = 0` to right-justify the text labels (the default is `hjust = 0.5`, which would center them on 3.05).
+9. Remove the legend and grid lines. 
+10. Increase the x-axis text size.
 
 
 #### Word Clouds
@@ -444,14 +459,14 @@ We can use this data to look at how the words used differ depending on the ratin
 
 ```{r}
 words <- alexa |>
-  unnest_tokens(output = "word", input = "verified_reviews")
+  tidytext::unnest_tokens(output = "word", input = "verified_reviews")
 ```
 
 We can then add another line of code using a pipe that counts how many instances of each word there is by rating to give us the most popular words.
 
 ```{r}
 words <- alexa |>
-  unnest_tokens(output = "word", input = "verified_reviews") |>
+  tidytext::unnest_tokens(output = "word", input = "verified_reviews") |>
   count(word, rating, sort = TRUE) 
 ```
 
@@ -471,38 +486,49 @@ To get the top 25 words, we then group by rating and use `dplyr::slice_max()`, o
 custom_stop <- tibble(word = c(0:9, "https", 34))
 
 words <- alexa |>
-  unnest_tokens(output = "word", input = "verified_reviews") |>
+  tidytext::unnest_tokens(output = "word", input = "verified_reviews") |>
   count(word, rating) |>
-  anti_join(stop_words, by = "word") |>
+  anti_join(tidytext::stop_words, by = "word") |>
   anti_join(custom_stop, by = "word") |>
-  group_by(rating) |>
-  slice_max(order_by = n, n = 25, with_ties = FALSE) |>
-  ungroup()
+  slice_max(order_by = n, 
+            n = 25, 
+            with_ties = FALSE, 
+            by = rating)
 ```
 
 First, let's make a word cloud for customers who gave a 1-star rating:
 
-* Filter retains only the data for 1-star ratings. 
-* `label` comes from the `word` column and is the data to plot (i.e., the words).
-* `colour` makes the words red (you could also set this to `word` to give each word a different colour or `n` to vary colour continuously by frequency).
-* `size` makes the size of the word proportional to `n`, the number of times the word appeared.
-* `r hl(ggwordcloud::geom_text_wordcloud_area())` is the word cloud geom. 
-* `r hl(ggwordcloud::scale_size_area())` controls how big the word cloud is (this usually takes some trial-and-error).  
-
 ```{r}
-rating1 <- filter(words, rating == 1) |>
-  ggplot(aes(label = word, colour = "red", size = n)) +
-  geom_text_wordcloud_area() +
-  scale_size_area(max_size = 10) +
+rating1 <- filter(words, rating == 1) |> # <1>
+  ggplot(aes(label = word,               # <2>
+             colour = "red",             # <3>
+             size = n)) +                # <4>
+  geom_text_wordcloud_area() +           # <5>
+  scale_size_area(max_size = 10) +       # <6>
   ggtitle("Rating = 1") +
   theme_minimal(base_size = 14)
+```
 
+1. Filter retains only the data for 1-star ratings. 
+2. `label` comes from the `word` column and is the data to plot (i.e., the words).
+3. `colour` makes the words red (you could also set this to `word` to give each word a different colour or `n` to vary colour continuously by frequency).
+4. `size` makes the size of the word proportional to `n`, the number of times the word appeared.
+5. `geom_text_wordcloud_area()` is the word cloud geom. 
+6. `scale_size_area()` controls how big the word cloud is (this usually takes some trial-and-error).  
+
+```{r}
+#| label: fig-word-cloud
+#| fig-cap: "A word cloud of 1-star ratings"
 rating1
 ```
 
+
 We can now do the same but for 5-star ratings and paste the plots together with `patchwork` (word clouds don't play well with facets). 
 
-```{r, fig.height = 3, fig.cap="Word cloud."}
+```{r}
+#| lbel: fig-word-cloud-1-5
+#| fig-height: 3
+#| fig-cap: "Word cloud."
 rating5 <- filter(words, rating == 5) |>
   ggplot(aes(label = word, size = n)) +
   geom_text_wordcloud_area(colour = "darkolivegreen3") +
@@ -527,7 +553,11 @@ Working with maps can be tricky. The `r pkg("sf")` package provides functions th
 * Try changing the values and colours below to get a sense of how the code works.
 
 
-```{r map-world, fig.width = 7, fig.height = 3.4}
+```{r}
+#| label: fig-map-world
+#| fig-width: 7
+#| fig-height: 3.4
+#| fig-cap: A blank world map.
 # get the world map coordinates
 world_sf <- ne_countries(returnclass = "sf", scale = "medium")
 
@@ -539,7 +569,11 @@ ggplot() +
 
 You can combine multiple countries using `bind_rows()` and visualise them with different colours for each country.
 
-```{r map-islands, fig.width = 6, fig.height = 6, fig.cap="Map coloured by country."}
+```{r}
+#| label: fig-map-islands
+#| fig-width: 6
+#| fig-height: 6
+#| fig-cap: "Map coloured by country."
 # get and bind country data
 uk_sf <- ne_states(country = "united kingdom", returnclass = "sf")
 ireland_sf <- ne_states(country = "ireland", returnclass = "sf")
@@ -591,25 +625,34 @@ scotmap_pop <- scotland_sf |>
 There is a typo in the data from `r pkg("rnaturalearth")`, so you need to change "North Ayshire" to "North Ayrshire" before you join the population data.
 :::
 
-* Setting the fill to population in `geom_sf()` gives each region a colour based on its population. 
-* The colours are customised with `scale_fill_viridis_c()`. The breaks of the fill scale are set to increments of 100K (1e5 in scientific notation) and the scale is set to span 0 to 600K. 
-* `paste0()` creates the labels by taking the numbers 0 through 6 and adding "00 k" to them.
-* Finally, the position of the legend is moved into the sea using `legend.position()`.
 
-```{r map-scotland, fig.width = 5, fig.height = 7, fig.cap="Map coloured by population."}
+
+```{r}
+#| label: fig-map-scotland
+#| fig-width: 5
+#| fig-height: 7
+#| fig-cap: "Map coloured by population."
 # plot
 ggplot() + 
   geom_sf(data = scotmap_pop,
-          mapping = aes(fill = population),
+          mapping = aes(fill = population), # <1>
           color = "white", 
           size = .1) +
   coord_sf(xlim = c(-8, 0), ylim = c(54, 61)) +
-  scale_fill_viridis_c(name = "Population",
-                       breaks = seq(from = 0, to = 6e5, by = 1e5), 
-                       limits = c(0, 6e5),
-                       labels = paste0(0:6, "00 K")) +
-  theme(legend.position = c(0.16, 0.84))
+  scale_fill_viridis_c(name = "Population", # <2>
+                       breaks = seq(from = 0, to = 6e5, by = 1e5),  # <3>
+                       limits = c(0, 6e5), # <4>
+                       labels = paste0(0:6, "00 K")) + # <5>
+  theme(legend.justification = c(0,1), # <6>
+        legend.position = c(0, 1)) 
 ```
+
+1. Setting the fill to population in `geom_sf()` gives each region a colour based on its population. 
+2. The colours are customised with `scale_fill_viridis_c()`. 
+3. The breaks of the fill scale are set to increments of 100K (1e5 in scientific notation) 
+4. The scale is set to span 0 to 600K. 
+5. Creates the labels by taking the numbers 0 through 6 and adding "00 k" to them.
+6. The position of the legend is moved into the sea by setting `legend.justification` and `legend.position` to c(0,1), which places the top left corner of the legend at the top left corner of the plot..
 
 #### Animated Plots
 
@@ -711,6 +754,7 @@ worldpop |>
 
 There are so many more options for data visualisation in R than we have time to cover here. The following resources will get you started on your journey to informative, intuitive visualisations.
 
+* [ggplot2 cheat sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html)
 * [The R Graph Gallery](http://www.r-graph-gallery.com/) (this is really useful)
 * [Look at Data](https://socviz.co/lookatdata.html) from [Data Vizualization for Social Science](http://socviz.co/)
 * [Graphs](http://www.cookbook-r.com/Graphs) in *Cookbook for R*
