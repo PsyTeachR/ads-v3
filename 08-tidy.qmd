@@ -5,6 +5,8 @@
 #| include: false
 
 library(tidyverse) # for data wrangling
+library(readxl)    # read excel files
+library(janitor)   # clean up data tables
 ```
 
 ```{r}
@@ -53,7 +55,8 @@ write_csv(untidy, "data/untidy.csv")
     * ggplot2:: `ggplot()`, `aes()`, ...
     * stringr:: `str_to_title()`, `str_replace()`
 * Other
-    * readxl: `readxl::read_xlsx()`
+    * readxl:: `read_xlsx()`
+    * janitor:: `clean_names()`
     
 
 ## Set-up {#sec-setup-tidy}
@@ -74,7 +77,9 @@ write_csv(untidy, "data/untidy.csv")
 #| label: setup
 #| include: false
 
-library(tidyverse) 
+library(tidyverse) # for data wrangling
+library(readxl)    # read excel files
+library(janitor)   # clean up data tables
 ```
 ````
 
@@ -449,15 +454,16 @@ You can debug a pipe by highlighting from the beginning to just before the pipe 
 
 Let's load a fairly messy dataset to do some realistic data processing.
 
-* [World Population Data](https://psyteachr.github.io/ads-v3/data/WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES.xlsx){download}
+* <a href="https://psyteachr.github.io/ads-v3/data/WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES.xlsx" download>World Population Data</a>
 
 ### Read in data
 
-If you try to read it in before you look at it, you'll see the column names are a mess because there are 16 rows of text before the main table. So let's skip those 16 rows.
+If you try to read it in before you look at it, you'll see the column names are a mess because there are 16 rows of text before the main table. So let's skip those 16 rows and use `janitor::clean_names()` to fix the names.
 
 ```{r}
 file <- "data/WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES.xlsx"
-pop <- readxl::read_xlsx(file, skip = 16)
+pop <- readxl::read_xlsx(file, skip = 16) |>
+  janitor::clean_names()
 ```
 
 Have a look at the first 10 columns (we already know there are a ton of year columns).
@@ -466,7 +472,7 @@ Have a look at the first 10 columns (we already know there are a ton of year col
 glimpse(pop[, 1:10])
 ```
 
-The years all imported as characters. We could fix that on import, but it's actually easier to fix it later once the dataset is long and all those bvalues are in a single column.
+The population values for each year all imported as characters. We could fix that on import, but it's actually easier to fix it later once the dataset is long and all those values are in a single column.
 
 ### Fill data
 
@@ -474,15 +480,16 @@ You'll also see a bunch of highlighted rows that are aggregate data. We only wan
 
 ```{r}
 pop <- readxl::read_xlsx(file, skip = 16) |>
+  janitor::clean_names() |>
   rename(country = 3) |>                                            # <1>
-  mutate(region = ifelse(Type == "SDG region", country, NA),        # <2>
-         subregion = ifelse(Type == "Subregion", country, NA)) |>
+  mutate(region = ifelse(type == "SDG region", country, NA),        # <2>
+         subregion = ifelse(type == "Subregion", country, NA)) |>
   fill(region, subregion) |>                                        # <3>
   relocate(region, subregion, .after = country) |>                  # <4>
-  filter(Type == "Country/Area")                                    # <5>
+  filter(type == "Country/Area")                                    # <5>
 ```
 
-1. Fix the terrible name in column 3
+1. Fix the long name in column 3
 2. Make two new columns, region and subregion, and give them the same value as the country column if the Type column is "SDG region" or "Subregion, and NA otherwise
 3. `fill()` fills in the NAs in a column with nearest value above it 
 4. Move the new columns where they'll make more sense
@@ -502,15 +509,16 @@ Now we have data from 1950 to 2020 each in their own column, so we need to make 
 
 ```{r}
 pop <- readxl::read_xlsx(file, skip = 16) |>
+  janitor::clean_names() |>
   rename(country = 3) |>                                            
-  mutate(region = ifelse(Type == "SDG region", country, NA),        
-         subregion = ifelse(Type == "Subregion", country, NA)) |>
+  mutate(region = ifelse(type == "SDG region", country, NA),        
+         subregion = ifelse(type == "Subregion", country, NA)) |>
   fill(region, subregion) |>                                        
   relocate(region, subregion, .after = country) |>                  
-  filter(Type == "Country/Area") |>
-  pivot_longer(`1950`:`2020`, 
+  filter(type == "Country/Area") |>
+  pivot_longer(x1950:x2020, 
                names_to = "year", 
-               values_to = "population",
+               values_to = "population"
               )
 ```
 
@@ -527,30 +535,33 @@ Now we can clean up some things.
 
 ```{r}
 pop <- readxl::read_xlsx(file, skip = 16) |>
+  janitor::clean_names() |>
   rename(country = 3) |>                                            
-  mutate(region = ifelse(Type == "SDG region", country, NA),        
-         subregion = ifelse(Type == "Subregion", country, NA)) |>
+  mutate(region = ifelse(type == "SDG region", country, NA),        
+         subregion = ifelse(type == "Subregion", country, NA)) |>
   fill(region, subregion) |>                                        
   relocate(region, subregion, .after = country) |>                  
-  filter(Type == "Country/Area") |>
-  pivot_longer(`1950`:`2020`, 
+  filter(type == "Country/Area") |>
+  pivot_longer(x1950:x2020, 
                names_to = "year", 
-               names_transform = list(year = as.integer), # <1>
+               names_prefix = "x", # <1>
+               names_transform = list(year = as.integer), # <2>
                values_to = "population",
-               values_transform = list(population = as.numeric), # <2>
+               values_transform = list(population = as.numeric), # <3>
               ) |>
-  select(country, region, subregion, year, population) |> # <3>
-  mutate(population = round(population, 3)) |> # <4>
-  mutate(region = str_to_title(region), # <5>
-         region = str_replace(region, "And", "&")) # <6>
+  select(country, region, subregion, year, population) |> # <4>
+  mutate(population = round(population, 3)) |> # <5>
+  mutate(region = str_to_title(region), # <6>
+         region = str_replace(region, "And", "&")) # <7>
 ```
 
-1. When you use pivot_longer, column names always become character data type, even if they are strings like "2020", so you can use `names_transform` to transform the names into a different data type.
-2. Since the excel file was structured so oddly, all of the population data read in as characters. Now that we have gotten rid of values in that column that aren't numbers, we can convert it to a numeric column.
-3. Narrow down to just the columns we want.
-4. Excel sometimes produces rounding artifacts, so round to 3 digits.
-5. Make the region in title case instead of all caps.
-6. Making region title case created a bunch of "And", which we replace with "&".
+1. Remove the "x" prefix from the column names to pivot
+2. When you use pivot_longer, column names always become character data type, even if they are strings like "2020", so you can use `names_transform` to transform the names into a different data type.
+3. Since the excel file was structured so oddly, all of the population data read in as characters. Now that we have gotten rid of values in that column that aren't numbers, we can convert it to a numeric column.
+4. Narrow down to just the columns we want.
+5. Excel sometimes produces rounding artifacts, so round to 3 digits.
+6. Make the region in title case instead of all caps.
+7. Making region title case created a bunch of "And", which we replace with "&".
 
 ```{r}
 #| echo: false

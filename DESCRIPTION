@@ -52,7 +52,8 @@ Imports:
     ggbump,
     waffle,
     DT,
-    showtext
+    showtext,
+    skimr
 Remotes: 
     ropensci/rnaturalearthhires,
     hrbrmstr/waffle
