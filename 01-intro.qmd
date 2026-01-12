@@ -74,20 +74,16 @@ You can change the location of panes and what tabs are shown in each pane under 
 
 In this class, you will be learning how to make reproducible reports. This involves writing scripts that transform data, create summaries and visualisations, and embed them in a report in a way that always gives you the same results.
 
-::: {.meme .right}
-![](images/memes/forgetting.jpg){fig-alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory"}
-:::
-
 When you do things reproducibly, others (and future you) can understand and check your work. You can also reuse your work more easily. For example, if you need to create a report every month with the social media analytics for your company, a reproducible report allows you to download a new month's data and create the report within seconds. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.
 
 ## RStudio Settings {#sec-rstudio-settings}
 
-There are a few settings you should fix immediately after updating RStudio. While the default settings restore the bjects from your last session every time you reopen RStudio, if you keep objects around in your workspace, things will get messy, and unexpected issues will occur. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit; the only thing you want to save are your scripts.
+There are a few settings you should fix immediately after updating RStudio. While the default settings restore the objects from your last session every time you reopen RStudio, if you keep objects around in your workspace, things will get messy, and unexpected issues will occur. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit; the only thing you want to save are your scripts.
 
 ::: {.callout-tip .activity}
 Go to <if>Tools > Global Options...</if> (<mac>Cmd-,</mac>):
 
-* In the General tab, uncheck the box that says Restore .RData into workspace at startup.
+* In the General tab, uncheck the box that says Restore .RData into workspace at start-up.
 * Change "Save workspace to .RData on exit" to "Never".
 
 You will need to change these settings each time you update RStudio.
@@ -152,7 +148,7 @@ If you get a message that says something like `package ‘tidyverse’ successfu
 ::: {.callout-caution}
 ## Install packages from the console only
 
-Never install a package from inside a script. Only do this from the console pane or the packages tab of the lower right pane. This is because if you put the install code in a script, you might run it accidentally and reinstall the package, which will update it. Sometimes you want to do this, and sometimes a package update might cause your code to stop working.
+Never install a package from inside a script. Only do this from the console pane or the packages tab of the lower right pane. This is because if you put the install code in a script, you might run it accidentally and re-install the package, which will update it. Sometimes you want to do this, and sometimes a package update might cause your code to stop working.
 :::
 
 ::: {.callout-tip .activity}
