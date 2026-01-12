@@ -104,23 +104,23 @@ a.video {
   border-left-color: var(--purple) !important;
 }
 
-.callout.activity .callout-title-container {
+.callout.activity > .callout-header > .callout-title-container {
   text-indent: -9999px;
   line-height: 0;
 }
 
-.callout.activity .callout-title-container::after {
+.callout.activity > .callout-header > .callout-title-container::after {
   content: "Activity";
   text-indent: 0;
   display: block;
   line-height: 1.5em;
 }
 
-.callout.activity .callout-header {
+.callout.activity > .callout-header {
   background-color: #61589C44 !important;
 }
 
-.callout.activity i.callout-icon::before {
+.callout.activity > .callout-header > i.callout-icon::before {
   background-image: url(../images/alerts/activity.svg) !important;
 }
 

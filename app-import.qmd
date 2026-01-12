@@ -644,7 +644,6 @@ glossary_table()
 # clean up temp datasets
 files <- c("data/avatar_na.csv", "data/family.csv", "data/starwars.csv")
 
-file.exists(files) %>%
-  `[`(files, .) %>%
+files[file.exists(files)] |>
   file.remove()
 ```

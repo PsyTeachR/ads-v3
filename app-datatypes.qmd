@@ -345,11 +345,11 @@ glimpse(avatar)
 There are various ways of accessing specific columns or rows from a table. You'll be learning more about this in @sec-tidy and @sec-wrangle. 
 
 ```{r dataframe-access-tidyverse}
-siblings   <- avatar %>% slice(1, 3) # rows (by number)
-bends      <- avatar %>% pull(2) # column vector (by number)
-friendly   <- avatar %>% pull(friendly) # column vector (by name)
-bends_name <- avatar %>% select(bends, name) # subset table (by name)
-toph       <- avatar %>% pull(name) %>% pluck(2) # single cell
+siblings   <- avatar |> slice(1, 3) # rows (by number)
+bends      <- avatar |> pull(2) # column vector (by number)
+friendly   <- avatar |> pull(friendly) # column vector (by name)
+bends_name <- avatar |> select(bends, name) # subset table (by name)
+toph       <- avatar |> pull(name) |> pluck(2) # single cell
 ``` 
 
 The code below uses `r glossary("base R")` to produce the same subsets as the functions above. This format is useful to know about, since you might see them in other people's scripts.

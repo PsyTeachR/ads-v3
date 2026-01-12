@@ -859,10 +859,10 @@ Imagine you have a table of the [population for each country in the world](https
 #| fig-alt: "A histogram with population (from 0K to 1M in 100K steps) on the x-axis and Number of countries (0-35) on the y-axis. Most countries (36) have 0-100K, with 12 having 100-1200K, and 6 or fewer having each step above."
 #| echo: false
 # load data
-pop_data <- readxl::read_excel("data/WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES.xlsx", skip = 16) %>%
-  filter(Type == "Country/Area") %>%
-  select(country = 3, population = `2020`) %>%
-  mutate(population = round(as.numeric(population) * 1000)) %>%
+pop_data <- readxl::read_excel("data/WPP2019_POP_F01_1_TOTAL_POPULATION_BOTH_SEXES.xlsx", skip = 16) |>
+  filter(Type == "Country/Area") |>
+  select(country = 3, population = `2020`) |>
+  mutate(population = round(as.numeric(population) * 1000)) |>
   filter(population < 1e6)
   
 # make plots

@@ -70,11 +70,11 @@ psyteachr_colors <- psyteachr_colours
 # inline code highlighting and styles
 
 hl <- function(code) {
-  txt <- rlang::enexpr(code) %>% rlang::as_label()
+  txt <- rlang::enexpr(code) |> rlang::as_label()
 
-  downlit::highlight(txt, classes = downlit::classes_pandoc()) %>%
-    gsub("a href", "a target='_blank' href", .) %>%
-    paste0("<code>", . , "</code>")
+  downlit::highlight(txt, classes = downlit::classes_pandoc()) |>
+    gsub("a href", "a target='_blank' href", x = _) |>
+    paste0("<code>", x = _ , "</code>")
 }
 
 path <- function(txt) {

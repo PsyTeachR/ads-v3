@@ -28,7 +28,6 @@ library(tidyverse)
 
 ::: {.callout-tip .activity}
 
-
 1. Open your `ADS-2026` project 
 1. Download the [Data transformation cheatsheet](https://rstudio.github.io/cheatsheets/html/data-transformation.html)
 1. Create a new quarto file called `05-relations.qmd`
@@ -43,7 +42,6 @@ library(tidyverse)
 library(tidyverse)
 ```
 ````
-
 :::
 
 ## Loading data {#sec-joins-data}
@@ -81,10 +79,7 @@ visits <- tibble(
 `r kable(visits, caption="Demo visits table.")`
 
 ::: {.callout-tip .activity}
-
-
 Insert a new code chunk and create the objects `patients` and `visits`.
-
 :::
 
 ## Mutating Joins
@@ -105,14 +100,11 @@ You can leave out the `by` argument if you're matching on all of the columns wit
 :::
 
 ::: {.callout-tip .activity}
-
-
 For each of the joins below, run the code and inspect the object it creates and make a note of three things in your Quarto document alongside each bit of code:
 
 1. Does the resulting object have more or less observations than the original tables?
 1. Does the resulting object have more or less variables than the original tables?
 1. Does the resulting object have any NAs?
-
 :::
 
 ### left_join() {#sec-left_join}
@@ -184,11 +176,10 @@ full_data
 
 
 ::: {.callout-tip .activity}
-
-
 1. You have two datasets: people registered with a GP practice (registrations) and people who received a flu jab (jabs). You only want people who appear in both datasets, because you are analysing outcomes for those registered and vaccinated. Which should you use?
 
 `r mcq(c(answer = "inner_join", "left_join", "right_join", "full_join"))`
+
 
 `r hide("Explain this answer")`
 `inner_join(registrations, jabs, by = "nhs_number")` returns only the people whose NHS number appears in both datasets. This is appropriate when you want to analyse the subset who are both registered and vaccinated, excluding anyone who is only in one list.
@@ -312,8 +303,8 @@ join_2 <- left_join(join_1, satisfaction,
 
 ```{r}
 # more efficient method using the pipe
-pipe_join <- patients %>%
-  left_join(visits, by = "id") %>%
+pipe_join <- patients |>
+  left_join(visits, by = "id") |>
   left_join(satisfaction, by = "id")
 
 ```
@@ -503,15 +494,13 @@ base::setdiff(patients, new_patients)
 
 ::: {.callout-tip .activity}
 
-
 1. Two  surveys used the same questions and columns, one run in 2023 (survey_2023) and one in 2024 (survey_2024). You want one dataset with all responses from both years, keeping duplicates if the same respondent appears twice. Which should you use?
 
 `r mcq(c("union", answer = "bind_rows", "bind_cols", "setdiff"))`
 
 `r hide("Explain this answer")`
 `bind_rows()` stacks two data frames on top of each other, so you get all responses from 2023 and 2024 in one long dataset. It keeps duplicates by default, which is appropriate if the same respondent appears in both years and you want both records retained.
-
-
+`r unhide()`
 
 1. You have two extracts of the same equality register (register_a, register_b) with identical columns. Some rows are exact duplicates across the two extracts. You want a combined dataset that removes exact duplicate rows. Which should you use?
 
@@ -536,7 +525,6 @@ base::setdiff(patients, new_patients)
 `r hide("Explain this answer")`
 `bind_cols()` adds columns side by side, which is the right choice when patients and preds have the same number of rows and are already aligned in the same row order. Because there is no shared identifier to join on, a join would be inappropriate and could silently misalign records if the order differs.
 `r unhide()`
-
 
 :::
 
@@ -579,7 +567,7 @@ As alternative method to change variable types from what we showed you in @sec-s
 To use these functions on a variable we can use `mutate()` to overwrite the variable with that variable as the new data type:
 
 ```{r}
-new_patients2 <- new_patients2 %>%
+new_patients2 <- new_patients2 |>
   mutate(id = as.numeric(id))
 ```
 
@@ -600,6 +588,7 @@ If you would like to go beyond what we've covered in this chapter, we recommend 
 
 If you are enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.
 
+::: {.callout-tip .activity}
 
 ### Set up 
 
@@ -613,7 +602,7 @@ You should work in short cycles (5 to 10 minutes or two or three tasks), then sw
 
 There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
 
-::: {.callout-tip .activity}
+
 
 1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often. The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
 
@@ -623,7 +612,6 @@ There are no solutions provided for the pair programming activities. Everything 
 
 4. In a new code chunk, load the tidyverse.
 
-:::
 
 ### Grade data 
 
@@ -631,7 +619,6 @@ The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumer
 
 Often when we're working with student grades they are provided to us in only one of these forms, but we need to be able to go between the two. For example, we need the numeric form in order to be able to calculate descriptive statistics about the mean grade, but we need the alphanumeric form to release to student records.
 
-::: {.callout-tip .activity}
 
 5. Download <a href="data/grade_data1.csv" download>grade_data.csv</a>, <a href="data/grade_data2.csv" download>grade_data2.csv</a> and <a href="data/scheduleA.csv" download>scheduleA.csv</a> into your data folder.
 
@@ -646,19 +633,16 @@ grades1 <- read_csv("data/grade_data1.csv")
 grades2 <- read_csv("data/grade_data2.csv")
 ```
 
-:::
 
 ### Matching the variable types 
 
 At UofG, all students are given a GUID, a numeric ID number. However, that ID number is also then combined with the first letter from your surname to create your username that is used with your email address. For example, if your ID is 1234567 and your surname is Nordmann, your username would be 1234567n. From a data wrangling perspective this is very annoying because the numeric ID will be stored as numeric data, but the username will be stored as character because of the letter at the end. `grades1` has a numeric id whilst `grades2` has the additional letter. In order to join these datasets, we need to standardise the variables.
 
-::: {.callout-tip .activity}
-
 7. First, remove the letter character from `id` using the function `stringr::str_replace_all()`, which replaces text that matches a pattern. Here, we're using the pattern `"[a-z]"`, which matches all lowercase letters a through z, and replacing them with `""`. See the help for `?about_search_regex` for more info about how to set patterns (these can get really complex).
 
 ```{r}
 #| include: false
-grades1 <- grades1 %>%
+grades1 <- grades1 |>
   mutate(id = str_replace_all(
     id, # the variable you want to search
     pattern = "[a-z]", # find all letters a-z
@@ -666,33 +650,26 @@ grades1 <- grades1 %>%
   ))  
 ```
 
-:::
-
-::: {.callout-tip .activity}
 
 8. Now, transform the data type of `id` so that it matches the data type in `grades2`.
 
 ```{r}
 #| include: false
-grades1 <- grades1 %>%
+grades1 <- grades1 |>
   mutate(id = as.numeric(id))
 ```
 
-:::
 
 ### Complete records
 
 In this example, we want to join the grade data to schedule A so that each student with a grade has both the grade and the grade point. But we also want a complete record of all students on the course, so students with missing grades should still be included in the data.
 
-::: {.callout-tip .activity}
 9. Join `grades1` and `scheduleA` and store this table in an object named `exam_all`.
 10. Do the same for `grades2` and save it in `essay_all`.
 11. Both `exam_all` and `essay_all` should have 100 observations of 4 variables.
 
 `r hide("Hint")`
-
 You want to keep all of the data from `grade_data1` and `grade_data2`, but you only want the alphanumeric grades from `schedule` for the Grade Point values that exist in `grades`. E.g., if no-one was awarded an F1, your final dataset shouldn't have that in it.
-
 `r unhide()`
 
 ```{r}
@@ -701,7 +678,6 @@ exam_all <- left_join(grades1, schedule, by = "Points")
 essay_all <- left_join(grades2, schedule, by = "Points")
 ```
 
-:::
 
 ### Missing data
 
@@ -710,7 +686,6 @@ Alternatively, you may wish to have a dataset that only contains data for studen
 * How many exam grades are missing? `r fitb(sum(is.na(exam_all$Grade)))`
 * How many essay grades are missing? `r fitb(sum(is.na(essay_all$Grade)))`
 
-::: {.callout-tip .activity}
 12. Now, create an object `exam_grades` that joins together `grades1` and `schedule`, but this time the resulting object should only contain data from students who have a grade. Do the same but for `grades2` and store it in `essay_grades`.
 
 Before you do this, given what you know about how many data points are missing in each data set:
@@ -726,50 +701,42 @@ essay_grades <- inner_join(grades2, schedule, by = "Points")
 ```
 
 `r hide("Alternative solution")`
-
-It's worth noting that in reality you wouldn't actually go back to the raw data and do another join to get this dataset, you could just remove all the missing response by adding `%>% drop_na()` to `exam_all` and `essay_all`. However, for the purposes of teaching joins, we'll do it this slightly artificial way.
-
+It's worth noting that in reality you wouldn't actually go back to the raw data and do another join to get this dataset, you could just remove all the missing response by adding `|> drop_na()` to `exam_all` and `essay_all`. However, for the purposes of teaching joins, we'll do it this slightly artificial way.
 `r unhide()`
 
-:::
 
-::: {.callout-tip .activity}
 13. Now, create a dataset `completes` that joins the grades for students who have a grade for **both** the essay and the exam.  Because both `exam_grades` and `essay_grades` have the variables `Assessment`, `Points` and `Grades` that are named the same, but have different data, you should amend the suffix so that the resulting variables are named `Points_exam` and `Points_essay` etc. You may need to consult the help documentation to see an example to figure this out. 
-:::
 
-::: {.callout-tip .activity}
 14. Clean up the file with `select()` and only keep the variables `id`, `Grade_exam`, and `Grade_essay`
 
-```{r, webex.hide = TRUE}
+```{r}
+#| include: false
 completes <- inner_join(exam_grades, essay_grades, 
                         by = "id", 
-                        suffix = c("_exam", "_essay")) %>%
+                        suffix = c("_exam", "_essay")) |>
   select(id, Grade_exam, Grade_essay)
 ```
 
 * How many students have a grade for both the exam and the essay? `r fitb(nrow(completes))`
-:::
 
-::: {.callout-tip .activity}
 15. Now create a dataset `no_essay` that contains students that have a grade for the exam, but not the essay.
 
-```{r, webex.hide = TRUE}
+```{r}
+#| include: false
 no_essay <- anti_join(exam_grades, essay_grades, by = "id")
 ```
 
 *   How many students have a grade for the exam but not the essay? `r fitb(nrow(no_essay))`
-:::
 
-::: {.callout-tip .activity}
 16. Finally, now make a dataset `no_exam` that contains students have have a grade for the essay but not the exam
 
-```{r, webex.hide = TRUE}
+```{r}
+#| include: false
 no_exam <- anti_join(essay_grades, exam_grades, by = "id")
 ```
-:::
 
-::: {.callout-tip .activity}
 17.  How many students have a grade for the exam but not the essay? `r fitb(nrow(no_exam))`
+
 :::
 
 ## Glossary {#sec-glossary-joins}
@@ -790,7 +757,6 @@ glossary_table()
 # clean up temp datasets
 files <- c("data/avatar_na.csv", "data/family.csv")
 
-file.exists(files) %>%
-  `[`(files, .) %>%
+files[file.exists(files)] |>
   file.remove()
 ```

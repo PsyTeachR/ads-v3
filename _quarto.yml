@@ -91,7 +91,6 @@ format:
     toc-expand: 2
     html-table-processing: none
     code-link: true
-    code-fold: show
     code-line-numbers: true
     code-annotations: below
     #code-overflow: wrap
