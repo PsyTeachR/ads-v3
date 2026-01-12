@@ -346,7 +346,7 @@ sample(x = letters, size = 5)
 :::{.callout-note  collapse="true"}
 ## Why are my letters different to your letters?
 
-`sample()` generates a random sample. Each time you run the code, you'll generate a different set of random letters (try it). The function `set.seed()` controls the random number generator - if you're using any functions that use randomness (such as `sample()`), running `set.seed()` will ensure that you get the same result (in many cases this may not be what you want to do). To get the same numbers we do, run `set.seed(1242016)` in the console, and then run `sample(x = letters, size = 5)` again.
+`sample()` generates a random sample. Each time you run the code, you'll generate a different set of random letters (try it). The function `set.seed()` controls the random number generator - if you're using any functions that use randomness (such as `sample()`), running `set.seed()` will ensure that you get the same result (in many cases this may not be what you want to do). To get the same numbers we do, run `set.seed(8675309)` in the console, and then run `sample(x = letters, size = 5)` again.
 :::
 
 ::: {.callout-tip .activity}
