@@ -561,7 +561,7 @@ There are no solutions provided for the pair programming activities. Everything 
 ::: {.callout-tip .activity}
 
 1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often! The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
-1. Open RStudio, ensure the environment is clear, and restart R.
+1. Open RStudio, type `a <- 1` in the console pane, check that it is in the Environment pane,  restart R, and check that `a` has disappeared from the Environment pane. If not, figure out what setting to change so that the Environment is cleared when you restart R. 
 1. Increase the editor font size to 14.
 1. Open a new script and save it with the name `ads-week1-2.R`
 1. Which version of R do you have installed? This should be a number like x.x.x `r fitb("4.5.2")`. If the box turns green, you have the latest version.
