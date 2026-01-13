@@ -556,17 +556,19 @@ For each exercise, you'll work in a pair programming team. Pair programming is w
 
 You should work in short cycles (5-10 minutes or two or three tasks), then switch roles. You will likely feel a bit awkward doing this to begin with but you will quickly get used to it (we're going to to it every week).
 
-There are no solutions provided for the pair programming activities. Everything you need is in this chapter of the book so use the search function and work together to solve any problems.
+There are no solutions provided for the pair programming activities. Everything you need is in this book (or very easily Google-able) so use the search function and work together to solve any problems.
 
 ::: {.callout-tip .activity}
 
 1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often! The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
-2. Open RStudio, ensure the environment is clear, and restart R.
-3. Increase the editor font size to 14.
-4. Open a new script and save it with the name `ads-week1-2.R`
-5. Create a character object called `name` with the current Driver's name, an object called `today` that pulls the date from the computer system, an object called `ads_report` that contains the deadline of the final report for Applied Data Skills.
-6. Subtract today’s date from your target date and store it as a new object called `days_left.`
-7. Use `paste()` to combine your name and the number of days into a single sentence - add this to your script.
+1. Open RStudio, ensure the environment is clear, and restart R.
+1. Increase the editor font size to 14.
+1. Open a new script and save it with the name `ads-week1-2.R`
+1. Which version of R do you have installed? This should be a number like x.x.x `r fitb("4.5.2")`. If the box turns green, you have the latest version.
+1. Which version of RStudio do you have installed? This should be a number like xxxx.xx.x`r fitb("2026.01.0")`. If the box turns green, you have the latest version. 
+1. Create a character object called `name` with the current Driver's name, an object called `today` that pulls the date from the computer system, an object called `ads_report` that contains the deadline of the final report for Applied Data Skills.
+1. Subtract today’s date from your target date and store it as a new object called `days_left.`
+1. Use `paste()` to combine your name and the number of days into a single sentence - add this to your script.
 
 ```{r}
 #| eval: false
@@ -577,10 +579,10 @@ message <- paste("Hi", name,
                  "days until your report is due")
 ```
 
-8. Print the message. How many days are there until the final report is due? `r fitb(83)` (this answer will only be correct if you complete this exercise on the 13th January).
-9. Add in comments with any problems you encountered along the way, or anything you learned.
-10. Use `beep()` to play the Mario sound.
-11. Save the file and make sure you both have a copy (send it to the other person via Teams or OneDrive)
+10. Print the message. How many days are there until the final report is due? `r fitb(83)` (this answer will only be correct if you complete this exercise on the 13th January).
+11. Add in comments with any problems you encountered along the way, how you solved them (e.g., did you have to search for information), or anything you learned.
+12. Use `beep()` to play the Mario sound.
+13. Save the file and make sure you both have a copy (send it to the other person via Teams or OneDrive)
 :::
 
 
