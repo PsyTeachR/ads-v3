@@ -115,7 +115,7 @@ tidy |>
 -   How many observations are there in this dataset? `r fitb(8)`
 -   How many values are there in this dataset? `r fitb(40)`
 -   What is `year`? `r mcq(c(x = "Observation", answer = "Variable", x = "Value"))`
--   What is `3298`? `r mcq(c(x = "Observation", x = "Variable", answer = "Value"))`
+-   What is `2025`? `r mcq(c(x = "Observation", x = "Variable", answer = "Value"))`
 
 `r hide("Explain these answers")`
 
@@ -123,7 +123,7 @@ tidy |>
 -   There are 8 observations, one for each of 2 countries for each of 4 years.
 -   There are 40 values, one for each combination of the 8 observations (rows) and 5 variables (columns)
 -   `year` is a column name, also known as a variable
--   `3298` is a value because it is a single data point for one variable for one observation. 
+-   `2025` is a value because it is a single data point for one variable for one observation. 
 
 `r unhide()`
 :::
@@ -419,7 +419,7 @@ You can read the code above like this:
 1.  Read the data with `read_csv()`
 
     -   `file`: from the file at r path("data/untidy.csv")\`,
-    -   `show_col_types`: do not show the colukmn types message; 
+    -   `show_col_types`: do not show the column types message; 
     -    **and then**
 
 2.  Reshape the data longer with `pivot_longer()`
@@ -613,18 +613,30 @@ ggplot(by_region, aes(x = year, y = population, colour = region)) +
         )
 ```
 
+## Peer Coding Exercises
 
-## Exercises
+If you are enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.
 
-Let's try a couple of examples. 
+::: {.callout-tip .activity}
 
-* Save your current quarto file, close it, and open a new qmd named "Patient_survey".
-* Download a copy of [wide_exercise-1.csv](https://psyteachr.github.io/ads-v3/data/wide_exercise-1.csv){download} and [wide_exercise-2.csv](https://psyteachr.github.io/ads-v3/data/wide_exercise-2.csv){download} into your data folder.
-* In the set-up code chunk, load the <pkg>tidyverse</pkg> then load the two data files in using `read_csv()` and name the objects `wide1` and `wide2`
+**It's very unlikely that you will get through all of the exercises during the class time - just do as many as you can as a pair. However, given that reshaping data is one of the biggest conceptual leaps in ADS, it will be worth finishing them at home on your own (or you could continue as a pair after class, that would be great).**
 
-```{r, message = FALSE,  webex.hide = TRUE}
-library(tidyverse)
-wide1 <- read_csv("data/wide_exercise-1.csv")
+1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often. The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
+
+2. Open RStudio, ensure the environment is clear, and restart R.
+
+3. Create a new quarto document and save it as `ads-week8-pivot.qmd`
+
+4. Download a copy of [wide_exercise-1.csv](https://psyteachr.github.io/ads-v3/data/wide_exercise-1.csv){download} and [wide_exercise-2.csv](https://psyteachr.github.io/ads-v3/data/wide_exercise-2.csv){download} into your data folder.
+
+5. In the set-up code chunk, load the <pkg>tidyverse</pkg> then load the two data files in using `read_csv()` and name the objects `wide1` and `wide2`.
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse) 
+wide1 <- read_csv("data/wide_exercise-1.csv") 
 wide2 <- read_csv("data/wide_exercise-2.csv")
 ```
 
@@ -634,12 +646,12 @@ The two datasets represent simulated data from a patient satisfaction survey. We
 
 `wide1` has data from 50 patients who were asked five questions about their most recent experience at a health centre. The results from this questionnaire are typically reported as a single overall satisfaction score, which is calculated by taking the mean of the five responses. Additionally, the survey also records whether the patient was attending the clinic for the first time, or as a repeat patient. 
 
-* Use your method of choice to look at the dataset and familiarise yourself with its structure and data. 
+6. Use your method of choice to look at the dataset and familiarise yourself with its structure and data. The Navigator should describe, in words, what “tidy” should look like before you write any code.
 
 As noted, it's important to think through what your tidied data should look like. Often, the problem with data wrangling in R isn't actually the code, it's a lack of understanding of the data that's being worked on. 
 
-1. How many **variables** should the long-form version of `wide` have? `r fitb(4)`
-2. How many **observations** should the long-form version of `wide1` have? `r fitb(250)`
+* How many **variables** should the long-form version of `wide` have? `r fitb(4)`
+* How many **observations** should the long-form version of `wide1` have? `r fitb(250)`
 
 `r hide("Explain these answers")`
 
@@ -648,31 +660,33 @@ As noted, it's important to think through what your tidied data should look like
 
 `r unhide()`
 
-### Tidy 1
+7. Transform `wide1` to long-form using `pivot_longer()` and store it in an object named `tidy1`
 
-Transform `wide1` to long-form using `pivot_longer()` and store it in an object named `tidy1`
+```{r}
+#| echo: false
 
-```{r webex.hide = TRUE}
-tidy1 <- wide1 |>
-  pivot_longer(cols = q1:q5,
-               names_to = "question", 
-               values_to = "response")
+tidy1 <- wide1 |> pivot_longer(cols = q1:q5, 
+                               names_to = "question", 
+                               values_to = "response")
 ```
+
+
+8. Confirm you have 250 rows and that is one row per patient per question.
 
 
 ### Survey 2
 
 `wide2` also has data from 50 patients, however, there are now two measures included in the questionnaire. There are still five questions that relate to satisfaction, but there are also five questions that relate to whether the patient would recommend the medical practice to a friend. Both measures are typically reported by calculating an overall mean for each of the five items. 
 
-* Use your method of choice to look at the dataset and familiarise yourself with its structure and data. 
+9. Use your method of choice to look at the dataset and familiarise yourself with its structure and data.  The Navigator should describe, in words, what “tidy” should look like before you write any code.
 
-This is not as simple as the first exercise because there's actually two potential ways you might tidy this data, depending on what you want to do with it and how you conceptualise the two different measurements. It's important to recognise that many of your coding problems will not have just one solution.
+This is not as simple as the first exercise because there's two potential ways you might tidy this data, depending on what you want to do with it and how you conceptualise the different measurements. It's important to recognise that many of your coding problems will not have just one solution or approach which is why transparency is so vital.
 
 #### Tidy 2a
 
 For the first option, we're going to treat the "satisfaction" and "recommendation" measurements as two categories of the same variable. This will be a fully long-form data set with five variables `id`, `repeat_patient`, `question` (the question number), `category` (whether it's `sat` or `rec`), and `response` (the numerical rating). 
 
-* How many **observations** should the fully long-form version of `wide2` have? `r fitb(500)`
+10. How many **observations** should the fully long-form version of `wide2` have? `r fitb(500)`
 
 `r hide("Explain this answer")`
 
@@ -680,50 +694,25 @@ There will be 500 rows of data because each participant will have 10 rows: 5 for
 
 `r unhide()`
 
-Transform `wide2` to full long-form using `pivot_longer()` and store it in an object named `tidy2a`.
+11. Transform `wide2` to full long-form using `pivot_longer()` and store it in an object named `tidy2a`. This exercise requires multiple steps and you may need to look at the help documentation.
 
-This exercise requires multiple steps and you may need to look at the help documentation.
+```{r}
+#| echo: false
 
-`r hide("Hint 1")`
-
-`data |> pivot_longer() |> separate()`
-
-`r unhide()`
-
-`r hide("Hint 2")`
-
-`into  = c("col1", "col2")`
-
-`r unhide()`
-
-```{r webex.hide = TRUE}
-tidy2a <- wide2 |>
-  pivot_longer(cols = q1_sat:q5_rec,
-               names_to = "question", 
-               values_to = "response") |>
-  separate(col = "question", into = c("question", "category"))
-
+tidy2a <- wide2 |> pivot_longer(cols = q1_sat:q5_rec, 
+                                names_to = c("question", "category"), 
+                                names_sep = "_", values_to = "response")
 ```
 
 
-```{r webex.hide = "Alternative solution"}
-# combine pivot_longer and separate by setting two values for names_to
-# must include names_sep to determine how to separate the column names
-tidy2a <- wide2 |>
-  pivot_longer(cols = q1_sat:q5_rec,
-               names_to = c("question", "category"), 
-               names_sep = "_",
-               values_to = "response")
-
-```
 
 #### Tidy 2b
 
 The second option is to treat the satisfaction and recommendation scores as two distinct variables. This only makes sense if the satisfaction and recommendation scores for each question number are related to each other (e.g., q1 is about the same thing for both questions), making them part of the same observation.
 
-This version should also have five variables, but it won't be fully long-form, it'll be a slight mix of the two that we're going to call "semi-long". The variables in the semi-long version will be `id`, `repeat`, `question` (the question number), `sat` (the response for the satisfaction question), and `rec` (the response for the recommendation question). 
+This version should also have five variables, but it won't be fully tidy, it'll be a slight mix of the two that we're going to call "semi-tidy". The variables in the semi-tidy version will be `id`, `repeat`, `question` (the question number), `sat` (the response for the satisfaction question), and `rec` (the response for the recommendation question). 
 
-* How many **observations** should the semi-long version of `wide2` have? `r fitb(250)`
+12. How many **observations** should the semi-tidy version of `wide2` have? `r fitb(250)`
 
 `r hide("Explain this answer")`
 
@@ -731,55 +720,29 @@ There will be 250 rows of data because, just like `tidy1`, each participant will
 
 `r unhide()`
 
-This also takes multiple steps.
+13. Transform `wide2` to semi-tidy using `pivot_longer()` and store it in an object named `tidy2b`. This exercise requires multiple steps and you may need to look at the help documentation.
 
-`r hide("Hint 1")`
+```{r}
+#| echo: false
+
+tidy2b <- wide2 |> pivot_longer(cols = q1_sat:q5_rec, 
+                                names_to = "question", 
+                                values_to = "response") |> 
+  separate(col = "question", into = c("question", "category")) |> 
+  pivot_wider(names_from = "category", values_from = "response")
+```
+
+
+`r hide("Hint")`
 
 You can reuse the code from `tidy2a`, you just need to add on an extra line that makes the data slightly wider.
 
 `r unhide()`
 
-`r hide("Hint 2")`
+14. Using `summarise()`, calculate the mean score for each participant for both satisfaction and recommendation. Do this for both versions of the dataset so that you can see how the structure of the dataset changes the approach you need to take.
 
-`data |> pivot_longer() |> separate() |> pivot_wider()`
+14. Replicate the following scatterplot showing the relationship between satisfaction and recommendation scores, by whether the patient is a repeat patient.
 
-`r unhide()`
-
-```{r webex.hide = TRUE}
-tidy2b <- wide2 |>
-  pivot_longer(cols = q1_sat:q5_rec,
-               names_to = "question", 
-               values_to = "response") |>
-  separate(col = "question", into = c("question", "category")) |>
-  pivot_wider(names_from = "category", values_from = "response")
-```
-
-### Analysis and visualisation
-
-Using `summarise()`, calculate the mean score for each participant for both satisfaction and recommendation. Do this for both versions of the dataset so that you can see how the structure of the dataset changes the approach you need to take.
-
-```{r eval = FALSE, webex.hide = TRUE}
-tidy2a |>
-  summarise(mean = mean(response),
-            .by = c(id, category))
-
-tidy2b |>
-  summarise(mean_satisfaction = mean(sat),
-            mean_rec = mean(rec),
-            .by = id)
-```
-
-Replicate the following:
-
-#### Plot 1
-
-Scatterplot showing the relationship between satisfaction and recommendation scores, by whether the patient is a repeat patient.
-
-`r hide("Hint")`
-
-`geom_jitter()`
-
-`r unhide()`
 
 ```{r echo = FALSE, message=FALSE, warning=FALSE}
 ggplot(tidy2b, aes(x = sat, y = rec, colour = repeat_patient)) +
@@ -789,18 +752,7 @@ ggplot(tidy2b, aes(x = sat, y = rec, colour = repeat_patient)) +
   theme_classic()
 ```
 
-```{r webex.hide = TRUE, eval = FALSE}
-ggplot(tidy2b, aes(x = sat, y = rec, colour = repeat_patient)) +
-  geom_jitter() +
-  geom_smooth(method = "lm") +
-  labs(x = "Satisfaction score", y = "Recommendation score", title = "Satisfaction and recommendation scores") +
-  theme_classic()
-```
-
-
-#### Plot 2
-
-Boxplots showing satisfaction and recommends scores for new and repeat patients separately.
+15. Replicate the following boxplots showing satisfaction and recommends scores for new and repeat patients separately.
 
 ```{r echo = FALSE}
 ggplot(tidy2a, aes(x = repeat_patient, y = response, fill = repeat_patient)) +
@@ -810,17 +762,7 @@ ggplot(tidy2a, aes(x = repeat_patient, y = response, fill = repeat_patient)) +
   scale_fill_brewer(palette = "Dark2")
 ```
 
-```{r webex.hide = TRUE, eval = FALSE}
-ggplot(tidy2a, aes(x = repeat_patient, y = response, fill = repeat_patient)) +
-  geom_boxplot(show.legend = FALSE) +
-  facet_wrap(~category)+
-  theme_bw() +
-  scale_fill_brewer(palette = "Dark2")
-```
-
-#### Plot 3
-
-Histogram showing the distribution of all responses, across questions and categories.
+16. Replicate the following histogram showing the distribution of all responses, across questions and categories.
 
 ```{r echo = FALSE}
 ggplot(tidy2a, aes(x = response)) +
@@ -829,18 +771,7 @@ ggplot(tidy2a, aes(x = response)) +
   theme_bw()
 ```
 
-```{r webex.hide = TRUE, eval = FALSE}
-ggplot(tidy2a, aes(x = response)) +
-  geom_histogram(binwidth = 1, colour = "black", fill = "Grey") +
-  labs(x = "Responses across all questions and categories") +
-  theme_bw()
-```
-
-If your head hurts a bit at this point, rest assured it's absolutely normal. As we said at the start, reshaping and tidying data is a conceptual leap and there's no shortcut to the fact it just takes a bit of time and practice with different datasets - you will get there eventually!
-
-### Share on Teams
-
-Once you're done, share your rendered html file and the qmd file for the exercises on Teams in the Week 08 channel.
+:::
 
 ## Glossary {#sec-glossary-tidy}
 
