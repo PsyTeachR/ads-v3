@@ -606,10 +606,10 @@ You can set the `width` and `height` of your plot. The default units are inches,
 #| label: ggsave-example
 #| eval: false
 
-box <- ggplot(pip, aes(x = region, y = gini)) +
+box <- ggplot(pip, aes(x = region_name, y = gini)) +
   geom_boxplot()
 
-violin <- ggplot(pip, aes(x = region, y = gini)) +
+violin <- ggplot(pip, aes(x = region_name, y = gini)) +
   geom_violin()
 
 ggsave("violin_plot.png", width = 5, height = 7)
@@ -1387,7 +1387,7 @@ personality <- read_csv("https://psyteachr.github.io/ads-v3/data/personality_sco
 * `Op`: Openness
 * `Ex`: Extroversion
 
-5. Create a level 2 heading titled "Overview". Underneath this heading, write a short summary of what the data set contains (scores on a 5-factor personality questionnaire) and what each of the variables means (you can use the information from the [personality_scores.json](https://psyteachr.github.io/ads-v3/data/personality_scores.json) codebook).
+5. Create a level 2 heading titled "Overview". Underneath this heading, write a short summary of what the data set contains (scores on a 5-factor personality questionnaire) and what each of the variables means.
 
 6. Create a visualisation with an appropriate plot style for each question below:
 
