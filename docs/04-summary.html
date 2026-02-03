@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.21">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>4&nbsp; Data Summaries – Applied Data Skills</title>
 <style>
@@ -66,18 +66,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea06de1ba525ceca656e3b09b4cd3316.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8f2db377de619df7931067401f8d1149.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-4a2ccc64b761de15a5842074facec3cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0845fdd955b62895367064eb3a4079b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-4a2ccc64b761de15a5842074facec3cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -291,7 +292,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
         <div class="sidebar-tools-main">
@@ -562,7 +565,7 @@ Tip
 <li>Update the YAML header</li>
 <li>Replace the setup chunk with the one below</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
@@ -574,7 +577,7 @@ Tip
 <span id="cb1-10"><a href="#cb1-10"></a><span class="fu">library</span>(rio)           <span class="co"># importing and exporting many types of files</span></span>
 <span id="cb1-11"><a href="#cb1-11"></a><span class="fu">library</span>(skimr)         <span class="co"># summarising datasets</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a><span class="fu">library</span>(janitor)       <span class="co"># clean up data</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section><section id="sec-import-data" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="sec-import-data">
@@ -594,7 +597,7 @@ Tip
 <li>Download <a href="data/12.1_delivery.csv" download="">12.1_delivery.csv</a>), save it in your data folder, and then in a new code chunk, load in the data.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 97077 Columns: 9
 ── Column specification ────────────────────────────────────────────────────────
@@ -611,7 +614,7 @@ dbl (2): SIMDQuintile, Livebirths
 <p>When you load data with <code>read_csv()</code>, you get a quick summary that you should always check to see if the data were loaded correctly. One common problem is that data load with the the wrong type (see <a href="app-datatypes.html" class="quarto-xref"><span>Appendix D</span></a>), usually because a numeric column contains some unexpected text values. So the first thing to check is that each column has the expected data type. The abbreviation “chr” means this is a <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> column, which can contain any text. The abbreviation “dbl” is a <a href="https://psyteachr.github.io/glossary/d#double" target="_blank" class="glossary" title="A data type representing a real decimal number">double</a>, which is a number that can have decimal places.</p>
 <p>There are too many columns to show all of them in the summary, so it tells you to use the <code>spec()</code> function to check all the columns.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">spec</span>(births)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">spec</span>(births)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>cols(
   FinancialYear = col_character(),
@@ -629,7 +632,7 @@ dbl (2): SIMDQuintile, Livebirths
 <p>This gives you the info formatted inside the <code>cols()</code> function to make it easy for you to copy and edit this if any of the columns imported incorrectly.</p>
 <p>You can also use the <code>glimpse()</code> function to check the type of each column, and see a few examples of the cell values.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">glimpse</span>(births)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">glimpse</span>(births)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 97,077
 Columns: 9
@@ -662,7 +665,7 @@ Tip
 </div>
 <p>The column <code>SIMDQuintileQF</code> looks a little odd. We can quickly check what all the values are in a data table with the <code>count()</code> function:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">count</span>(births, SIMDQuintileQF)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">count</span>(births, SIMDQuintileQF)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -704,19 +707,19 @@ Tip
 <li>Amend the code so that the column we do not need is skipped on loading.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># edit the output of spec(births)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># edit the output of spec(births)</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>birth_cols <span class="ot">&lt;-</span> <span class="fu">cols</span>(</span>
 <span id="cb9-3"><a href="#cb9-3"></a>  <span class="at">SIMDQuintileQF =</span> <span class="fu">col_skip</span>()</span>
 <span id="cb9-4"><a href="#cb9-4"></a>)</span>
 <span id="cb9-5"><a href="#cb9-5"></a></span>
-<span id="cb9-6"><a href="#cb9-6"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>, <span class="at">col_types =</span> birth_cols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-6"><a href="#cb9-6"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>, <span class="at">col_types =</span> birth_cols)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 <p>There’s also additional edits you can make to the initial file, for example, you can set the order of levels for <a href="https://psyteachr.github.io/glossary/c#categorical" target="_blank" class="glossary" title="Data that can only take certain values, such as types of pet.">categorical</a> data when you first import it. This can be useful when you want to create plots as R will automatically order factors alphabetically but this might not be the most useful way to present your data. A very common option is to order your factor by importance or frequency of the groups.</p>
 <p>To check which groups our data has, we can use the <code>count()</code> function to check the level labels for <code>AgeGroup</code>, <code>Delivery</code> and <code>Induced</code>; and set <code>sort = TRUE</code> to sort by frequency.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">count</span>(births, AgeGroup)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">count</span>(births, AgeGroup)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -747,7 +750,7 @@ Tip
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">count</span>(births, Delivery, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">count</span>(births, Delivery, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -790,7 +793,7 @@ Tip
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">count</span>(births, Induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">count</span>(births, Induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -833,8 +836,8 @@ Caution
 <div class="code-with-filename-file">
 <pre><strong>Type in the console</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>delivery_table <span class="ot">&lt;-</span> <span class="fu">count</span>(births, Delivery, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="co"># make a table sorted by most frequent delivery</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">dput</span>(delivery_table<span class="sc">$</span>Delivery) <span class="co"># print the text from the variable Delivery in that order</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>delivery_table <span class="ot">&lt;-</span> <span class="fu">count</span>(births, Delivery, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="co"># make a table sorted by most frequent delivery</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">dput</span>(delivery_table<span class="sc">$</span>Delivery) <span class="co"># print the text from the variable Delivery in that order</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>c("Spontaneous", "Caesarean - Emergency", "Forceps", "Vacuum", 
@@ -857,7 +860,7 @@ Tip
 <li>Edit your birth_cols code to add the factor orders and then reload the dataset.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># edit the output of spec(births)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># edit the output of spec(births)</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>birth_cols <span class="ot">&lt;-</span> <span class="fu">cols</span>(</span>
 <span id="cb15-3"><a href="#cb15-3"></a>  <span class="at">SIMDQuintileQF =</span> <span class="fu">col_skip</span>(),</span>
 <span id="cb15-4"><a href="#cb15-4"></a>  <span class="at">AgeGroup =</span> <span class="fu">col_factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Under 25"</span>, <span class="st">"25-34"</span>, <span class="st">"35 and over"</span>,<span class="st">"Unknown"</span>)),</span>
@@ -871,7 +874,7 @@ Tip
 <span id="cb15-12"><a href="#cb15-12"></a>  <span class="at">Induced =</span> <span class="fu">col_factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Not Induced"</span>, <span class="st">"Induced"</span>, <span class="st">"Unknown"</span>))</span>
 <span id="cb15-13"><a href="#cb15-13"></a>)</span>
 <span id="cb15-14"><a href="#cb15-14"></a></span>
-<span id="cb15-15"><a href="#cb15-15"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>, <span class="at">col_types =</span> birth_cols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-15"><a href="#cb15-15"></a>births <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/12.1_delivery.csv"</span>, <span class="at">col_types =</span> birth_cols)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -893,9 +896,9 @@ Tip
 <li>Clean the names using <code>clean_names()</code> and then view the new names.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>births <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(births)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>births <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(births)</span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">colnames</span>(births)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">colnames</span>(births)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "financial_year" "ca"             "simd_quintile"  "simd_version"  
 [5] "age_group"      "delivery"       "induced"        "livebirths"    </code></pre>
@@ -970,12 +973,12 @@ Tip
 <p>We need to take a couple of brief detours to introduce some additional coding conventions. First, let’s introduce the <code>$</code> notation. You’ve already seen it but it’s worth explaining it explicityly.</p>
 <p>The dollar sign allows you to select items from some objects, like lists or data frames. The left-hand side is the object/table, and the right-hand side is the variable/column. Here, we will select columns from a table. When you call a column like this, R will return all the observations in that column.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>years <span class="ot">&lt;-</span> births<span class="sc">$</span>financial_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>years <span class="ot">&lt;-</span> births<span class="sc">$</span>financial_year</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If your item has multiple observations, you can specify which ones to return using square brackets <code>[]</code> and the row number or a <a href="https://psyteachr.github.io/glossary/v#vector" target="_blank" class="glossary" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.">vector</a> of row numbers.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>births<span class="sc">$</span>financial_year[<span class="dv">1</span>] <span class="co"># select the first observation</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>births<span class="sc">$</span>livebirths[<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>)] <span class="co"># select multiple with c()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>births<span class="sc">$</span>financial_year[<span class="dv">1</span>] <span class="co"># select the first observation</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>births<span class="sc">$</span>livebirths[<span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>)] <span class="co"># select multiple with c()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1997/98"
 [1]  2 42  3</code></pre>
@@ -990,7 +993,7 @@ Tip
 -->
 <p>Let’s say you want to filter the dataset down to just the emergency C-sections, and then sum up the total number of live births per year, and then arrange the data from largest to smallest (don’t worry, we’ll introduce these functions soon). You could do it by creating intermediate objects for each step:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># filter the table to just emergency c-sections</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># filter the table to just emergency c-sections</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>c_sections <span class="ot">&lt;-</span> <span class="fu">filter</span>(births, </span>
 <span id="cb21-3"><a href="#cb21-3"></a>                     delivery <span class="sc">==</span> <span class="st">"Caesarean - Emergency"</span>)</span>
 <span id="cb21-4"><a href="#cb21-4"></a></span>
@@ -1002,7 +1005,7 @@ Tip
 <span id="cb21-10"><a href="#cb21-10"></a><span class="co"># sort by n, descending</span></span>
 <span id="cb21-11"><a href="#cb21-11"></a>c_sorted <span class="ot">&lt;-</span> <span class="fu">arrange</span>(c_per_year, <span class="fu">desc</span>(n))</span>
 <span id="cb21-12"><a href="#cb21-12"></a></span>
-<span id="cb21-13"><a href="#cb21-13"></a><span class="fu">head</span>(c_sorted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-13"><a href="#cb21-13"></a><span class="fu">head</span>(c_sorted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1044,7 +1047,7 @@ Tip
 <p>Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before <code>|&gt;</code> to be an argument in the function after <code>|&gt;</code>. By default, this is the first argument, but we’ll show you ways to change that later.</p>
 <p>It can be useful to translate the pipe as “<strong>and then</strong>”. It’s easier to show than tell, so let’s look at an example.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>c_per_year <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span> <span class="co"># start with the dataset births and then</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>c_per_year <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span> <span class="co"># start with the dataset births and then</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>  </span>
 <span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">filter</span>(delivery <span class="sc">==</span> <span class="st">"Caesarean - Emergency"</span>) <span class="sc">|&gt;</span> <span class="co"># filter for delivery types and then</span></span>
 <span id="cb22-4"><a href="#cb22-4"></a>  </span>
@@ -1053,7 +1056,7 @@ Tip
 <span id="cb22-7"><a href="#cb22-7"></a>  </span>
 <span id="cb22-8"><a href="#cb22-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="co"># arrange the data by n</span></span>
 <span id="cb22-9"><a href="#cb22-9"></a></span>
-<span id="cb22-10"><a href="#cb22-10"></a><span class="fu">head</span>(c_per_year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-10"><a href="#cb22-10"></a><span class="fu">head</span>(c_per_year)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1123,7 +1126,7 @@ Tip
 <li>Count the number of deliveries by type of delivery.</li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">count</span>(births, delivery)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">count</span>(births, delivery)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1171,9 +1174,9 @@ Tip
 <p>You can add on a column with the numbers expressed in percent using the function <code>mutate()</code>. We’ll go into more detail on how to use <code>mutate()</code> in <a href="09-wrangle.html" class="quarto-xref"><span>Chapter 9</span></a>, but for now, it can be used to add new columns or overwrite existing columns.</p>
 <p>The code below divides the value in the <code>n</code> column by the total sum of the numbers in that column, and adds it to a new column called <code>percent</code>. The next step overwrites the percent column by multiplying it by 100 and rounding the value. You could do this all in one step, like <code>round(100 * n / sum(n))</code>, but often it’s clearer to break it into a few steps to avoid too many nested parentheses.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">|&gt;</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n),</span>
-<span id="cb24-3"><a href="#cb24-3"></a>         <span class="at">percent =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> percent))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-3"><a href="#cb24-3"></a>         <span class="at">percent =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> percent))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1225,7 +1228,7 @@ Tip
 </div>
 <p>We can also count combinations of columns by adding more arguments. The table below shows the number of rows per age group and induction status, sorted by the number of rows. We won’t add on percent just yet as the additional variable requires another function that we’ll come back to later.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">count</span>(births, age_group, induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">count</span>(births, age_group, induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1353,9 +1356,9 @@ Warning
 <div class="callout-body-container callout-body">
 <p>If you get the answer <code>NA</code> from a summary function, that usually means that there are missing values in the columns you were summarising. This may seem counter-intuitive but it is actually very logical if you consider that NA means “I don’t know the value of this cell” because the average of 1 + 2 + I don’t know isn’t 1.5, it’s “I don’t know”. We’ll discuss this more in <a href="09-wrangle.html#sec-missing-values" class="quarto-xref"><span>Section 9.4.2</span></a>, but you can ignore missing values for many functions by adding the argument <code>na.rm = TRUE</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">2</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">2</span>)</span>
 <span id="cb26-2"><a href="#cb26-2"></a><span class="fu">mean</span>(values) <span class="co"># is NA</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">mean</span>(values, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># removes NAs first</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">mean</span>(values, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># removes NAs first</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA
 [1] 2.4</code></pre>
@@ -1371,8 +1374,8 @@ Warning
 <li>The values of these columns are the result of the summary operation on the right hand-side.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">summarise</span>(births,</span>
-<span id="cb28-2"><a href="#cb28-2"></a>          <span class="at">total_births =</span> <span class="fu">sum</span>(livebirths))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">summarise</span>(births,</span>
+<span id="cb28-2"><a href="#cb28-2"></a>          <span class="at">total_births =</span> <span class="fu">sum</span>(livebirths))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1388,9 +1391,9 @@ Warning
 </div>
 <p>If you want to summarise by category, you can use the <code>.by</code> argument, as long as you have a version of dplyr that is 1.1.0 or above (if not, you can use the method in the next section).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">summarise</span>(births,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">summarise</span>(births,</span>
 <span id="cb29-2"><a href="#cb29-2"></a>          <span class="at">total_births =</span> <span class="fu">sum</span>(livebirths),</span>
-<span id="cb29-3"><a href="#cb29-3"></a>          <span class="at">.by =</span> delivery)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-3"><a href="#cb29-3"></a>          <span class="at">.by =</span> delivery)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1434,9 +1437,9 @@ Warning
 </div>
 <p>If you want to group by more than one column, use the <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> function to group the column names.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">summarise</span>(births,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">summarise</span>(births,</span>
 <span id="cb30-2"><a href="#cb30-2"></a>          <span class="at">total_births =</span> <span class="fu">sum</span>(livebirths),</span>
-<span id="cb30-3"><a href="#cb30-3"></a>          <span class="at">.by =</span> <span class="fu">c</span>(delivery, induced))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-3"><a href="#cb30-3"></a>          <span class="at">.by =</span> <span class="fu">c</span>(delivery, induced))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1561,10 +1564,10 @@ Warning
 <p>You can also create summary values by group using a combination of <code>group_by()</code> and <code>summarise()</code>. The function <code>group_by()</code> takes an existing data table and converts it into a grouped table, where any operations that are subsequently performed on it are done “by group”.</p>
 <p>It differs from the <code>.by</code> argument to <code>summarise()</code> in that it is persistent, so the table stays grouped until you explicitly remove the groups using the <code>ungroup()</code> functions, while the <code>.by</code> argument only applies to the function it is inside. Most of the code examples you’ll see use this style, since the <code>.by</code> argument is fairly new.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>births <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>births <span class="sc">|&gt;</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">group_by</span>(delivery) <span class="sc">|&gt;</span></span>
 <span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">summarise</span>(<span class="at">births =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">|&gt;</span></span>
-<span id="cb31-4"><a href="#cb31-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-4"><a href="#cb31-4"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1621,11 +1624,11 @@ Warning
 </div>
 <p>You might have noticed that the order of the table above is different from the order when using the <code>.by</code> argument of <code>summarise()</code>. This is because <code>group_by()</code> always sorts the values in the grouping columns in ascending order, while <code>.by</code> leaves them in the order they are first encountered in your data frame. Use the function <code>arrange()</code> to manually change order (see <a href="09-wrangle.html#sec-arrange" class="quarto-xref"><span>Section 9.3.5</span></a>).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>births <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>births <span class="sc">|&gt;</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">group_by</span>(delivery) <span class="sc">|&gt;</span></span>
 <span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">summarise</span>(<span class="at">births =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">|&gt;</span></span>
 <span id="cb32-4"><a href="#cb32-4"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(births)) <span class="co"># sort by number of births in descending order</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(births)) <span class="co"># sort by number of births in descending order</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1674,10 +1677,10 @@ Warning
 <li>Reverse the order of <code>delivery</code> and financial_year<code>in</code>group_by()` to see how it changes the output.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>births <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>births <span class="sc">|&gt;</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">group_by</span>(delivery, financial_year) <span class="sc">|&gt;</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">|&gt;</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1717,8 +1720,8 @@ Tip
 <p>Calculating percent by groups is a great example of the flexibility of <code>group_by()</code> but also why you have to be very careful and always check the output of your code.</p>
 <p>When we just had one variable to count, adding percent was nice and easy:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">|&gt;</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1770,9 +1773,9 @@ Tip
 </div>
 <p>With multiple variables, problems can arise if we use the exact same approach because by default, it will calculate the percent that each row contributes to the dataset as a whole (that is, all of the numbers in the percent column will add up to 100%). This might be what you want and this also provides a good time to introduce another helpful<code>janitor</code> function <code>adorn_totals()</code> which adds <code>row</code> or <code>col</code> totals to a table:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">count</span>(births, age_group, induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)<span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">count</span>(births, age_group, induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)<span class="sc">|&gt;</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)<span class="sc">|&gt;</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1862,11 +1865,11 @@ Tip
 </div>
 <p>However, it’s more likely that you would want to calculate percent by groups. For example, what percent of people in the Induced category were in which age group? Or what percent of 25-34 year olds were induced? To calculate these numbers, we add in a call to <code>group_by()</code>. The column of percent totals now looks a bit mad at 400% and 300% but it’s a useful sense check for how many groups the percentages are being calculated by:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># group by age, percentages within each age group will sum to 100</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># group by age, percentages within each age group will sum to 100</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a><span class="fu">count</span>(births, age_group, induced)<span class="sc">|&gt;</span> <span class="co">#age then induced</span></span>
 <span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">group_by</span>(age_group) <span class="sc">|&gt;</span></span>
 <span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)<span class="sc">|&gt;</span></span>
-<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1955,11 +1958,11 @@ Tip
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># group by induced, percentages within each induction group will sum to 100</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># group by induced, percentages within each induction group will sum to 100</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a><span class="fu">count</span>(births, induced, age_group)<span class="sc">|&gt;</span> <span class="co">#induced then age</span></span>
 <span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">group_by</span>(induced) <span class="sc">|&gt;</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)<span class="sc">|&gt;</span></span>
-<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -2049,7 +2052,7 @@ Tip
 </div>
 <p>If you have updated <pkg>dyplr</pkg> then you can also use the <code>.by</code> argument in <code>mutate()</code>:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># group by age, percentages within each age group will sum to 100</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># group by age, percentages within each age group will sum to 100</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="fu">count</span>(births, age_group, induced)<span class="sc">|&gt;</span> <span class="co">#age then induced</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>,</span>
 <span id="cb38-4"><a href="#cb38-4"></a>         <span class="at">.by =</span> age_group)<span class="sc">|&gt;</span></span>
@@ -2059,7 +2062,7 @@ Tip
 <span id="cb38-8"><a href="#cb38-8"></a><span class="fu">count</span>(births, induced, age_group)<span class="sc">|&gt;</span> <span class="co">#induced then age</span></span>
 <span id="cb38-9"><a href="#cb38-9"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>,</span>
 <span id="cb38-10"><a href="#cb38-10"></a>         <span class="at">.by =</span> induced)<span class="sc">|&gt;</span></span>
-<span id="cb38-11"><a href="#cb38-11"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-11"><a href="#cb38-11"></a>  <span class="fu">adorn_totals</span>(<span class="fu">c</span>(<span class="st">"row"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section></section><section id="additional-functions" class="level2" data-number="4.6"><h2 data-number="4.6" class="anchored" data-anchor-id="additional-functions">
 <span class="header-section-number">4.6</span> Additional Functions</h2>
@@ -2076,7 +2079,7 @@ Tip
 <li>filter your data to remove unknown ages and delivery types</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>births_per_year_type_age <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>births_per_year_type_age <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">str_extract</span>(financial_year, <span class="st">".{4}"</span>), <span class="co"># takes first four digits</span></span>
 <span id="cb39-3"><a href="#cb39-3"></a>         <span class="at">year =</span> <span class="fu">as.integer</span>(year)) <span class="sc">|&gt;</span> <span class="co"># transform to numeric</span></span>
 <span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">filter</span>(age_group <span class="sc">!=</span> <span class="st">"Unknown"</span>, <span class="co"># remove unknown</span></span>
@@ -2088,7 +2091,7 @@ Tip
 <span id="cb39-10"><a href="#cb39-10"></a>  </span>
 <span id="cb39-11"><a href="#cb39-11"></a></span>
 <span id="cb39-12"><a href="#cb39-12"></a><span class="co"># show just the first 6 rows</span></span>
-<span id="cb39-13"><a href="#cb39-13"></a><span class="fu">head</span>(births_per_year_type_age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-13"><a href="#cb39-13"></a><span class="fu">head</span>(births_per_year_type_age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -2164,7 +2167,7 @@ Tip
 </div>
 <p>Now you can use your skills from <a href="03-viz.html" class="quarto-xref"><span>Chapter 3</span></a> to plot the data! The code below has a few elements you haven’t seen before. For example, it adds a transparent horizontal line at 0, which is a trick to force all the y-axes to start at 0, but allows different scales per facet. It also angles the text in the x-axis.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>births_per_year_type_age  <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>births_per_year_type_age  <span class="sc">|&gt;</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> pcnt, <span class="at">color =</span> age_group)) <span class="sc">+</span></span>
 <span id="cb40-3"><a href="#cb40-3"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb40-4"><a href="#cb40-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>delivery, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
@@ -2172,7 +2175,7 @@ Tip
 <span id="cb40-6"><a href="#cb40-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, </span>
 <span id="cb40-7"><a href="#cb40-7"></a>       <span class="at">y =</span> <span class="st">"Percent of Live Births per Year"</span>,</span>
 <span id="cb40-8"><a href="#cb40-8"></a>       <span class="at">color =</span> <span class="st">"Age Group"</span>) <span class="sc">+</span></span>
-<span id="cb40-9"><a href="#cb40-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-9"><a href="#cb40-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-birth-year-type-age" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-birth-year-type-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

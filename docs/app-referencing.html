@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.21">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Appendix B — Referencing – Applied Data Skills</title>
 <style>
@@ -86,18 +86,19 @@ div.csl-indent {
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ea06de1ba525ceca656e3b09b4cd3316.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bef06593271c35acc66b6cdfb882565b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8f2db377de619df7931067401f8d1149.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-4a2ccc64b761de15a5842074facec3cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0845fdd955b62895367064eb3a4079b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-4a2ccc64b761de15a5842074facec3cb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -311,7 +312,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
         <div class="sidebar-tools-main">
@@ -515,13 +518,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </header><section id="sec-bibliography" class="level2" data-number="B.1"><h2 data-number="B.1" class="anchored" data-anchor-id="sec-bibliography">
 <span class="header-section-number">B.1</span> Bibliography</h2>
 <p>There are several ways to do in-text references and automatically generate a <a href="https://quarto.org/docs/authoring/citations.html">bibliography</a> in quarto. Quarto files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like <code>bibliography: refs.bib</code> and cite references in text using an at symbol and a shortname, like <code>[@tidyverse]</code>. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="an">format:</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co">  html:</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="co">    toc: true</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="an">bibliography:</span><span class="co"> refs.bib</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="converting-from-reference-software" class="level3" data-number="B.1.1"><h3 data-number="B.1.1" class="anchored" data-anchor-id="converting-from-reference-software">
 <span class="header-section-number">B.1.1</span> Converting from reference software</h3>
 <p>Most reference software like EndNote or Zotero has exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.</p>
@@ -563,7 +566,7 @@ Warning
 </div>
 </div>
 <p>The exported file should look like this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bib number-lines code-with-copy"><code class="sourceCode bibtex"><span id="cb2-1"><a href="#cb2-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bib number-lines code-with-copy"><code class="sourceCode bibtex"><span id="cb2-1"><a href="#cb2-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="va">@article</span>{<span class="ot">kathawalla_easing_2021</span>,</span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="dt">title</span> = {Easing {Into} {Open} {Science}: {A} {Guide} for {Graduate} {Students} and {Their} {Advisors}},</span>
 <span id="cb2-4"><a href="#cb2-4"></a>    <span class="dt">volume</span> = {7},</span>
@@ -579,7 +582,7 @@ Warning
 <span id="cb2-14"><a href="#cb2-14"></a>    <span class="dt">month</span> = <span class="st">jan</span>,</span>
 <span id="cb2-15"><a href="#cb2-15"></a>    <span class="dt">year</span> = {2021},</span>
 <span id="cb2-16"><a href="#cb2-16"></a>    <span class="dt">pages</span> = {18684},</span>
-<span id="cb2-17"><a href="#cb2-17"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-17"><a href="#cb2-17"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section><section id="creating-a-bibtex-file" class="level3" data-number="B.1.2"><h3 data-number="B.1.2" class="anchored" data-anchor-id="creating-a-bibtex-file">
 <span class="header-section-number">B.1.2</span> Creating a BibTeX File</h3>
 <p>You can also add references manually.</p>
@@ -603,7 +606,7 @@ Warning
 <p>See <a href="https://www.bibtex.com/g/bibtex-format/">A complete guide to the BibTeX format</a> for instructions on citing books, technical reports, and more.</p>
 <p>You can get the reference for an R package using the functions <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> and <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., “ggplot2”) before the first comma to refer to the reference.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">"ggplot2"</span>) <span class="sc">|&gt;</span> <span class="fu">toBibtex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">"ggplot2"</span>) <span class="sc">|&gt;</span> <span class="fu">toBibtex</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>@Book{,
   author = {Hadley Wickham},
@@ -627,10 +630,10 @@ Warning
 </section><section id="citations" class="level3" data-number="B.1.4"><h3 data-number="B.1.4" class="anchored" data-anchor-id="citations">
 <span class="header-section-number">B.1.4</span> Citing references</h3>
 <p>You can cite references in text like this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>This tutorial uses several R packages <span class="co">[</span><span class="ot">@tidyverse;@rmarkdown</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>This tutorial uses several R packages <span class="co">[</span><span class="ot">@tidyverse;@rmarkdown</span><span class="co">]</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This tutorial uses several R packages <span class="citation" data-cites="tidyverse rmarkdown">(<a href="app-referencing.html#ref-rmarkdown" role="doc-biblioref">Allaire et al., 2018</a>; <a href="app-referencing.html#ref-tidyverse" role="doc-biblioref">Wickham, 2017</a>)</span>.</p>
 <p>Put a minus in front of the @ if you just want the year:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a>Kathawalla and colleagues <span class="co">[</span><span class="ot">-@kathawalla_easing_2021</span><span class="co">]</span> explain how to introduce open research practices into your postgraduate studies.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a>Kathawalla and colleagues <span class="co">[</span><span class="ot">-@kathawalla_easing_2021</span><span class="co">]</span> explain how to introduce open research practices into your postgraduate studies.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Kathawalla and colleagues <span class="citation" data-cites="kathawalla_easing_2021">(<a href="app-referencing.html#ref-kathawalla_easing_2021" role="doc-biblioref">2021</a>)</span> explain how to introduce open research practices into your postgraduate studies.</p>
 </section><section id="uncited-references" class="level3" data-number="B.1.5"><h3 data-number="B.1.5" class="anchored" data-anchor-id="uncited-references">
 <span class="header-section-number">B.1.5</span> Uncited references</h3>
@@ -649,8 +652,8 @@ Warning
 </section><section id="reference-section" class="level3" data-number="B.1.7"><h3 data-number="B.1.7" class="anchored" data-anchor-id="reference-section">
 <span class="header-section-number">B.1.7</span> Reference Section</h3>
 <p>By default, the reference section is added to the end of the document. If you want to change the position (e.g., to add figures and tables after the references), include the following where you want the references:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a>::: {#refs}</span>
-<span id="cb10-2"><a href="#cb10-2"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a>::: {#refs}</span>
+<span id="cb10-2"><a href="#cb10-2"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="try">
 <p>Add in-text citations and a reference list to your report.</p>
 </div>

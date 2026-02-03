@@ -6,7 +6,7 @@ This chapter gives an overview the first assessment, the backwards engineering r
 
 ## Details and files
 
--   To get started, download this <a href="https://github.com/PsyTeachR/ads-v3/tree/master/data/backwards_report.zip" download>zip file</a> which contains the data files and the finished html report that you need to backwards engineer from the data. 
+-   To get started, download this <a href="data/backwards_report.zip" download>zip file</a> which contains the data files and the finished html report that you need to backwards engineer from the data. 
 
 -   There are multiple ways to achieve the same outcome when coding. You do not have to use the same solutions that we did; what matters is that the output is the same and that it is reproducible.
 

@@ -1,0 +1,181 @@
+---
+title: "ads-week4-1"
+format: html
+editor: source
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# packages needed for this chapter
+library(tidyverse)     # loads readr for importing data
+                       #   and tibble for creating tables
+library(readxl)        # importing excel files
+library(jsonlite)      # importing JSON files
+library(rio)           # importing and exporting many types of files
+library(skimr)         # summarising datasets
+library(janitor)       # clean up data
+```
+
+
+```{r}
+count(births, SIMDQuintileQF)
+```
+
+```{r}
+birth_cols <- cols(SIMDQuintileQF = col_skip(),
+                   AgeGroup = col_factor(levels = c("Under 25", "25-34", "35 and over","Unknown")),
+                   Delivery = col_factor(levels = c("Spontaneous", 
+                                   "Caesarean - Emergency", 
+                                   "Forceps", 
+                                   "Vacuum", 
+                                   "Caesarean - Elective", 
+                                   "Breech", 
+                                   "Not Known")),
+                   Induced = col_factor(levels = c("Not Induced", "Induced", "Unknown")))
+
+births <- read_csv("data/12.1_delivery.csv", col_types = birth_cols)
+
+glimpse(births)
+```
+
+```{r}
+count(births, AgeGroup)
+count(births, Delivery, sort = TRUE)
+count(births, Induced, sort = TRUE)
+```
+
+```{r}
+births <- clean_names(births)
+
+colnames(births)
+```
+
+```{r}
+years <- births$financial_year
+births$financial_year[1]
+births$livebirths[c(20,30,40)]
+```
+
+```{r}
+# emergency c-sections
+# creating object with only desired column
+c_sections <- filter(births,
+                     delivery == "Caesarean - Emergency")
+# total births per year stored in another object
+c_per_year <- summarise(c_sections,
+                        n = sum(livebirths),
+                        .by = financial_year)
+# arrange data appropriately in another object
+c_sorted <- arrange(c_per_year, desc(n))
+
+head(c_sorted)
+```
+
+```{r}
+# utilising the pipe to perform same action
+c_per_year <- births %>% 
+  filter(delivery == "Caesarean - Emergency") %>% 
+  summarise(n = sum(livebirths),
+            .by = financial_year) %>% 
+  arrange(desc(n))
+
+head(c_per_year)
+```
+
+```{r}
+count(births, delivery) %>% 
+  mutate(percent = n / sum(n),
+         percent = round(100 * percent))
+```
+
+```{r}
+count(births, delivery) %>% 
+  mutate(percent = round(n / sum(n) *100,0))
+```
+```{r}
+# counting combinations of columns
+count(births, age_group, induced, sort = TRUE)
+```
+
+```{r}
+values <- c(1, 2, 4, 3, NA, 2)
+mean(values)
+mean(values, na.rm = TRUE)
+```
+
+```{r}
+summarise(births,
+          total_births = sum(livebirths),
+          .by = c(delivery, induced))
+```
+```{r}
+glimpse(births)
+```
+
+```{r}
+# no. of births per age group
+count(births, livebirths,
+      .by = age_group)
+```
+
+```{r}
+summarise(births,
+          total_births = sum(livebirths),
+          .by = age_group)
+```
+
+```{r}
+test <- births %>% 
+  group_by(delivery, induced) %>% 
+  summarise(total_births = sum(livebirths)) %>% 
+  adorn_totals(c("row"))
+```
+
+```{r}
+summarise(births,
+          total_births = sum(livebirths))
+```
+
+```{r}
+births_per_year_type_age <- births |>
+  mutate(year = str_extract(financial_year, ".{4}"), # takes first four digits
+         year = as.integer(year)) |> # transform to numeric
+  filter(age_group != "Unknown", # remove unknown
+         delivery != "Not Known") |>
+    group_by(year, delivery, age_group) %>%
+  summarise(n = sum(livebirths))|>
+  ungroup() %>% 
+  group_by(year, age_group) %>%
+  mutate(pcnt = n / sum(n) * 100)
+  
+
+# show just the first 6 rows
+head(births_per_year_type_age)
+```
+
+```{r}
+births_per_year_type_age <- births |>
+  mutate(year = str_extract(financial_year, ".{4}"), # takes first four digits
+         year = as.integer(year)) |> # transform to numeric
+  filter(age_group != "Unknown", # remove unknown
+         delivery != "Not Known") |> # remove not known
+  summarise(n = sum(livebirths),
+            .by = c(year, delivery, age_group)) |>
+  mutate(pcnt = n / sum(n) * 100, 
+         .by = c(year, age_group))
+  
+
+# show just the first 6 rows
+head(births_per_year_type_age)
+```
+
+```{r}
+
+```
+
+
+
+
+
