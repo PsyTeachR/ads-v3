@@ -520,7 +520,7 @@ base::setdiff(patients, new_patients)
 
 1. You have a dataset with one row per patient (patients) and a separate table with model predictions in the same row order (preds), with no shared identifier. You want to add the prediction column to the patients dataset. Which should you use?
 
-`r mcq(c(answer = "union", "bind_rows", "bind_cols", answer = "setdiff"))`
+`r mcq(c("union", "bind_rows", answer = "bind_cols", answer = "setdiff"))`
 
 `r hide("Explain this answer")`
 `bind_cols()` adds columns side by side, which is the right choice when patients and preds have the same number of rows and are already aligned in the same row order. Because there is no shared identifier to join on, a join would be inappropriate and could silently misalign records if the order differs.
