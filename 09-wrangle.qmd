@@ -872,7 +872,7 @@ Checkpoint 2:
 * `count(sdg_focus, entity)` returns five rows.
 * The earliest year in `sdg_focus` is 2000 (or later).
 
-### Task 3: Summarise the latest available values
+### Task 3
 
 Michael only cares about “the latest number” for each indicator and country.
 
@@ -900,7 +900,7 @@ Two common approaches:
 
 `r unhide()`
 
-### Task 4: Make it “Michael-ready” (Checkpoint 4)
+### Task 4
 
 Michael wants a single table with one row per country and one column per indicator.
 
@@ -924,7 +924,7 @@ Checkpoint 4 (swap roles):
 * `sdg_dashboard` has 5 rows and 4 columns.
 * The indicator columns are numeric.
 
-### Task 5: Briefing notes for Dwight (standard extension)
+### Task 5
 
 Dwight wants “a ranking” to show who is doing best.
 
