@@ -17,16 +17,23 @@ library(janitor)    # data table cleaning
 ## Functions used {#functions-wrangle}
 
 * built-in (you can always use these without loading any packages)
-    * base:: `round()`, `mean()`, `min()`, `max()`, ``sum()`, `as.character()`, `as.numeric()`
-    * stats:: `median()`
-    * utils:: `head()`, `packageVersion()`
+  * base:: `round()`, `mean()`, `min()`, `max()`, `sum()`, `paste0()`, `as.character()`, `as.numeric()`, `factor()`, `tolower()`, `toupper()`
+  * stats:: `median()`
+  * utils:: `head()`, `packageVersion()`
+
 * tidyverse (you can use all these with `library(tidyverse)`)
-    * readr:: `read_csv()`
-    * dplyr:: `count()`, `filter()`, `arrange()`, `mutate()`, `summarise()`, `group_by()`, `ungroup()`, `case_when()`, `na_if()`, `across()`
-    * tidyselect:: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, `all_of()`, `any_of()`, `everything()`, `where()`
+  * readr:: `read_csv()`
+  * tibble:: `tibble()`
+  * dplyr:: `count()`, `filter()`, `arrange()`, `mutate()`, `summarise()`, `group_by()`, `ungroup()`, `rename()`, `relocate()`, `slice_max()`, `bind_rows()`, `drop_na()`, `case_when()`, `na_if()`, `across()`, `row_number()`, `min_rank()`
+  * tidyr:: `pivot_wider()`
+  * stringr:: `str_detect()`
+  * tidyselect:: `starts_with()`, `ends_with()`, `contains()`, `matches()`, `num_range()`, `all_of()`, `any_of()`, `everything()`, `where()`
+
 * other (you need to load each package to use these)
-    * readxl:: `read_xlsx()`
-    * janitor:: `clean_names()`, `round_half_up()`
+  * readxl:: `read_xlsx()`
+  * janitor:: `clean_names()`, `round_half_up()`
+
+
 
 ## Set-up {#sec-setup-wrangle}
 
@@ -54,7 +61,7 @@ library(janitor)   # clean up data tables
 :::
 
 ::: {.callout-warning}
-At this point in ADS it's very likely you will have the most recent version of the <pkg>tidyverse</pkg> packages but just in case, be aware that the function `case_when()` that we will use in this chapter was updated in to introduce new arguments and ways of handling `NA`. The code we provide in this chapter will only work if you have v1.1.0 or above of <pkg>dplyr</pkg> installed. To check run `packageVersion("dplyr")` and if it's below 1.1.0, install it again to update.
+At this point in ADS it's very likely you will have the most recent version of the <pkg>tidyverse</pkg> packages but just in case, be aware that the function `case_when()` that we will use in this chapter was updated to introduce new arguments and ways of handling `NA`. The code we provide in this chapter will only work if you have v1.1.0 or above of <pkg>dplyr</pkg> installed. To check run `packageVersion("dplyr")` and if it's below 1.1.0, install it again to update.
 :::
 
 ## Wrangling functions
@@ -71,15 +78,20 @@ It's worth highlighting that in this chapter we're going to cover these common f
 
 We'll use data from the United Nations [SDG Indicators Database](https://unstats.un.org/sdgs/dataportal/database) on sustainable development goal 11.2.1: Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities. You can access [metadata about this data](https://unstats.un.org/sdgs/metadata/files/Metadata-11-02-01.pdf) to find out more.
 
+::: {.callout-tip .activity}
+
+Load the data into an object:
+
 ```{r}
 transport <- readxl::read_xlsx("data/SDG-11.2.1.xlsx")  |>
   janitor::clean_names()
 ```
 
+:::
 
 ### Explore
 
-After you load the data, use `glimpse(budget)` or `View(transport)` to get familiar with the data.
+After you load the data, use `glimpse(transport)` or `View(transport)` to get familiar with the data.
 
 ```{r}
 #| echo: false
@@ -98,6 +110,14 @@ It looks like most of the data is for all ages and both sexes, so if we want to 
 ::: {.callout-tip .activity}
 Use `count()` (or other functions) to figure out how many years and how many countries are represented in the data.
 
+
+`r hide("Hint")`
+
+`|> nrow()`
+`|> unique() |> length()`
+
+`r unhide()`
+
 ```{r}
 #| webex.hide: true
 
@@ -108,36 +128,17 @@ n_years <- transport$time_period |> unique() |> length()
 
 :::
 
-There are also several columns that seem to have no data, but sometimes there are important values later in the dataset. We can use count to confirm that these columns are entirely NAs.
+There are also several columns that seem to have no data from the glimpse. We can use count to confirm that these columns are entirely NAs - for example, if we count the column `time_coverage` we can see that all 2473 values are `NA`.
+
+```{r}
+count(transport, time_coverage)
+```
+
+Other columns seem to have the exact same value for all rows. For example, all 2473 values of `goal` are equal to `11`.
 
 ```{r}
 count(transport, goal)
-count(transport, target)
-count(transport, indicator)
-count(transport, series_code)
-count(transport, series_description)
-count(transport, reporting_type)
-count(transport, units)
 ```
-
-
-:::{.callout-tip .activity}
-Other columns seems to have the exact same value for all rows. Double check this.
-
-
-```{r}
-#| webex.hide: true
-#| eval: false
-count(transport, time_coverage)
-count(transport, upper_bound) 
-count(transport, lower_bound) 
-count(transport, base_period)
-count(transport, geo_info_url) 
-count(transport, custom_breakdown)
-```
-
-:::
-
 
 ### Select
 
@@ -149,10 +150,10 @@ You can select columns by name or number (which is sometimes referred to as the 
 
 ```{r}
 # select single column by name
-value <- transport |> select(value) 
+value_col <- transport |> select(value) 
 
 # select single column by number
-value <- transport |> select(9) 
+value_col <- transport |> select(9) 
 ```
 
 You can select each column individually, separated by commas (e.g., `age, sex`) but you can also select all columns from one to another by separating them with a colon (e.g., `goal:value`).
@@ -247,7 +248,7 @@ transport_clean <- transport |>
 ::: {.callout-tip collapse=true}
 
 There is a way to do this without having to type in all of the column names, but rather use functions to determine which columns have only one value and get a
-vector of their names. This is probaly overkill for small tables, but invaluable if you have a table with hundreds of columns, or you need to do this to many different tables.
+vector of their names. This is probably overkill for small tables, but invaluable if you have a table with hundreds of columns, or you need to do this to many different tables.
 
 ```{r}
 n_values <- transport |> 
@@ -260,7 +261,6 @@ one_val_cols <- one_val[, one_val] |>  # <5>
   names()                              # <6>
 ```
 
-1. Use `across()` to apply a function to several columns
 2. Use `everything()` to select all columns
 3. Create an anonymous function (`\(col)`) that makes a vector of the unique values for each column and returns its length
 4. Check which values are equal to 1
@@ -286,7 +286,7 @@ a4 <- setNames(a, c("x", "x", "x", "answer")) |> longmcq()
 
 
 ::: {.callout-tip .activity}
-What are the resulting columns for these four examples?
+What are the resulting columns for these four examples? Try and guess the answer from the code without looking at the output (but then use the output to check your answer if you get it wrong)
 
 * `transport |> select(contains("_area_"))`
     `r a3`
@@ -301,7 +301,7 @@ What are the resulting columns for these four examples?
 
 ### Rename and relocate
 
-Whist you can rename and reorder columns using `select()`, sometimes it is easier to use the `rename()` and `relocate()` functions.
+Whilst you can rename and reorder columns using `select()`, sometimes it is easier to use the `rename()` and `relocate()` functions.
 
 ```{r}
 transport_clean <- transport |>
@@ -321,7 +321,7 @@ Whilst `select()` chooses the columns you want to retain, `filter()` chooses the
 You can filter by a single criterion. This criterion can be rows where a certain column's value matches a character value (e.g., "North") or a number (e.g., 9003). It can also be the result of a logical equation (e.g., keep all rows with a specific column value larger than a certain value). The criterion is checked for each row, and if the result is FALSE, the row is removed. You can reverse equations by specifying `!=` where `!` means "not".
 
 ```{r}
-#| label: filter-examaple
+#| label: filter-example
 #| eval: false
 
 # select all rows where country is Togo
@@ -343,14 +343,14 @@ Remember to use `==` and not `=` to check if two things are equivalent. A single
 
 
 ```{r filter-mcq, echo = FALSE}
-class <- tibble(id = 1:4, 
+class_tbl <- tibble(id = 1:4, 
                grade = c("A", "A", "C", "B"),
                score = c(95, 91, 76, 84)
                )
-x1 <- which(class$grade == "A")
-x2 <- which(class$score == 91)
-x3 <- which(class$score < 80)
-x4 <- which(class$grade != "A")
+x1 <- which(class_tbl$grade == "A")
+x2 <- which(class_tbl$score == 91)
+x3 <- which(class_tbl$score < 80)
+x4 <- which(class_tbl$grade != "A")
 
 a <- list(x1, x2, x3, x4) |>
   sapply(paste, collapse = ", ")
@@ -369,13 +369,13 @@ Which IDs are kept from the table below?
 class
 ```
 
-* `filter(demo, score < 80)`
+* `filter(class_tbl, score < 80)`
     `r a3`
-* `filter(demo, grade == "A")`
+* `filter(class_tbl, grade == "A")`
     `r a1`
-* `filter(demo, grade != "A")`
+* `filter(class_tbl, grade != "A")`
     `r a4`
-* `filter(demo, score == 91)`
+* `filter(class_tbl, score == 91)`
     `r a2`
     
 
@@ -430,7 +430,7 @@ no_islands <- transport_clean |>
 `A != B`   |not equal 	          |A does not exactly equal B
 `A %in% B` |in 	                  |A is an element of vector B
 
-Finally, you can also pass many other functions to filter. For example, the package <pkg>stringr</pkg> that is loaded as part of the <pkg>tidyverse</pkg> contains many different functions for working with `r glossary("string", "strings")` (character data). For example, you you use `str_detect()` to only retain rows where the country contains the word "Island".
+Finally, you can also pass many other functions to filter. For example, the package <pkg>stringr</pkg> that is loaded as part of the <pkg>tidyverse</pkg> contains many different functions for working with `r glossary("string", "strings")` (character data). For example, you use `str_detect()` to only retain rows where the country contains the word "Island".
 
 ```{r}
 transport_clean |>
@@ -457,7 +457,7 @@ What check would you do to make sure the filtering above worked as intended?
 
 ```{r}
 #| webex.hide: true
-# this should produce only two row, 
+# this should produce only two rows, 
 # with MALE and FEMALE as sex 
 # and ALLAGE as age
 count(transport_filtered, sex, age)
@@ -540,7 +540,7 @@ transport_data <- transport_factor |>
 
 ```
 
-The `case_when()` function allows allows you to set multiple criteria, although we're only using one non-default criterion here. It can be very useful, but takes a little practice.
+The `case_when()` function allows you to set multiple criteria, although we're only using one non-default criterion here. It can be very useful, but takes a little practice.
 
 You can also use `case_when()` to combine different criteria:
 
@@ -574,63 +574,56 @@ Just like `filter()`, `mutate()` is incredibly powerful and the scope of what yo
 
 ### Summarise {#sec-dplyr-summarise}
 
-You were introduced to the `summarise()` function in @sec-summary-summarise. This applies summary functions to an entire table (or groups, as you'll see in the next section).
+You were introduced to `summarise()` in @sec-summary-summarise. Chapter 9 uses it as part of a wider wrangling workflow rather than re-teaching it.
 
-Let's say we want to 
+Key points to remember:
 
-```{r}
-transport_data |>
-  summarise(mean = mean(value),
-            min = min(value), 
-            max = max(value))
-```
+- `summarise()` returns a new table. Without groups, it returns one row. With groups, it returns one row per group.
+- Name your summaries on the left (for example, `mean = mean(value)`), so the output columns are readable.
+- Missing values propagate unless you handle them (for example, `mean(value, na.rm = TRUE)`).
 
-
-
-### Group By {#sec-dplyr-groupby}
-
-You were introduced to the `group_by()` function in @sec-grouping. For example, you can break down the summary statistics above by sex
-
-```{r}
-transport_data |>
-  group_by(sex) |>
-  summarise(
-    mean = mean(value),
-    min = min(value), 
-    max = max(value)
-  ) |>
-  ungroup()
-```
-
-Newer code tends to use this format, however, if you just need to group the data for one function, you can use `.by`.
+Example (overall summary):
 
 ```{r}
 transport_data |>
   summarise(
-    .by = sex,
-    mean = mean(value),
-    min = min(value), 
-    max = max(value)
+    mean = mean(value, na.rm = TRUE),
+    min  = min(value, na.rm = TRUE),
+    max  = max(value, na.rm = TRUE)
   )
 ```
 
-::: {.callout-tip}
-Functions that let you create your own argument names, like `mutate()` and `summarise`, usually have all their other arguments start with `.` so you can create new columns with names like "data" or "by". See what happens if you accidentally use `by` instead of `.by`.
+### Group By {#sec-dplyr-groupby}
+
+You were introduced to grouping in @sec-grouping (and used it with summarise() in Chapter 4). Here is the reminder version.
+
+Key points to remember:
+
+* Use group_by() when you want grouping to persist across multiple steps in a pipeline.
+* Use .by = ... inside a single function call (for example, summarise(.by = ...)) when you only need grouping for that one operation.
+* If you use group_by(), ungroup() once you are done, unless you intentionally want subsequent steps to stay grouped.
+* .by is not the same as by. by = ... will be treated as a new column name, not a grouping instruction.
 
 ```{r}
-#| warning: false
-
+# One-off grouping (recommended when you only need grouping once)
 transport_data |>
   summarise(
-    by = sex,
-    mean = mean(value),
-    min = min(value), 
-    max = max(value)
-  ) |> head()
+    .by  = sex,
+    mean = mean(value, na.rm = TRUE),
+    min  = min(value, na.rm = TRUE),
+    max  = max(value, na.rm = TRUE)
+  )
+
+# Persistent grouping (useful when you want several grouped operations)
+transport_data |>
+  group_by(sex) |>
+  summarise(max = max(value, na.rm = TRUE)) |>
+  ungroup()
+
 ```
 
-:::
 
+Examples:
 
 ::: {.callout-tip .activity}
 How would you find out the maximum value for each country, separately by sex?
@@ -653,7 +646,7 @@ transport_data |>
   slice_max(n = 2, order_by = value)
 ```
 
-But this can be combined with `group_by()` to return the top sales for each region:
+But this can be combined with `by` to return the top values for each sex:
 
 ```{r}
 # return top 2 values per sex
@@ -674,7 +667,7 @@ transport_data |>
   select(value, pcnt)
 ```
 
-If you look at the values above, you can see that the first three round up fro .5, and the last rounds down. What's going on!?
+If you look at the values above, you can see that the first three round up from .5, and the last rounds down. What's going on!?
 
 This may seem like a mistake, but R rounds .5 to the nearest even number, rather than always up, like you were probably taught in school. This prevents overestimation biases, since x.5 is *exactly* halfway between x and x+1, so there is no reason it should always round up.
 
@@ -700,14 +693,12 @@ However, we often don't have control over how the data come to us, so let's run 
 
 #### Bad missing values
 
-What if the South region hadn't returned their expenses (entered as 0) and the North region hadn't returned their sales data for 2020 yet, so someone entered it as "missing"?  
-
-First, we're going to recode the data to add in the missing values. We can use `case_when()` to set the `value` to "missing" if the year is 2000 and country is "Uzbekistan", otherwise use the original value. You can't combine number and character data types in the same column, so you need to convert the default value into a character (thi is your first sign that this isn't a good idea).
+First, we're going to recode the data to add in the missing values. We can use `case_when()` to set the `value` to "missing" if the year is 2000 and country is "Uzbekistan", otherwise use the original value. You can't combine number and character data types in the same column, so you need to convert the default value into a character (this is your first sign that this isn't a good idea).
 
 ```{r}
 missing_bad <- transport_data |>
   mutate(value = case_when(
-    # set to 0 when year is 2000 and country is Uzbekistan
+    # set to missing when year is 2000 and country is Uzbekistan
     year == 2000 & country == "Uzbekistan" ~ "missing", 
     # otherwise, set to the existing value
     .default = as.character(value)
@@ -750,7 +741,7 @@ missing_data |>
 
 #### Ignore missing values
 
-This is because `NA` basically means "I don't know", and the sum of 100 and "I don't know" is "I don't know", not 100. However, when you're calculating means, you often want to just ignore missing values. Set `na.rm = TRUE` in the summary function to remove missing values before calculating.
+The reason that `summarise()` returns `NA` even if there's a single missing value is because `NA` basically means "I don't know", and the sum of 100 and "I don't know" is "I don't know", not 100. However, when you're calculating means, you often want to just ignore missing values. Set `na.rm = TRUE` in the summary function to remove missing values before calculating.
 
 ```{r}
 missing_data |>
@@ -795,185 +786,165 @@ If you use `drop_na()` without specifying columns, make absolutely sure that is 
 
 Missing data can be quite difficult to deal with depending on how it is represented. As always, no amount of coding expertise can make up for not understanding the structure and idiosyncrasies of your data. 
 
-## Exercises {#sec-together-wrangle}
+## Peer Coding Exercises {#sec-together-wrangle}
 
-Let's try some exercises using a dataset with simulated survey data so that you can see how much more you're able to do with the data now.
+If you are enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.
 
-* Save your current Markdown, close it, and open a new qmd named "survey_data_mad_skillz".
-* In the set-up code chunk, load the tidyverse, then load the dataset from https://psyteachr.github.io/ads-v2/data/survey_data.csv into an object named `survey_data`.
-* Use your method of choice to review the dataset and familiarise yourself with its structure.
+::: {.callout-tip .activity}
 
-```{r webex.hide = TRUE}
-# from https://www.kaggle.com/kyanyoga/sample-sales-data
+Scenario: Michael has decided that Dunder Mifflin needs an “SDG progress dashboard” for a corporate visit. Dwight has volunteered you to build it, using publicly available data.
+
+
+1. Decide who is going to start as the Driver and Navigator. Remember to switch every so often. The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.
+
+2. Open RStudio, ensure the environment is clear, and restart R.
+
+3. Create a new quarto document and save it as `ads-week9-wrangle.qmd`
+
+4. In the set-up chunk, load the tidyverse and janitor then load the three datasets below from Our World in Data (OWID). These map loosely onto:
+   - SDG 7 (Affordable and Clean Energy): renewables share; access to electricity
+   - SDG 13 (Climate Action): CO₂ emissions per capita
+
+```{r}
+#| message: false
+#| warning: false
+
+
 library(tidyverse)
-survey_data <- read_csv("https://psyteachr.github.io/ads-v2/data/survey_data.csv")
+library(janitor)
 
+renewables <- read_csv("https://ourworldindata.org/grapher/share-electricity-renewables.csv")
+electricity_access <- read_csv("https://ourworldindata.org/grapher/share-of-the-population-with-access-to-electricity.csv")
+co2_pc <- read_csv("https://ourworldindata.org/grapher/co-emissions-per-capita.csv")
 ```
 
-### Creating new categories
+5. Use your method of choice to inspect each dataset (`glimpse()`, `summary()`, `str()`), and confirm the column names and types.
 
-Employees 1-5 were trained by Michael and employees 6-10 were trained by Dwight. 
+### Task 1
 
-* Create a new column named `trainer` that lists the trainer for each employee.
-* Then, calculate the average satisfaction scores for employees trained by each trainer and visualise the satisfaction scores for each in whatever way you think best.
+Goal: combine the three indicators into one long (“tidy”) dataset with a consistent structure.
 
-` r hide("Hint")`
-To add the trainer column you can use `case_when()` and specify multiple criteria (e.g., if the employee is 1-5, Michael, if the employee is 6-10 Dwight)
-` r unhide()`
+6. For each dataset:
 
-```{r webex.hide = TRUE}
-# case_when() method
-survey_data <- survey_data |>
-  mutate(trainer = case_when(
-    employee_id %in% c("E01", "E02", "E03", "E04", "E05") ~ "Michael",
-    employee_id %in% c("E06", "E07", "E08", "E09", "E10") ~ "Dwight")
-  )
+   * clean the column names with `clean_names()`
+   * rename the value column to `value`
+   * add a column called `indicator` with one of:
 
-# mean satisfaction scores
-survey_data |>
-  summarise(.by = trainer,
-            mean_satisfaction = mean(satisfaction))
+     * `"renewables_share_electricity"`
+     * `"access_to_electricity"`
+     * `"co2_per_capita"`
 
-# possible visualisation 
+7. Bind the three datasets into a single object called `sdg_long`.
 
-ggplot(survey_data, aes(x = satisfaction, fill = trainer)) +
-  geom_histogram(binwidth = 1, show.legend = FALSE, colour = "black") +
-  facet_wrap(~trainer) +
-  labs(title = "Satisfaction scores by employee trainer")
-```
+Your target structure for `sdg_long` is:
 
-### Filter by calculated score
-
-First, calculate the average wait time and store this in an object named `mean_wait`. This should be a single value rather than a table.
+* `entity` (country or region name)
+* `code` (country code, often ISO3, sometimes missing)
+* `year`
+* `value`
+* `indicator`
 
 `r hide("Hint")`
-There are multiple ways to achieve this. You could create the table and then pull out the single value, or just calculate the single value.
+You will usually want `mutate(indicator = "...")` before `bind_rows()`, and `rename(value = ...)` to standardise the measurement column.
 `r unhide()`
 
-```{r webex.hide = TRUE}
+Checkpoint:
 
-# method 1 - tidyverse
-mean_wait <- survey_data |>
-  summarise(mean_wait = mean(wait_time)) |>
-  pull(mean_wait)
+* `glimpse(sdg_long)` shows exactly five columns.
+* `count(sdg_long, indicator)` returns three rows (one per indicator).
 
-# method 2 - base R
-mean_wait <- mean(survey_data$wait_time)
+### Task 2
 
-```
+Dwight has chosen a shortlist of “strategic markets”:
 
-Now create a dataset named `long_wait` that just contains data from customers who waited more than the average wait time.
+* United Kingdom
+* United States
+* India
+* Nigeria
+* Sweden
 
-```{r webex.hide = TRUE}
-long_wait <- survey_data |>
-  filter(wait_time > mean_wait)
-```
+8. Create `sdg_focus` by filtering `sdg_long` to those countries.
+9. Restrict to years from 2000 onwards.
+10. Arrange the result so it is easy to sanity check (for example, by `entity`, then `indicator`, then `year`).
 
-Create a visualisation that shows how many customers waited more than the average wait time for each employee.
+Checkpoint 2:
 
-```{r webex.hide = TRUE}
-long_wait |>
-  ggplot(aes(x = employee_id)) +
-  geom_bar()
-```
+* `count(sdg_focus, entity)` returns five rows.
+* The earliest year in `sdg_focus` is 2000 (or later).
 
-### Multiple critera
+### Task 3: Summarise the latest available values
 
-Now, add a column to `survey_data` named `follow_up` that flags whether a customer should be followed up with a courtesy phone call. Your company is short-staffed so only customers that meet all three of the following criteria should be followed-up:
+Michael only cares about “the latest number” for each indicator and country.
 
-* Their wait time should be above the average **for all calls**
-* Their call time should be above the average **for their category**
-* Their satisfaction should be less than three 3. 
+11. Create `sdg_latest` with one row per `entity` and `indicator`, keeping:
 
-This is quite complicated and there are multiple ways to achieve the desired outcome. Some approaches may need other functions that were covered in previous chapters and you may need to create intermediate objects.
+   * the latest year available for that country and indicator
+   * the corresponding value
 
-Call the final object `follow_data` and keep only the customer ID, employee ID, trainer, and follow up columns. 
+You may find it easiest to:
 
-```{r webex.hide = TRUE}
+* group by `entity` and `indicator`
+* identify the maximum year
+* keep the row(s) corresponding to that year
 
-# this is one possible solution, there are many other valid approaches 
+Checkpoint 3:
 
-# calculate mean wait time across all calls
-mean_wait <- mean(survey_data$wait_time)
-
-# calculate mean call time for each category
-follow_data <- survey_data |>
-  summarise(.by = issue_category,
-            mean_call = mean(call_time)) |>
-#then join it to the survey data  
-  left_join(survey_data, by = "issue_category") |>
-# then add on the column
-  mutate(follow_up = case_when(wait_time > mean_wait & 
-                               call_time > mean_call & 
-                               satisfaction < 3 ~ "yes",
-                               .default = "no")) |>
-  select(caller_id, employee_id, trainer, follow_up)
-```
-
-For all of the above, write code that stores the answer as a single value, so that you could easily use it in inline coding.
-
-How many customers need to be followed up:
-
-* In total? `r fitb("120")`
-* From calls by employee 06? `r fitb("16")`
-* From calls by employees trained by Michael `r fitb("65")`
-* From calls by employees trained by Dwight `r fitb("55")`
+* `count(sdg_latest, indicator)` returns three rows.
+* `sdg_latest` has 15 rows in total (5 countries × 3 indicators), unless missing data forces fewer.
 
 `r hide("Hint")`
-`group_by |> count() |> filter() |> pull()
+Two common approaches:
+
+* `slice_max(year, n = 1, with_ties = FALSE)`
+* `filter(year == max(year, na.rm = TRUE))`
+
 `r unhide()`
 
-Which employee needs to make the largest number of follow-up courtesy calls? `r fitb("E02")`
+### Task 4: Make it “Michael-ready” (Checkpoint 4)
+
+Michael wants a single table with one row per country and one column per indicator.
+
+12. Start from `sdg_latest`.
+13. Pivot to wide format so you get columns like:
+
+   * `renewables_share_electricity`
+   * `access_to_electricity`
+   * `co2_per_capita`
+
+Call the result `sdg_dashboard`.
+
+14. Reorder columns so `entity` comes first, followed by the three indicator columns.
+15. Round sensibly:
+
+   * renewable share and access to electricity to 1 decimal place
+   * CO₂ per capita to 2 decimal places
+
+Checkpoint 4 (swap roles):
+
+* `sdg_dashboard` has 5 rows and 4 columns.
+* The indicator columns are numeric.
+
+### Task 5: Briefing notes for Dwight (standard extension)
+
+Dwight wants “a ranking” to show who is doing best.
+
+16. Create two ranked tables:
+
+A. Highest renewables share (latest values)
+B. Lowest CO₂ per capita (latest values)
+
+For each, show:
+
+* country
+* value
+* rank (1 = best)
 
 `r hide("Hint")`
-As above but add in an `ungroup()` and `slice_max()` along the way. 
+You can use `arrange()` plus `mutate(rank = row_number())`, or `min_rank()`.
+
 `r unhide()`
 
-```{r webex.hide = TRUE}
-# in total
-follow_data |>
-  count(follow_up)|>
-  filter(follow_up == "yes") |>
-  pull(n)
-
-# by employee 6
-follow_data |>
-  count(follow_up, employee_id) |>
-  filter(employee_id == "E06",
-         follow_up == "yes") |>
-  pull(n)
-
-# by michael
-follow_data |>
-  count(follow_up, trainer) |>
-  filter(trainer == "Michael",
-         follow_up == "yes") |>
-  pull(n)
-
-# by dwight
-follow_data |>
-  count(follow_up, trainer) |>
-  filter(trainer == "Dwight",
-         follow_up == "yes") |>
-  pull(n)
-
-# most follow-ups needed
-follow_data |>
-  count(follow_up, employee_id) |>
-  filter(follow_up == "yes") |>
-  slice_max(n = 1, order_by = n) |>
-  pull(employee_id)
-
-```
-
-### Original insight
-
-In preparation for the final summative assessment, explore the data to provide one original insight of your own.
-
-### Share on Teams
-
-Once you're done, share your rendered html file and the qmd file for the exercises on Teams in the Week 09 channel.
-
+:::
 
 ## Glossary {#sec-glossary-wrangle}
 
