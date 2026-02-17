@@ -1,4 +1,4 @@
-# Next Steps {#sec-next}
+# Wrapping up {#sec-next}
 
 ```{r}
 #| label: setup-next
@@ -160,7 +160,7 @@ Before you write a single line of analysis code, make sure you understand the da
 
 - [ ] **Open and inspect the data** — Use `glimpse()`, `head()`, or `View()` to look at the structure. How many rows and columns are there? What does each row represent?
 - [ ] **Understand the variables** — What does each column contain? What are the units of measurement? Are categorical variables stored as characters or factors? Check any accompanying documentation or codebook.
-- [ ] **Check for missing data** — Use `summary()` or `colSums(is.na(dat))` to see which columns have missing values and how many. Decide how you will handle them before you start your analysis, not halfway through.
+- [ ] **Check for missing data** — Use e.g., `summary()` to see which columns have missing values and how many. Decide how you will handle them before you start your analysis, not halfway through.
 - [ ] **Check for unexpected values** — Are there values that don't make sense, like negative ages or dates in the future? Use `count()` on categorical variables to check for typos or inconsistent labels (e.g., "Male", "male", "M").
 - [ ] **Understand how datasets relate** — If you have multiple data files, identify the common variables that link them. Check whether the key variables match across files (e.g., are there IDs in one file that don't appear in the other?).
 

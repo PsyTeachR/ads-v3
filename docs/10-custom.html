@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Applied Data Skills - 10&nbsp; Next Steps</title>
+<title>Applied Data Skills - 10&nbsp; Wrapping up</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,7 +116,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-custom.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-custom.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrapping up</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -220,7 +220,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-custom.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrapping up</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -332,7 +332,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title"><span id="sec-next" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></span></h1>
+<h1 class="title"><span id="sec-next" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrapping up</span></span></h1>
 </div>
 
 
@@ -403,8 +403,8 @@ Knowledge check: Writing about data
 <div class="callout-body-container callout-body">
 <p>Which of the following is the best methodological explanation for a figure showing average life satisfaction scores by country?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_ALZQJKPRIL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ALZQJKPRIL" value="x"><span>I used group_by(country) and summarise(mean_score = mean(life_satisfaction)) to calculate the means, then made a bar chart with ggplot.</span></label><label><input type="radio" autocomplete="off" name="radio_ALZQJKPRIL" value="x"><span>I made a bar chart of life satisfaction by country.</span></label><label><input type="radio" autocomplete="off" name="radio_ALZQJKPRIL" value="answer"><span>Mean life satisfaction scores were calculated for each country. Countries with fewer than 30 respondents were excluded to avoid unreliable estimates (n = 3 countries removed). A bar chart was chosen to allow direct comparison across the 12 remaining countries.</span></label><label><input type="radio" autocomplete="off" name="radio_ALZQJKPRIL" value="x"><span>The data was grouped and summarised. Missing values were removed using drop_na(). The results are shown in Figure 1.</span></label>
+<div id="radio_SVIFZWXYMD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SVIFZWXYMD" value="x"><span>I made a bar chart of life satisfaction by country.</span></label><label><input type="radio" autocomplete="off" name="radio_SVIFZWXYMD" value="x"><span>I used group_by(country) and summarise(mean_score = mean(life_satisfaction)) to calculate the means, then made a bar chart with ggplot.</span></label><label><input type="radio" autocomplete="off" name="radio_SVIFZWXYMD" value="answer"><span>Mean life satisfaction scores were calculated for each country. Countries with fewer than 30 respondents were excluded to avoid unreliable estimates (n = 3 countries removed). A bar chart was chosen to allow direct comparison across the 12 remaining countries.</span></label><label><input type="radio" autocomplete="off" name="radio_SVIFZWXYMD" value="x"><span>The data was grouped and summarised. Missing values were removed using drop_na(). The results are shown in Figure 1.</span></label>
 </div>
 </div>
 </div>
@@ -421,8 +421,8 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Which of the following is the best methodological explanation for a table showing the number of respondents by age group?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_SFJBIBEMNA" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SFJBIBEMNA" value="x"><span>The age column was recoded with case_when() into four groups, then I used count() and kable() to display the results.</span></label><label><input type="radio" autocomplete="off" name="radio_SFJBIBEMNA" value="answer"><span>Respondents were grouped into four age categories (18–24, 25–34, 35–44, 45+). A frequency table was used to show the distribution of respondents across groups, as the primary goal was to summarise the sample composition rather than compare a continuous measure.</span></label><label><input type="radio" autocomplete="off" name="radio_SFJBIBEMNA" value="x"><span>Table 1 shows respondents by age group. The data was wrangled and displayed using tidyverse.</span></label><label><input type="radio" autocomplete="off" name="radio_SFJBIBEMNA" value="x"><span>I used count() to count the number of respondents in each age group and then displayed it as a table.</span></label>
+<div id="radio_CLBVPXZIUP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CLBVPXZIUP" value="x"><span>The age column was recoded with case_when() into four groups, then I used count() and kable() to display the results.</span></label><label><input type="radio" autocomplete="off" name="radio_CLBVPXZIUP" value="answer"><span>Respondents were grouped into four age categories (18–24, 25–34, 35–44, 45+). A frequency table was used to show the distribution of respondents across groups, as the primary goal was to summarise the sample composition rather than compare a continuous measure.</span></label><label><input type="radio" autocomplete="off" name="radio_CLBVPXZIUP" value="x"><span>Table 1 shows respondents by age group. The data was wrangled and displayed using tidyverse.</span></label><label><input type="radio" autocomplete="off" name="radio_CLBVPXZIUP" value="x"><span>I used count() to count the number of respondents in each age group and then displayed it as a table.</span></label>
 </div>
 </div>
 </div>
@@ -493,8 +493,8 @@ Knowledge check: Code commenting
 <div class="callout-body-container callout-body">
 <p>Which of the following is the best code comment for the line <code>dat &lt;- dat |&gt; drop_na(score)</code>?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_RXXUMMELTF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_RXXUMMELTF" value="answer"><span># remove 6 participants with missing scores (incomplete survey responses)</span></label><label><input type="radio" autocomplete="off" name="radio_RXXUMMELTF" value="x"><span># drop NAs</span></label><label><input type="radio" autocomplete="off" name="radio_RXXUMMELTF" value="x"><span># use drop_na to remove NAs from score</span></label><label><input type="radio" autocomplete="off" name="radio_RXXUMMELTF" value="x"><span># data cleaning step 3</span></label>
+<div id="radio_PMOXMOPNFS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PMOXMOPNFS" value="answer"><span># remove 6 participants with missing scores (incomplete survey responses)</span></label><label><input type="radio" autocomplete="off" name="radio_PMOXMOPNFS" value="x"><span># data cleaning step 3</span></label><label><input type="radio" autocomplete="off" name="radio_PMOXMOPNFS" value="x"><span># drop NAs</span></label><label><input type="radio" autocomplete="off" name="radio_PMOXMOPNFS" value="x"><span># use drop_na to remove NAs from score</span></label>
 </div>
 </div>
 </div>
@@ -508,7 +508,7 @@ Knowledge check: Code commenting
 <ul class="task-list">
 <li><label><input type="checkbox"><strong>Open and inspect the data</strong> — Use <code>glimpse()</code>, <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code>, or <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> to look at the structure. How many rows and columns are there? What does each row represent?</label></li>
 <li><label><input type="checkbox"><strong>Understand the variables</strong> — What does each column contain? What are the units of measurement? Are categorical variables stored as characters or factors? Check any accompanying documentation or codebook.</label></li>
-<li><label><input type="checkbox"><strong>Check for missing data</strong> — Use <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> or <code>colSums(is.na(dat))</code> to see which columns have missing values and how many. Decide how you will handle them before you start your analysis, not halfway through.</label></li>
+<li><label><input type="checkbox"><strong>Check for missing data</strong> — Use e.g., <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> to see which columns have missing values and how many. Decide how you will handle them before you start your analysis, not halfway through.</label></li>
 <li><label><input type="checkbox"><strong>Check for unexpected values</strong> — Are there values that don’t make sense, like negative ages or dates in the future? Use <code>count()</code> on categorical variables to check for typos or inconsistent labels (e.g., “Male”, “male”, “M”).</label></li>
 <li><label><input type="checkbox"><strong>Understand how datasets relate</strong> — If you have multiple data files, identify the common variables that link them. Check whether the key variables match across files (e.g., are there IDs in one file that don’t appear in the other?).</label></li>
 </ul></section><section id="reproducibility" class="level3" data-number="10.3.2"><h3 data-number="10.3.2" class="anchored" data-anchor-id="reproducibility">
@@ -538,14 +538,14 @@ Knowledge check: Reproducibility and data checking
 <div class="callout-body-container callout-body">
 <p>Why is it important to restart R and run all chunks in order before rendering your report?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_MNDCKTLTVQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MNDCKTLTVQ" value="x"><span>It clears the console so the report looks tidy.</span></label><label><input type="radio" autocomplete="off" name="radio_MNDCKTLTVQ" value="x"><span>It is faster than rendering the document directly.</span></label><label><input type="radio" autocomplete="off" name="radio_MNDCKTLTVQ" value="x"><span>It ensures your packages are up to date.</span></label><label><input type="radio" autocomplete="off" name="radio_MNDCKTLTVQ" value="answer"><span>It checks that your script does not depend on objects that only exist because you ran chunks out of order during development.</span></label>
+<div id="radio_PSVPYZLOKA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PSVPYZLOKA" value="x"><span>It is faster than rendering the document directly.</span></label><label><input type="radio" autocomplete="off" name="radio_PSVPYZLOKA" value="x"><span>It clears the console so the report looks tidy.</span></label><label><input type="radio" autocomplete="off" name="radio_PSVPYZLOKA" value="answer"><span>It checks that your script does not depend on objects that only exist because you ran chunks out of order during development.</span></label><label><input type="radio" autocomplete="off" name="radio_PSVPYZLOKA" value="x"><span>It ensures your packages are up to date.</span></label>
 </div>
 </div>
 <p>What is wrong with the following file path in a Quarto report: <code>read_csv("C:/Users/emily/Desktop/ADS/data/survey.csv")</code>?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_MLAFIWWQNC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MLAFIWWQNC" value="answer"><span>It uses an absolute file path which will not work on another computer, making the report non-reproducible.</span></label><label><input type="radio" autocomplete="off" name="radio_MLAFIWWQNC" value="x"><span>The folder name 'ADS' should be in lowercase.</span></label><label><input type="radio" autocomplete="off" name="radio_MLAFIWWQNC" value="x"><span>The file extension should be .xlsx, not .csv.</span></label><label><input type="radio" autocomplete="off" name="radio_MLAFIWWQNC" value="x"><span>You should use read.csv() instead of read_csv().</span></label>
+<div id="radio_ZCXHAWQAEV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZCXHAWQAEV" value="x"><span>The file extension should be .xlsx, not .csv.</span></label><label><input type="radio" autocomplete="off" name="radio_ZCXHAWQAEV" value="x"><span>The folder name 'ADS' should be in lowercase.</span></label><label><input type="radio" autocomplete="off" name="radio_ZCXHAWQAEV" value="x"><span>You should use read.csv() instead of read_csv().</span></label><label><input type="radio" autocomplete="off" name="radio_ZCXHAWQAEV" value="answer"><span>It uses an absolute file path which will not work on another computer, making the report non-reproducible.</span></label>
 </div>
 </div>
 <p>True or false: it is acceptable to open your data file in Excel and fix a typo before loading it into R, as long as you note the change in a comment. <select class="webex-select"><option value="blank"></option>
@@ -553,14 +553,14 @@ Knowledge check: Reproducibility and data checking
 <option value="answer">FALSE</option></select></p>
 <p>You load a dataset and run <code>count(dat, gender)</code> and see the values “Female”, “female”, “F”, and “Male”. What is the most likely problem?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_QZHCZVJNWI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QZHCZVJNWI" value="x"><span>The count() function is not appropriate for character variables.</span></label><label><input type="radio" autocomplete="off" name="radio_QZHCZVJNWI" value="x"><span>The gender column should be numeric, not character.</span></label><label><input type="radio" autocomplete="off" name="radio_QZHCZVJNWI" value="x"><span>The data has too many columns.</span></label><label><input type="radio" autocomplete="off" name="radio_QZHCZVJNWI" value="answer"><span>There are inconsistent labels that need to be recoded before analysis.</span></label>
+<div id="radio_GBHXELEJOO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GBHXELEJOO" value="x"><span>The gender column should be numeric, not character.</span></label><label><input type="radio" autocomplete="off" name="radio_GBHXELEJOO" value="answer"><span>There are inconsistent labels that need to be recoded before analysis.</span></label><label><input type="radio" autocomplete="off" name="radio_GBHXELEJOO" value="x"><span>The count() function is not appropriate for character variables.</span></label><label><input type="radio" autocomplete="off" name="radio_GBHXELEJOO" value="x"><span>The data has too many columns.</span></label>
 </div>
 </div>
 <p>Which of the following is the best first step when you receive a new dataset?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_WQLYIGKUEU" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_WQLYIGKUEU" value="x"><span>Run a statistical test to check for significant differences.</span></label><label><input type="radio" autocomplete="off" name="radio_WQLYIGKUEU" value="x"><span>Start writing ggplot code to visualise the main variables.</span></label><label><input type="radio" autocomplete="off" name="radio_WQLYIGKUEU" value="answer"><span>Inspect the structure of the data using functions like glimpse(), summary(), or head() to understand what each variable contains.</span></label><label><input type="radio" autocomplete="off" name="radio_WQLYIGKUEU" value="x"><span>Immediately filter out any rows with missing data using drop_na().</span></label>
+<div id="radio_NYWBRLYQPY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NYWBRLYQPY" value="x"><span>Run a statistical test to check for significant differences.</span></label><label><input type="radio" autocomplete="off" name="radio_NYWBRLYQPY" value="x"><span>Start writing ggplot code to visualise the main variables.</span></label><label><input type="radio" autocomplete="off" name="radio_NYWBRLYQPY" value="answer"><span>Inspect the structure of the data using functions like glimpse(), summary(), or head() to understand what each variable contains.</span></label><label><input type="radio" autocomplete="off" name="radio_NYWBRLYQPY" value="x"><span>Immediately filter out any rows with missing data using drop_na().</span></label>
 </div>
 </div>
 </div>
