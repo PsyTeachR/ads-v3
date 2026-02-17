@@ -1,4 +1,4 @@
-# Data Types {#sec-data-types}
+# Advanced: Data Types {#sec-data-types}
 
 ## Basic data types 
 

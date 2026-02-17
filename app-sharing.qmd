@@ -1,4 +1,4 @@
-# Sharing your Package {#sec-sharing}
+# Advanced: Sharing your Package {#sec-sharing}
 
 [Recording](https://youtu.be/C-zGrJda4rU)
 

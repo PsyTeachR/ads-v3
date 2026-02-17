@@ -925,7 +925,6 @@ Checkpoint 4 (swap roles):
 * The indicator columns are numeric.
 
 ### Task 5
-
 Dwight wants “a ranking” to show who is doing best.
 
 16. Create two ranked tables:
