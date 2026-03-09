@@ -42,7 +42,7 @@ library(janitor)    # data table cleaning
 1. Open your `ADS-2026` project 
 1. Download the [Data transformation cheat sheet](https://rstudio.github.io/cheatsheets/html/data-transformation.html)
 1. Download a data file into the "data" folder: 
-    * <a href="https://psyteachr.github.io/ads-v2/data/SDG-11.2.1.xlsx" download>SDG-11.2.1.xlsx</a>
+    * <a href="https://psyteachr.github.io/ads-v3/data/SDG-11.2.1.xlsx" download>SDG-11.2.1.xlsx</a>
 1. Create a new quarto file called `09-wrangle.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below
