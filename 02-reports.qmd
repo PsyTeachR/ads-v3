@@ -844,7 +844,6 @@ The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, jo
 
 ::: {.callout-tip .activity}
 
-
 Try changing the theme to see which one you like best.
 
 :::
@@ -863,6 +862,29 @@ Error in yaml::yaml.load(..., eval.expr = TRUE) :
 ```
 
 The error message will tell you exactly where the problem is (the second character of the second line of the YAML header), and it's usually a matter of fixing typos or making sure that the indenting is exactly right.
+:::
+
+### Embedding Resources {#sec-embed-resources}
+
+When you create an HTML file, there are helper files that control the look (css) and functionality (js) of the web page, as well as image files. When you render an HTML file in quarto, these helper files are saved in a folder named `{report_name}_files`. It is efficient to have a single copy of these that are linked to all your pages in a big website, but this means you always have to share this folder alongside your html file, and if they are not in the same directory, the images and styles in your report will be broken.
+
+To save all of the resources inside the html file, so you can ust share a single file, set `embed-resources: true` in the YAMl header.
+
+
+``` yaml
+---
+format:
+  html:
+    embed-resources: true
+---
+```
+
+::: {.callout-tip .activity}
+Check the file size of the `02-reports.html` file in your project. Move it to another folder, like your Desktop, and see what it loos like when you open it in a web browser. 
+
+Delete the `02-reports_files` directory, change the YAML header to embed resources, and re-render the script. 
+
+Now check the size of the `02-reports.html` file. What happens if you move this file to another folder and open it?
 :::
 
 ### Table of Contents {#sec-toc}

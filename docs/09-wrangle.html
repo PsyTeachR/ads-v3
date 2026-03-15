@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.8.25">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Applied Data Skills - 9&nbsp; Data Wrangling</title>
+
+
+<title>9&nbsp; Data Wrangling – Applied Data Skills</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -53,6 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -63,17 +68,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./10-custom.html" rel="next">
 <link href="./08-tidy.html" rel="prev">
 <link href="./images/logos/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-54c8f25464f32f8783bd446cee98020d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bb1cd4028f63a369ab283e072cb7d572.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-cabf4f02d17b8c43ddba8f1619ebfb5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-0db195ef62d4be9e037a3716eb1f967e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-cabf4f02d17b8c43ddba8f1619ebfb5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -99,53 +109,230 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script type="text/javascript">
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
+
+<script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
-</script><link rel="stylesheet" href="include/psyteachr.css">
+</script>
+
+
+<link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
 </head>
-<body class="nav-sidebar floating">
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-wrangle.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Wrangling</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Applied Data Skills</a> 
         <div class="sidebar-tools-main">
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
+          <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
       </ul>
-</div>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -157,7 +344,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
@@ -220,7 +407,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10-custom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrapping up</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -231,14 +418,14 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-website.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Advanced: Websites</span></span></a>
@@ -287,61 +474,60 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#sec-ilo-wrangle" id="toc-sec-ilo-wrangle" class="nav-link active" data-scroll-target="#sec-ilo-wrangle">Intended Learning Outcomes</a></li>
+  <li><a href="#sec-ilo-wrangle" id="toc-sec-ilo-wrangle" class="nav-link active" data-scroll-target="#sec-ilo-wrangle">Intended Learning Outcomes</a></li>
   <li><a href="#functions-wrangle" id="toc-functions-wrangle" class="nav-link" data-scroll-target="#functions-wrangle"><span class="header-section-number">9.1</span> Functions used</a></li>
   <li><a href="#sec-setup-wrangle" id="toc-sec-setup-wrangle" class="nav-link" data-scroll-target="#sec-setup-wrangle"><span class="header-section-number">9.2</span> Set-up</a></li>
-  <li>
-<a href="#wrangling-functions" id="toc-wrangling-functions" class="nav-link" data-scroll-target="#wrangling-functions"><span class="header-section-number">9.3</span> Wrangling functions</a>
+  <li><a href="#wrangling-functions" id="toc-wrangling-functions" class="nav-link" data-scroll-target="#wrangling-functions"><span class="header-section-number">9.3</span> Wrangling functions</a>
   <ul>
-<li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore"><span class="header-section-number">9.3.1</span> Explore</a></li>
-  <li>
-<a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">9.3.2</span> Select</a>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore"><span class="header-section-number">9.3.1</span> Explore</a></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">9.3.2</span> Select</a>
   <ul class="collapse">
-<li><a href="#by-name-or-index" id="toc-by-name-or-index" class="nav-link" data-scroll-target="#by-name-or-index"><span class="header-section-number">9.3.2.1</span> By name or index</a></li>
+  <li><a href="#by-name-or-index" id="toc-by-name-or-index" class="nav-link" data-scroll-target="#by-name-or-index"><span class="header-section-number">9.3.2.1</span> By name or index</a></li>
   <li><a href="#un-selecting-columns" id="toc-un-selecting-columns" class="nav-link" data-scroll-target="#un-selecting-columns"><span class="header-section-number">9.3.2.2</span> Un-selecting columns</a></li>
   <li><a href="#select-helpers" id="toc-select-helpers" class="nav-link" data-scroll-target="#select-helpers"><span class="header-section-number">9.3.2.3</span> Select helpers</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#rename-and-relocate" id="toc-rename-and-relocate" class="nav-link" data-scroll-target="#rename-and-relocate"><span class="header-section-number">9.3.3</span> Rename and relocate</a></li>
   <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">9.3.4</span> Filter</a></li>
   <li><a href="#sec-arrange" id="toc-sec-arrange" class="nav-link" data-scroll-target="#sec-arrange"><span class="header-section-number">9.3.5</span> Arrange</a></li>
   <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">9.3.6</span> Mutate</a></li>
   <li><a href="#sec-dplyr-summarise" id="toc-sec-dplyr-summarise" class="nav-link" data-scroll-target="#sec-dplyr-summarise"><span class="header-section-number">9.3.7</span> Summarise</a></li>
   <li><a href="#sec-dplyr-groupby" id="toc-sec-dplyr-groupby" class="nav-link" data-scroll-target="#sec-dplyr-groupby"><span class="header-section-number">9.3.8</span> Group By</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#complications" id="toc-complications" class="nav-link" data-scroll-target="#complications"><span class="header-section-number">9.4</span> Complications</a>
+  </ul></li>
+  <li><a href="#complications" id="toc-complications" class="nav-link" data-scroll-target="#complications"><span class="header-section-number">9.4</span> Complications</a>
   <ul>
-<li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding"><span class="header-section-number">9.4.1</span> Rounding</a></li>
-  <li>
-<a href="#sec-missing-values" id="toc-sec-missing-values" class="nav-link" data-scroll-target="#sec-missing-values"><span class="header-section-number">9.4.2</span> Missing values</a>
+  <li><a href="#rounding" id="toc-rounding" class="nav-link" data-scroll-target="#rounding"><span class="header-section-number">9.4.1</span> Rounding</a></li>
+  <li><a href="#sec-missing-values" id="toc-sec-missing-values" class="nav-link" data-scroll-target="#sec-missing-values"><span class="header-section-number">9.4.2</span> Missing values</a>
   <ul class="collapse">
-<li><a href="#bad-missing-values" id="toc-bad-missing-values" class="nav-link" data-scroll-target="#bad-missing-values"><span class="header-section-number">9.4.2.1</span> Bad missing values</a></li>
+  <li><a href="#bad-missing-values" id="toc-bad-missing-values" class="nav-link" data-scroll-target="#bad-missing-values"><span class="header-section-number">9.4.2.1</span> Bad missing values</a></li>
   <li><a href="#convert-missing-values-to-na" id="toc-convert-missing-values-to-na" class="nav-link" data-scroll-target="#convert-missing-values-to-na"><span class="header-section-number">9.4.2.2</span> Convert missing values to NA</a></li>
   <li><a href="#ignore-missing-values" id="toc-ignore-missing-values" class="nav-link" data-scroll-target="#ignore-missing-values"><span class="header-section-number">9.4.2.3</span> Ignore missing values</a></li>
   <li><a href="#count-missing-values" id="toc-count-missing-values" class="nav-link" data-scroll-target="#count-missing-values"><span class="header-section-number">9.4.2.4</span> Count missing values</a></li>
   <li><a href="#omit-missing-values" id="toc-omit-missing-values" class="nav-link" data-scroll-target="#omit-missing-values"><span class="header-section-number">9.4.2.5</span> Omit missing values</a></li>
-  </ul>
-</li>
-  </ul>
-</li>
+  </ul></li>
+  </ul></li>
   <li><a href="#sec-together-wrangle" id="toc-sec-together-wrangle" class="nav-link" data-scroll-target="#sec-together-wrangle"><span class="header-section-number">9.5</span> Peer Coding Exercises</a></li>
   <li><a href="#sec-glossary-wrangle" id="toc-sec-glossary-wrangle" class="nav-link" data-scroll-target="#sec-glossary-wrangle"><span class="header-section-number">9.6</span> Glossary</a></li>
   <li><a href="#sec-resources-wrangle" id="toc-sec-resources-wrangle" class="nav-link" data-scroll-target="#sec-resources-wrangle"><span class="header-section-number">9.7</span> Further resources</a></li>
-  </ul></nav>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title"><span id="sec-wrangle" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></h1>
 </div>
 
@@ -356,50 +542,44 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><section id="sec-ilo-wrangle" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-ilo-wrangle">Intended Learning Outcomes</h2>
+</header>
+
+
+<section id="sec-ilo-wrangle" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-ilo-wrangle">Intended Learning Outcomes</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Be able to select and filter data for relevance</label></li>
 <li><label><input type="checkbox">Be able to create new columns and edit existing ones</label></li>
 <li><label><input type="checkbox">Be able to handle missing data</label></li>
-</ul></section><section id="functions-wrangle" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="functions-wrangle">
-<span class="header-section-number">9.1</span> Functions used</h2>
+</ul>
+</section>
+<section id="functions-wrangle" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="functions-wrangle"><span class="header-section-number">9.1</span> Functions used</h2>
 <ul>
 <li>built-in (you can always use these without loading any packages)
 <ul>
-<li>base:: <code><a href="https://rdrr.io/r/base/Round.html">round()</a></code>, <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">min()</a></code>, <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code>, <code><a href="https://rdrr.io/r/base/paste.html">paste0()</a></code>, <code><a href="https://rdrr.io/r/base/character.html">as.character()</a></code>, <code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code>, <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code>, <code><a href="https://rdrr.io/r/base/chartr.html">tolower()</a></code>, <code><a href="https://rdrr.io/r/base/chartr.html">toupper()</a></code>
-</li>
-<li>stats:: <code><a href="https://rdrr.io/r/stats/median.html">median()</a></code>
-</li>
-<li>utils:: <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code>, <code><a href="https://rdrr.io/r/utils/packageDescription.html">packageVersion()</a></code>
-</li>
-</ul>
-</li>
-<li>tidyverse (you can use all these with <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code>)
+<li>base:: <code>round()</code>, <code>mean()</code>, <code>min()</code>, <code>max()</code>, <code>sum()</code>, <code>paste0()</code>, <code>as.character()</code>, <code>as.numeric()</code>, <code>factor()</code>, <code>tolower()</code>, <code>toupper()</code></li>
+<li>stats:: <code>median()</code></li>
+<li>utils:: <code>head()</code>, <code>packageVersion()</code></li>
+</ul></li>
+<li>tidyverse (you can use all these with <code>library(tidyverse)</code>)
 <ul>
-<li>readr:: <code>read_csv()</code>
-</li>
-<li>tibble:: <code>tibble()</code>
-</li>
-<li>dplyr:: <code>count()</code>, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>, <code>arrange()</code>, <code>mutate()</code>, <code>summarise()</code>, <code>group_by()</code>, <code>ungroup()</code>, <code>rename()</code>, <code>relocate()</code>, <code>slice_max()</code>, <code>bind_rows()</code>, <code>drop_na()</code>, <code>case_when()</code>, <code>na_if()</code>, <code>across()</code>, <code>row_number()</code>, <code>min_rank()</code>
-</li>
-<li>tidyr:: <code>pivot_wider()</code>
-</li>
-<li>stringr:: <code>str_detect()</code>
-</li>
-<li>tidyselect:: <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, <code>matches()</code>, <code>num_range()</code>, <code>all_of()</code>, <code>any_of()</code>, <code>everything()</code>, <code>where()</code>
-</li>
-</ul>
-</li>
+<li>readr:: <code>read_csv()</code></li>
+<li>tibble:: <code>tibble()</code></li>
+<li>dplyr:: <code>count()</code>, <code>filter()</code>, <code>arrange()</code>, <code>mutate()</code>, <code>summarise()</code>, <code>group_by()</code>, <code>ungroup()</code>, <code>rename()</code>, <code>relocate()</code>, <code>slice_max()</code>, <code>bind_rows()</code>, <code>drop_na()</code>, <code>case_when()</code>, <code>na_if()</code>, <code>across()</code>, <code>row_number()</code>, <code>min_rank()</code></li>
+<li>tidyr:: <code>pivot_wider()</code></li>
+<li>stringr:: <code>str_detect()</code></li>
+<li>tidyselect:: <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, <code>matches()</code>, <code>num_range()</code>, <code>all_of()</code>, <code>any_of()</code>, <code>everything()</code>, <code>where()</code></li>
+</ul></li>
 <li>other (you need to load each package to use these)
 <ul>
-<li>readxl:: <code>read_xlsx()</code>
-</li>
-<li>janitor:: <code>clean_names()</code>, <code>round_half_up()</code>
-</li>
+<li>readxl:: <code>read_xlsx()</code></li>
+<li>janitor:: <code>clean_names()</code>, <code>round_half_up()</code></li>
+</ul></li>
 </ul>
-</li>
-</ul></section><section id="sec-setup-wrangle" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="sec-setup-wrangle">
-<span class="header-section-number">9.2</span> Set-up</h2>
+</section>
+<section id="sec-setup-wrangle" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-setup-wrangle"><span class="header-section-number">9.2</span> Set-up</h2>
 <div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -412,26 +592,23 @@ Tip
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Open your <code>ADS-2026</code> project</li>
-<li>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-transformation.html">Data transformation cheat sheet</a>
-</li>
+<li>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-transformation.html">Data transformation cheat sheet</a></li>
 <li>Download a data file into the “data” folder:
 <ul>
 <li><a href="https://psyteachr.github.io/ads-v3/data/SDG-11.2.1.xlsx" download="">SDG-11.2.1.xlsx</a></li>
-</ul>
-</li>
-<li>Create a new quarto file called <code>09-wrangle.qmd</code>
-</li>
+</ul></li>
+<li>Create a new quarto file called <code>09-wrangle.qmd</code></li>
 <li>Update the YAML header</li>
 <li>Replace the setup chunk with the one below</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="in">#| label: setup</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="in">#| include: false</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="in">library(tidyverse) # for data wrangling</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="in">library(readxl)    # read excel files</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="in">library(janitor)   # clean up data tables</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(tidyverse) <span class="co"># for data wrangling</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(readxl)    <span class="co"># read excel files</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(janitor)   <span class="co"># clean up data tables</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -447,8 +624,9 @@ Warning
 <p>At this point in ADS it’s very likely you will have the most recent version of the <pkg>tidyverse</pkg> packages but just in case, be aware that the function <code>case_when()</code> that we will use in this chapter was updated to introduce new arguments and ways of handling <code>NA</code>. The code we provide in this chapter will only work if you have v1.1.0 or above of <pkg>dplyr</pkg> installed. To check run <code>packageVersion("dplyr")</code> and if it’s below 1.1.0, install it again to update.</p>
 </div>
 </div>
-</section><section id="wrangling-functions" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="wrangling-functions">
-<span class="header-section-number">9.3</span> Wrangling functions</h2>
+</section>
+<section id="wrangling-functions" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="wrangling-functions"><span class="header-section-number">9.3</span> Wrangling functions</h2>
 <p>Data wrangling refers to the process of cleaning, transforming, and restructuring your data to get it into the format you need for analysis and it’s something you will spend an awful lot of time doing. Most <a href="https://psyteachr.github.io/glossary/d#data-wrangling" target="_blank" class="glossary" title="The process of preparing data for visualisation and statistical analysis.">data wrangling</a> involves the reshaping functions you learned in <a href="08-tidy.html" class="quarto-xref"><span>Chapter 8</span></a> and six functions from the <pkg>dplyr</pkg> package that is loaded as part of the <pkg>tidyverse</pkg>: <code>select</code>, <code>filter</code>, <code>arrange</code>, <code>mutate</code>, <code>summarise</code>, and <code>group_by</code>. We covered the last two in detail in <a href="04-summary.html" class="quarto-xref"><span>Chapter 4</span></a>, and the others have already come up several times, so we’ll focus on more advanced data wrangling.</p>
 <p>It’s worth highlighting that in this chapter we’re going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> (and packages beyond it) has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven’t explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how.</p>
 <p>We’ll use data from the United Nations <a href="https://unstats.un.org/sdgs/dataportal/database">SDG Indicators Database</a> on sustainable development goal 11.2.1: Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities. You can access <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-02-01.pdf">metadata about this data</a> to find out more.</p>
@@ -464,13 +642,13 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Load the data into an object:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>transport <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/SDG-11.2.1.xlsx"</span>)  <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>transport <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">"data/SDG-11.2.1.xlsx"</span>)  <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
-<section id="explore" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="explore">
-<span class="header-section-number">9.3.1</span> Explore</h3>
+<section id="explore" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="explore"><span class="header-section-number">9.3.1</span> Explore</h3>
 <p>After you load the data, use <code>glimpse(transport)</code> or <code>View(transport)</code> to get familiar with the data.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
@@ -505,15 +683,17 @@ $ units              &lt;chr&gt; "PERCENT", "PERCENT", "PERCENT", "PERCENT", "PE
 </div>
 <p>It is useful to use the <code>count()</code> function to explore data, especially where there are too many rows or columns to view on one screen.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">count</span>(transport, age, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">count</span>(transport, age, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">age</th>
 <th style="text-align: left;">sex</th>
 <th style="text-align: right;">n</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">60+</td>
@@ -560,20 +740,20 @@ Hint
 </div>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Note</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># two ways to get the number of unique values in a column</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># two ways to get the number of unique values in a column</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>n_countries <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> <span class="fu">count</span>(geo_area_name) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span>
-<span id="cb5-3"><a href="#cb5-3"></a>n_years <span class="ot">&lt;-</span> transport<span class="sc">$</span>time_period <span class="sc">|&gt;</span> <span class="fu">unique</span>() <span class="sc">|&gt;</span> <span class="fu">length</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3"></a>n_years <span class="ot">&lt;-</span> transport<span class="sc">$</span>time_period <span class="sc">|&gt;</span> <span class="fu">unique</span>() <span class="sc">|&gt;</span> <span class="fu">length</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -582,80 +762,91 @@ Solution
 </div>
 <p>There are also several columns that seem to have no data from the glimpse. We can use count to confirm that these columns are entirely NAs - for example, if we count the column <code>time_coverage</code> we can see that all 2473 values are <code>NA</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">count</span>(transport, time_coverage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">count</span>(transport, time_coverage)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">time_coverage</th>
 <th style="text-align: right;">n</th>
-</tr></thead>
-<tbody><tr class="odd">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td style="text-align: left;">NA</td>
 <td style="text-align: right;">2473</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 </div>
 <p>Other columns seem to have the exact same value for all rows. For example, all 2473 values of <code>goal</code> are equal to <code>11</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">count</span>(transport, goal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">count</span>(transport, goal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: right;">goal</th>
 <th style="text-align: right;">n</th>
-</tr></thead>
-<tbody><tr class="odd">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td style="text-align: right;">11</td>
 <td style="text-align: right;">2473</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 </div>
-</section><section id="select" class="level3" data-number="9.3.2"><h3 data-number="9.3.2" class="anchored" data-anchor-id="select">
-<span class="header-section-number">9.3.2</span> Select</h3>
+</section>
+<section id="select" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="select"><span class="header-section-number">9.3.2</span> Select</h3>
 <p>You can select a subset of the columns (variables) in a table to make it easier to view or to prepare a table for display. You can also select columns in a new order.</p>
-<section id="by-name-or-index" class="level4" data-number="9.3.2.1"><h4 data-number="9.3.2.1" class="anchored" data-anchor-id="by-name-or-index">
-<span class="header-section-number">9.3.2.1</span> By name or index</h4>
+<section id="by-name-or-index" class="level4" data-number="9.3.2.1">
+<h4 data-number="9.3.2.1" class="anchored" data-anchor-id="by-name-or-index"><span class="header-section-number">9.3.2.1</span> By name or index</h4>
 <p>You can select columns by name or number (which is sometimes referred to as the column index). Selecting by number can be useful when the column names are long or complicated.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># select single column by name</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># select single column by name</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>value_col <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> <span class="fu">select</span>(value) </span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="co"># select single column by number</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>value_col <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="dv">9</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5"></a>value_col <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="dv">9</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can select each column individually, separated by commas (e.g., <code>age, sex</code>) but you can also select all columns from one to another by separating them with a colon (e.g., <code>goal:value</code>).</p>
 <p>The colon notation can be much faster because you don’t need to type out each individual variable name, but make sure that you know what order your columns are in and always check the output to make sure you have selected what you intended.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># select columns individually</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># select columns individually</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
 <span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">select</span>(geo_area_name, time_period, value)</span>
 <span id="cb9-4"><a href="#cb9-4"></a></span>
 <span id="cb9-5"><a href="#cb9-5"></a><span class="co"># select columns with colon</span></span>
 <span id="cb9-6"><a href="#cb9-6"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
-<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">select</span>(geo_area_name<span class="sc">:</span>value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">select</span>(geo_area_name<span class="sc">:</span>value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can rename columns at the same time as selecting them by setting <code>new_name = old_col</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>country_year <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">select</span>(<span class="at">country =</span> geo_area_name, </span>
 <span id="cb10-3"><a href="#cb10-3"></a>         <span class="at">year =</span> time_period, </span>
 <span id="cb10-4"><a href="#cb10-4"></a>         value)</span>
 <span id="cb10-5"><a href="#cb10-5"></a></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="fu">head</span>(country_year, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="fu">head</span>(country_year, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: left;">value</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Afghanistan</td>
@@ -672,11 +863,12 @@ Solution
 </div>
 </div>
 </div>
-</section><section id="un-selecting-columns" class="level4" data-number="9.3.2.2"><h4 data-number="9.3.2.2" class="anchored" data-anchor-id="un-selecting-columns">
-<span class="header-section-number">9.3.2.2</span> Un-selecting columns</h4>
+</section>
+<section id="un-selecting-columns" class="level4" data-number="9.3.2.2">
+<h4 data-number="9.3.2.2" class="anchored" data-anchor-id="un-selecting-columns"><span class="header-section-number">9.3.2.2</span> Un-selecting columns</h4>
 <p>You can select columns either by telling R which ones you want to keep as in the previous examples, or by specifying which ones you want to exclude by using a minus symbol to un-select columns. You can also use the colon notation to de-select columns, but to do so you need to put parentheses around the span first, e.g., <code>-(time_coverage:base_period)</code>, not <code>-time_coverage:base_period</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># de-select individual columns</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># de-select individual columns</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">select</span>(<span class="sc">-</span>time_coverage, </span>
 <span id="cb11-4"><a href="#cb11-4"></a>         <span class="sc">-</span>upper_bound, </span>
@@ -689,20 +881,23 @@ Solution
 <span id="cb11-11"><a href="#cb11-11"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb11-12"><a href="#cb11-12"></a>  <span class="fu">select</span>(<span class="sc">-</span>(time_coverage<span class="sc">:</span>base_period), </span>
 <span id="cb11-13"><a href="#cb11-13"></a>         <span class="sc">-</span>geo_info_url, </span>
-<span id="cb11-14"><a href="#cb11-14"></a>         <span class="sc">-</span>custom_breakdown)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-14"><a href="#cb11-14"></a>         <span class="sc">-</span>custom_breakdown)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="select-helpers" class="level4" data-number="9.3.2.3"><h4 data-number="9.3.2.3" class="anchored" data-anchor-id="select-helpers">
-<span class="header-section-number">9.3.2.3</span> Select helpers</h4>
+</section>
+<section id="select-helpers" class="level4" data-number="9.3.2.3">
+<h4 data-number="9.3.2.3" class="anchored" data-anchor-id="select-helpers"><span class="header-section-number">9.3.2.3</span> Select helpers</h4>
 <p>Finally, you can select columns based on criteria about the column names.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
 <col style="width: 54%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th>function</th>
 <th>definition</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>everything()</code></td>
@@ -726,8 +921,7 @@ Solution
 </tr>
 <tr class="even">
 <td><code>num_range()</code></td>
-<td>select columns with a name that matches the pattern <code>prefix</code>
-</td>
+<td>select columns with a name that matches the pattern <code>prefix</code></td>
 </tr>
 <tr class="odd">
 <td><code>where()</code></td>
@@ -745,7 +939,7 @@ Solution
 </table>
 <p>Below, we make a vector of column names for columns that have only one value.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>one_val_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>one_val_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="st">"goal"</span>,</span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="st">"target"</span>,</span>
 <span id="cb12-4"><a href="#cb12-4"></a>  <span class="st">"indicator"</span>,</span>
@@ -759,15 +953,15 @@ Solution
 <span id="cb12-12"><a href="#cb12-12"></a>  <span class="st">"custom_breakdown"</span>,</span>
 <span id="cb12-13"><a href="#cb12-13"></a>  <span class="st">"reporting_type"</span>,</span>
 <span id="cb12-14"><a href="#cb12-14"></a>  <span class="st">"units"</span></span>
-<span id="cb12-15"><a href="#cb12-15"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-15"><a href="#cb12-15"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we can use this vector to unselect these columns.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">all_of</span>(one_val_cols))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">all_of</span>(one_val_cols))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -780,14 +974,14 @@ Tip
 <div class="callout-body-container callout-body">
 <p>There is a way to do this without having to type in all of the column names, but rather use functions to determine which columns have only one value and get a vector of their names. This is probably overkill for small tables, but invaluable if you have a table with hundreds of columns, or you need to do this to many different tables.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="annotated-cell-39"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-39-1"><a href="#annotated-cell-39-1"></a>n_values <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="annotated-cell-39"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-39-1"><a href="#annotated-cell-39-1"></a>n_values <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span> </span>
 <span id="annotated-cell-39-2"><a href="#annotated-cell-39-2"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-39" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-39-3" class="code-annotation-target"><a href="#annotated-cell-39-3"></a>    <span class="at">.cols =</span> <span class="fu">everything</span>(),</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-39" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-39-4" class="code-annotation-target"><a href="#annotated-cell-39-4"></a>    <span class="at">.fns =</span> \(col) <span class="fu">unique</span>(col) <span class="sc">|&gt;</span> <span class="fu">length</span>()</span>
 <span id="annotated-cell-39-5"><a href="#annotated-cell-39-5"></a>  ))</span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-39" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-39-6" class="code-annotation-target"><a href="#annotated-cell-39-6"></a>one_val <span class="ot">&lt;-</span> n_values <span class="sc">==</span> <span class="dv">1</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-39" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-39-7" class="code-annotation-target"><a href="#annotated-cell-39-7"></a>one_val_cols <span class="ot">&lt;-</span> one_val[, one_val] <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-39-8"><a href="#annotated-cell-39-8"></a>  <span class="fu">names</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-39-8"><a href="#annotated-cell-39-8"></a>  <span class="fu">names</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-39" data-target-annotation="2">2</dt>
@@ -824,50 +1018,45 @@ Tip
 <div class="callout-body-container callout-body">
 <p>What are the resulting columns for these four examples? Try and guess the answer from the code without looking at the output (but then use the output to check your answer if you get it wrong)</p>
 <ul>
-<li>
-<code>transport |&gt; select(contains("_area_"))</code>
-<div id="radio_MFRPCNBCSI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MFRPCNBCSI" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_MFRPCNBCSI" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_MFRPCNBCSI" value="answer"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_MFRPCNBCSI" value="x"><span>goal, geo_area_code, time_period</span></label>
-</div>
-</li>
-<li>
-<code>transport |&gt; select(where(is.numeric))</code>
-<div id="radio_CMHPWNVSVV" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CMHPWNVSVV" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_CMHPWNVSVV" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_CMHPWNVSVV" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_CMHPWNVSVV" value="answer"><span>goal, geo_area_code, time_period</span></label>
-</div>
-</li>
-<li>
-<code>transport |&gt; select(starts_with("geo_"))</code>
-<div id="radio_GPWTQROOSF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GPWTQROOSF" value="answer"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_GPWTQROOSF" value="x"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_GPWTQROOSF" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_GPWTQROOSF" value="x"><span>goal, geo_area_code, time_period</span></label>
-</div>
-</li>
-<li>
-<code>transport |&gt; select(ends_with("_bound"))</code>
-<div id="radio_HZSQWPQUCF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_HZSQWPQUCF" value="x"><span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_HZSQWPQUCF" value="answer"><span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_HZSQWPQUCF" value="x"><span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_HZSQWPQUCF" value="x"><span>goal, geo_area_code, time_period</span></label>
-</div>
-</li>
+<li><code>transport |&gt; select(contains("_area_"))</code>
+<div id="radio_SEBDUFWCBB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SEBDUFWCBB" value="x"> <span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_SEBDUFWCBB" value="x"> <span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_SEBDUFWCBB" value="answer"> <span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_SEBDUFWCBB" value="x"> <span>goal, geo_area_code, time_period</span></label>
+</div></li>
+<li><code>transport |&gt; select(where(is.numeric))</code>
+<div id="radio_VNYVNSZUNR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VNYVNSZUNR" value="x"> <span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_VNYVNSZUNR" value="x"> <span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_VNYVNSZUNR" value="x"> <span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_VNYVNSZUNR" value="answer"> <span>goal, geo_area_code, time_period</span></label>
+</div></li>
+<li><code>transport |&gt; select(starts_with("geo_"))</code>
+<div id="radio_YUOCOVLNKE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YUOCOVLNKE" value="answer"> <span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_YUOCOVLNKE" value="x"> <span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_YUOCOVLNKE" value="x"> <span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_YUOCOVLNKE" value="x"> <span>goal, geo_area_code, time_period</span></label>
+</div></li>
+<li><code>transport |&gt; select(ends_with("_bound"))</code>
+<div id="radio_VDOAJWBPEW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VDOAJWBPEW" value="x"> <span>geo_area_code, geo_area_name, geo_info_url</span></label><label><input type="radio" autocomplete="off" name="radio_VDOAJWBPEW" value="answer"> <span>upper_bound, lower_bound</span></label><label><input type="radio" autocomplete="off" name="radio_VDOAJWBPEW" value="x"> <span>geo_area_code, geo_area_name</span></label><label><input type="radio" autocomplete="off" name="radio_VDOAJWBPEW" value="x"> <span>goal, geo_area_code, time_period</span></label>
+</div></li>
 </ul>
 </div>
 </div>
-</section></section><section id="rename-and-relocate" class="level3" data-number="9.3.3"><h3 data-number="9.3.3" class="anchored" data-anchor-id="rename-and-relocate">
-<span class="header-section-number">9.3.3</span> Rename and relocate</h3>
+</section>
+</section>
+<section id="rename-and-relocate" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="rename-and-relocate"><span class="header-section-number">9.3.3</span> Rename and relocate</h3>
 <p>Whilst you can rename and reorder columns using <code>select()</code>, sometimes it is easier to use the <code>rename()</code> and <code>relocate()</code> functions.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>transport_clean <span class="ot">&lt;-</span> transport <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">all_of</span>(one_val_cols)) <span class="sc">|&gt;</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">rename</span>(<span class="at">year =</span> time_period,</span>
 <span id="cb14-4"><a href="#cb14-4"></a>         <span class="at">country =</span> geo_area_name) <span class="sc">|&gt;</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a>  <span class="fu">relocate</span>(age, sex, <span class="at">.after =</span> value) <span class="sc">|&gt;</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">relocate</span>(geo_area_code, <span class="at">.before =</span> cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="fu">relocate</span>(geo_area_code, <span class="at">.before =</span> cities)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="filter" class="level3" data-number="9.3.4"><h3 data-number="9.3.4" class="anchored" data-anchor-id="filter">
-<span class="header-section-number">9.3.4</span> Filter</h3>
-<p>Whilst <code>select()</code> chooses the columns you want to retain, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> chooses the rows to retain by matching row or column criteria.</p>
+</section>
+<section id="filter" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="filter"><span class="header-section-number">9.3.4</span> Filter</h3>
+<p>Whilst <code>select()</code> chooses the columns you want to retain, <code>filter()</code> chooses the rows to retain by matching row or column criteria.</p>
 <p>You can filter by a single criterion. This criterion can be rows where a certain column’s value matches a character value (e.g., “North”) or a number (e.g., 9003). It can also be the result of a logical equation (e.g., keep all rows with a specific column value larger than a certain value). The criterion is checked for each row, and if the result is FALSE, the row is removed. You can reverse equations by specifying <code>!=</code> where <code>!</code> means “not”.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># select all rows where country is Togo</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># select all rows where country is Togo</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>transport_clean <span class="sc">|&gt;</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Togo"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3"></a></span>
 <span id="cb15-4"><a href="#cb15-4"></a><span class="co"># select all rows where country is NOT Togo</span></span>
@@ -877,7 +1066,7 @@ Tip
 <span id="cb15-8"><a href="#cb15-8"></a>transport_clean <span class="sc">|&gt;</span> <span class="fu">filter</span>(value <span class="sc">&gt;</span> <span class="dv">99</span>)</span>
 <span id="cb15-9"><a href="#cb15-9"></a></span>
 <span id="cb15-10"><a href="#cb15-10"></a><span class="co"># select rows where sex is FEMALE or MALE</span></span>
-<span id="cb15-11"><a href="#cb15-11"></a>transport_clean <span class="sc">|&gt;</span> <span class="fu">filter</span>(sex <span class="sc">%in%</span>  <span class="fu">c</span>(<span class="st">"FEMALE"</span>, <span class="st">"MALE"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-11"><a href="#cb15-11"></a>transport_clean <span class="sc">|&gt;</span> <span class="fu">filter</span>(sex <span class="sc">%in%</span>  <span class="fu">c</span>(<span class="st">"FEMALE"</span>, <span class="st">"MALE"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -909,40 +1098,16 @@ Tip
 </div>
 </div>
 <ul>
-<li>
-<code>filter(class_tbl, score &lt; 80)</code> <select class="webex-select"><option value="blank"></option>
-<option value="x">1, 2</option>
-<option value="x">2</option>
-<option value="answer">3</option>
-<option value="x">3, 4</option></select>
-</li>
-<li>
-<code>filter(class_tbl, grade == "A")</code> <select class="webex-select"><option value="blank"></option>
-<option value="answer">1, 2</option>
-<option value="x">2</option>
-<option value="x">3</option>
-<option value="x">3, 4</option></select>
-</li>
-<li>
-<code>filter(class_tbl, grade != "A")</code> <select class="webex-select"><option value="blank"></option>
-<option value="x">1, 2</option>
-<option value="x">2</option>
-<option value="x">3</option>
-<option value="answer">3, 4</option></select>
-</li>
-<li>
-<code>filter(class_tbl, score == 91)</code> <select class="webex-select"><option value="blank"></option>
-<option value="x">1, 2</option>
-<option value="answer">2</option>
-<option value="x">3</option>
-<option value="x">3, 4</option></select>
-</li>
+<li><code>filter(class_tbl, score &lt; 80)</code> <select class="webex-select"><option value="blank"></option><option value="x">1, 2</option><option value="x">2</option><option value="answer">3</option><option value="x">3, 4</option></select></li>
+<li><code>filter(class_tbl, grade == "A")</code> <select class="webex-select"><option value="blank"></option><option value="answer">1, 2</option><option value="x">2</option><option value="x">3</option><option value="x">3, 4</option></select></li>
+<li><code>filter(class_tbl, grade != "A")</code> <select class="webex-select"><option value="blank"></option><option value="x">1, 2</option><option value="x">2</option><option value="x">3</option><option value="answer">3, 4</option></select></li>
+<li><code>filter(class_tbl, score == 91)</code> <select class="webex-select"><option value="blank"></option><option value="x">1, 2</option><option value="answer">2</option><option value="x">3</option><option value="x">3, 4</option></select></li>
 </ul>
 </div>
 </div>
 <p>You can also select on multiple criteria by separating them by commas (rows will be kept if they match <em>all</em> criteria). Additionally, you can use <code>&amp;</code> (“and”) and <code>|</code> (“or”) to create complex criteria.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># only data from Togo in 2020</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># only data from Togo in 2020</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>togo_2020 <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span> </span>
 <span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">filter</span>(</span>
 <span id="cb17-4"><a href="#cb17-4"></a>    country <span class="sc">==</span> <span class="st">"Togo"</span>,</span>
@@ -958,29 +1123,31 @@ Tip
 <span id="cb17-14"><a href="#cb17-14"></a></span>
 <span id="cb17-15"><a href="#cb17-15"></a><span class="co"># values under 10 or over 90</span></span>
 <span id="cb17-16"><a href="#cb17-16"></a>extreme_values <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span>  </span>
-<span id="cb17-17"><a href="#cb17-17"></a>  <span class="fu">filter</span>( value <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">|</span> value <span class="sc">&gt;</span> <span class="dv">90</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-17"><a href="#cb17-17"></a>  <span class="fu">filter</span>( value <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">|</span> value <span class="sc">&gt;</span> <span class="dv">90</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If you want the filter to retain multiple specific values in the same variable, the “match operator” (<code>%in%</code>) should be used rather than <code>|</code> (or). The <code>!</code> can also be used in combination here, but it is placed before the variable name.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>islands <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Solomon Islands"</span>, <span class="st">"Northern Mariana Islands"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>islands <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Solomon Islands"</span>, <span class="st">"Northern Mariana Islands"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2"></a></span>
 <span id="cb18-3"><a href="#cb18-3"></a>only_islands <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span></span>
 <span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> islands)</span>
 <span id="cb18-5"><a href="#cb18-5"></a></span>
 <span id="cb18-6"><a href="#cb18-6"></a>no_islands <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">filter</span>(<span class="sc">!</span>country <span class="sc">%in%</span> islands)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">filter</span>(<span class="sc">!</span>country <span class="sc">%in%</span> islands)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
 <col style="width: 33%">
 <col style="width: 50%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th><a href="https://psyteachr.github.io/glossary/o#operator" target="_blank" class="glossary" title="A symbol that performs some mathematical or comparative process.">Operator</a></th>
 <th>Name</th>
 <th>is TRUE if and only if</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td><code>A &lt; B</code></td>
@@ -1021,20 +1188,22 @@ Tip
 </table>
 <p>Finally, you can also pass many other functions to filter. For example, the package <pkg>stringr</pkg> that is loaded as part of the <pkg>tidyverse</pkg> contains many different functions for working with <a href="https://psyteachr.github.io/glossary/s#string" target="_blank" class="glossary" title="A piece of text inside of quotes.">strings</a> (character data). For example, you use <code>str_detect()</code> to only retain rows where the country contains the word “Island”.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>transport_clean <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>transport_clean <span class="sc">|&gt;</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(country, <span class="st">"Island"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: left;">value</th>
 <th style="text-align: left;">age</th>
 <th style="text-align: left;">sex</th>
 <th style="text-align: left;">time_detail</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Solomon Islands</td>
@@ -1057,7 +1226,7 @@ Tip
 </div>
 </div>
 </div>
-<p>Note that <code>str_detect()</code> is case sensitive so it would not return values of “island” or “ISLAND”. You can use the function <code><a href="https://rdrr.io/r/base/chartr.html">tolower()</a></code> or <code><a href="https://rdrr.io/r/base/chartr.html">toupper()</a></code> to convert a string to lowercase or uppercase before you search for substring if you need case-insensitive matching.</p>
+<p>Note that <code>str_detect()</code> is case sensitive so it would not return values of “island” or “ISLAND”. You can use the function <code>tolower()</code> or <code>toupper()</code> to convert a string to lowercase or uppercase before you search for substring if you need case-insensitive matching.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1068,42 +1237,44 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> is incredibly powerful and can allow you to select very specific subsets of data. But, it is also quite dangerous because when you start combining multiple criteria and operators, it’s very easy to accidentally specify something slightly different than what you intended. <strong>Always check your output</strong>. If you have a small dataset, then you can eyeball it to see if it looks right. With a larger dataset, you may wish to compute summary statistics or count the number of groups/observations in each variable to verify your filter is correct. There is no level of expertise in coding that can substitute knowing and checking your data.</p>
+<p><code>filter()</code> is incredibly powerful and can allow you to select very specific subsets of data. But, it is also quite dangerous because when you start combining multiple criteria and operators, it’s very easy to accidentally specify something slightly different than what you intended. <strong>Always check your output</strong>. If you have a small dataset, then you can eyeball it to see if it looks right. With a larger dataset, you may wish to compute summary statistics or count the number of groups/observations in each variable to verify your filter is correct. There is no level of expertise in coding that can substitute knowing and checking your data.</p>
 </div>
 </div>
 <p>Let’s narrow down our dataset to just the rows that report values aggregated by age, but separate for sex.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>transport_filtered <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>transport_filtered <span class="ot">&lt;-</span> transport_clean <span class="sc">|&gt;</span> </span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">filter</span>(sex <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"FEMALE"</span>, <span class="st">"MALE"</span>),</span>
-<span id="cb20-3"><a href="#cb20-3"></a>         age <span class="sc">==</span> <span class="st">"ALLAGE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3"></a>         age <span class="sc">==</span> <span class="st">"ALLAGE"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="try">
 <p>What check would you do to make sure the filtering above worked as intended?</p>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Note</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># this should produce only two rows, </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># this should produce only two rows, </span></span>
 <span id="cb21-2"><a href="#cb21-2"></a><span class="co"># with MALE and FEMALE as sex </span></span>
 <span id="cb21-3"><a href="#cb21-3"></a><span class="co"># and ALLAGE as age</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="fu">count</span>(transport_filtered, sex, age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="fu">count</span>(transport_filtered, sex, age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">sex</th>
 <th style="text-align: left;">age</th>
 <th style="text-align: right;">n</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">FEMALE</td>
@@ -1124,15 +1295,16 @@ Solution
 </div>
 </div>
 </div>
-</section><section id="sec-arrange" class="level3" data-number="9.3.5"><h3 data-number="9.3.5" class="anchored" data-anchor-id="sec-arrange">
-<span class="header-section-number">9.3.5</span> Arrange</h3>
+</section>
+<section id="sec-arrange" class="level3" data-number="9.3.5">
+<h3 data-number="9.3.5" class="anchored" data-anchor-id="sec-arrange"><span class="header-section-number">9.3.5</span> Arrange</h3>
 <p>You can sort your dataset using <code>arrange()</code>. You will find yourself needing to sort data in R much less than you do in Excel, since you don’t need to have rows next to each other in order to, for example, calculate group means. But <code>arrange()</code> can be useful when preparing data for display in tables. <code>arrange()</code> works on character data where it will sort alphabetically, as well as numeric data where the default is ascending order (smallest to largest). Reverse the order using <code>desc()</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># arranging the table </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># arranging the table </span></span>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="co"># first by country in alphabetical order</span></span>
 <span id="cb22-3"><a href="#cb22-3"></a><span class="co"># then by year in reverse order</span></span>
 <span id="cb22-4"><a href="#cb22-4"></a>transport_arranged <span class="ot">&lt;-</span> transport_filtered <span class="sc">|&gt;</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">arrange</span>(country, <span class="fu">desc</span>(year))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">arrange</span>(country, <span class="fu">desc</span>(year))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1146,22 +1318,24 @@ Tip
 <div class="callout-body-container callout-body">
 <p>If you want to sort character data/categories in a specific order, turn the column into a <a href="https://psyteachr.github.io/glossary/f#factor" target="_blank" class="glossary" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter">factor</a> and set the <code>levels</code> in the desired order.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>transport_factor <span class="ot">&lt;-</span> transport_filtered <span class="sc">|&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(sex, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"MALE"</span>, <span class="st">"FEMALE"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>transport_factor <span class="ot">&lt;-</span> transport_filtered <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(sex, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"MALE"</span>, <span class="st">"FEMALE"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>transport_factor <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="dv">2001</span><span class="sc">:</span><span class="dv">2003</span>) <span class="sc">|&gt;</span></span>
 <span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">select</span>(country, year, sex) <span class="sc">|&gt;</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">arrange</span>(year, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">arrange</span>(year, sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: left;">sex</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Uzbekistan</td>
@@ -1200,24 +1374,25 @@ Tip
 </div>
 </div>
 </div>
-</section><section id="mutate" class="level3" data-number="9.3.6"><h3 data-number="9.3.6" class="anchored" data-anchor-id="mutate">
-<span class="header-section-number">9.3.6</span> Mutate</h3>
+</section>
+<section id="mutate" class="level3" data-number="9.3.6">
+<h3 data-number="9.3.6" class="anchored" data-anchor-id="mutate"><span class="header-section-number">9.3.6</span> Mutate</h3>
 <p>The function <code>mutate()</code> allows you to add new columns or change existing ones by overwriting them by using the syntax <code>new_column = operation</code>. You can add more than one column in the same mutate function by separating the columns with a comma. Once you make a new column, you can use it in further column definitions. For example, the following code creates a new column called <code>urban</code>, which is true if the string “Urban average” is detected in the <code>foot_note</code> column, and fixes the data type of <code>value</code> by replacing it with the numeric version.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb25-3"><a href="#cb25-3"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
 <span id="cb25-4"><a href="#cb25-4"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value)</span>
-<span id="cb25-5"><a href="#cb25-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-5"><a href="#cb25-5"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><code>mutate()</code> can also be used in conjunction with other functions and Boolean operators. For example, we can add another column to <code>transport_data</code> that states whether the value is above the median value. Just like when we used <a href="https://psyteachr.github.io/glossary/b#boolean-expression" target="_blank" class="glossary" title="An expression that evaluates to TRUE or FALSE.">Boolean expressions</a> with filter, it will evaluate the equation and return TRUE or FALSE depending on whether the observation meets the criteria.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb26-3"><a href="#cb26-3"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
 <span id="cb26-4"><a href="#cb26-4"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
 <span id="cb26-5"><a href="#cb26-5"></a>    <span class="at">above_median =</span> value <span class="sc">&gt;</span> <span class="fu">median</span>(value)</span>
-<span id="cb26-6"><a href="#cb26-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-6"><a href="#cb26-6"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1234,7 +1409,7 @@ Warning
 </div>
 <p>You can also use <code>case_when()</code> to specify what values to return, rather than defaulting to TRUE or FALSE:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb27-3"><a href="#cb27-3"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
 <span id="cb27-4"><a href="#cb27-4"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value),</span>
@@ -1244,12 +1419,12 @@ Warning
 <span id="cb27-8"><a href="#cb27-8"></a>      value <span class="sc">&gt;=</span><span class="dv">85</span> <span class="sc">~</span> <span class="st">"high"</span>,</span>
 <span id="cb27-9"><a href="#cb27-9"></a>      <span class="at">.default =</span> <span class="cn">NA</span></span>
 <span id="cb27-10"><a href="#cb27-10"></a>    )</span>
-<span id="cb27-11"><a href="#cb27-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-11"><a href="#cb27-11"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>case_when()</code> function allows you to set multiple criteria, although we’re only using one non-default criterion here. It can be very useful, but takes a little practice.</p>
 <p>You can also use <code>case_when()</code> to combine different criteria:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># use different cutoffs for urban and non-urban areas</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co"># use different cutoffs for urban and non-urban areas</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>transport_data <span class="ot">&lt;-</span> transport_factor <span class="sc">|&gt;</span></span>
 <span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb28-4"><a href="#cb28-4"></a>    <span class="at">urban =</span> <span class="fu">str_detect</span>(foot_note, <span class="st">"Urban average"</span>),</span>
@@ -1264,7 +1439,7 @@ Warning
 <span id="cb28-13"><a href="#cb28-13"></a>      <span class="at">.default =</span> <span class="cn">NA</span></span>
 <span id="cb28-14"><a href="#cb28-14"></a>    )</span>
 <span id="cb28-15"><a href="#cb28-15"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb28-16"><a href="#cb28-16"></a>  <span class="fu">select</span>(<span class="sc">-</span>foot_note) <span class="co"># get rid of very long data no longer used</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-16"><a href="#cb28-16"></a>  <span class="fu">select</span>(<span class="sc">-</span>foot_note) <span class="co"># get rid of very long data no longer used</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1279,44 +1454,49 @@ Tip
 <p>Be mindful that <code>.default</code> uses <code>=</code> whilst the others use <code>~</code>. Emily has lost quite a lot of her time and sanity to not realising this.</p>
 </div>
 </div>
-<p>Just like <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>, <code>mutate()</code> is incredibly powerful and the scope of what you can create is far beyond what we can cover in this book.</p>
-</section><section id="sec-dplyr-summarise" class="level3" data-number="9.3.7"><h3 data-number="9.3.7" class="anchored" data-anchor-id="sec-dplyr-summarise">
-<span class="header-section-number">9.3.7</span> Summarise</h3>
+<p>Just like <code>filter()</code>, <code>mutate()</code> is incredibly powerful and the scope of what you can create is far beyond what we can cover in this book.</p>
+</section>
+<section id="sec-dplyr-summarise" class="level3" data-number="9.3.7">
+<h3 data-number="9.3.7" class="anchored" data-anchor-id="sec-dplyr-summarise"><span class="header-section-number">9.3.7</span> Summarise</h3>
 <p>You were introduced to <code>summarise()</code> in <a href="04-summary.html#sec-summary-summarise" class="quarto-xref"><span>Section 4.4</span></a>. Chapter 9 uses it as part of a wider wrangling workflow rather than re-teaching it.</p>
 <p>Key points to remember:</p>
 <ul>
-<li>
-<code>summarise()</code> returns a new table. Without groups, it returns one row. With groups, it returns one row per group.</li>
+<li><code>summarise()</code> returns a new table. Without groups, it returns one row. With groups, it returns one row per group.</li>
 <li>Name your summaries on the left (for example, <code>mean = mean(value)</code>), so the output columns are readable.</li>
 <li>Missing values propagate unless you handle them (for example, <code>mean(value, na.rm = TRUE)</code>).</li>
 </ul>
 <p>Example (overall summary):</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>transport_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb29-3"><a href="#cb29-3"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb29-4"><a href="#cb29-4"></a>    <span class="at">min  =</span> <span class="fu">min</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb29-5"><a href="#cb29-5"></a>    <span class="at">max  =</span> <span class="fu">max</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb29-6"><a href="#cb29-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-6"><a href="#cb29-6"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: right;">mean</th>
 <th style="text-align: right;">min</th>
 <th style="text-align: right;">max</th>
-</tr></thead>
-<tbody><tr class="odd">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td style="text-align: right;">68.60333</td>
 <td style="text-align: right;">9.5</td>
 <td style="text-align: right;">87.6</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 </div>
-</section><section id="sec-dplyr-groupby" class="level3" data-number="9.3.8"><h3 data-number="9.3.8" class="anchored" data-anchor-id="sec-dplyr-groupby">
-<span class="header-section-number">9.3.8</span> Group By</h3>
+</section>
+<section id="sec-dplyr-groupby" class="level3" data-number="9.3.8">
+<h3 data-number="9.3.8" class="anchored" data-anchor-id="sec-dplyr-groupby"><span class="header-section-number">9.3.8</span> Group By</h3>
 <p>You were introduced to grouping in <a href="04-summary.html#sec-grouping" class="quarto-xref"><span>Section 4.5</span></a> (and used it with summarise() in Chapter 4). Here is the reminder version.</p>
 <p>Key points to remember:</p>
 <ul>
@@ -1326,7 +1506,7 @@ Tip
 <li>.by is not the same as by. by = … will be treated as a new column name, not a grouping instruction.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># One-off grouping (recommended when you only need grouping once)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># One-off grouping (recommended when you only need grouping once)</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb30-4"><a href="#cb30-4"></a>    <span class="at">.by  =</span> sex,</span>
@@ -1339,16 +1519,18 @@ Tip
 <span id="cb30-11"><a href="#cb30-11"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb30-12"><a href="#cb30-12"></a>  <span class="fu">group_by</span>(sex) <span class="sc">|&gt;</span></span>
 <span id="cb30-13"><a href="#cb30-13"></a>  <span class="fu">summarise</span>(<span class="at">max =</span> <span class="fu">max</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb30-14"><a href="#cb30-14"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-14"><a href="#cb30-14"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">sex</th>
 <th style="text-align: right;">mean</th>
 <th style="text-align: right;">min</th>
 <th style="text-align: right;">max</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">FEMALE</td>
@@ -1366,11 +1548,13 @@ Tip
 </table>
 </div>
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">sex</th>
 <th style="text-align: right;">max</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">MALE</td>
@@ -1398,17 +1582,17 @@ Tip
 <div class="callout-body-container callout-body">
 <p>How would you find out the maximum value for each country, separately by sex?</p>
 <div class="cell" data-layout-align="center">
-<div id="radio_CONBNPBIEV" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CONBNPBIEV" value="answer"><span>
+<div id="radio_PSWQMSYYGG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PSWQMSYYGG" value="answer"> <span>
 <pre>transport_data |&gt;
   summarise(.by = c(sex, country), max = max(value)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_CONBNPBIEV" value="x"><span>
-<pre>transport_data |&gt;
-  summarise(by = c(value, country), max = max(sex)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_CONBNPBIEV" value="x"><span>
+</span></label><label><input type="radio" autocomplete="off" name="radio_PSWQMSYYGG" value="x"> <span>
 <pre>transport_data |&gt;
   summarise(.by = value, country, max = max(sex)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_CONBNPBIEV" value="x"><span>
+</span></label><label><input type="radio" autocomplete="off" name="radio_PSWQMSYYGG" value="x"> <span>
+<pre>transport_data |&gt;
+  summarise(by = c(value, country), max = max(sex)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_PSWQMSYYGG" value="x"> <span>
 <pre>transport_data |&gt;
   summarise(.by = sex, country, max = max(value)</pre>
 </span></label>
@@ -1418,12 +1602,12 @@ Tip
 </div>
 <p>You can also use <code>group_by()</code> or <code>by</code> in combination with other functions. For example, <code>slice_max()</code> returns the top N rows, ordered by a specific variable.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># return top 2 values </span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># return top 2 values </span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>transport_data <span class="sc">|&gt;</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">2</span>, <span class="at">order_by =</span> value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">2</span>, <span class="at">order_by =</span> value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 6%">
 <col style="width: 2%">
@@ -1439,7 +1623,8 @@ Tip
 <col style="width: 3%">
 <col style="width: 5%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: right;">value</th>
@@ -1453,7 +1638,8 @@ Tip
 <th style="text-align: left;">nature</th>
 <th style="text-align: left;">urban</th>
 <th style="text-align: left;">category</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Uzbekistan</td>
@@ -1492,12 +1678,12 @@ Tip
 </div>
 <p>But this can be combined with <code>by</code> to return the top values for each sex:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># return top 2 values per sex</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co"># return top 2 values per sex</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>transport_data <span class="sc">|&gt;</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">2</span>, <span class="at">order_by =</span> value, <span class="at">by =</span> sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">2</span>, <span class="at">order_by =</span> value, <span class="at">by =</span> sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 6%">
 <col style="width: 2%">
@@ -1513,7 +1699,8 @@ Tip
 <col style="width: 3%">
 <col style="width: 5%">
 </colgroup>
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">year</th>
 <th style="text-align: right;">value</th>
@@ -1527,7 +1714,8 @@ Tip
 <th style="text-align: left;">nature</th>
 <th style="text-align: left;">urban</th>
 <th style="text-align: left;">category</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Uzbekistan</td>
@@ -1609,23 +1797,27 @@ Tip
 </div>
 </div>
 </div>
-</section></section><section id="complications" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="complications">
-<span class="header-section-number">9.4</span> Complications</h2>
-<section id="rounding" class="level3" data-number="9.4.1"><h3 data-number="9.4.1" class="anchored" data-anchor-id="rounding">
-<span class="header-section-number">9.4.1</span> Rounding</h3>
+</section>
+</section>
+<section id="complications" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="complications"><span class="header-section-number">9.4</span> Complications</h2>
+<section id="rounding" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="rounding"><span class="header-section-number">9.4.1</span> Rounding</h3>
 <p>Let’s say we want to round all the values to the nearest percent and add a % sign.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>transport_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>transport_data <span class="sc">|&gt;</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">pcnt =</span> <span class="fu">round</span>(value) <span class="sc">|&gt;</span> <span class="fu">paste0</span>(<span class="st">"%"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(value, <span class="st">"</span><span class="sc">\\</span><span class="st">.5"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">select</span>(value, pcnt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">select</span>(value, pcnt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: right;">value</th>
 <th style="text-align: left;">pcnt</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">9.5</td>
@@ -1651,8 +1843,8 @@ Tip
 <p>If you look at the values above, you can see that the first three round up from .5, and the last rounds down. What’s going on!?</p>
 <p>This may seem like a mistake, but R rounds .5 to the nearest even number, rather than always up, like you were probably taught in school. This prevents overestimation biases, since x.5 is <em>exactly</em> halfway between x and x+1, so there is no reason it should always round up.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">round</span>(<span class="fl">0.5</span>)</span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">round</span>(<span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">round</span>(<span class="fl">0.5</span>)</span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">round</span>(<span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0
 [1] 2</code></pre>
@@ -1661,34 +1853,35 @@ Tip
 <p>However, this might throw a monkey wrench into your own systems. For example, our school policy is to round up for course marks at x.5. The easiest solution is to use the <code>round_half_up()</code> function from the package <pkg>janitor</pkg>.</p>
 <p>This should work as you’d expect.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">round_half_up</span>(<span class="fl">0.5</span>)</span>
-<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">round_half_up</span>(<span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">round_half_up</span>(<span class="fl">0.5</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">round_half_up</span>(<span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2</code></pre>
 </div>
 </div>
-</section><section id="sec-missing-values" class="level3" data-number="9.4.2"><h3 data-number="9.4.2" class="anchored" data-anchor-id="sec-missing-values">
-<span class="header-section-number">9.4.2</span> Missing values</h3>
+</section>
+<section id="sec-missing-values" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="sec-missing-values"><span class="header-section-number">9.4.2</span> Missing values</h3>
 <p>If you have control over your data, it is always best to keep missing values as empty cells rather than denoting missingness with a word or implausible number. If you used “missing” rather than leaving the cell empty, the entire variable would be read as character data, which means you wouldn’t be able to perform mathematical operations like calculating the mean. If you use an implausible number (0 or 999 are common), then you risk these values being included in any calculations as real numbers.</p>
 <p>However, we often don’t have control over how the data come to us, so let’s run through how to fix this.</p>
-<section id="bad-missing-values" class="level4" data-number="9.4.2.1"><h4 data-number="9.4.2.1" class="anchored" data-anchor-id="bad-missing-values">
-<span class="header-section-number">9.4.2.1</span> Bad missing values</h4>
+<section id="bad-missing-values" class="level4" data-number="9.4.2.1">
+<h4 data-number="9.4.2.1" class="anchored" data-anchor-id="bad-missing-values"><span class="header-section-number">9.4.2.1</span> Bad missing values</h4>
 <p>First, we’re going to recode the data to add in the missing values. We can use <code>case_when()</code> to set the <code>value</code> to “missing” if the year is 2000 and country is “Uzbekistan”, otherwise use the original value. You can’t combine number and character data types in the same column, so you need to convert the default value into a character (this is your first sign that this isn’t a good idea).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>missing_bad <span class="ot">&lt;-</span> transport_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>missing_bad <span class="ot">&lt;-</span> transport_data <span class="sc">|&gt;</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">mutate</span>(<span class="at">value =</span> <span class="fu">case_when</span>(</span>
 <span id="cb38-3"><a href="#cb38-3"></a>    <span class="co"># set to missing when year is 2000 and country is Uzbekistan</span></span>
 <span id="cb38-4"><a href="#cb38-4"></a>    year <span class="sc">==</span> <span class="dv">2000</span> <span class="sc">&amp;</span> country <span class="sc">==</span> <span class="st">"Uzbekistan"</span> <span class="sc">~</span> <span class="st">"missing"</span>, </span>
 <span id="cb38-5"><a href="#cb38-5"></a>    <span class="co"># otherwise, set to the existing value</span></span>
 <span id="cb38-6"><a href="#cb38-6"></a>    <span class="at">.default =</span> <span class="fu">as.character</span>(value)</span>
-<span id="cb38-7"><a href="#cb38-7"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-7"><a href="#cb38-7"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, if you try to compute the mean value, you will get an error message and the result will be <code>NA</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># try to compute mean value</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># try to compute mean value</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>missing_bad <span class="sc">|&gt;</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(value))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(value))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: There was 1 warning in `summarise()`.
 ℹ In argument: `mean = mean(value)`.
@@ -1697,43 +1890,50 @@ Caused by warning in `mean.default()`:
 </div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: right;">mean</th>
-</tr></thead>
-<tbody><tr class="odd">
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td style="text-align: right;">NA</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 </div>
-</section><section id="convert-missing-values-to-na" class="level4" data-number="9.4.2.2"><h4 data-number="9.4.2.2" class="anchored" data-anchor-id="convert-missing-values-to-na">
-<span class="header-section-number">9.4.2.2</span> Convert missing values to NA</h4>
+</section>
+<section id="convert-missing-values-to-na" class="level4" data-number="9.4.2.2">
+<h4 data-number="9.4.2.2" class="anchored" data-anchor-id="convert-missing-values-to-na"><span class="header-section-number">9.4.2.2</span> Convert missing values to NA</h4>
 <p>To set the missing values to NA, we can use the handy function <code>na_if()</code>. We’ll also need to transform <code>value</code> back to numeric.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>missing_data <span class="ot">&lt;-</span> missing_bad <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>missing_data <span class="ot">&lt;-</span> missing_bad <span class="sc">|&gt;</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb41-3"><a href="#cb41-3"></a>    <span class="co"># if value = "missing" set as NA</span></span>
 <span id="cb41-4"><a href="#cb41-4"></a>    <span class="at">value =</span> <span class="fu">na_if</span>(value, <span class="st">"missing"</span>),</span>
 <span id="cb41-5"><a href="#cb41-5"></a>    <span class="co"># convert to numeric</span></span>
 <span id="cb41-6"><a href="#cb41-6"></a>    <span class="at">value =</span> <span class="fu">as.numeric</span>(value)</span>
-<span id="cb41-7"><a href="#cb41-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-7"><a href="#cb41-7"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, if we try to calculate the mean value for each country, we get missing values for any summary value that contains an NA.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>missing_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>missing_data <span class="sc">|&gt;</span></span>
 <span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb42-3"><a href="#cb42-3"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
 <span id="cb42-4"><a href="#cb42-4"></a>    <span class="at">.by=</span> country</span>
-<span id="cb42-5"><a href="#cb42-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-5"><a href="#cb42-5"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">mean</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Bahrain</td>
@@ -1752,22 +1952,25 @@ Caused by warning in `mean.default()`:
 </div>
 </div>
 </div>
-</section><section id="ignore-missing-values" class="level4" data-number="9.4.2.3"><h4 data-number="9.4.2.3" class="anchored" data-anchor-id="ignore-missing-values">
-<span class="header-section-number">9.4.2.3</span> Ignore missing values</h4>
+</section>
+<section id="ignore-missing-values" class="level4" data-number="9.4.2.3">
+<h4 data-number="9.4.2.3" class="anchored" data-anchor-id="ignore-missing-values"><span class="header-section-number">9.4.2.3</span> Ignore missing values</h4>
 <p>The reason that <code>summarise()</code> returns <code>NA</code> even if there’s a single missing value is because <code>NA</code> basically means “I don’t know”, and the sum of 100 and “I don’t know” is “I don’t know”, not 100. However, when you’re calculating means, you often want to just ignore missing values. Set <code>na.rm = TRUE</code> in the summary function to remove missing values before calculating.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>missing_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>missing_data <span class="sc">|&gt;</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb43-3"><a href="#cb43-3"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">.by=</span> country</span>
-<span id="cb43-5"><a href="#cb43-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-5"><a href="#cb43-5"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">mean</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Bahrain</td>
@@ -1786,26 +1989,29 @@ Caused by warning in `mean.default()`:
 </div>
 </div>
 </div>
-</section><section id="count-missing-values" class="level4" data-number="9.4.2.4"><h4 data-number="9.4.2.4" class="anchored" data-anchor-id="count-missing-values">
-<span class="header-section-number">9.4.2.4</span> Count missing values</h4>
-<p>If you want to find out how many missing or non-missing values there are in a column, use the <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> function to get a <a href="https://psyteachr.github.io/glossary/l#logical" target="_blank" class="glossary" title="A data type representing TRUE or FALSE values.">logical</a> vector of whether or not each value is missing, and use <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> to count how many values are TRUE or <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> to calculate the proportion of TRUE values.</p>
+</section>
+<section id="count-missing-values" class="level4" data-number="9.4.2.4">
+<h4 data-number="9.4.2.4" class="anchored" data-anchor-id="count-missing-values"><span class="header-section-number">9.4.2.4</span> Count missing values</h4>
+<p>If you want to find out how many missing or non-missing values there are in a column, use the <code>is.na()</code> function to get a <a href="https://psyteachr.github.io/glossary/l#logical" target="_blank" class="glossary" title="A data type representing TRUE or FALSE values.">logical</a> vector of whether or not each value is missing, and use <code>sum()</code> to count how many values are TRUE or <code>mean()</code> to calculate the proportion of TRUE values.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>missing_data <span class="sc">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>missing_data <span class="sc">|&gt;</span></span>
 <span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb44-3"><a href="#cb44-3"></a>    <span class="at">n_valid =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(value)),</span>
 <span id="cb44-4"><a href="#cb44-4"></a>    <span class="at">n_missing =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(value)),</span>
 <span id="cb44-5"><a href="#cb44-5"></a>    <span class="at">prop_missing =</span> <span class="fu">mean</span>(<span class="fu">is.na</span>(value)),</span>
 <span id="cb44-6"><a href="#cb44-6"></a>    <span class="at">.by=</span> country</span>
-<span id="cb44-7"><a href="#cb44-7"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-7"><a href="#cb44-7"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">country</th>
 <th style="text-align: right;">n_valid</th>
 <th style="text-align: right;">n_missing</th>
 <th style="text-align: right;">prop_missing</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Bahrain</td>
@@ -1830,17 +2036,18 @@ Caused by warning in `mean.default()`:
 </div>
 </div>
 </div>
-</section><section id="omit-missing-values" class="level4" data-number="9.4.2.5"><h4 data-number="9.4.2.5" class="anchored" data-anchor-id="omit-missing-values">
-<span class="header-section-number">9.4.2.5</span> Omit missing values</h4>
+</section>
+<section id="omit-missing-values" class="level4" data-number="9.4.2.5">
+<h4 data-number="9.4.2.5" class="anchored" data-anchor-id="omit-missing-values"><span class="header-section-number">9.4.2.5</span> Omit missing values</h4>
 <p>You may also want to remove rows that have missing values and only work from complete datasets. <code>drop_na()</code> will remove any row that has a missing observation. You can use <code>drop_na()</code> on the entire dataset which will remove any row that has <em>any</em> missing value, or you can specify to only remove rows that are missing a specific value.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># remove any rows with any missing values</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># remove any rows with any missing values</span></span>
 <span id="cb45-2"><a href="#cb45-2"></a>complete_data <span class="ot">&lt;-</span> missing_data <span class="sc">|&gt;</span></span>
 <span id="cb45-3"><a href="#cb45-3"></a>  <span class="fu">drop_na</span>()</span>
 <span id="cb45-4"><a href="#cb45-4"></a></span>
 <span id="cb45-5"><a href="#cb45-5"></a><span class="co"># remove any rows that are missing a value for sales</span></span>
 <span id="cb45-6"><a href="#cb45-6"></a>complete_values <span class="ot">&lt;-</span> missing_data <span class="sc">|&gt;</span></span>
-<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">drop_na</span>(value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">drop_na</span>(value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1856,8 +2063,11 @@ Warning
 </div>
 </div>
 <p>Missing data can be quite difficult to deal with depending on how it is represented. As always, no amount of coding expertise can make up for not understanding the structure and idiosyncrasies of your data.</p>
-</section></section></section><section id="sec-together-wrangle" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="sec-together-wrangle">
-<span class="header-section-number">9.5</span> Peer Coding Exercises</h2>
+</section>
+</section>
+</section>
+<section id="sec-together-wrangle" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="sec-together-wrangle"><span class="header-section-number">9.5</span> Peer Coding Exercises</h2>
 <p>If you are enrolled on PSYCH1012 Applied Data Skills, do not do these exercises until the Tuesday workshop.</p>
 <div class="activity callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1874,52 +2084,44 @@ Tip
 <li><p>Decide who is going to start as the Driver and Navigator. Remember to switch every so often. The Navigator will find it helpful to have a copy of these instructions open and read the next step to the Driver.</p></li>
 <li><p>Open RStudio, ensure the environment is clear, and restart R.</p></li>
 <li><p>Create a new quarto document and save it as <code>ads-week9-wrangle.qmd</code></p></li>
-<li>
-<p>In the set-up chunk, load the tidyverse and janitor then load the three datasets below from Our World in Data (OWID). These map loosely onto:</p>
+<li><p>In the set-up chunk, load the tidyverse and janitor then load the three datasets below from Our World in Data (OWID). These map loosely onto:</p>
 <ul>
 <li>SDG 7 (Affordable and Clean Energy): renewables share; access to electricity</li>
 <li>SDG 13 (Climate Action): CO₂ emissions per capita</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">library</span>(tidyverse)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb46-2"><a href="#cb46-2"></a><span class="fu">library</span>(janitor)</span>
 <span id="cb46-3"><a href="#cb46-3"></a></span>
 <span id="cb46-4"><a href="#cb46-4"></a>renewables <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://ourworldindata.org/grapher/share-electricity-renewables.csv"</span>)</span>
 <span id="cb46-5"><a href="#cb46-5"></a>electricity_access <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://ourworldindata.org/grapher/share-of-the-population-with-access-to-electricity.csv"</span>)</span>
-<span id="cb46-6"><a href="#cb46-6"></a>co2_pc <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://ourworldindata.org/grapher/co-emissions-per-capita.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-6"><a href="#cb46-6"></a>co2_pc <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://ourworldindata.org/grapher/co-emissions-per-capita.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="5" type="1">
-<li>Use your method of choice to inspect each dataset (<code>glimpse()</code>, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>, <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>), and confirm the column names and types.</li>
+<li>Use your method of choice to inspect each dataset (<code>glimpse()</code>, <code>summary()</code>, <code>str()</code>), and confirm the column names and types.</li>
 </ol>
-<section id="task-1" class="level3" data-number="9.5.1"><h3 data-number="9.5.1" class="anchored" data-anchor-id="task-1">
-<span class="header-section-number">9.5.1</span> Task 1</h3>
+<section id="task-1" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="task-1"><span class="header-section-number">9.5.1</span> Task 1</h3>
 <p>Goal: combine the three indicators into one long (“tidy”) dataset with a consistent structure.</p>
 <ol start="6" type="1">
-<li>
-<p>For each dataset:</p>
+<li><p>For each dataset:</p>
 <ul>
 <li><p>clean the column names with <code>clean_names()</code></p></li>
 <li><p>rename the value column to <code>value</code></p></li>
-<li>
-<p>add a column called <code>indicator</code> with one of:</p>
+<li><p>add a column called <code>indicator</code> with one of:</p>
 <ul>
 <li><code>"renewables_share_electricity"</code></li>
 <li><code>"access_to_electricity"</code></li>
 <li><code>"co2_per_capita"</code></li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li><p>Bind the three datasets into a single object called <code>sdg_long</code>.</p></li>
 </ol>
 <p>Your target structure for <code>sdg_long</code> is:</p>
 <ul>
-<li>
-<code>entity</code> (country or region name)</li>
-<li>
-<code>code</code> (country code, often ISO3, sometimes missing)</li>
+<li><code>entity</code> (country or region name)</li>
+<li><code>code</code> (country code, often ISO3, sometimes missing)</li>
 <li><code>year</code></li>
 <li><code>value</code></li>
 <li><code>indicator</code></li>
@@ -1932,12 +2134,12 @@ Hint
 </div>
 <p>Checkpoint:</p>
 <ul>
-<li>
-<code>glimpse(sdg_long)</code> shows exactly five columns.</li>
-<li>
-<code>count(sdg_long, indicator)</code> returns three rows (one per indicator).</li>
-</ul></section><section id="task-2" class="level3" data-number="9.5.2"><h3 data-number="9.5.2" class="anchored" data-anchor-id="task-2">
-<span class="header-section-number">9.5.2</span> Task 2</h3>
+<li><code>glimpse(sdg_long)</code> shows exactly five columns.</li>
+<li><code>count(sdg_long, indicator)</code> returns three rows (one per indicator).</li>
+</ul>
+</section>
+<section id="task-2" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="task-2"><span class="header-section-number">9.5.2</span> Task 2</h3>
 <p>Dwight has chosen a shortlist of “strategic markets”:</p>
 <ul>
 <li>United Kingdom</li>
@@ -1953,11 +2155,12 @@ Hint
 </ol>
 <p>Checkpoint 2:</p>
 <ul>
-<li>
-<code>count(sdg_focus, entity)</code> returns five rows.</li>
+<li><code>count(sdg_focus, entity)</code> returns five rows.</li>
 <li>The earliest year in <code>sdg_focus</code> is 2000 (or later).</li>
-</ul></section><section id="task-3" class="level3" data-number="9.5.3"><h3 data-number="9.5.3" class="anchored" data-anchor-id="task-3">
-<span class="header-section-number">9.5.3</span> Task 3</h3>
+</ul>
+</section>
+<section id="task-3" class="level3" data-number="9.5.3">
+<h3 data-number="9.5.3" class="anchored" data-anchor-id="task-3"><span class="header-section-number">9.5.3</span> Task 3</h3>
 <p>Michael only cares about “the latest number” for each indicator and country.</p>
 <ol start="11" type="1">
 <li>Create <code>sdg_latest</code> with one row per <code>entity</code> and <code>indicator</code>, keeping:</li>
@@ -1968,17 +2171,14 @@ Hint
 </ul>
 <p>You may find it easiest to:</p>
 <ul>
-<li>group by <code>entity</code> and <code>indicator</code>
-</li>
+<li>group by <code>entity</code> and <code>indicator</code></li>
 <li>identify the maximum year</li>
 <li>keep the row(s) corresponding to that year</li>
 </ul>
 <p>Checkpoint 3:</p>
 <ul>
-<li>
-<code>count(sdg_latest, indicator)</code> returns three rows.</li>
-<li>
-<code>sdg_latest</code> has 15 rows in total (5 countries × 3 indicators), unless missing data forces fewer.</li>
+<li><code>count(sdg_latest, indicator)</code> returns three rows.</li>
+<li><code>sdg_latest</code> has 15 rows in total (5 countries × 3 indicators), unless missing data forces fewer.</li>
 </ul>
 <div class="webex-solution">
 <button>
@@ -1990,8 +2190,9 @@ Hint
 <li><code>filter(year == max(year, na.rm = TRUE))</code></li>
 </ul>
 </div>
-</section><section id="task-4" class="level3" data-number="9.5.4"><h3 data-number="9.5.4" class="anchored" data-anchor-id="task-4">
-<span class="header-section-number">9.5.4</span> Task 4</h3>
+</section>
+<section id="task-4" class="level3" data-number="9.5.4">
+<h3 data-number="9.5.4" class="anchored" data-anchor-id="task-4"><span class="header-section-number">9.5.4</span> Task 4</h3>
 <p>Michael wants a single table with one row per country and one column per indicator.</p>
 <ol start="12" type="1">
 <li>Start from <code>sdg_latest</code>.</li>
@@ -2013,11 +2214,12 @@ Hint
 </ul>
 <p>Checkpoint 4 (swap roles):</p>
 <ul>
-<li>
-<code>sdg_dashboard</code> has 5 rows and 4 columns.</li>
+<li><code>sdg_dashboard</code> has 5 rows and 4 columns.</li>
 <li>The indicator columns are numeric.</li>
-</ul></section><section id="task-5" class="level3" data-number="9.5.5"><h3 data-number="9.5.5" class="anchored" data-anchor-id="task-5">
-<span class="header-section-number">9.5.5</span> Task 5</h3>
+</ul>
+</section>
+<section id="task-5" class="level3" data-number="9.5.5">
+<h3 data-number="9.5.5" class="anchored" data-anchor-id="task-5"><span class="header-section-number">9.5.5</span> Task 5</h3>
 <p>Dwight wants “a ranking” to show who is doing best.</p>
 <ol start="16" type="1">
 <li>Create two ranked tables:</li>
@@ -2038,15 +2240,18 @@ Hint
 </section>
 </div>
 </div>
-</section><section id="sec-glossary-wrangle" class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" data-anchor-id="sec-glossary-wrangle">
-<span class="header-section-number">9.6</span> Glossary</h2>
+</section>
+<section id="sec-glossary-wrangle" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="sec-glossary-wrangle"><span class="header-section-number">9.6</span> Glossary</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: left;">definition</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/b#boolean-expression" class="glossary" target="_blank">boolean-expression</a></td>
@@ -2076,24 +2281,24 @@ Hint
 </table>
 </div>
 </div>
-</section><section id="sec-resources-wrangle" class="level2" data-number="9.7"><h2 data-number="9.7" class="anchored" data-anchor-id="sec-resources-wrangle">
-<span class="header-section-number">9.7</span> Further resources</h2>
+</section>
+<section id="sec-resources-wrangle" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="sec-resources-wrangle"><span class="header-section-number">9.7</span> Further resources</h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheat sheet</a></li>
-<li>
-<a href="https://r4ds.hadley.nz/missing-values">Chapter 18: Missing Data</a> in <em>R for Data Science</em>
-</li>
-<li>
-<a href="https://r4ds.hadley.nz/data-transform">Chapter 3: Data Transformation</a> in <em>R for Data Science</em>
-</li>
-<li>
-<a href="https://r4ds.hadley.nz/functions">Chapter 25: Functions</a> in <em>R for Data Science</em>
-</li>
+<li><a href="https://r4ds.hadley.nz/missing-values">Chapter 18: Missing Data</a> in <em>R for Data Science</em></li>
+<li><a href="https://r4ds.hadley.nz/data-transform">Chapter 3: Data Transformation</a> in <em>R for Data Science</em></li>
+<li><a href="https://r4ds.hadley.nz/functions">Chapter 25: Functions</a> in <em>R for Data Science</em></li>
 <li><a href="https://stringr.tidyverse.org/articles/stringr.html">Introduction to stringr</a></li>
 </ul>
 
 
-</section></main><!-- /main --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script>
+</section>
+
+</main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
 
 /* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
@@ -2266,7 +2471,8 @@ window.onload = function() {
   update_total_correct();
 }
 
-</script><script>
+</script>
+<script>
 $( document ).ready(function() {
   var cite = ' ';
   var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
@@ -2287,188 +2493,73 @@ $( document ).ready(function() {
   move_sidebar();
   window.onresize = move_sidebar;
 });
-</script><script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
       return false;
     }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -2476,184 +2567,184 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2661,197 +2752,176 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./08-tidy.html" class="pagination-link" aria-label="Data Tidying">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data Tidying</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10-custom.html" class="pagination-link" aria-label="Next Steps">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-custom.html" class="pagination-link" aria-label="Wrapping up">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wrapping up</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>CC-BY 2026, psyTeachR</p>
 </div>   
@@ -2863,6 +2933,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
